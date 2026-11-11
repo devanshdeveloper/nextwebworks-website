@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-11-11T06:13:56.482Z",
-  "mode": "dry-run",
-  "serverUrl": "https://prod-server.nextwebworks.com",
+  "timestamp": "2026-11-11T06:17:53.127Z",
+  "mode": "live",
+  "serverUrl": "https://prod-server.nextwebworks.in",
   "model": "blog",
-  "durationMs": 3,
+  "durationMs": 4397,
   "stats": {
     "total": 3,
-    "created": 0,
+    "created": 3,
     "skipped": 0,
     "alreadyExists": 0,
     "failed": 0
@@ -15,26 +15,29 @@
     {
       "file": "C:\\code\\personal\\nextwebworks-website\\project-docs\\client-review\\gate-5-cms-content\\blog\\blog\\headless-nextjs-vs-wordpress-vs-webflow.json",
       "slug": "headless-nextjs-vs-wordpress-vs-webflow",
-      "status": "DRY_RUN_VALIDATED",
-      "message": "Payload verified for endpoint POST https://prod-server.nextwebworks.com/api/blog/create-one (Write suppressed: --apply not set)",
-      "attempts": 0,
-      "endpoint": "https://prod-server.nextwebworks.com/api/blog/create-one"
+      "status": "CREATED",
+      "id": "6af4088da8450a8c5b76368e",
+      "message": "Successfully created blog item (HTTP 201)",
+      "attempts": 1,
+      "endpoint": "https://prod-server.nextwebworks.in/api/blog/create-one"
     },
     {
       "file": "C:\\code\\personal\\nextwebworks-website\\project-docs\\client-review\\gate-5-cms-content\\blog\\blog\\how-to-scope-fixed-price-web-projects-without-scope-creep.json",
       "slug": "how-to-scope-fixed-price-web-projects-without-scope-creep",
-      "status": "DRY_RUN_VALIDATED",
-      "message": "Payload verified for endpoint POST https://prod-server.nextwebworks.com/api/blog/create-one (Write suppressed: --apply not set)",
-      "attempts": 0,
-      "endpoint": "https://prod-server.nextwebworks.com/api/blog/create-one"
+      "status": "CREATED",
+      "id": "6af4088fa8450a8c5b763692",
+      "message": "Successfully created blog item (HTTP 201)",
+      "attempts": 1,
+      "endpoint": "https://prod-server.nextwebworks.in/api/blog/create-one"
     },
     {
       "file": "C:\\code\\personal\\nextwebworks-website\\project-docs\\client-review\\gate-5-cms-content\\blog\\blog\\the-white-label-playbook-for-marketing-agencies.json",
       "slug": "the-white-label-playbook-for-marketing-agencies",
-      "status": "DRY_RUN_VALIDATED",
-      "message": "Payload verified for endpoint POST https://prod-server.nextwebworks.com/api/blog/create-one (Write suppressed: --apply not set)",
-      "attempts": 0,
-      "endpoint": "https://prod-server.nextwebworks.com/api/blog/create-one"
+      "status": "CREATED",
+      "id": "6af4088fa8450a8c5b76369a",
+      "message": "Successfully created blog item (HTTP 201)",
+      "attempts": 1,
+      "endpoint": "https://prod-server.nextwebworks.in/api/blog/create-one"
     }
   ]
 }

@@ -228,3 +228,4 @@ PolicySchema.index({ slug: 1 });
 ## 5. Seed Validation Standards & Compilation Mapping
 
 All compiled seed files in `project-docs/client-review/gate-5-cms-content/` are validated against strict Zod definitions matching the Mongoose schemas above prior to database transmission.
+

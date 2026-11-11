@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-11-11T06:14:03.101Z",
-  "mode": "dry-run",
-  "serverUrl": "https://prod-server.nextwebworks.com",
+  "timestamp": "2026-11-11T06:18:02.774Z",
+  "mode": "live",
+  "serverUrl": "https://prod-server.nextwebworks.in",
   "model": "policy",
-  "durationMs": 3,
+  "durationMs": 3212,
   "stats": {
     "total": 2,
-    "created": 0,
+    "created": 2,
     "skipped": 0,
     "alreadyExists": 0,
     "failed": 0
@@ -15,18 +15,20 @@
     {
       "file": "C:\\code\\personal\\nextwebworks-website\\project-docs\\client-review\\gate-5-cms-content\\policies\\policy\\privacy.json",
       "slug": "privacy",
-      "status": "DRY_RUN_VALIDATED",
-      "message": "Payload verified for endpoint POST https://prod-server.nextwebworks.com/api/website-privacy-policy/create-one (Write suppressed: --apply not set)",
-      "attempts": 0,
-      "endpoint": "https://prod-server.nextwebworks.com/api/website-privacy-policy/create-one"
+      "status": "CREATED",
+      "id": "6af40897a8450a8c5b76369e",
+      "message": "Successfully created website-privacy-policy item (HTTP 201)",
+      "attempts": 1,
+      "endpoint": "https://prod-server.nextwebworks.in/api/website-privacy-policy/create-one"
     },
     {
       "file": "C:\\code\\personal\\nextwebworks-website\\project-docs\\client-review\\gate-5-cms-content\\policies\\policy\\terms.json",
       "slug": "terms",
-      "status": "DRY_RUN_VALIDATED",
-      "message": "Payload verified for endpoint POST https://prod-server.nextwebworks.com/api/website-privacy-policy/create-one (Write suppressed: --apply not set)",
-      "attempts": 0,
-      "endpoint": "https://prod-server.nextwebworks.com/api/website-privacy-policy/create-one"
+      "status": "CREATED",
+      "id": "6af40899a8450a8c5b7636a0",
+      "message": "Successfully created website-privacy-policy item (HTTP 201)",
+      "attempts": 1,
+      "endpoint": "https://prod-server.nextwebworks.in/api/website-privacy-policy/create-one"
     }
   ]
 }

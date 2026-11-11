@@ -15,3 +15,4 @@ In accordance with the pipeline's modular architecture, page copywriting, sectio
 2. **[CMS Implementation Rules](../gate-5-cms-requirements/cms-implementation-rules.md):** Target endpoints, strict-mode container rules, on-demand ISR revalidation, and zero-rates policy.
 3. **[Content Master Index](../gate-5-cms-content/index.md):** Full inventory of compiled JSON seeds and dry-run preflight validation.
 4. **[Stock Provenance Manifest](../../stock-provenance.json):** Verified zero-stock ceiling (`stock_ceiling: 0`).
+

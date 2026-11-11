@@ -1,0 +1,30 @@
+{
+  "model": "blog",
+  "lastSyncedAt": "2026-11-11T06:17:53.127Z",
+  "items": {
+    "headless-nextjs-vs-wordpress-vs-webflow": {
+      "id": "6af4088da8450a8c5b76368e",
+      "slug": "headless-nextjs-vs-wordpress-vs-webflow",
+      "status": "synced",
+      "pushedAt": "2026-11-11T06:17:50.652Z",
+      "attempts": 1,
+      "endpoint": "https://prod-server.nextwebworks.in/api/blog/create-one"
+    },
+    "how-to-scope-fixed-price-web-projects-without-scope-creep": {
+      "id": "6af4088fa8450a8c5b763692",
+      "slug": "how-to-scope-fixed-price-web-projects-without-scope-creep",
+      "status": "synced",
+      "pushedAt": "2026-11-11T06:17:52.112Z",
+      "attempts": 1,
+      "endpoint": "https://prod-server.nextwebworks.in/api/blog/create-one"
+    },
+    "the-white-label-playbook-for-marketing-agencies": {
+      "id": "6af4088fa8450a8c5b76369a",
+      "slug": "the-white-label-playbook-for-marketing-agencies",
+      "status": "synced",
+      "pushedAt": "2026-11-11T06:17:53.126Z",
+      "attempts": 1,
+      "endpoint": "https://prod-server.nextwebworks.in/api/blog/create-one"
+    }
+  }
+}

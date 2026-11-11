@@ -111,3 +111,4 @@ In accordance with our architecture audit (confirming that NWW CMS uses the unif
 In strict adherence to the project's zero-rates mandate:
 - **Zero Public Prices:** No CMS collection, seed file, or API payload may contain price figures, hourly rates, "from" prices, retainer tiers, or discount percentages.
 - All pricing is scoped and quoted during the first discovery call.
+
