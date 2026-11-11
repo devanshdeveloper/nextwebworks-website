@@ -24,7 +24,7 @@ export const forAgenciesContent = {
       {
         question: 'How quickly do you deliver scoped quotes on new client briefs?',
         answer:
-          'After our initial 20-minute scoping call, we deliver an itemized, fixed-price quotation within 24 business hours.',
+          'After our initial 30-minute scoping call, we deliver an itemized, fixed-price quotation within 24 business hours.',
       },
       {
         question: 'What happens if our agency’s project requirements expand mid-sprint?',
@@ -37,7 +37,7 @@ export const forAgenciesContent = {
   ctaBanner: {
     title: 'Ready to Scale Dev Capacity Without Full-Time Overhead?',
     description:
-      'Partner with an engineering consultancy built specifically for agency margins. Book a 20-minute introductory call to discuss your current project pipeline.',
+      'Partner with an engineering consultancy built specifically for agency margins. Book a 30-minute introductory call to discuss your current project pipeline.',
     primaryButton: { text: 'Discuss Agency Partnership', href: '/book-a-call' },
   },
 };

@@ -6,9 +6,9 @@ import FinalCTABanner from '../_components/FinalCTABanner.js';
 import { homeContent } from '@/content/home.js';
 
 export const metadata = {
-  title: 'Book a 20-Minute Technical Discovery Call | Next Web Works',
+  title: 'Book a 30-Minute Technical Discovery Call | Next Web Works',
   description:
-    'Schedule a 20-minute scoping call directly with our founder. We review your client briefs, confirm stack fit, and deliver a fixed-scope quote in 24 hours.',
+    'Schedule a 30-minute scoping call directly with our founder. We review your client briefs, confirm stack fit, and deliver a fixed-scope quote in 24 hours.',
   alternates: { canonical: 'https://nextwebworks.in/book-a-call' },
 };
 

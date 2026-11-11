@@ -95,7 +95,7 @@ export const aboutContent = {
   ctaBanner: {
     title: 'Work Directly With the Principal Engineer',
     description:
-      'Cut out account manager layers and speak directly with engineering leadership. Book a 20-minute discovery call to review your upcoming client roadmap.',
+      'Cut out account manager layers and speak directly with engineering leadership. Book a 30-minute discovery call to review your upcoming client roadmap.',
     primaryButton: { text: 'Book Discovery Call With Devansh', href: '/book-a-call' },
   },
 };

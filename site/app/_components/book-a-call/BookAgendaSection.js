@@ -30,7 +30,7 @@ export default function BookAgendaSection() {
             Call Agenda
           </span>
           <h2 className="font-heading text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
-            What Happens on the 20-Minute Call
+            What Happens on the 30-Minute Call
           </h2>
         </div>
 

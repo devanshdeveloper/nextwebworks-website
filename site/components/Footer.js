@@ -118,7 +118,7 @@ export default function Footer() {
             <ul className="mt-4 space-y-2.5 text-sm">
               <li>
                 <Link href="/book-a-call" className="text-[#2563EB] dark:text-[#3B82F6] hover:underline font-medium transition-colors">
-                  Book a 20-Min Call →
+                  Book a 30-Min Call →
                 </Link>
               </li>
               <li>
@@ -201,7 +201,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 border-t border-slate-200 dark:border-[#1E293B]/60 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-[#64748B]">
           <p>
-            Next Web Works is a proprietary engineering consultancy operated by Devansh [PROPRIETOR FULL LEGAL NAME - TO PROVIDE]. All rights reserved.
+            Next Web Works is a proprietary engineering consultancy operated by Devansh Khetwani (Sole Proprietor). All rights reserved.
           </p>
           <p className="font-mono">© 2026 Next Web Works</p>
         </div>

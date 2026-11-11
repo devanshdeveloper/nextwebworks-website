@@ -2,54 +2,29 @@
 
 **Project:** Next Web Works (`nextwebworks-website`)  
 **Status:** Active Rolling Brain & Context Expansion Queue (Batch 16: Production Launch Readiness, Third-Party Credentials & Final Client Assets)  
-**Active Open Questions Count:** 7  
+**Active Open Questions Count:** 2  
 
 ---
 
-### Category A: Third-Party Credentials & Production Integrations (Batch 16)
+### Category A: Third-Party Credentials Required from Client (Awaiting Input)
 
 1. **Google Analytics 4 (GA4) Measurement ID:**
-   - **(A) (Recommended)** Provide the GA4 Measurement ID (`G-XXXXXXXXXX`) to be added to Vercel production environment variables (`NEXT_PUBLIC_GA4_ID`), enabling privacy-conscious web analytics via Next.js Third Parties.
-   - **(B)** Defer analytics setup until after initial marketing push.
-   - **(C)** Use an alternative privacy-first analytics provider (e.g., Plausible, PostHog, Cloudflare Web Analytics).
+   - **Status:** Approved by client. Awaiting `G-XXXXXXXXXX` Measurement ID string from client Google Analytics console.
+   - **Target Deployment:** Will be injected into Vercel production environment variable `NEXT_PUBLIC_GA4_ID`.
 
 2. **Inbound Lead Alerting & Email Dispatch (`Resend`):**
-   - **(A) (Recommended)** Provide your production `RESEND_API_KEY` to configure in Vercel environment variables so briefs submitted via `/contact` and homepage dispatch instant email notifications to `contact@nextwebworks.in` with reply-to set directly to the lead.
-   - **(B)** Direct all leads exclusively to Calendly and WhatsApp (`https://wa.me/917999934815`), disabling email form dispatch.
-   - **(C)** Route form submissions directly into NWW CMS `Lead` collection for webhook triage.
-
-3. **Google Search Console (GSC) Domain Indexing:**
-   - **(A) (Recommended)** Confirm Google Search Console property verification using the deployed live verification token (`https://nextwebworks.in/googleabbe0780e1c0ccb2.html`) and submit the live sitemap (`https://nextwebworks.in/sitemap.xml`).
-   - **(B)** Verify via DNS TXT record in your domain registrar instead.
-   - **(C)** Defer search console indexing until official launch announcement.
+   - **Status:** Approved by client. Awaiting `re_...` Resend API Key from client Resend account.
+   - **Target Deployment:** Will be injected into Vercel production environment variable `RESEND_API_KEY` to dispatch email briefs from `/contact` directly to `contact@nextwebworks.in`.
 
 ---
 
-### Category B: Legal Entity, Founder Assets & Brand Refinements (Batch 16)
+## Codified Decisions History (Resolved in Batches 01–16)
 
-4. **Proprietor Full Legal Name for Legal Policies (`/privacy` & `/terms`):**
-   - **(A) (Recommended)** Provide Devansh's full legal name to replace `[PROPRIETOR FULL LEGAL NAME - TO PROVIDE]` in the sole proprietorship legal declaration on `/privacy` and `/terms`.
-   - **(B)** Use `"Next Web Works Operations Team"` as the entity representative until legal registration paperwork is filed.
-   - **(C)** Omit proprietor name and list only `"Next Web Works, Indore, Madhya Pradesh, India"`.
-
-5. **Founder Story & Headshot on `/about`:**
-   - **(A) (Recommended)** Keep the current authentic, clean engineering narrative on `/about` and provide an authentic photo of Devansh (`devansh.jpg` or `founder.webp`, in-house authentic photo, zero stock) to replace `[FOUNDER HEADSHOT]`.
-   - **(B)** Keep typography-only layout without a founder photograph to maintain a minimalist technical lead feel.
-   - **(C)** Expand into an interview-style founder QA section.
-
-6. **Calendly Meeting Duration & Copy Alignment:**
-   - **(A) (Recommended)** Update website copy across header, hero, and CTA banners from *"Book a 20-Min Call"* to *"Book a 30-Min Call"* to match the active Calendly event (`https://calendly.com/devanshkhetwani/30min`).
-   - **(B)** Retain *"Book a 20-Min Call"* copy and configure a dedicated 20-minute event on Calendly (`https://calendly.com/devanshkhetwani/20min`).
-   - **(C)** Use agnostic copy: *"Book an Intro Call"* or *"Book a Discovery Call"*.
-
-7. **NWW CMS Content Population for Services & Portfolio:**
-   - **(A) (Recommended)** Populate dynamic entries in the NWW CMS under `Service` (5 technical capabilities) and `Portfolio` (ClassyMenu, CeramicSales, NWW CMS Kit) models; until populated, the site's high-fidelity static fallbacks continue serving with 100% uptime.
-   - **(B)** Keep static fallbacks as the permanent single source of truth in `site/content/` to maximize static build performance and eliminate external CMS build dependency.
-   - **(C)** Migrate all CMS data into localized MDX files.
-
----
-
-## Codified Decisions History (Resolved in Batches 01–15)
+### Batch 16 Decisions (Resolved & Implemented)
+- **Proprietor Full Legal Name:** Codified as **Devansh Khetwani (Sole Proprietor)**. All occurrences of `[PROPRIETOR FULL LEGAL NAME - TO PROVIDE]` updated across footer, `/privacy`, `/terms`, and sanitized HTML renderer.
+- **Meeting Duration & Call Copy Alignment:** Standardized from 20-min to **30-Min Call** (*"Book a 30-Min Call"*, *"30-Minute Technical Review"*) across navigation, hero, agenda, article callouts, footer, and decoupled content modules to 100% align with active Calendly event (`https://calendly.com/devanshkhetwani/30min`).
+- **Lead Intake Routing:** Client confirmed direct email dispatch to `contact@nextwebworks.in` via Resend with 1-click reply-to for briefs submitted via `/contact` and homepage.
+- **Google Search Console Token:** Live verification token deployed at `https://nextwebworks.in/googleabbe0780e1c0ccb2.html`.
 
 ### Batch 15: Component Blueprints, Breakpoints, Markdown Rendering & SEO Schemas (Codified & Implemented)
 - **Hero Schematic Nodes:** Implemented 4 connected nodes (`Agency Brand / Client Spec` → `Next Web Works Engineering Layer` → `Next.js App Router & API` → `White-Label Deliverable`) with cobalt lines and subtle packet flow in `HeroSection.js`.

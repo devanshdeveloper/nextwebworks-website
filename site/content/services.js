@@ -37,7 +37,7 @@ export const servicesContent = {
   ctaBanner: {
     title: 'Need a Specific Platform or Architecture Built?',
     description:
-      'Book a 20-minute technical review with our principal engineer. We will review your stack requirements, verify technical feasibility, and deliver a fixed-scope quotation within 24 hours.',
+      'Book a 30-minute technical review with our principal engineer. We will review your stack requirements, verify technical feasibility, and deliver a fixed-scope quotation within 24 hours.',
     primaryButton: { text: 'Discuss Your Stack With Engineering', href: '/book-a-call' },
   },
 };

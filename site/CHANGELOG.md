@@ -5,6 +5,13 @@ All notable changes to the Next Web Works platform will be documented in this fi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.2] - 2026-11-11
+
+### Changed
+- **Calendly 30-Min Call Alignment**: Standardized all discovery call copy across header, hero, agenda, blog articles, and footer from 20-min to "Book a 30-Min Call" to match the active Calendly event.
+- **Sole Proprietorship Legal Declarations**: Codified Devansh Khetwani as the Sole Proprietor across footer and legal policies, resolving the `[PROPRIETOR FULL LEGAL NAME - TO PROVIDE]` placeholder.
+- **Rolling Discovery Queue Batch 16**: Advanced open questions queue to Batch 16, codifying all Batch 15 architecture and component decisions.
+
 ## [0.3.1] - 2026-11-11
 
 ### Fixed

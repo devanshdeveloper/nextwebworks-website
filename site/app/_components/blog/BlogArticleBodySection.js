@@ -19,7 +19,7 @@ export default function BlogArticleBodySection({ cleanContent }) {
           </p>
           <div className="pt-2">
             <Link href="/book-a-call" className="font-mono text-xs text-[#2563EB] dark:text-[#60A5FA] hover:underline font-semibold">
-              Book a 20-Min Technical Scoping Call →
+              Book a 30-Min Technical Scoping Call →
             </Link>
           </div>
         </div>

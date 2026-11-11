@@ -47,7 +47,7 @@ export default function Nav() {
             href="/book-a-call"
             className="inline-flex items-center justify-center rounded-lg bg-[#2563EB] px-4 py-2 text-sm font-medium text-white hover:bg-[#1D4ED8] transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB] focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-[#0B0F19] shadow-sm"
           >
-            Book a 20-Min Call
+            Book a 30-Min Call
           </Link>
         </div>
 
@@ -97,7 +97,7 @@ export default function Nav() {
               onClick={() => setMobileMenuOpen(false)}
               className="block w-full text-center rounded-lg bg-[#2563EB] px-4 py-2.5 text-sm font-medium text-white hover:bg-[#1D4ED8]"
             >
-              Book a 20-Min Call
+              Book a 30-Min Call
             </Link>
           </div>
         </div>

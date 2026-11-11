@@ -173,7 +173,7 @@ export default function HeroSection({ content }) {
             className="flex items-center justify-between w-full rounded-full bg-[#2563EB] px-6 py-3.5 text-sm font-semibold text-white shadow-2xl hover:bg-[#1D4ED8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
           >
             <span>{content.mobilePill.text}</span>
-            <span className="font-mono text-xs opacity-90">20-Min Discovery</span>
+            <span className="font-mono text-xs opacity-90">30-Min Discovery</span>
           </Link>
         </div>
       )}

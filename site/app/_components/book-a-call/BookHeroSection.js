@@ -11,7 +11,7 @@ export default function BookHeroSection() {
           Discovery Schedule
         </span>
         <h1 className="font-heading text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl">
-          Book a 20-Minute Technical Review
+          Book a 30-Minute Technical Review
         </h1>
         <p className="mx-auto max-w-2xl text-base leading-relaxed text-slate-600 dark:text-[#94A3B8]">
           Direct scoping call with our founder & principal engineer. No sales pitches. We review your client briefs, confirm stack fit, and deliver a fixed-scope quotation within 24 hours.

@@ -88,6 +88,9 @@ export function cleanArticleHtml(rawHtml) {
     .replace(/on\w+\s*=\s*["'][^"']*["']/gi, '')
     .replace(/href\s*=\s*["']javascript:[^"']*["']/gi, 'href="#"');
 
+  // 3. Resolve legal entity proprietor placeholder
+  html = html.replace(/\[PROPRIETOR FULL LEGAL NAME - TO PROVIDE\]/gi, 'Devansh Khetwani');
+
   return html;
 }
 

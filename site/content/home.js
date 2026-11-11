@@ -6,9 +6,9 @@ export const homeContent = {
     title: 'Say Yes to Every Client Dev Request. Without Hiring Developers.',
     description:
       'We handle the complete development, staging, and deployment under your brand. WordPress, Webflow, custom Next.js, and mobile apps. Fixed-scope pricing. Zero client contact.',
-    primaryCta: { text: 'Book a 20-Min Call', href: '/book-a-call' },
+    primaryCta: { text: 'Book a 30-Min Call', href: '/book-a-call' },
     secondaryCta: { text: 'Explore Services & How We Work ↓', href: '#services' },
-    mobilePill: { text: 'Book a 20-Min Call →', href: '/book-a-call' },
+    mobilePill: { text: 'Book a 30-Min Call →', href: '/book-a-call' },
   },
 
   painPoints: {
@@ -239,7 +239,7 @@ export const homeContent = {
       {
         question: 'How do we get started?',
         answer:
-          'Book a 20-min call, sign a mutual NDA, review your brief, quote in 24 hours, and kickoff the same day. (Small-task and critical-blocker turnaround: typical).',
+          'Book a 30-min call, sign a mutual NDA, review your brief, quote in 24 hours, and kickoff the same day. (Small-task and critical-blocker turnaround: typical).',
       },
     ],
   },
@@ -247,8 +247,8 @@ export const homeContent = {
   ctaBanner: {
     title: 'Ready to Expand Your Agency’s Dev Capacity?',
     description:
-      'Book a 20-minute discovery call with our founder. We’ll review your active client briefs, match stacks, and provide a fixed-scope pilot quote within 24 hours.',
-    primaryButton: { text: 'Book a 20-Min Call', href: '/book-a-call' },
+      'Book a 30-minute discovery call with our founder. We’ll review your active client briefs, match stacks, and provide a fixed-scope pilot quote within 24 hours.',
+    primaryButton: { text: 'Book a 30-Min Call', href: '/book-a-call' },
   },
 
   contactForm: {

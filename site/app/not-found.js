@@ -21,7 +21,7 @@ export default function NotFound() {
           href="/book-a-call"
           className="rounded-lg border border-[#1E293B] bg-[#0F172A] px-5 py-2.5 text-sm font-medium text-[#E2E8F0] hover:bg-[#1E293B] transition-colors"
         >
-          Book a 20-Min Call
+          Book a 30-Min Call
         </Link>
       </div>
     </div>
