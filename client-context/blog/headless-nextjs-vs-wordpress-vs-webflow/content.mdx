@@ -51,7 +51,26 @@ Visual Site Builder (Webflow) <───> Content Management Engine (WordPress) 
 
 ---
 
-## 2. Platform Breakdown: Strengths, Tradeoffs & Best Fits
+## 2. Comprehensive 10-Criteria Platform Matrix
+
+Evaluate client platform fit against these ten architectural and operational parameters:
+
+| Architectural Dimension | Headless Next.js 15 | WordPress (ACF Pro) | Webflow (CMS) |
+|---|---|---|---|
+| **Primary Architecture** | React Server Components & Edge SSR | PHP & Relational MySQL | Hosted No-Code Visual Generator |
+| **Core Web Vitals / LCP** | **Sub-second (Instant Edge)** | Dependent on theme & plugins | Good (Managed CDN) |
+| **Custom Business Logic** | **Unlimited (Full-Stack Node.js)** | Moderate (PHP hooks & plugins) | Extremely Limited (No custom backend) |
+| **Client Self-Editing** | Headless CMS GUI (NWW CMS / Sanity) | Native Gutenberg & ACF Fields | Visual In-Context Editor |
+| **Vendor Lock-In** | **Zero (Open Source & Cloud Agnostic)** | **Zero (Self-Hosted)** | High (Proprietary Webflow hosting) |
+| **Relational Data Models** | PostgreSQL, Prisma, MongoDB | Custom Post Types & Taxonomy | Limited Collection Lists |
+| **Monthly Hosting Overhead** | Predictable Serverless (Vercel / AWS) | Standard Managed VPS | Paid per site + CMS seat costs |
+| **Security Surface** | **Minimal (Static/Edge API isolation)** | High (Requires active patch management)| Minimal (Fully managed by Webflow) |
+| **Mobile App Parity** | High (Shared TypeScript logic) | Low (REST API wrappers required) | Zero (Web-only output) |
+| **Best Client Archetype** | **Portals, ERPs & Custom Web Apps** | **Editorial Media & Content Blogs** | **Fast Marketing Pages & Startups** |
+
+---
+
+## 3. Platform Breakdown: Strengths, Tradeoffs & Best Fits
 
 ### A. Next.js 15 (App Router & React Server Components)
 Next.js is the premier React framework for bespoke web applications, high-performance corporate platforms, and dynamic digital products.
@@ -63,7 +82,7 @@ Next.js is the premier React framework for bespoke web applications, high-perfor
 - **Tradeoffs:**
   - Requires professional software engineering expertise; clients cannot visually drag and drop layout elements.
 - **Ideal Client Use Cases:**
-  - Custom client portals, SaaS dashboards, operations ERPs, and high-traffic corporate platforms demanding custom business logic.
+  - Custom [client portals](/services#web-apps), SaaS dashboards, [business operations ERPs](/services#erps), and high-traffic corporate platforms demanding custom business logic.
 
 ---
 
@@ -77,7 +96,7 @@ Powering over 40% of the web, WordPress remains the unmatched global standard fo
 - **Tradeoffs:**
   - Requires diligent maintenance, regular security updates, and automated backups to prevent plugin vulnerabilities.
 - **Ideal Client Use Cases:**
-  - Content-driven marketing websites, multi-author corporate publications, and businesses with existing WordPress infrastructure.
+  - Content-driven [marketing websites](/services#websites), multi-author corporate publications, and businesses with existing WordPress infrastructure.
 
 ---
 
@@ -95,35 +114,23 @@ Webflow bridges visual design and clean front-end code generation, making it a f
 
 ---
 
-## 3. The Agency Selection Decision Matrix
-
-Use this checklist during your initial client discovery call:
-
-| Requirement / Client Constraint | Recommended Stack | Rationale |
-|---|---|---|
-| Client demands drag-and-drop visual editing with zero developer reliance for layout changes | **Webflow** | Minimizes ongoing dev overhead for visual landers |
-| Client produces high-volume weekly blog posts, case studies, and editorial resources | **WordPress (ACF)** | Unbeatable editorial workflows and content authoring ergonomics |
-| Client requires user logins, role-based dashboards, database queries, or custom SaaS workflows | **Next.js 15** | Only a true software engineering framework supports secure business logic |
-| Client demands sub-second Core Web Vitals, enterprise security, and 100% custom UI craft | **Next.js 15** | Server-side rendering eliminates client-side bundle bloat |
-| Client already runs their business on an established WordPress installation | **WordPress** | Respect existing client systems rather than forcing painful platform migrations |
-
----
-
 ## 4. Multi-Platform Support in an Agency Partner
 
-> **Delivery Standard:** Next Web Works builds in the platform your client already uses. Whether your project requires a typed Next.js App Router portal, a bespoke WordPress theme with custom Gutenberg blocks, or a Webflow marketing build, we engineer under your brand with clean architecture and documented handovers.
+> **Delivery Standard:** Next Web Works builds in the platform your client already uses. Whether your project requires a typed [Next.js App Router portal](/services#web-apps), a bespoke [WordPress theme with custom Gutenberg blocks](/services#cms-platforms), or a [Webflow marketing build](/services#cms-platforms), we engineer under your brand with clean architecture and documented handovers.
 
-By offering platform flexibility instead of rigid dogmatism, your marketing agency captures every client development opportunity and secures long-term client trust.
+By offering platform flexibility instead of rigid dogmatism, your marketing agency captures every client development opportunity and secures long-term client trust. Review our [illustrative architecture samples](/work) to see how we approach complex data schemas and cross-platform [React Native mobile applications](/services#mobile-apps).
+
+Unsure which stack fits an incoming client brief? [Book a 20-minute discovery call with Devansh](/book-a-call) to analyze requirements and get an architectural recommendation with zero sales bias.
 
 ---
 
 ## Frequently Asked Questions
 
 ### Can Next.js use WordPress as a headless CMS?
-Yes. Headless WordPress combines the familiar WordPress content editing dashboard with a blazing-fast Next.js frontend consuming the WP GraphQL or REST API. This delivers high performance while preserving your client's editorial workflow.
+**Yes, headless WordPress pairs the WordPress editorial interface with a high-performance Next.js frontend.** In this architecture, content editors manage articles in their familiar WordPress dashboard, while Next.js fetches data via the WP GraphQL or REST API at build time and on-demand using Incremental Static Regeneration (ISR).
 
 ### Is WordPress slower than Next.js?
-Stock WordPress with heavy off-the-shelf commercial themes and dozens of bloated plugins is significantly slower. However, a bespoke WordPress site built with a clean custom theme, minimal plugins, and edge caching can achieve excellent performance, though Next.js Server Components still hold the architectural advantage for interactive web applications.
+**Stock WordPress with commercial themes and heavy third-party plugins is significantly slower than Next.js.** However, a bespoke WordPress site built with a clean, hand-coded custom theme, minimal plugins, and edge caching can achieve high performance—though Next.js Server Components retain an architectural advantage for interactive applications.
 
 ### What if our client wants to migrate from Webflow to Next.js later?
-Migration is straightforward. Clean semantic HTML and CSS can be extracted from Webflow and ported into modular Next.js Tailwind components, allowing the frontend to scale as the client's custom engineering requirements expand.
+**Migrating from Webflow to Next.js is a seamless architectural progression as client logic expands.** Clean semantic HTML and CSS can be exported from Webflow and refactored into modular React and Tailwind CSS components, establishing a scalable foundation for custom databases and authentication.
