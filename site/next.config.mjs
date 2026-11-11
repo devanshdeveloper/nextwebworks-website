@@ -8,6 +8,25 @@ const nextConfig = {
       },
     },
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'prod-server.nextwebworks.in',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'prod-server.nextwebworks.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'nextwebworks.in',
+        pathname: '/**',
+      },
+    ],
+  },
   async redirects() {
     return [
       {

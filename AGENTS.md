@@ -16,7 +16,7 @@ Next Web Works (`nextwebworks-website`) is an agency-facing engineering consulta
   - `site/app/_components/`: Section components (<= 250 lines, `// section: <id>`, `data-section="<id>"`)
   - `site/components/`: Shared UI components (`Nav.js`, `Footer.js`, `WhatsAppButton.js`, `motion/`)
   - `site/content/`: Decoupled static copy and structured JSON-LD entities
-  - `site/lib/`: Shared utilities (`utils.js`, `motion.js`) and CMS client layer (`cms-kit/`)
+  - `site/lib/`: Shared utilities (`utils.js`, `motion.js`), Markdown pipeline (`markdown/`), and CMS client layer (`cms-kit/`). Blog supports dual HTML & Markdown formats with server-side RSC rendering, Shiki syntax highlighting, and on-demand Mermaid diagrams.
 - `client-context/`: Client answers, approved copy, brand identity, and conversion blueprints
 - `project-docs/`: Architecture specifications, review gates, and master router state (`router-state.md`)
 - `.agents/`: Antigravity rules, skills, and safety hooks

@@ -191,6 +191,17 @@ export const ALLOWLIST = new Set([
   'need a white label engineering partner for your agency',
   'we deliver custom next js wordpress and mobile builds directly under your brand with fix',
   'we deliver custom nextjs wordpress and mobile builds directly under your brand with fix',
+
+  // Blog Markdown & Article UI Microcopy
+  'copy code to clipboard',
+  'copied to clipboard',
+  'syntax error in mermaid diagram',
+  'failed to render diagram',
+  'table of contents',
+  'jump to top of article',
+  'expand table of contents',
+  'collapse table of contents',
+  'on this page',
 ]);
 
 // Fail immediately if build output is missing

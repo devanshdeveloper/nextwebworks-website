@@ -5,6 +5,19 @@ All notable changes to the Next Web Works platform will be documented in this fi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.7.0] - 2026-11-11
+
+### Added
+- **Full Markdown & Mermaid Diagram Architecture for Blog (`site/lib/markdown/`)**: Implemented a server-side Markdown compilation and rendering pipeline based on `unified`, `remark-gfm`, `remark-rehype`, `rehype-slug`, `rehype-autolink-headings`, `rehype-sanitize`, and `shiki`.
+  - CommonMark + GitHub-Flavored Markdown support: responsive tables, task lists, strikethrough, autolinks, footnotes, blockquotes, inline code, kbd, figures, and images.
+  - GitHub-style alert callouts (`> [!NOTE]`, `[!TIP]`, `[!IMPORTANT]`, `[!WARNING]`, `[!CAUTION]`) with Lucide icons mapped to brand color tokens.
+  - Server-side syntax highlighting via Shiki with dual themes (`github-light` / `github-dark-default`), language indicators, and interactive `<CopyButton />` leaf.
+  - Lazy Mermaid diagram rendering via `<MermaidDiagram />`: on-demand dynamic import when blocks enter viewport, strict security mode, real-time light/dark theme synchronization, responsive horizontal scrolling, and accessible server-side fallback.
+  - Sticky Table of Contents (`<TableOfContents />`): active heading highlight via `IntersectionObserver`, collapsible mobile drawer, and smooth anchor scrolling cooperating with Lenis.
+  - Ultra-tier reading progress bar (`<MotionReadingProgress />`) and subtle reveals for non-text blocks (`<MotionRevealBlock />`).
+  - Shared helpers for plain-text extraction, word-boundary excerpt generation, reading time calculation, and SEO metadata / Schema.org `BlogPosting` JSON-LD description.
+- **Dual Content Format Support**: Preserved 100% backward compatibility for legacy sanitized HTML blog posts alongside Markdown posts with conservative format detection in `site/lib/markdown/format.js`.
+
 ## [0.6.0] - 2026-11-11
 
 ### Added

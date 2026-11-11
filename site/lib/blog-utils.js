@@ -1,4 +1,8 @@
 // site/lib/blog-utils.js - Plain-text excerpts, allowlist sanitizer, and category key helper
+import { getArticleExcerpt, getArticlePlainText, getArticleReadingTime, getArticleDescription } from './markdown/helpers.js';
+import { detectContentFormat } from './markdown/format.js';
+
+export { getArticleExcerpt, getArticlePlainText, getArticleReadingTime, getArticleDescription, detectContentFormat };
 
 /**
  * Categorizes a string into one of 4 deterministic design motifs.
@@ -15,53 +19,16 @@ export function getCategoryKey(category = '') {
 }
 
 /**
- * Strips HTML tags, removes duplicate leading titles, decodes entities,
- * inserts spaces between blocks, and trims cleanly on a word boundary.
+ * Strips HTML and Markdown tags, removes duplicate leading titles, decodes entities,
+ * and trims cleanly on a word boundary with an ellipsis only when truncated.
  *
- * @param {string} html - Raw HTML or text from CMS
+ * @param {string} html - Raw HTML or Markdown text from CMS
  * @param {string} [title=''] - Article title for deduplication
  * @param {number} [maxLength=140] - Character ceiling
  * @returns {string} Clean plain text
  */
 export function stripHtml(html, title = '', maxLength = 140) {
-  if (!html) return '';
-  let text = String(html);
-
-  // 1. If HTML starts with a heading tag (h1-h6), remove the entire heading block
-  text = text.replace(/^\s*<h[1-6][^>]*>[\s\S]*?<\/h[1-6]>\s*/i, ' ');
-
-  // 2. Remove all remaining HTML tags, ensuring spacing between blocks
-  text = text.replace(/<[^>]*>/g, ' ');
-
-  // 3. Decode standard HTML entities
-  text = text
-    .replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&nbsp;/g, ' ')
-    .replace(/&mdash;/g, '—')
-    .replace(/&ndash;/g, '–');
-
-  // 4. Normalize multiple whitespaces
-  text = text.replace(/\s+/g, ' ').trim();
-
-  // 5. If text still starts by repeating the title, strip it out
-  if (title) {
-    const cleanTitle = title.trim();
-    if (text.toLowerCase().startsWith(cleanTitle.toLowerCase())) {
-      text = text.slice(cleanTitle.length).replace(/^[:\-\s]+/, '').trim();
-    }
-  }
-
-  if (text.length <= maxLength) return text;
-
-  // 6. Trim cleanly on word boundary with ellipsis only when truncated
-  const sub = text.slice(0, maxLength);
-  const lastSpace = sub.lastIndexOf(' ');
-  const trimmed = lastSpace > 0 ? sub.slice(0, lastSpace) : sub;
-  return `${trimmed}...`;
+  return getArticleExcerpt(html, title, maxLength);
 }
 
 function formatCell(cell) {

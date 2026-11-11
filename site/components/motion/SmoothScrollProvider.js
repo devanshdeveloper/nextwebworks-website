@@ -41,6 +41,9 @@ export default function SmoothScrollProvider({ children }) {
     });
 
     lenisRef.current = lenis;
+    if (typeof window !== 'undefined') {
+      window.__lenis = lenis;
+    }
 
     // 4. GSAP ticker sync: synchronize Lenis raf with GSAP's internal ticker
     const updateTicker = (time) => {
@@ -54,6 +57,9 @@ export default function SmoothScrollProvider({ children }) {
       gsap.ticker.remove(updateTicker);
       lenis.destroy();
       lenisRef.current = null;
+      if (typeof window !== 'undefined') {
+        window.__lenis = null;
+      }
     };
   }, []);
 

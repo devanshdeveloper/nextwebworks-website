@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { SvgScene } from '@/lib/svg/index.js';
 import MotionFadeIn from '@/components/motion/MotionFadeIn.js';
 
-export default function BlogArticleHeaderSection({ post, category }) {
+export default function BlogArticleHeaderSection({ post, category, readingTime = '' }) {
   return (
     <section
       id="blog-article-header"
@@ -27,7 +27,7 @@ export default function BlogArticleHeaderSection({ post, category }) {
             {post.title}
           </h1>
           <p className="font-mono text-xs text-slate-500 dark:text-[#64748B]">
-            Published on {new Date(post.createdAt || '2026-11-11').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} · By Devansh, Principal Engineer
+            Published on {new Date(post.createdAt || '2026-11-11').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} · By Devansh, Principal Engineer{readingTime ? ` · ${readingTime}` : ''}
           </p>
         </MotionFadeIn>
 
