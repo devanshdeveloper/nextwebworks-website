@@ -99,10 +99,12 @@ function formatTableFromRows(rows) {
 
 export function parseMarkdownTables(html) {
   if (!html) return '';
-  const pRegex = /(?:<p>\s*\|[^\n<]+?\|\s*<\/p>\s*)+/gi;
+  const pRegex = /(?:<p>\s*\|(?:(?!<\/p>)[\s\S])*?\|\s*<\/p>\s*)+/gi;
   let res = html.replace(pRegex, (block) => {
     const matches = block.match(/<p>\s*(\|[\s\S]*?\|)\s*<\/p>/gi);
-    return matches && matches.length >= 2 ? formatTableFromRows(matches.map((p) => p.replace(/<\/?p>/gi, '').trim())) || block : block;
+    if (!matches || matches.length < 2) return block;
+    const rawRows = matches.map((p) => p.replace(/^<p>\s*/i, '').replace(/\s*<\/p>$/i, '').trim());
+    return formatTableFromRows(rawRows) || block;
   });
   const rawRegex = /(?:^|\n)(\|[^\n]+\|\r?\n\|[\s\-:|]+\|\r?\n(?:\|[^\n]+\|\r?\n?)+)/g;
   return res.replace(rawRegex, (m, b) => {
