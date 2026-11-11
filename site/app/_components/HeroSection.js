@@ -3,8 +3,10 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 export default function HeroSection({ content }) {
+  const router = useRouter();
   const [showMobilePill, setShowMobilePill] = useState(false);
 
   useEffect(() => {
@@ -20,6 +22,24 @@ export default function HeroSection({ content }) {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleSecondaryCtaClick = (e) => {
+    if (content.secondaryCta?.href?.startsWith('#')) {
+      e.preventDefault();
+      const targetId = content.secondaryCta.href.replace(/^#/, '');
+      const target =
+        document.getElementById(targetId) ||
+        document.getElementById('services') ||
+        document.getElementById('home-s4-services');
+
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+        window.history.pushState(null, '', content.secondaryCta.href);
+      } else {
+        router.push('/services');
+      }
+    }
+  };
 
   return (
     <section
@@ -66,6 +86,7 @@ export default function HeroSection({ content }) {
               </Link>
               <a
                 href={content.secondaryCta.href}
+                onClick={handleSecondaryCtaClick}
                 className="inline-flex items-center justify-center rounded-lg border border-slate-300 dark:border-[#1E293B] bg-white dark:bg-[#0F172A] px-6 py-3.5 text-base font-medium text-slate-800 dark:text-[#E2E8F0] hover:bg-slate-100 dark:hover:bg-[#1E293B] hover:text-slate-900 dark:hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB] transition-colors duration-200"
               >
                 {content.secondaryCta.text}

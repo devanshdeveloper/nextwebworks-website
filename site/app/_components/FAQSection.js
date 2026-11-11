@@ -12,10 +12,11 @@ export default function FAQSection({ content }) {
 
   return (
     <section
-      id="home-s6-faq"
+      id="faq"
       data-section="home-s6-faq"
-      className="py-20 md:py-28 border-b border-slate-200 dark:border-[#1E293B]/60 bg-white dark:bg-[#0B0F19] transition-colors"
+      className="py-20 md:py-28 border-b border-slate-200 dark:border-[#1E293B]/60 bg-white dark:bg-[#0B0F19] transition-colors scroll-mt-16 relative"
     >
+      <div id="home-s6-faq" className="absolute -top-16 left-0" aria-hidden="true" />
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-left space-y-4">

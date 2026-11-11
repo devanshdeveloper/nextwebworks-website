@@ -1,4 +1,5 @@
 import { Policy } from '@/lib/cms-kit/policy.js';
+import { cleanArticleHtml } from '@/lib/blog-utils.js';
 
 export const metadata = {
   title: 'Privacy Policy | Next Web Works',
@@ -8,6 +9,10 @@ export const metadata = {
 
 export default async function PrivacyPage() {
   const policy = await Policy.readOne('privacy').catch(() => null);
+  const cleanContent = cleanArticleHtml(
+    policy?.content ||
+      '<p>Privacy Policy details under review by legal counsel. For inquiries, email contact@nextwebworks.in.</p>'
+  );
 
   return (
     <div className="py-16 md:py-24">
@@ -19,9 +24,10 @@ export default async function PrivacyPage() {
         <p className="font-mono text-xs text-slate-500 dark:text-[#64748B]">
           Effective Date: {policy?.effectiveDate || '2026-11-11'} · India DPDP Act 2023 & GDPR Aligned
         </p>
-        <div className="prose prose-slate dark:prose-invert max-w-none text-sm leading-relaxed text-slate-700 dark:text-[#CBD5E1] whitespace-pre-line border-t border-slate-200 dark:border-[#1E293B] pt-6">
-          {policy?.content || 'Privacy Policy details under review by legal counsel. For inquiries, email contact@nextwebworks.in.'}
-        </div>
+        <div
+          className="prose prose-slate dark:prose-invert max-w-none text-sm leading-relaxed text-slate-700 dark:text-[#CBD5E1] border-t border-slate-200 dark:border-[#1E293B] pt-6"
+          dangerouslySetInnerHTML={{ __html: cleanContent }}
+        />
       </div>
     </div>
   );

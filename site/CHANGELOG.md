@@ -5,6 +5,13 @@ All notable changes to the Next Web Works platform will be documented in this fi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.1] - 2026-11-11
+
+### Fixed
+- **Privacy Policy & Terms of Service HTML Rendering**: Fixed raw HTML tags displaying on `/privacy` and `/terms` by parsing CMS policy body through `cleanArticleHtml` sanitizer and rendering sanitized semantic HTML via `dangerouslySetInnerHTML`.
+- **Home Hero Services Link Navigation**: Wired `#services` section ID to `ServicesSection.js` with `scroll-mt-16` offset, added canonical anchor IDs (`#work`, `#faq`, `#contact`), and added smooth scrolling with graceful router fallback in `HeroSection.js`.
+- **Link Integrity**: Validated all 72 internal and external links sitewide to ensure zero dead or broken links.
+
 ## [0.3.0] - 2026-11-11
 
 ### Added
