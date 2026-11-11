@@ -1,0 +1,66 @@
+// section: home-s2-pain-points
+import Link from 'next/link';
+
+export default function PainPointsSection({ content }) {
+  return (
+    <section
+      id="home-s2-pain-points"
+      data-section="home-s2-pain-points"
+      className="py-20 md:py-28 border-b border-[#1E293B]/60 bg-[#0B0F19]"
+    >
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="max-w-3xl space-y-4">
+          <p className="text-xs font-mono tracking-wider uppercase text-[#10B981] font-semibold">
+            {content.eyebrow}
+          </p>
+          <h2 className="font-heading text-3xl font-bold tracking-tight text-[#F8FAFC] sm:text-4xl">
+            {content.title}
+          </h2>
+          <p className="text-base leading-relaxed text-[#94A3B8]">
+            {content.description}
+          </p>
+        </div>
+
+        {/* 3-Column Pain-Point Cards */}
+        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
+          {content.cards.map((card, idx) => (
+            <div
+              key={card.title}
+              className="group relative flex flex-col justify-between rounded-2xl border border-[#1E293B] bg-[#0F172A] p-7 transition-all duration-200 hover:border-[#2563EB]/60 hover:-translate-y-0.5"
+            >
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <span className="font-mono text-xs uppercase tracking-wider text-[#64748B]">
+                    0{idx + 1} // {card.tag}
+                  </span>
+                  <span className="h-2 w-2 rounded-full bg-[#EF4444]/70" />
+                </div>
+                <h3 className="font-heading text-xl font-semibold text-white">
+                  {card.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-[#94A3B8]">
+                  {card.description}
+                </p>
+              </div>
+              <div className="mt-6 pt-4 border-t border-[#1E293B]/80 text-xs font-mono text-[#64748B]">
+                Risk Factor: High Margin Erosion
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* CTA after pain-point cards */}
+        <div className="mt-12 flex justify-start">
+          <Link
+            href={content.cta.href}
+            className="inline-flex items-center gap-2 text-sm font-medium text-[#2563EB] hover:text-[#3B82F6] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB] rounded py-1"
+          >
+            <span>{content.cta.text}</span>
+            <span aria-hidden="true">→</span>
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
