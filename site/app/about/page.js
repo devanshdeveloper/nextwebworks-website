@@ -7,7 +7,7 @@ import Schema from '@/components/seo/Schema.js';
 import { aboutContent } from '@/content/about.js';
 
 export const metadata = {
-  title: 'About the Engineering Team & Delivery Standards | Next Web Works',
+  title: 'About the Engineering Team & Delivery Standards',
   description:
     'Meet Devansh, Founder & Lead Engineer at Next Web Works. Four core engineering principles, 14-day post-launch warranty, and Indore engineering operations.',
   alternates: { canonical: 'https://nextwebworks.in/about' },

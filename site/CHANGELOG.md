@@ -5,6 +5,11 @@ All notable changes to the Next Web Works platform will be documented in this fi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.2] - 2026-11-11
+
+### Fixed
+- **Duplicate Brand Name in Page Titles**: Removed redundant `| Next Web Works` suffixes across all App Router `page.js` routes (`/about`, `/blog`, `/blog/[slug]`, `/book-a-call`, `/book-a-call/thank-you`, `/contact`, `/for-agencies`, `/privacy`, `/terms`, `/services`, `/services/[slug]`, `/work`, `/work/[slug]`), allowing the root `template: '%s | Next Web Works'` in `site/app/layout.js` to append the brand suffix cleanly exactly once without duplication.
+
 ## [0.5.1] - 2026-11-11
 
 ### Fixed

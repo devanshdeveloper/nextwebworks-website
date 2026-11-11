@@ -2,7 +2,7 @@ import { Policy } from '@/lib/cms-kit/policy.js';
 import { cleanArticleHtml } from '@/lib/blog-utils.js';
 
 export const metadata = {
-  title: 'Terms of Service | Next Web Works',
+  title: 'Terms of Service',
   description: 'Terms of Service and white-label contractual standards for Next Web Works.',
   alternates: { canonical: 'https://nextwebworks.in/terms' },
 };

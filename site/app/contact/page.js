@@ -6,7 +6,7 @@ import FinalCTABanner from '../_components/FinalCTABanner.js';
 import { contactContent } from '@/content/contact.js';
 
 export const metadata = {
-  title: 'Send an Agency Project Brief | Next Web Works',
+  title: 'Send an Agency Project Brief',
   description:
     'Submit your client dev brief for a fixed-price quote within 24 hours. Confidential white-label evaluation under strict mutual NDA.',
   alternates: { canonical: 'https://nextwebworks.in/contact' },

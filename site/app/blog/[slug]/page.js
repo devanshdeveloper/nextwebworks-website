@@ -18,7 +18,7 @@ export async function generateMetadata({ params }) {
   const post = await Blog.readOne(slug).catch(() => null);
   if (!post) return { title: 'Post Not Found' };
   return {
-    title: `${post.title} | Next Web Works`,
+    title: post.title,
     description: stripHtml(post.excerpt || post.content, post.title, 160),
     alternates: { canonical: `https://nextwebworks.in/blog/${slug}` },
   };

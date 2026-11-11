@@ -8,7 +8,7 @@ import { blogContent } from '@/content/blog.js';
 import { stripHtml } from '@/lib/blog-utils.js';
 
 export const metadata = {
-  title: 'Engineering Blog & Agency White-Label Playbooks | Next Web Works',
+  title: 'Engineering Blog & Agency White-Label Playbooks',
   description:
     'Tactical guides on agency operations, fixed-price project scoping, and headless CMS architectures for marketing agency operators.',
   alternates: { canonical: 'https://nextwebworks.in/blog' },

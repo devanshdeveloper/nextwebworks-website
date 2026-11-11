@@ -9,7 +9,7 @@ import Schema from '@/components/seo/Schema.js';
 import { workContent } from '@/content/work.js';
 
 export const metadata = {
-  title: 'Flagship Products & Technical Deliverables | Next Web Works',
+  title: 'Flagship Products & Technical Deliverables',
   description:
     'Explore our in-house products and client builds: NWW Headless CMS Kit, ClassyMenu digital dining SaaS, and CeramicSales wholesale inventory ERP.',
   alternates: { canonical: 'https://nextwebworks.in/work' },

@@ -9,7 +9,7 @@ import Schema from '@/components/seo/Schema.js';
 import { servicesContent } from '@/content/services.js';
 
 export const metadata = {
-  title: 'Engineering Capabilities & Technical Specs | Next Web Works',
+  title: 'Engineering Capabilities & Technical Specs',
   description:
     'Full-service white-label development for marketing agencies. WordPress, Webflow, custom Next.js, and mobile apps built in the platform your client already uses.',
   alternates: { canonical: 'https://nextwebworks.in/services' },

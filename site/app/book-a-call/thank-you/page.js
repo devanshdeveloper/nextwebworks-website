@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Call Scheduled | Next Web Works',
+  title: 'Call Scheduled',
   robots: { index: false, follow: false },
 };
 

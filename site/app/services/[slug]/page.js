@@ -30,7 +30,7 @@ export async function generateMetadata({ params }) {
   const service = await getService(slug);
   if (!service) return { title: 'Service Not Found' };
   return {
-    title: `${service.title} | Next Web Works White-Label Capabilities`,
+    title: `${service.title} - White-Label Capabilities`,
     description: service.summary || service.description,
     alternates: { canonical: `https://nextwebworks.in/services/${slug}` },
   };

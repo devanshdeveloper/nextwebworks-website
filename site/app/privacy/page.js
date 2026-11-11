@@ -2,7 +2,7 @@ import { Policy } from '@/lib/cms-kit/policy.js';
 import { cleanArticleHtml } from '@/lib/blog-utils.js';
 
 export const metadata = {
-  title: 'Privacy Policy | Next Web Works',
+  title: 'Privacy Policy',
   description: 'Privacy Policy and data protection standards for Next Web Works.',
   alternates: { canonical: 'https://nextwebworks.in/privacy' },
 };

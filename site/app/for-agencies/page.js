@@ -7,7 +7,7 @@ import Schema from '@/components/seo/Schema.js';
 import { forAgenciesContent } from '@/content/forAgencies.js';
 
 export const metadata = {
-  title: 'White-Label Partnership Models for Agencies | Next Web Works',
+  title: 'White-Label Partnership Models for Agencies',
   description:
     'Dedicated dev bench, fixed-price sprints, and scoped pilot builds for marketing agencies. 100% white-label with full non-solicitation guarantees.',
   alternates: { canonical: 'https://nextwebworks.in/for-agencies' },
