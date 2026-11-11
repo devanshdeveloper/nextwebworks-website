@@ -1,7 +1,14 @@
 // section: blog-article-body
 import Link from 'next/link';
 
-export default function BlogArticleBodySection({ cleanContent }) {
+export default function BlogArticleBodySection({ cleanContent, callout }) {
+  const box = callout || {
+    title: 'Need a white-label engineering partner for your agency?',
+    desc: 'We deliver custom frontends and web apps directly under your brand with fixed quotes within 24 hours.',
+    cta: 'Book a 30-Min Technical Scoping Call →',
+    href: '/book-a-call',
+  };
+
   return (
     <section
       id="blog-article-body"
@@ -12,14 +19,14 @@ export default function BlogArticleBodySection({ cleanContent }) {
         {/* Mid-Article Agency Callout Box */}
         <div className="rounded-xl border border-[#2563EB]/40 bg-slate-50 dark:bg-[#0F172A] p-6 text-sm space-y-2">
           <p className="font-semibold text-slate-900 dark:text-white">
-            Need a white-label engineering partner for your agency?
+            {box.title}
           </p>
           <p className="text-xs text-slate-600 dark:text-[#94A3B8] leading-relaxed">
-            We deliver custom Next.js, WordPress, and mobile builds directly under your brand with fixed quotes within 24 hours.
+            {box.desc}
           </p>
           <div className="pt-2">
-            <Link href="/book-a-call" className="font-mono text-xs text-[#2563EB] dark:text-[#60A5FA] hover:underline font-semibold">
-              Book a 30-Min Technical Scoping Call →
+            <Link href={box.href || '/book-a-call'} className="font-mono text-xs text-[#2563EB] dark:text-[#60A5FA] hover:underline font-semibold">
+              {box.cta}
             </Link>
           </div>
         </div>

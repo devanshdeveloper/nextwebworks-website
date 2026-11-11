@@ -60,7 +60,7 @@ export default function ServiceDetailSpecsSection({ service }) {
             {specs.map((spec) => (
               <li
                 key={spec}
-                className="flex items-start gap-3 rounded-xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0B0F19] p-4 text-xs text-slate-800 dark:text-[#E2E8F0]"
+                className="flex items-start gap-3 rounded-xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0B0F19] p-4 text-xs text-slate-800 dark:text-[#E2E8F0] hover:border-[#2563EB]/40 transition-colors"
               >
                 <span className="text-[#10B981] font-bold text-sm" aria-hidden="true">✓</span>
                 <span className="leading-relaxed">{spec}</span>

@@ -1,6 +1,6 @@
 // section: blog-grid
 import Link from 'next/link';
-import { generateBlogCoverSvg } from '@/lib/blog-utils.js';
+import { SvgScene } from '@/lib/svg/index.js';
 
 export default function BlogGridSection({ posts }) {
   if (!posts || posts.length === 0) return null;
@@ -24,7 +24,6 @@ export default function BlogGridSection({ posts }) {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => {
             const category = post.metadata?.category || 'White-Label Engineering';
-            const coverSvg = generateBlogCoverSvg(post.slug, category, post.title);
 
             return (
               <article
@@ -32,10 +31,15 @@ export default function BlogGridSection({ posts }) {
                 className="flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0F172A] hover:border-[#2563EB]/60 transition-colors shadow-sm"
               >
                 {/* 16:9 In-House Deterministic Theme-Aware SVG Cover */}
-                <div
-                  className="w-full aspect-[16/9] overflow-hidden border-b border-slate-200 dark:border-[#1E293B]"
-                  dangerouslySetInnerHTML={{ __html: coverSvg }}
-                />
+                <div className="w-full aspect-[16/9] overflow-hidden border-b border-slate-200 dark:border-[#1E293B]">
+                  <SvgScene
+                    kind="blog"
+                    category={category}
+                    slug={post.slug}
+                    title={post.title}
+                    aspectRatio="16/9"
+                  />
+                </div>
 
                 <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
                   <div className="space-y-3">

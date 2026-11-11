@@ -11,7 +11,7 @@ Next Web Works is a high-performance marketing agency engineering consultancy pl
   - **`components/motion/`**: `SmoothScrollProvider.js` integrating Lenis and GSAP ticker sync for desktop while preserving mobile battery life.
   - **`content/`**: Decoupled static page copy modules (`home.js`, `shared/nav.js`, `shared/footer.js`).
   - **`lib/cms-kit/`**: Direct class-based client layer for NWW CMS (`Blog`, `ContactUs`, `Policy`, `SEOHelper`).
-  - **`public/assets/`**: In-house optimized vector graphics (all SVGs <= 5.0 KB) and asset manifest.
+  - **`public/assets/`**: In-house optimized vector graphics and asset manifest.
   - **`scripts/`**: Automated compliance auditors (`check-structure.mjs`, `check-assets.mjs`).
 - **`client-context/`**: Approved brand guidelines, verified answers, content blueprints, and conversion requirements.
 - **`project-docs/`**: Client review gates, master pipeline router state (`router-state.md`), and stock provenance audits.

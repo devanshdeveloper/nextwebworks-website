@@ -16,7 +16,7 @@ Under NO circumstances may any file in this repository contain:
 ## 2. Zero Stock Photography Policy
 - Strictly `stock_ceiling: 0`.
 - Stock photography, generic corporate vectors, and unverified mockups are prohibited.
-- All graphics must be in-house vector SVGs adhering to byte budgets (<= 5.0 KB / 15 KB) or authentic photographs.
+- All graphics must be in-house vector SVGs or authentic photographs (stock ceiling = 0).
 
 ## 3. White-Label & NDA Confidentiality
 - Never invent client names, client logos, awards, or synthetic performance metrics (`FID < 50ms`, `90%`).

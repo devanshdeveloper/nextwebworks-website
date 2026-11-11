@@ -1,7 +1,20 @@
 // section: blog-article-author
 import Link from 'next/link';
 
-export default function BlogArticleAuthorSection() {
+const AUTHOR_FOCUS_BY_SLUG = {
+  'the-white-label-playbook-for-marketing-agencies':
+    'Advising agency principals and operations directors on scaling delivery capacity through confidential engineering benches.',
+  'how-to-scope-fixed-price-web-projects-without-scope-creep':
+    'Consulting on functional specifications, milestone boundaries, and predictable change request governance for digital agencies.',
+  'headless-nextjs-vs-wordpress-vs-webflow':
+    'Architecting high-performance React Server Components frontends, headless data layers, and structured CMS workflows.',
+};
+
+export default function BlogArticleAuthorSection({ slug = '' }) {
+  const bio =
+    AUTHOR_FOCUS_BY_SLUG[slug] ||
+    'Providing transparent technical execution and predictable white-label sprint capacity for marketing agencies.';
+
   return (
     <section
       id="blog-article-author"
@@ -22,7 +35,7 @@ export default function BlogArticleAuthorSection() {
                 Founder & Technical Lead
               </p>
               <p className="text-xs text-slate-600 dark:text-[#94A3B8]">
-                Providing transparent technical execution and predictable white-label sprint capacity for marketing agencies.
+                {bio}
               </p>
             </div>
           </div>

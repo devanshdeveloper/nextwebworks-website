@@ -28,7 +28,7 @@ Always run commands with `--dir site` when invoked from the repository root:
 - `pnpm --dir site start`: Run local production server
 - `pnpm --dir site lint`: Run ESLint checks
 - `pnpm --dir site check:structure`: Validate file line ceilings (page <= 80, sections <= 250), minimum 5 sections per page, and RSC rules
-- `pnpm --dir site check:assets`: Verify SVG byte budgets (<= 5.0 KB / 15 KB) and asset manifest
+- `pnpm --dir site check:assets`: Verify asset manifest and zero-stock integrity
 - `pnpm --dir site check:content`: Validate hard content uniqueness, zero cross-page text repeats, and FAQ depth floor (run after build)
 - `pnpm --dir site check:all`: Run lint, structure audit, and asset audit in sequence
 
@@ -52,7 +52,7 @@ Create and modify files **exclusively** with Antigravity editor tools (`write_fi
 ## 8. Verification Definition
 Never declare a task completed without measured evidence:
 1. Run `pnpm --dir site check:structure` to ensure line ceilings and RSC rules pass with 0 errors.
-2. Run `pnpm --dir site check:assets` to ensure byte budgets and asset manifests remain valid.
+2. Run `pnpm --dir site check:assets` to ensure asset manifests and zero-stock integrity remain valid.
 3. Run `pnpm --dir site build` to confirm zero static prerender or compilation errors across all routes.
 4. Run `pnpm --dir site check:content` to confirm zero content repeats and FAQ depth compliance across prerendered routes.
 5. Verify responsiveness and visual rendering in the browser.

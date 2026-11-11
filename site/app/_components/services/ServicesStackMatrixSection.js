@@ -30,7 +30,7 @@ export default function ServicesStackMatrixSection({ content }) {
           {platforms.map((group) => (
             <div
               key={group.category}
-              className="rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0F172A] p-6 shadow-xs space-y-4"
+              className="rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0F172A] p-6 shadow-xs space-y-4 hover:-translate-y-0.5 hover:border-[#2563EB]/50 transition-all"
             >
               <h3 className="font-heading text-sm font-bold text-slate-900 dark:text-white">
                 {group.category}

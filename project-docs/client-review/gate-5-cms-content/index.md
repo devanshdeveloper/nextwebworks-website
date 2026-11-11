@@ -15,8 +15,8 @@
 
 | Model | Resource Path | Total Seeds | Backend Endpoint | Live Ingestion Status | Remote ObjectIDs |
 |---|---|:---:|---|:---:|---|
-| **Blog** | `gate-5-cms-content/blog/blog/` | 3 | `POST /api/blog/create-one` | **SYNCED (HTTP 201)** | `6af4088da845...`, `6af4088fa845...`, `6af4088fa845...` |
-| **Policy** | `gate-5-cms-content/policies/policy/` | 2 | `POST /api/website-privacy-policy/create-one` | **SYNCED (HTTP 201)** | `6af40897a845...`, `6af40899a845...` |
+| **Blog** | `gate-5-cms-content/blog/blog/` | 3 | `POST /api/blog/create-one` | **SYNCED (HTTP 201)** | `6af45a9ba845...`, `6af45a9da845...`, `6af45a9da845...` |
+| **Policy** | `gate-5-cms-content/policies/policy/` | 2 | `POST /api/website-privacy-policy/create-one` | **SYNCED (HTTP 201)** | `6af45aa3a845...`, `6af45aa4a845...` |
 | **Lead** | Dynamic Ingestion | 2 Patterns | `POST /api/lead/create-one` | **Verified Architecture** | Ready for contact & newsletter submissions |
 
 ---

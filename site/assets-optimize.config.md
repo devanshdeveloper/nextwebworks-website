@@ -21,4 +21,4 @@ node scripts/assets-optimizer/index.js \
 ## Manifest Summary
 - Indexed assets: 3 in-house SVG covers for launch blog posts (`blog-playbook`, `blog-scoping`, `blog-headless`).
 - Zero stock imagery allocated (`stock-provenance.json` verified with `stock_ceiling: 0`).
-- Vector asset budget: <= 5 KB each (verified).
+- In-house vector graphics (zero stock ceiling verified).

@@ -1,12 +1,11 @@
 // section: blog-featured
 import Link from 'next/link';
-import { generateBlogCoverSvg } from '@/lib/blog-utils.js';
+import { SvgScene } from '@/lib/svg/index.js';
 
 export default function BlogFeaturedSection({ featuredPost }) {
   if (!featuredPost) return null;
 
   const category = featuredPost.metadata?.category || 'White-Label Engineering';
-  const coverSvg = generateBlogCoverSvg(featuredPost.slug, category, featuredPost.title);
 
   return (
     <section
@@ -23,7 +22,13 @@ export default function BlogFeaturedSection({ featuredPost }) {
 
         <div className="overflow-hidden rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0F172A] shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-0 items-center">
           <div className="lg:col-span-7 aspect-[16/9] w-full overflow-hidden border-b lg:border-b-0 lg:border-r border-slate-200 dark:border-[#1E293B]">
-            <div className="w-full h-full" dangerouslySetInnerHTML={{ __html: coverSvg }} />
+            <SvgScene
+              kind="blog"
+              category={category}
+              slug={featuredPost.slug}
+              title={featuredPost.title}
+              aspectRatio="16/9"
+            />
           </div>
 
           <div className="lg:col-span-5 p-8 md:p-10 space-y-4">

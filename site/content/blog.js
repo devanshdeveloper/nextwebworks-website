@@ -19,79 +19,90 @@ export const blogContent = {
     footnote: 'Complete source ownership · Dedicated dev bench · 14-day warranty',
   },
 
+  articleCtaBannerBySlug: {
+    'the-white-label-playbook-for-marketing-agencies': {
+      badge: 'Agency Scale Bench',
+      title: 'Need an Engineering Partner to Execute Your White-Label Roadmaps?',
+      description:
+        'We partner with marketing and design agencies to deliver pixel-perfect frontends, custom portals, and mobile codebases behind your brand.',
+      primaryButton: { text: 'Schedule a White-Label Scoping Call', href: '/book-a-call' },
+      footnote: '100% white-label repos · Mutual NDA signed · 24h quote turnaround',
+    },
+    'how-to-scope-fixed-price-web-projects-without-scope-creep': {
+      badge: 'Predictable Scoping Desk',
+      title: 'Have a Client Scope Brief That Needs Immediate Technical Feasibility?',
+      description:
+        'Send us your Figma files, functional specifications, or RFPs. We deliver milestone-gated quotations within 24 business hours.',
+      primaryButton: { text: 'Request a Fixed-Price Project Quote', href: '/contact' },
+      footnote: 'Milestone-gated sprints · Change request firewalls · 14-day warranty',
+    },
+    'headless-nextjs-vs-wordpress-vs-webflow': {
+      badge: 'Modern Stack Consultation',
+      title: 'Evaluating Next.js, Headless CMS, or Webflow for an Upcoming Build?',
+      description:
+        'Our principal engineer will review your client’s editorial workflow, performance targets, and data requirements to recommend the ideal stack.',
+      primaryButton: { text: 'Discuss Platform Architecture', href: '/book-a-call' },
+      footnote: 'Green Core Web Vitals · Zero plugin bloat · Direct engineering access',
+    },
+  },
+
+  articleCalloutBySlug: {
+    'the-white-label-playbook-for-marketing-agencies': {
+      title: 'Need a white-label engineering partner for your agency?',
+      desc: 'We deliver custom frontends and web apps directly under your brand with fixed quotes within 24 hours.',
+      cta: 'Book a 30-Min Technical Scoping Call →',
+      href: '/book-a-call',
+    },
+    'how-to-scope-fixed-price-web-projects-without-scope-creep': {
+      title: 'Have a complex client RFP or scoping brief to review?',
+      desc: 'Send us your functional requirements and Figma files for an immediate technical feasibility check.',
+      cta: 'Request a Fixed-Price Scope Audit →',
+      href: '/contact',
+    },
+    'headless-nextjs-vs-wordpress-vs-webflow': {
+      title: 'Evaluating frontend frameworks for an upcoming client build?',
+      desc: 'Our principal engineer helps your team compare performance tradeoffs, CMS workflows, and hosting requirements.',
+      cta: 'Consult With an Architecture Lead →',
+      href: '/book-a-call',
+    },
+  },
+
   relatedArticlesBySlug: {
-    '11-signs-your-child-is-being-bullied-but-hiding-from-you': [
+    'the-white-label-playbook-for-marketing-agencies': [
       {
-        title: 'Spotting Behavioral Changes in Early Childhood',
-        desc: 'Understanding emotional cues and subtle changes in children’s daily communication routines.',
-        href: '/blog',
+        title: 'How to Scope Fixed-Price Web Projects Without Scope Creep',
+        desc: 'Frameworks for fixed-price quoting, functional boundaries, and avoiding unpaid sprint drift.',
+        href: '/blog/how-to-scope-fixed-price-web-projects-without-scope-creep',
       },
       {
-        title: 'Digital Safeguards & Interactive Intervention',
-        desc: 'How technology-assisted learning and gameplay foster supportive environments for children.',
-        href: '/blog',
-      },
-    ],
-    'how-counselors-can-spot-silent-victims-in-grade-3': [
-      {
-        title: 'School Counseling Assessment Frameworks',
-        desc: 'Practical diagnostic indicators for classroom educators and pediatric mental health leads.',
-        href: '/blog',
-      },
-      {
-        title: 'Structured Group Exercises for Young Learners',
-        desc: 'Facilitating constructive peer dialogue through non-threatening classroom roleplay scenarios.',
-        href: '/blog',
+        title: 'Headless Next.js vs WordPress vs Webflow',
+        desc: 'Evaluating frontend frameworks and editorial workflows for growing digital agencies.',
+        href: '/blog/headless-nextjs-vs-wordpress-vs-webflow',
       },
     ],
-    'traditional-anti-bullying-programs-are-failing-heres-why': [
+    'how-to-scope-fixed-price-web-projects-without-scope-creep': [
       {
-        title: 'The Shift Toward Experiential Empathy Learning',
-        desc: 'Why didactic lectures fail where participatory simulation and immersive play succeed.',
-        href: '/blog',
+        title: 'The White-Label Playbook for Marketing Agencies',
+        desc: 'Strategic playbook on expanding agency revenue through dependable engineering partnerships.',
+        href: '/blog/the-white-label-playbook-for-marketing-agencies',
       },
       {
-        title: 'Measuring Engagement in Social Emotional Learning',
-        desc: 'Quantitative methodologies to evaluate behavioral improvement in school programs.',
-        href: '/blog',
-      },
-    ],
-    'what-happens-inside-a-kids-brain-playing-bullying-prevention-games': [
-      {
-        title: 'Neuroscience of Gamified Learning Systems',
-        desc: 'Cognitive retention mechanisms and mirror neuron activation during ethical game choices.',
-        href: '/blog',
-      },
-      {
-        title: 'Interactive Decision Trees in Child Psychology',
-        desc: 'Designing game loops that reinforce positive bystander intervention and empathy.',
-        href: '/blog',
+        title: 'Modern Headless Architecture & Jamstack Workflows',
+        desc: 'How Next.js App Router and edge caching guarantee sub-second performance on complex builds.',
+        href: '/blog/headless-nextjs-vs-wordpress-vs-webflow',
       },
     ],
-    'what-to-do-when-your-child-is-being-bullied-at-school': [
+    'headless-nextjs-vs-wordpress-vs-webflow': [
       {
-        title: 'Actionable Steps for Parent-School Conferences',
-        desc: 'Navigating administrative meetings and institutional support structures productively.',
-        href: '/blog',
+        title: 'The White-Label Playbook for Marketing Agencies',
+        desc: 'Shipping custom applications and marketing websites without maintaining in-house developers.',
+        href: '/blog/the-white-label-playbook-for-marketing-agencies',
       },
       {
-        title: 'Rebuilding Confidence Through Collaborative Play',
-        desc: 'Evidence-based home routines to restore agency and self-esteem in affected students.',
-        href: '/blog',
-      },
-    ],
-    'why-kids-learn-empathy-faster-through-games-than-lectures-the-role-of-yozgoo': [
-      {
-        title: 'The Architecture of Serious Games for Education',
-        desc: 'Balancing narrative engagement with targeted pedagogical outcomes in software design.',
-        href: '/blog',
-      },
-      {
-        title: 'Future Directions in Interactive Social Learning',
-        desc: 'How next-generation educational software bridges classroom instruction and digital habits.',
-        href: '/blog',
+        title: 'How to Scope Fixed-Price Web Projects Without Scope Creep',
+        desc: 'Seven-point agency scoping checklist for fixed-price contracts and predictable deliveries.',
+        href: '/blog/how-to-scope-fixed-price-web-projects-without-scope-creep',
       },
     ],
   },
 };
-

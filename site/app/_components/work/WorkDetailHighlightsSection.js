@@ -51,7 +51,7 @@ export default function WorkDetailHighlightsSection({ work }) {
             {highlights.map((h) => (
               <li
                 key={h}
-                className="flex flex-col justify-between rounded-xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0B0F19] p-5 text-xs text-slate-800 dark:text-[#E2E8F0] space-y-3"
+                className="flex flex-col justify-between rounded-xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0B0F19] p-5 text-xs text-slate-800 dark:text-[#E2E8F0] space-y-3 hover:-translate-y-0.5 hover:border-[#2563EB]/40 transition-all"
               >
                 <span className="text-[#10B981] font-bold text-base" aria-hidden="true">▪</span>
                 <span className="leading-relaxed font-medium">{h}</span>

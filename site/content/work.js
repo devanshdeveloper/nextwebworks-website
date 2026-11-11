@@ -1,6 +1,54 @@
 // site/content/work.js - Portfolio, deliverable standards, staging environments, and per-page CTA banner
 
 export const workContent = {
+  hero: {
+    eyebrow: 'PORTFOLIO & DELIVERABLES',
+    title: 'Production Case Studies & In-House Platforms',
+    description:
+      'Technical breakdowns of our proprietary software products and confidential white-label agency builds. Built with modern architectures and sovereign repository ownership.',
+    ctaPrimary: { text: 'Book a 30-Min Architecture Call', href: '/book-a-call' },
+    ctaSecondary: { text: 'View Deliverables ↓', href: '#work-showcase' },
+    pillars: [
+      { id: 'wp1', label: 'PROPRIETARY', title: 'In-House Platforms' },
+      { id: 'wp2', label: 'DELIVERABLE', title: 'Direct Client Builds' },
+      { id: 'wp3', label: 'PROTECTED', title: 'White-Label NDA' },
+      { id: 'wp4', label: 'WARRANTY', title: '14-Day Post-Launch' },
+    ],
+  },
+
+  process: {
+    eyebrow: 'STAGING & TRANSFER PROTOCOL',
+    title: 'From Staging Preview to Sovereign Code Handover',
+    description:
+      'We eliminate deployment surprises through strict repository hygiene, automated branch verifications, and unbranded staging domains.',
+    steps: [
+      {
+        step: '01',
+        tag: 'PRIVATE PREVIEW DOMAIN',
+        title: 'Staging Environment Setup',
+        desc: 'Milestones deploy to password-protected staging domains or your cloud infrastructure for internal agency review.',
+      },
+      {
+        step: '02',
+        tag: 'AUTOMATED QA AUDIT',
+        title: 'Multi-Device & Performance Verification',
+        desc: 'Every branch passes automated linting, Core Web Vitals checks, and responsive stress testing across screen sizes.',
+      },
+      {
+        step: '03',
+        tag: 'REPOSITORY TRANSFER',
+        title: 'Direct Git Push to Agency Org',
+        desc: 'Clean commits transfer to your GitHub or GitLab organization with complete setup documentation and environment guides.',
+      },
+      {
+        step: '04',
+        tag: 'DEFECT WARRANTY',
+        title: '14-Day Post-Launch Coverage',
+        desc: 'Scheduled check-ins on Day 7 and Day 14 resolve any unforeseen responsive edge cases or DNS deployment bugs.',
+      },
+    ],
+  },
+
   faqs: {
     eyebrow: 'Deliverable Verification FAQ',
     title: 'How We Ship, Stage, and Hand Over Code',

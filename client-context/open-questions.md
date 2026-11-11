@@ -44,7 +44,7 @@
 - **Image Alt-Text Standards:** Architectural descriptions enforced for all technical diagrams and schematics.
 - **AI Scraper Governance:** Enforced in `site/app/robots.js` allowing standard search crawlers while blocking non-search AI scrapers (`GPTBot`, `CCBot`).
 - **Minimum 5 Sections Rule:** Enforced via `.agents/rules/min-sections-per-page.md` and `check-structure.mjs`, requiring all public pages to compose $\ge 5$ modular section components.
-- **16:9 Deterministic Blog SVG Covers:** 4 theme-aware SVG motifs (`agency-growth`, `project-scoping`, `architecture`, `general`) rendered inline under 5.0 KB.
+- **16:9 Deterministic Blog SVG Covers:** 4 theme-aware SVG motifs (`agency-growth`, `project-scoping`, `architecture`, `general`) rendered inline.
 - **Legal HTML Rendering:** Policy pages (`/privacy` and `/terms`) parse CMS content through `cleanArticleHtml` and render formatted semantic HTML via `dangerouslySetInnerHTML`.
 - **Calendly Embed:** Embedded inline Calendly widget (`https://calendly.com/devanshkhetwani/30min`) on `/book-a-call`.
 
@@ -95,7 +95,7 @@
 - **`/about` Engineering Standards Header:** *"Engineering Standards: How We Build Behind Your Brand"* (grounded in clean typed code, staging previews, clean handovers).
 - **Color Discipline & Focus Rings:** Cobalt `#2563EB` reserved exclusively for interactive touchpoints and buttons; prohibited for body text on `#0B0F19` dark canvas. Keyboard focus rings: 2px electric cobalt ring with 2px offset (`ring-2 ring-blue-600 ring-offset-2 ring-offset-slate-900` on dark canvas; `ring-offset-white` on light surfaces). Emerald `#10B981` reserved for live status indicators and workflow nodes.
 - **Typography:** Display: Plus Jakarta Sans; Interface/Body: Inter; Monospace: JetBrains Mono. Configured with `display: 'swap'` and `adjustFontFallback: true` for zero CLS.
-- **Asset Budgets & Guards:** Strict byte budgets enforced ($<150\text{ KB}$ for card illustrations/SVGs; $<250\text{ KB}$ for sample schematics). Zero stock photography (stock ceiling = 0).
+- **Asset Guards:** Zero stock photography (stock ceiling = 0); custom in-house vector SVGs and authentic photos only.
 - **Internal Web Vitals Benchmarks:** Accessibility $\ge 95$, SEO $\ge 95$, CLS $< 0.1$, LCP $< 2.5\text{s}$, and Performance $\ge 85$ on mobile with `ultra` motion tier. Zero scores published until measured.
 - **Pain-Points Order:** 1. The Freelancer Ghost, 2. The Unbillable In-House Salary, 3. The Costly Code Rewrite. Qualitative copy only; zero invented statistics.
 - **Workflow Pipeline:** 4-step horizontal connected pipeline on desktop, vertical on mobile, with static emerald nodes (subtle pulse at most; zero scrubbed progress bars).

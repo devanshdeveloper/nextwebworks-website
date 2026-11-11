@@ -1,11 +1,11 @@
 import ServicesHeroSection from '../_components/services/ServicesHeroSection.js';
+import ServicesCapabilitiesSection from '../_components/services/ServicesCapabilitiesSection.js';
+import ServicesProcessSection from '../_components/services/ServicesProcessSection.js';
 import ServicesStackMatrixSection from '../_components/services/ServicesStackMatrixSection.js';
-import ServicesSection from '../_components/ServicesSection.js';
 import FAQSection from '../_components/FAQSection.js';
 import FinalCTABanner from '../_components/FinalCTABanner.js';
 import ContactFormSection from '../_components/ContactFormSection.js';
 import Schema from '@/components/seo/Schema.js';
-import { homeContent } from '@/content/home.js';
 import { servicesContent } from '@/content/services.js';
 
 export const metadata = {
@@ -33,11 +33,9 @@ export default function ServicesPage() {
     <div>
       <Schema schema={[faqSchema]} />
       <ServicesHeroSection />
+      <ServicesCapabilitiesSection />
+      <ServicesProcessSection />
       <ServicesStackMatrixSection content={{ platforms: servicesContent.stackMatrix }} />
-      <ServicesSection
-        content={{ ...homeContent.services, drawers: servicesContent.drawers }}
-        hideHeader={true}
-      />
       <FAQSection content={servicesContent.faqs} />
       <FinalCTABanner content={servicesContent.ctaBanner} />
       <ContactFormSection content={servicesContent.contactForm} />

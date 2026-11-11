@@ -1,6 +1,61 @@
 // site/content/services.js - Technical capabilities, stack FAQs, and per-page CTA banner
 
 export const servicesContent = {
+  hero: {
+    eyebrow: 'ENGINEERING CAPABILITIES',
+    title: 'Enterprise-Grade Web & Mobile Engineering for Agencies',
+    description:
+      'We engineer pixel-perfect frontends, scalable web applications, and cross-platform mobile apps strictly under your agency brand. Built on the modern architectures your accounts require with zero technical debt.',
+    ctaPrimary: { text: 'Book a 30-Min Technical Call', href: '/book-a-call' },
+    ctaSecondary: { text: 'Explore Capabilities ↓', href: '#services-capabilities' },
+    pillars: [
+      { id: 'p1', label: '01 // CONFIDENTIAL', title: '100% White-Label' },
+      { id: 'p2', label: '02 // PREDICTABLE', title: 'Fixed-Price Quotes' },
+      { id: 'p3', label: '03 // RELIABLE', title: '14-Day Warranty' },
+      { id: 'p4', label: '04 // FAST TURN', title: 'Quote in 24 Hours' },
+    ],
+  },
+
+  capabilitiesHeader: {
+    eyebrow: 'CORE CAPABILITIES',
+    title: 'Engineered Across Five Strategic Platforms',
+    description:
+      'From sub-second marketing websites to high-concurrency ERP software, we build in the frameworks your clients require.',
+  },
+
+  process: {
+    eyebrow: 'DELIVERY PROTOCOL',
+    title: 'Predictable White-Label Engineering Pipeline',
+    description:
+      'Every engagement follows an explicit 4-stage governance model designed to protect agency margins and eliminate delivery friction.',
+    steps: [
+      {
+        step: '01',
+        tag: 'BRIEF & MUTUAL NDA',
+        title: 'Scope & Confidentiality Lock',
+        desc: 'We sign mutual NDAs before reviewing briefs or codebases, guaranteeing strict confidentiality for your clients.',
+      },
+      {
+        step: '02',
+        tag: 'TECHNICAL FEASIBILITY',
+        title: '24-Hour Fixed Quotation',
+        desc: 'Our principal engineer evaluates database schemas, APIs, and Figma files to deliver a fixed-scope milestone quotation within 24 business hours.',
+      },
+      {
+        step: '03',
+        tag: 'PRIVATE STAGING',
+        title: 'Sprint Execution & QA Pass',
+        desc: 'We develop in isolated staging environments with automated linting, Core Web Vitals profiling, and WCAG contrast audits.',
+      },
+      {
+        step: '04',
+        tag: 'CODE SOVEREIGNTY',
+        title: 'Direct Git Push & Warranty',
+        desc: 'Clean commits transfer directly into your agency repository, supported by a 14-day post-launch defect fix window.',
+      },
+    ],
+  },
+
   faqs: {
     eyebrow: 'Technical Specifications FAQ',
     title: 'Answers to Architecture & Platform Questions',
@@ -65,10 +120,10 @@ export const servicesContent = {
       summary:
         'Figma-accurate frontend engineering delivering sub-second paint targets, WCAG 2.1 AA accessibility, and structured editorial schemas.',
       specs: [
-        'Clean, componentized code matching Figma 1:1 down to 1px precision',
-        'Core Web Vitals optimized with zero layout shift and sub-second paint targets',
-        'Client-friendly visual editors or headless CMS custom field groups',
-        'Structured data schema, OpenGraph, dynamic sitemaps, and technical SEO',
+        'Component-driven frontends matching Figma mockups with 1px precision',
+        'Engineered to guarantee sub-second LCP and green Core Web Vitals',
+        'Intuitive visual editors or headless CMS custom field groups',
+        'Semantic schema tags, dynamic sitemaps, and technical SEO structure',
       ],
       ctaText: 'Scope marketing build',
     },
@@ -79,10 +134,10 @@ export const servicesContent = {
       summary:
         'Full-stack application engineering with React Server Components, transactional database schemas, and enterprise role-based security.',
       specs: [
-        'React Server Components for instant data streaming and sub-second TTFB',
-        'Role-based access control (RBAC), multi-tenant data schemas, and audit logs',
-        'Third-party REST/GraphQL API integrations and webhook pipelines',
-        'Comprehensive automated testing, error boundaries, and telemetry',
+        'Server-rendered Next.js architectures with low TTFB streaming',
+        'Role-based access controls, tenant isolation, and audit histories',
+        'Idempotent webhook consumers and third-party API sync engines',
+        'Automated branch test suites and structured runtime observability',
       ],
       ctaText: 'Scope web application',
     },
@@ -93,10 +148,10 @@ export const servicesContent = {
       summary:
         'Operational business software featuring row-level atomic FIFO depletion, dynamic multi-tier tax engines, and vector PDF streaming.',
       specs: [
-        'Atomic FIFO stock depletion with transactional rollbacks',
-        'Multi-tier GST tax engines (CGST / SGST / IGST) and compliance audits',
-        'Server-side vector PDF generation and automated financial exports',
-        'Enterprise role-based permissions with immutable event logs',
+        'Deterministic FIFO stock deduction with rollback safeguards',
+        'Automated CGST, SGST, and IGST tax calculation matrices',
+        'High-fidelity server-side vector PDF invoice streaming',
+        'Granular user permission matrices with immutable event logs',
       ],
       ctaText: 'Scope custom ERP',
     },
@@ -107,10 +162,10 @@ export const servicesContent = {
       summary:
         'Cross-platform mobile applications engineered in React Native with offline data caching, native device sensors, and app store release management.',
       specs: [
-        'Single shared React Native codebase targeting iOS and Android',
-        'Hardware API access: native camera capture, geolocation, and biometrics',
-        'Push notification workflows via Apple APNs and Firebase Cloud Messaging',
-        'End-to-end Apple App Store and Google Play Store submission support',
+        'Unified React Native and Expo codebase targeting iOS and Android',
+        'Direct device hardware integration for camera, geo, and biometrics',
+        'Reliable push messaging via Apple APNs and Firebase Cloud services',
+        'Store submission management across Apple App Store and Google Play',
       ],
       ctaText: 'Scope mobile build',
     },
@@ -121,10 +176,10 @@ export const servicesContent = {
       summary:
         'Modular Gutenberg block themes and structured Webflow CMS collections built without third-party page builders for complete client autonomy.',
       specs: [
-        'Custom WordPress themes and Gutenberg block development without bloated page builders',
-        'Advanced Webflow CMS architecture, interactions, and custom code embeds',
-        'Turnkey client editor documentation and video walkthroughs',
-        'Zero NWW branding; ready for agency delivery under your brand',
+        'Custom Gutenberg blocks engineered without bulky third-party builders',
+        'Webflow CMS architectures with custom code embeds and interactions',
+        'Step-by-step editor handbooks and video walkthrough documentation',
+        'Fully unbranded delivery packages ready for immediate agency handover',
       ],
       ctaText: 'Scope CMS build',
     },

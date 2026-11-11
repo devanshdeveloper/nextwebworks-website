@@ -1,7 +1,11 @@
 // section: services-hero
 import Link from 'next/link';
+import { SvgScene } from '@/lib/svg/index.js';
+import { servicesContent } from '@/content/services.js';
 
 export default function ServicesHeroSection() {
+  const content = servicesContent.hero;
+
   return (
     <section
       id="services-hero"
@@ -9,35 +13,64 @@ export default function ServicesHeroSection() {
       className="py-16 md:py-24 border-b border-slate-200 dark:border-[#1E293B]/60 bg-white dark:bg-[#0B0F19] transition-colors"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl space-y-4">
-          <span className="font-mono text-xs uppercase tracking-wider text-[#10B981] font-semibold">
-            Services & Stacks
-          </span>
-          <h1 className="font-heading text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl">
-            Agency Engineering Capabilities
-          </h1>
-          <p className="text-base leading-relaxed text-slate-600 dark:text-[#94A3B8]">
-            Explore the exact architectures, platform integrations, and quality standards we deliver under your brand. Built in the stack your client already uses.
-          </p>
-        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          {/* Left Column: Deliberate Anatomy */}
+          <div className="lg:col-span-7 space-y-6">
+            <span className="font-mono text-xs uppercase tracking-wider text-[#10B981] font-semibold">
+              {content.eyebrow}
+            </span>
 
-        {/* Value Pillars */}
-        <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4 max-w-4xl">
-          <div className="rounded-xl border border-slate-200 dark:border-[#1E293B] bg-slate-50 dark:bg-[#0F172A] p-4 text-xs">
-            <span className="font-mono text-[#2563EB] dark:text-[#60A5FA]">01 {'//'} CONFIDENTIAL</span>
-            <p className="mt-1 font-medium text-slate-900 dark:text-white">100% White-Label</p>
+            <h1 className="font-heading text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl leading-tight">
+              {content.title}
+            </h1>
+
+            <p className="text-base leading-relaxed text-slate-600 dark:text-[#94A3B8] max-w-2xl">
+              {content.description}
+            </p>
+
+            {/* Actions */}
+            <div className="pt-2 flex flex-wrap items-center gap-4">
+              <Link
+                href={content.ctaPrimary.href}
+                className="rounded-lg bg-[#2563EB] px-6 py-3 text-xs font-semibold text-white shadow-sm hover:bg-[#1D4ED8] transition-all hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
+              >
+                {content.ctaPrimary.text} →
+              </Link>
+              <a
+                href={content.ctaSecondary.href}
+                className="rounded-lg border border-slate-200 dark:border-[#1E293B] bg-slate-50 dark:bg-[#0F172A] px-5 py-3 text-xs font-semibold text-slate-700 dark:text-[#94A3B8] hover:text-slate-900 dark:hover:text-white transition-all hover:-translate-y-0.5"
+              >
+                {content.ctaSecondary.text}
+              </a>
+            </div>
+
+            {/* Proof Pillar Badges */}
+            <div className="pt-4 grid grid-cols-2 sm:grid-cols-4 gap-3">
+              {content.pillars.map((pillar) => (
+                <div
+                  key={pillar.id}
+                  className="rounded-xl border border-slate-200 dark:border-[#1E293B] bg-slate-50 dark:bg-[#0F172A] p-3.5 text-xs transition-colors hover:border-[#2563EB]/40"
+                >
+                  <span className="font-mono text-[10px] text-[#2563EB] dark:text-[#38BDF8] font-medium block">
+                    {pillar.label}
+                  </span>
+                  <p className="mt-1 font-semibold text-slate-900 dark:text-white">
+                    {pillar.title}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="rounded-xl border border-slate-200 dark:border-[#1E293B] bg-slate-50 dark:bg-[#0F172A] p-4 text-xs">
-            <span className="font-mono text-[#2563EB] dark:text-[#60A5FA]">02 {'//'} PREDICTABLE</span>
-            <p className="mt-1 font-medium text-slate-900 dark:text-white">Fixed-Price Quotes</p>
-          </div>
-          <div className="rounded-xl border border-slate-200 dark:border-[#1E293B] bg-slate-50 dark:bg-[#0F172A] p-4 text-xs">
-            <span className="font-mono text-[#2563EB] dark:text-[#60A5FA]">03 {'//'} RELIABLE</span>
-            <p className="mt-1 font-medium text-slate-900 dark:text-white">14-Day Warranty</p>
-          </div>
-          <div className="rounded-xl border border-slate-200 dark:border-[#1E293B] bg-slate-50 dark:bg-[#0F172A] p-4 text-xs">
-            <span className="font-mono text-[#10B981]">04 {'//'} FAST TURN</span>
-            <p className="mt-1 font-medium text-slate-900 dark:text-white">Quote in 24 Hours</p>
+
+          {/* Right Column: Interactive Hero SVG Scene */}
+          <div className="lg:col-span-5 aspect-[16/10] w-full overflow-hidden rounded-2xl border border-slate-200 dark:border-[#1E293B] shadow-sm">
+            <SvgScene
+              kind="service"
+              category="Modern Web"
+              slug="services-hero-preview"
+              aspectRatio="16/10"
+              ariaLabel="Next Web Works Engineering Architecture Overview"
+            />
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import WorkHeroSection from '../_components/work/WorkHeroSection.js';
 import WorkStandardsSection from '../_components/work/WorkStandardsSection.js';
-import WorkShowcaseSection from '../_components/WorkShowcaseSection.js';
+import WorkShowcaseGridSection from '../_components/work/WorkShowcaseGridSection.js';
+import WorkProcessSection from '../_components/work/WorkProcessSection.js';
 import FAQSection from '../_components/FAQSection.js';
 import FinalCTABanner from '../_components/FinalCTABanner.js';
 import ContactFormSection from '../_components/ContactFormSection.js';
@@ -33,7 +34,8 @@ export default function WorkPage() {
       <Schema schema={[faqSchema]} />
       <WorkHeroSection />
       <WorkStandardsSection />
-      <WorkShowcaseSection content={workContent.showcase} hideHeader={true} />
+      <WorkShowcaseGridSection />
+      <WorkProcessSection />
       <FAQSection content={workContent.faqs} />
       <FinalCTABanner content={workContent.ctaBanner} />
       <ContactFormSection content={workContent.contactForm} />

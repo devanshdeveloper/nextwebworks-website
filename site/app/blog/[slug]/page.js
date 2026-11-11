@@ -35,10 +35,10 @@ export default async function BlogPostPage({ params }) {
   return (
     <article>
       <BlogArticleHeaderSection post={post} category={category} />
-      <BlogArticleBodySection cleanContent={cleanContent} />
-      <BlogArticleAuthorSection />
+      <BlogArticleBodySection cleanContent={cleanContent} callout={blogContent.articleCalloutBySlug?.[slug]} />
+      <BlogArticleAuthorSection slug={slug} />
       <BlogArticleRelatedSection currentSlug={slug} />
-      <FinalCTABanner content={blogContent.articleCtaBanner} />
+      <FinalCTABanner content={blogContent.articleCtaBannerBySlug[slug] || blogContent.articleCtaBanner} />
     </article>
   );
 }

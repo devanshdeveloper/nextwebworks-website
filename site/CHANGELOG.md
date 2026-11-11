@@ -5,6 +5,18 @@ All notable changes to the Next Web Works platform will be documented in this fi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.0] - 2026-11-11
+
+### Added
+- **Modular SVG Generator System (`site/lib/svg/`)**: Introduced a modular, theme-aware, deterministic SVG generator library composed of primitives (`defs`, `patterns`, `frames`, `nodes`, `blocks`, `badges`), Tailwind-derived tokens, real CMS category/work scenes, a seeded PRNG (Mulberry32) for build-stable rendering, and a central registry `<SvgScene />`.
+- **Services Page Redesign to Reference Standards**: Redesigned `/services` and `/services/[slug]` to match reference benchmarks (`linear.app`, `stripe.com`, `posthog.com`) with 12-column responsive split grid, deliberate section anatomy (eyebrow, heading, support line, action, proof), dedicated capabilities bento (`ServicesCapabilitiesSection.js`), 4-stage connected delivery pipeline (`ServicesProcessSection.js`), and inline SVG architecture schematics.
+- **Work Page Redesign to Reference Standards**: Redesigned `/work` and `/work/[slug]` with 12-column split case study layouts, dedicated deliverable showcase grid (`WorkShowcaseGridSection.js`), 4-stage white-label staging & transfer pipeline (`WorkProcessSection.js`), and bespoke deliverable SVG schematics.
+
+### Changed
+- **Removed SVG Size Limit**: Completely removed all SVG byte budgets ($\le 5.0\text{ KB} / 15\text{ KB}$) across `check-assets.mjs`, `AGENTS.md`, `release-checklist.md`, `zero-rates-and-confidentiality.md`, `verify/SKILL.md`, and documentation while preserving the strict zero-stock policy (`stock_ceiling: 0`) and asset manifest integrity.
+- **Re-Wired Blog Components to Modular SVG System**: Replaced legacy monolithic cover code in `site/lib/blog-utils.js` with `<SvgScene />` across `BlogFeaturedSection`, `BlogGridSection`, and `BlogArticleHeaderSection`.
+- **Decoupled Blog Article Author & CTA Banners**: Parameterized `BlogArticleAuthorSection` and `FinalCTABanner` per slug with dedicated copy in `site/content/blog.js`, ensuring 100% content uniqueness and 0 duplicate text violations.
+
 ## [0.4.0] - 2026-11-11
 
 ### Added

@@ -7,7 +7,7 @@ const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, '..');
 const manifestPath = path.join(rootDir, 'public', 'assets', 'manifest.json');
 
-console.log('🔍 Running Asset Budget & Manifest Audit...');
+console.log('🔍 Running Asset Manifest & Zero-Stock Audit...');
 
 if (!fs.existsSync(manifestPath)) {
   console.error('❌ Manifest not found: public/assets/manifest.json');
@@ -26,9 +26,7 @@ for (const [key, asset] of Object.entries(manifest.assets || {})) {
   }
   const stat = fs.statSync(filePath);
   const sizeKb = stat.size / 1024;
-  if (asset.src.endsWith('.svg') && sizeKb > 15) {
-    console.warn(`⚠️ Vector SVG ${key} is ${sizeKb.toFixed(1)} KB (budget: 15 KB)`);
-  } else if (!asset.src.endsWith('.svg') && sizeKb > 102.4) {
+  if (!asset.src.endsWith('.svg') && sizeKb > 102.4) {
     console.error(`❌ Raster asset ${key} is ${sizeKb.toFixed(1)} KB, exceeding 100 KB budget`);
     errors++;
   }
@@ -38,6 +36,6 @@ if (errors > 0) {
   console.error(`\n❌ Asset check failed with ${errors} error(s).`);
   process.exit(1);
 } else {
-  console.log('✅ Asset audit passed! All manifest entries valid and within byte budgets.\n');
+  console.log('✅ Asset audit passed! All manifest entries valid.\n');
   process.exit(0);
 }

@@ -4,7 +4,7 @@ export default function WorkStandardsSection() {
     {
       title: 'Zero Stock Visuals',
       tag: 'Strict Vector Discipline',
-      desc: 'All graphics are in-house vector SVGs adhering to strict byte budgets (<= 5 KB). Zero generic stock vectors or corporate clutter.',
+      desc: 'All graphics are custom in-house vector SVGs engineered for performance. Zero generic stock vectors or corporate clutter.',
     },
     {
       title: 'Sub-Second Performance',
@@ -46,7 +46,7 @@ export default function WorkStandardsSection() {
           {standards.map((std) => (
             <div
               key={std.title}
-              className="rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0F172A] p-6 shadow-xs space-y-3"
+              className="rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0F172A] p-6 shadow-xs space-y-3 hover:-translate-y-0.5 hover:border-[#2563EB]/50 transition-all"
             >
               <span className="font-mono text-xs text-[#2563EB] dark:text-[#60A5FA] font-medium">
                 {std.tag}

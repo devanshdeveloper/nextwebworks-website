@@ -17,7 +17,7 @@ export default function WorkDetailConfidentialitySection({ work }) {
       className="py-12 md:py-16 border-b border-slate-200 dark:border-[#1E293B]/60 bg-slate-50 dark:bg-[#0B0F19] transition-colors"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0F172A] p-8 md:p-10 shadow-xs flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div className="rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0F172A] p-8 md:p-10 shadow-xs flex flex-col md:flex-row items-start md:items-center justify-between gap-6 hover:border-[#2563EB]/40 transition-colors">
           <div className="max-w-2xl space-y-2">
             <span className="font-mono text-xs uppercase tracking-wider text-[#10B981] font-semibold">
               {eyebrow}

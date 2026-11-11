@@ -31,5 +31,5 @@
 - `pnpm dev`: Start local development server.
 - `pnpm build`: Verify production build.
 - `pnpm check:structure`: Validate file line ceilings and RSC rules.
-- `pnpm check:assets`: Validate asset budgets and manifest entries.
+- `pnpm check:assets`: Validate asset manifest entries and zero-stock integrity.
 - `pnpm check:all`: Run complete test suite.

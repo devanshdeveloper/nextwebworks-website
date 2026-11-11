@@ -92,7 +92,7 @@ export default function ServiceDetailStackSection({ service }) {
           {stackItems.map((item) => (
             <div
               key={item.name}
-              className="rounded-xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0F172A] p-5 text-xs space-y-2"
+              className="rounded-xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0F172A] p-5 text-xs space-y-2 hover:-translate-y-0.5 hover:border-[#2563EB]/50 transition-all"
             >
               <span className="font-mono text-slate-500 dark:text-[#64748B] uppercase tracking-wider font-semibold">
                 {item.name}

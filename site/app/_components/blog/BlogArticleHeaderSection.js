@@ -1,10 +1,8 @@
 // section: blog-article-header
 import Link from 'next/link';
-import { generateBlogCoverSvg } from '@/lib/blog-utils.js';
+import { SvgScene } from '@/lib/svg/index.js';
 
 export default function BlogArticleHeaderSection({ post, category }) {
-  const coverSvg = generateBlogCoverSvg(post.slug, category, post.title);
-
   return (
     <section
       id="blog-article-header"
@@ -33,10 +31,15 @@ export default function BlogArticleHeaderSection({ post, category }) {
         </div>
 
         {/* 16:9 Theme-Aware Vector Cover Art */}
-        <div
-          className="w-full aspect-[16/9] overflow-hidden rounded-2xl border border-slate-200 dark:border-[#1E293B]"
-          dangerouslySetInnerHTML={{ __html: coverSvg }}
-        />
+        <div className="w-full aspect-[16/9] overflow-hidden rounded-2xl border border-slate-200 dark:border-[#1E293B]">
+          <SvgScene
+            kind="blog"
+            category={category}
+            slug={post.slug}
+            title={post.title}
+            aspectRatio="16/9"
+          />
+        </div>
       </div>
     </section>
   );

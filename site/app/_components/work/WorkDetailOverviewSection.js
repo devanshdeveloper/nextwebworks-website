@@ -96,7 +96,7 @@ export default function WorkDetailOverviewSection({ work }) {
           {highlights.map((item) => (
             <div
               key={item.title}
-              className="rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0F172A] p-6 shadow-xs space-y-3"
+              className="rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0F172A] p-6 shadow-xs space-y-3 hover:-translate-y-0.5 hover:border-[#2563EB]/50 transition-all"
             >
               <span className="font-mono text-xs text-[#2563EB] dark:text-[#60A5FA] font-medium">
                 {item.label}

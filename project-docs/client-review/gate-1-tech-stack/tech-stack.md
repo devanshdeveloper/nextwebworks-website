@@ -21,7 +21,7 @@
 | **Icons** | Lucide React | Latest | Clean, lightweight vector SVGs with tree-shaking; used as supporting details alongside bespoke inline SVGs. |
 | **Motion Engine** | GSAP 3 + `@gsap/react` | `^3.12` | Configured for `ultra` motion tier: 120fps GSAP ticker synchronization, subtle border glow + small hover lift, respecting `prefers-reduced-motion`. |
 | **Smooth Scroll** | Lenis | `^1.1` | Decoupled smooth scrolling synced directly to `gsap.ticker` to ensure butter-smooth page flow without input lag. |
-| **Asset Engine** | Sharp | `^0.33` | Image optimization engine powering responsive WebP/AVIF generation and byte budget validation. |
+| **Asset Engine** | Sharp | `^0.33` | Image optimization engine powering responsive WebP/AVIF generation and asset manifest validation. |
 | **Headless CMS & Leads** | NWW CMS Client (`cms-kit`) | Direct Fetch / REST | Direct Server Component queries for dynamic blog (9 posts/page), on-demand ISR revalidation (`/api/revalidate`), and inbound lead persistence (`Lead` model helper via Next.js Server Action with CMS Bearer token). Dynamic CMS scoped strictly to `blog` and `policies`; services and samples stay static in code. |
 | **Alert Dispatch** | Next.js Server Action | Resend Email | Server Action triggers email alert via Resend (`from: alerts@nextwebworks.in` [`[RESEND VERIFICATION PENDING]`], `reply-to` set to lead's own email for instant 1-click reply) and an automated autoresponder sent from `contact@nextwebworks.in` to the lead upon successful CMS submission. Slack eliminated completely. |
 | **Booking Embed** | Cal.com | React Embed | Dedicated `/book-a-call` route with inline, lazy-loaded embed (`cal.com/nextwebworks/intro-20`); all sitewide booking CTAs route directly to this page. |

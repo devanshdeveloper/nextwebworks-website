@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-11-11T06:17:53.127Z",
+  "timestamp": "2026-11-11T12:07:59.387Z",
   "mode": "live",
   "serverUrl": "https://prod-server.nextwebworks.in",
   "model": "blog",
-  "durationMs": 4397,
+  "durationMs": 3391,
   "stats": {
     "total": 3,
     "created": 3,
@@ -16,7 +16,7 @@
       "file": "C:\\code\\personal\\nextwebworks-website\\project-docs\\client-review\\gate-5-cms-content\\blog\\blog\\headless-nextjs-vs-wordpress-vs-webflow.json",
       "slug": "headless-nextjs-vs-wordpress-vs-webflow",
       "status": "CREATED",
-      "id": "6af4088da8450a8c5b76368e",
+      "id": "6af45a9ba8450a8c5b764747",
       "message": "Successfully created blog item (HTTP 201)",
       "attempts": 1,
       "endpoint": "https://prod-server.nextwebworks.in/api/blog/create-one"
@@ -25,7 +25,7 @@
       "file": "C:\\code\\personal\\nextwebworks-website\\project-docs\\client-review\\gate-5-cms-content\\blog\\blog\\how-to-scope-fixed-price-web-projects-without-scope-creep.json",
       "slug": "how-to-scope-fixed-price-web-projects-without-scope-creep",
       "status": "CREATED",
-      "id": "6af4088fa8450a8c5b763692",
+      "id": "6af45a9da8450a8c5b76474a",
       "message": "Successfully created blog item (HTTP 201)",
       "attempts": 1,
       "endpoint": "https://prod-server.nextwebworks.in/api/blog/create-one"
@@ -34,7 +34,7 @@
       "file": "C:\\code\\personal\\nextwebworks-website\\project-docs\\client-review\\gate-5-cms-content\\blog\\blog\\the-white-label-playbook-for-marketing-agencies.json",
       "slug": "the-white-label-playbook-for-marketing-agencies",
       "status": "CREATED",
-      "id": "6af4088fa8450a8c5b76369a",
+      "id": "6af45a9da8450a8c5b76474f",
       "message": "Successfully created blog item (HTTP 201)",
       "attempts": 1,
       "endpoint": "https://prod-server.nextwebworks.in/api/blog/create-one"
