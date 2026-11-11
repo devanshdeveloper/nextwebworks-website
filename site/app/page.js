@@ -21,12 +21,11 @@ export const metadata = {
 export default function HomePage() {
   const websiteSchema = {
     '@context': 'https://schema.org',
-    '@type': 'ProfessionalService',
+    '@type': 'Organization',
     name: 'Next Web Works',
     description: 'White-label engineering partner for marketing agencies.',
     url: 'https://nextwebworks.in',
     telephone: '+917999934815',
-    priceRange: '$$$$',
     founder: {
       '@type': 'Person',
       name: 'Devansh',

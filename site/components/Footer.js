@@ -199,7 +199,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 border-t border-[#1E293B]/60 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#64748B]">
           <p>
-            Next Web Works is a proprietary engineering consultancy operated by Devansh. All rights reserved.
+            Next Web Works is a proprietary engineering consultancy operated by Devansh [PROPRIETOR FULL LEGAL NAME - TO PROVIDE]. All rights reserved.
           </p>
           <p className="font-mono">© 2026 Next Web Works</p>
         </div>

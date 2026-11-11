@@ -73,7 +73,7 @@ export default function HeroSection({ content }) {
             </div>
 
             {/* Trust metadata */}
-            <div className="flex flex-wrap items-center gap-y-2 gap-x-6 pt-4 text-xs font-mono text-[#64748B]">
+            <div className="flex flex-wrap items-center gap-y-2 gap-x-6 pt-4 text-xs font-mono text-[#94A3B8]">
               <span className="flex items-center gap-1.5">
                 <span className="text-[#10B981]">✓</span> Fixed quotes in 24h
               </span>
@@ -95,7 +95,7 @@ export default function HeroSection({ content }) {
                   <span className="h-3 w-3 rounded-full bg-[#F59E0B]/80" />
                   <span className="h-3 w-3 rounded-full bg-[#10B981]/80" />
                 </div>
-                <span className="font-mono text-xs text-[#64748B]">pipeline_contract.spec</span>
+                <span className="font-mono text-xs text-[#94A3B8]">pipeline_contract.spec</span>
               </div>
 
               <div className="space-y-4">
@@ -103,40 +103,40 @@ export default function HeroSection({ content }) {
                 <div className="rounded-xl border border-[#1E293B] bg-[#0B0F19] p-4">
                   <div className="flex items-center justify-between text-xs font-mono text-[#94A3B8]">
                     <span>STEP 01 // INPUT</span>
-                    <span className="text-[#2563EB]">Your Agency Brand</span>
+                    <span className="text-[#E2E8F0] font-medium">Your Agency Brand</span>
                   </div>
                   <p className="mt-1 text-sm font-medium text-white">Client Brief & Figma Specs</p>
-                  <p className="text-xs text-[#64748B] mt-0.5">Scoping · stack evaluation · 24h turnaround</p>
+                  <p className="text-xs text-[#94A3B8] mt-0.5">Scoping · stack evaluation · 24h turnaround</p>
                 </div>
 
                 {/* Connector Arrow */}
-                <div className="flex justify-center text-[#2563EB] font-mono text-xs">
-                  ↓ <span className="text-[#64748B] ml-2">Private Repo & Staging Pipeline</span>
+                <div className="flex justify-center text-[#E2E8F0] font-mono text-xs">
+                  ↓ <span className="text-[#94A3B8] ml-2">Private Repo & Staging Pipeline</span>
                 </div>
 
                 {/* Node 2 */}
-                <div className="rounded-xl border border-[#2563EB]/40 bg-[#0B0F19] p-4 shadow-sm">
+                <div className="rounded-xl border border-[#2563EB]/60 bg-[#0B0F19] p-4 shadow-sm">
                   <div className="flex items-center justify-between text-xs font-mono text-[#94A3B8]">
                     <span>STEP 02 // EXECUTION</span>
                     <span className="text-[#10B981] font-semibold">Invisible Delivery</span>
                   </div>
                   <p className="mt-1 text-sm font-medium text-white">Dedicated NWW Engineering Bench</p>
-                  <p className="text-xs text-[#64748B] mt-0.5">Next.js · WordPress · Webflow · React Native</p>
+                  <p className="text-xs text-[#94A3B8] mt-0.5">Next.js · WordPress · Webflow · React Native</p>
                 </div>
 
                 {/* Connector Arrow */}
-                <div className="flex justify-center text-[#2563EB] font-mono text-xs">
-                  ↓ <span className="text-[#64748B] ml-2">Verified Staging on Agency Domain</span>
+                <div className="flex justify-center text-[#E2E8F0] font-mono text-xs">
+                  ↓ <span className="text-[#94A3B8] ml-2">Verified Staging on Agency Domain</span>
                 </div>
 
                 {/* Node 3 */}
                 <div className="rounded-xl border border-[#1E293B] bg-[#0B0F19] p-4">
                   <div className="flex items-center justify-between text-xs font-mono text-[#94A3B8]">
                     <span>STEP 03 // HANDOVER</span>
-                    <span className="text-[#10B981]">Production</span>
+                    <span className="text-[#10B981] font-semibold">Production</span>
                   </div>
                   <p className="mt-1 text-sm font-medium text-white">Client Cloud Launch & 14-Day Fix Window</p>
-                  <p className="text-xs text-[#64748B] mt-0.5">Vercel · AWS · DigitalOcean · 100% Client IP</p>
+                  <p className="text-xs text-[#94A3B8] mt-0.5">Vercel · AWS · DigitalOcean · 100% Client IP</p>
                 </div>
               </div>
             </div>
@@ -146,13 +146,13 @@ export default function HeroSection({ content }) {
 
       {/* Mobile Floating CTA Pill (<768px) */}
       {showMobilePill && (
-        <div className="fixed bottom-4 left-4 right-20 z-40 md:hidden animate-fade-in">
+        <div className="fixed bottom-4 left-4 right-4 z-30 md:hidden animate-fade-in">
           <Link
             href={content.mobilePill.href}
-            className="flex items-center justify-between w-full rounded-full bg-[#2563EB] px-5 py-3 text-sm font-semibold text-white shadow-xl hover:bg-[#1D4ED8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
+            className="flex items-center justify-between w-full rounded-full bg-[#2563EB] px-6 py-3.5 text-sm font-semibold text-white shadow-2xl hover:bg-[#1D4ED8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
           >
             <span>{content.mobilePill.text}</span>
-            <span className="font-mono text-xs opacity-80">20-Min</span>
+            <span className="font-mono text-xs opacity-90">20-Min Discovery</span>
           </Link>
         </div>
       )}

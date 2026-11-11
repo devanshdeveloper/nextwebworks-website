@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import CalEmbed from './_components/CalEmbed.js';
 
 export const metadata = {
   title: 'Book a 20-Minute Technical Discovery Call | Next Web Works',
@@ -36,25 +36,7 @@ export default function BookACallPage() {
         </div>
 
         {/* Cal.com Scheduling Container */}
-        <div className="mt-12 rounded-2xl border border-[#1E293B] bg-[#0F172A] p-8 md:p-12 text-center space-y-6">
-          <p className="text-sm text-[#E2E8F0]">Select an open slot directly on our calendar:</p>
-          <div>
-            <a
-              href="https://cal.com/nextwebworks/intro-20"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-xl bg-[#2563EB] px-8 py-4 text-base font-semibold text-white shadow-lg hover:bg-[#1D4ED8] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
-            >
-              Open Calendar (cal.com/nextwebworks) →
-            </a>
-          </div>
-          <p className="text-xs font-mono text-[#64748B]">
-            Prefer WhatsApp? Message directly at{' '}
-            <a href="https://wa.me/917999934815" className="text-[#10B981] underline">
-              +91 79999 34815
-            </a>
-          </p>
-        </div>
+        <CalEmbed />
       </div>
     </div>
   );

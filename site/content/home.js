@@ -89,7 +89,7 @@ export const homeContent = {
           'Pixel-perfect Figma-to-code implementations with sub-second page loads, strict accessibility, and turnkey client editor workflows.',
         specs: [
           'Clean, componentized code matching Figma 1:1 down to 1px precision',
-          'Core Web Vitals guaranteed (LCP < 1.2s, CLS = 0, FID < 50ms)',
+          'Core Web Vitals optimized with zero layout shift and sub-second paint targets',
           'Client-friendly visual editors or headless CMS custom field groups',
           'Structured data schema, OpenGraph, dynamic sitemaps, and technical SEO',
         ],
@@ -130,10 +130,24 @@ export const homeContent = {
         summary:
           'Native-feel iOS and Android applications built from a single shared TypeScript codebase with camera, location, and offline sync.',
         specs: [
-          'Shared React Native codebase reducing development timeline by 40%',
+          'Single shared React Native codebase targeting iOS and Android',
           'Hardware API access: native camera capture, geolocation, and biometrics',
           'Push notification workflows via Apple APNs and Firebase Cloud Messaging',
           'End-to-end Apple App Store and Google Play Store submission support',
+        ],
+        ctaText: 'Discuss this build',
+      },
+      {
+        id: 'cms-platforms',
+        title: 'Agency CMS & No-Code Platforms',
+        tag: 'WordPress · Webflow · Wix Studio',
+        summary:
+          'Expert implementation across standard client CMS ecosystems. Custom themes, Gutenberg blocks, Webflow CMS collections, and visual client handover.',
+        specs: [
+          'Custom WordPress themes and Gutenberg block development without bloated page builders',
+          'Advanced Webflow CMS architecture, interactions, and custom code embeds',
+          'Turnkey client editor documentation and video walkthroughs',
+          'Zero NWW branding; ready for agency delivery under your brand',
         ],
         ctaText: 'Discuss this build',
       },
@@ -168,7 +182,7 @@ export const homeContent = {
         overview:
           'Headless storefront handling 5,000+ SKU catalogs with instant predictive search, dynamic cart drawer, and automated inventory sync.',
         highlights: [
-          'Sub-80ms global cache response via Edge Middleware',
+          'Edge Middleware cache routing for instant global storefront responses',
           'Optimistic UI updates for zero-lag cart operations',
           'Atomic stock lock preventing overselling during flash promotions',
         ],
@@ -197,39 +211,35 @@ export const homeContent = {
     description: 'Direct answers to standard questions about white-label operations, scoping, and code handover.',
     items: [
       {
-        question: 'How does white-label communication work?',
-        answer:
-          'We operate as an invisible extension of your agency. We communicate directly with your account directors and project managers via your preferred channels (Slack, email, or project boards). We never contact your end-clients directly, and our name never appears on code repositories, staging domains, or commit histories.',
+        question: 'Who owns the code?',
+        answer: 'You do: the repository is transferred to your organization at handover.',
       },
       {
-        question: 'What platforms and tech stacks do you build with?',
+        question: 'Will our client find out?',
         answer:
-          'We build in the platform your client already uses: CMS and no-code (WordPress, Webflow, Wix Studio, Shopify), custom web applications (Next.js App Router, React.js, Node.js, PHP/Laravel), and mobile apps (React Native, Expo). We match your client’s existing hosting environment.',
+          'We deliver under your brand with no NWW credits or watermarks. You can introduce us as your in-house developer. Commits appear under our developer handle unless you ask us to author them under your agency’s identity.',
       },
       {
-        question: 'How do you handle fixed-price scoping and scope creep?',
+        question: 'What if a bug appears after launch?',
         answer:
-          'We provide guaranteed fixed-scope quotes within 24 hours of receiving your brief or Figma designs. Our quotes specify exact deliverables, milestones, and timelines. If a client introduces new requirements mid-build, we scope the delta separately with an addendum before writing any code.',
+          '14-day post-launch fix window included on full builds (proactive check-ins on Day 7 and Day 14), followed by an optional ongoing maintenance plan covering up to 1 hour of copy edits per month (excludes domain and hosting).',
       },
       {
-        question: 'How quickly can you spin up a pilot project?',
-        answer:
-          'We can kickoff a scoped pilot project on the same day terms are confirmed. Typical discovery to quotation takes under 24 business hours. Small tasks and critical blockers are turned around rapidly.',
+        question: 'Can you join client calls?',
+        answer: 'We can join client calls as your technical lead when you introduce us.',
       },
       {
-        question: 'Who owns the code and intellectual property?',
-        answer:
-          'Your agency and your client own 100% of the code, intellectual property, and design assets upon milestone completion. We provide full source code, deployment scripts, and architecture documentation without licensing restrictions or vendor lock-in.',
+        question: 'What stacks do you support?',
+        answer: 'Next.js, WordPress, Webflow, Wix, React.js, MERN, PHP, and React Native.',
       },
       {
-        question: 'How do client staging previews work?',
-        answer:
-          'We deploy preview builds to a subdomain on your agency’s domain (e.g., client-preview.youragency.com) or a neutral unbranded Vercel deployment protected with basic authentication and noindex, nofollow headers to safeguard client confidentiality.',
+        question: 'How do scope changes work?',
+        answer: 'Written change request with an itemized, revised quote before any out-of-scope work proceeds.',
       },
       {
-        question: 'What happens after production deployment?',
+        question: 'How do we get started?',
         answer:
-          'Every full build includes a 14-day post-launch defect fix window with scheduled check-ins on Day 7 and Day 14. We verify production DNS, SSL certificates, analytics tags, and form endpoints before signing off. Ongoing SLA maintenance retainers are available upon request.',
+          'Book a 20-min call, sign a mutual NDA, review your brief, quote in 24 hours, and kickoff the same day. (Small-task and critical-blocker turnaround: typical).',
       },
     ],
   },

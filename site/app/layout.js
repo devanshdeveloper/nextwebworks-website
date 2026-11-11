@@ -23,6 +23,8 @@ const jetbrainsMono = JetBrains_Mono({
   display: 'swap',
 });
 
+const isPreview = process.env.NEXT_PUBLIC_PREVIEW_GUARD === 'true';
+
 export const metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://nextwebworks.in'),
   title: {
@@ -31,16 +33,40 @@ export const metadata = {
   },
   description:
     'Dedicated white-label engineering partner for marketing agencies. WordPress, Webflow, custom Next.js, and mobile apps delivered under your brand with fixed quotes and zero overhead.',
-  robots: {
-    index: false,
-    follow: false,
+  robots: isPreview
+    ? { index: false, follow: false }
+    : {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          'max-video-preview': -1,
+          'max-image-preview': 'large',
+          'max-snippet': -1,
+        },
+      },
+  openGraph: {
+    title: 'Next Web Works | White-Label Engineering Partner for Marketing Agencies',
+    description:
+      'Dedicated white-label engineering partner for marketing agencies. WordPress, Webflow, custom Next.js, and mobile apps delivered under your brand with fixed quotes and zero overhead.',
+    url: 'https://nextwebworks.in',
+    siteName: 'Next Web Works',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Next Web Works | White-Label Engineering Partner for Marketing Agencies',
+    description:
+      'Dedicated white-label engineering partner for marketing agencies. Fixed-scope development under your agency brand.',
   },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html
-      lang="en"
+      lang="en-IN"
       className={`${plusJakarta.variable} ${inter.variable} ${jetbrainsMono.variable} h-full antialiased dark`}
     >
       <body className="min-h-full flex flex-col bg-[#0B0F19] text-[#F8FAFC] font-sans selection:bg-[#2563EB] selection:text-white">

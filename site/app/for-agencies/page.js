@@ -2,6 +2,7 @@ import FinalCTABanner from '../_components/FinalCTABanner.js';
 import ContactFormSection from '../_components/ContactFormSection.js';
 import FAQSection from '../_components/FAQSection.js';
 import WorkflowSection from '../_components/WorkflowSection.js';
+import PartnershipModelsSection from './_components/PartnershipModelsSection.js';
 import { homeContent } from '@/content/home.js';
 
 export const metadata = {
@@ -23,6 +24,7 @@ export default function ForAgenciesPage() {
           Say yes to complex client dev pitches without taking on permanent payroll or freelancer risk.
         </p>
       </div>
+      <PartnershipModelsSection />
       <WorkflowSection content={homeContent.workflow} />
       <FAQSection content={homeContent.faqs} />
       <FinalCTABanner content={homeContent.ctaBanner} />

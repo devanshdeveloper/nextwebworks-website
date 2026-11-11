@@ -22,7 +22,15 @@ export default function ContactPage() {
           Get a Fixed-Scope Quote in 24 Hours
         </h1>
         <p className="mt-4 mx-auto max-w-2xl text-base text-[#94A3B8]">
-          Email us directly at <span className="font-mono text-[#E2E8F0]">contact@nextwebworks.in</span> or complete the brief below.
+          Email us directly at <span className="font-mono text-[#E2E8F0]">contact@nextwebworks.in</span> or message via{' '}
+          <a
+            href="https://wa.me/917999934815?text=Hi%2C%20I%20run%20an%20agency%20and%20want%20to%20discuss%20white-label%20development.%0A%0APage%3A%20Send%20an%20Agency%20Project%20Brief%20%7C%20Next%20Web%20Works%0ALink%3A%20https%3A%2F%2Fnextwebworks.in%2Fcontact%0ASource%3A%20direct%0AVia%3A%20contact%20page"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#10B981] underline hover:text-[#059669]"
+          >
+            WhatsApp (+91 79999 34815)
+          </a>.
         </p>
       </div>
       <ContactFormSection content={content} />

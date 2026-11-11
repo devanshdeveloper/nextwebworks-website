@@ -52,12 +52,13 @@ export default function ServicesSection({ content }) {
             return (
               <div
                 key={drawer.id}
-                className="flex flex-col justify-between rounded-2xl border border-[#1E293B] bg-[#0F172A] p-7 transition-all duration-200"
+                id={drawer.id}
+                className="flex flex-col justify-between rounded-2xl border border-[#1E293B] bg-[#0F172A] p-7 transition-all duration-200 scroll-mt-24"
               >
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs text-[#2563EB]">{drawer.tag}</span>
-                    <span className="font-mono text-xs text-[#64748B]">#{drawer.id}</span>
+                    <span className="font-mono text-xs text-[#E2E8F0] font-medium">{drawer.tag}</span>
+                    <span className="font-mono text-xs text-[#94A3B8]">#{drawer.id}</span>
                   </div>
 
                   <h3 className="font-heading text-xl font-semibold text-white">
@@ -80,7 +81,7 @@ export default function ServicesSection({ content }) {
                   {/* Drawer Specs Content */}
                   {isOpen && (
                     <div className="mt-4 pt-4 border-t border-[#1E293B]/80 space-y-2 animate-fade-in">
-                      <p className="text-xs font-mono text-[#64748B] uppercase tracking-wider">
+                      <p className="text-xs font-mono text-[#94A3B8] uppercase tracking-wider">
                         Architecture Standards:
                       </p>
                       <ul className="space-y-1.5 text-xs text-[#E2E8F0]">
@@ -97,7 +98,7 @@ export default function ServicesSection({ content }) {
 
                 {/* Drawer Footer CTA */}
                 <div className="mt-6 pt-4 border-t border-[#1E293B]/60 flex items-center justify-between">
-                  <span className="font-mono text-xs text-[#64748B]">
+                  <span className="font-mono text-xs text-[#94A3B8]">
                     Scoped & quoted on discovery
                   </span>
                   <Link

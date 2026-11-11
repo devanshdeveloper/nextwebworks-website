@@ -26,6 +26,9 @@ export default function AboutPage() {
             <p className="text-xs text-[#94A3B8] leading-relaxed">
               Operating an engineering consultancy based in Indore, India, dedicated to helping digital agencies scale dev capacity safely.
             </p>
+            <div className="rounded-lg border border-dashed border-[#334155] bg-[#0B0F19]/60 p-2 font-mono text-[11px] text-[#64748B]">
+              [FOUNDER BIO / STORY TO PROVIDE]
+            </div>
           </div>
 
           <div className="lg:col-span-7 space-y-6">
