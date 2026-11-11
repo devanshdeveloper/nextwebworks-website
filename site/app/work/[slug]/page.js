@@ -9,6 +9,8 @@ import WorkDetailHeroSection from '../../_components/work/WorkDetailHeroSection.
 import WorkDetailOverviewSection from '../../_components/work/WorkDetailOverviewSection.js';
 import WorkDetailHighlightsSection from '../../_components/work/WorkDetailHighlightsSection.js';
 import WorkDetailConfidentialitySection from '../../_components/work/WorkDetailConfidentialitySection.js';
+import WorkDetailArchitectureSection from './_components/WorkDetailArchitectureSection.js';
+import WorkDetailDeliverablesSection from './_components/WorkDetailDeliverablesSection.js';
 import FAQSection from '../../_components/FAQSection.js';
 import FinalCTABanner from '../../_components/FinalCTABanner.js';
 import ContactFormSection from '../../_components/ContactFormSection.js';
@@ -43,6 +45,8 @@ export default async function WorkDetailPage({ params }) {
       <WorkDetailOverviewSection work={work} />
       <WorkDetailHighlightsSection work={work} />
       <WorkDetailConfidentialitySection work={work} />
+      <WorkDetailArchitectureSection work={work} />
+      <WorkDetailDeliverablesSection work={work} />
       <FAQSection content={detail.faqs} />
       <FinalCTABanner content={detail.ctaBanner} />
       <ContactFormSection content={detail.contactForm} />

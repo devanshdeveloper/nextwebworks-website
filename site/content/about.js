@@ -92,6 +92,117 @@ export const aboutContent = {
     ],
   },
 
+  mission: {
+    eyebrow: 'Agency Back-Office Mission',
+    title: 'Why We Built a Dedicated White-Label Engineering Partner',
+    description:
+      'Digital agencies win high-value accounts on strategy, brand, and design. But delivering modern web applications and headless portals without a bloated payroll bench is an expensive operational trap.',
+    cards: [
+      {
+        id: 'm1',
+        title: 'Freelancers Cannot Scale With Agency Demand',
+        description:
+          'Solo freelancers juggle multiple conflicting gigs, drop offline during critical client sprint demos, and lack systematic defect resolution workflows.',
+      },
+      {
+        id: 'm2',
+        title: 'Permanent In-House Engineering Carries Dead Weight',
+        description:
+          'Hiring senior fullstack developers on permanent payroll burns agency cash reserves when client retainers fluctuate or pitch pipelines experience delays.',
+      },
+      {
+        id: 'm3',
+        title: 'The Dedicated Invisible Partner Model Wins',
+        description:
+          'We bridge the gap: on-demand senior engineering horsepower with fixed-scope quotes, predictable sprint milestones, and zero payroll liability.',
+      },
+    ],
+  },
+
+  philosophy: {
+    eyebrow: 'Architectural Standards',
+    title: 'Engineering Quality Over Premature Framework Complexity',
+    description:
+      'We write production code designed to be maintained for years. Every repository adheres to strict line ceilings, pure Tailwind utility styling, and zero third-party bloat.',
+    pillars: [
+      {
+        id: 'ph1',
+        title: 'Thin Server Components',
+        description:
+          'We isolate client interactivity strictly to interactive leaves, ensuring maximum streaming efficiency, sub-second TTFB, and zero client bundle dead weight.',
+      },
+      {
+        id: 'ph2',
+        title: 'Zero Stock Photography Policy',
+        description:
+          'Every graphic element is an in-house programmatic SVG or authentic photograph, ensuring zero generic corporate stock aesthetic on your client builds.',
+      },
+      {
+        id: 'ph3',
+        title: 'Automated Compliance Gates',
+        description:
+          'Every commit passes rigorous automated lint, line ceiling, zero-stock asset verification, and technical SEO audits before code ever touches production.',
+      },
+    ],
+  },
+
+  confidentiality: {
+    eyebrow: 'White-Label Protocol',
+    title: 'Uncompromised Anonymity & Code Sovereignty',
+    description:
+      'Your clients never know we exist. We work strictly behind your agency veil, protecting your brand equity and agency-client relationships.',
+    items: [
+      {
+        id: 'c1',
+        badge: 'Ghost Authoring',
+        title: 'Developer Handles or Agency Commits',
+        description:
+          'We push git commits under developer pseudonyms or directly through your agency GitHub organization accounts with zero external attribution.',
+      },
+      {
+        id: 'c2',
+        badge: 'Mutual NDA',
+        title: 'Ironclad Legal Protection',
+        description:
+          'Every collaboration is governed by a bilateral mutual non-disclosure agreement with strict non-solicitation and confidential brief protections.',
+      },
+      {
+        id: 'c3',
+        badge: 'Direct IP Transfer',
+        title: 'Unconditional Code Ownership',
+        description:
+          'Full intellectual property, commit histories, infrastructure access, and environment keys transfer directly and unconditionally to your agency.',
+      },
+    ],
+  },
+
+  warranty: {
+    eyebrow: 'Post-Deployment Warranty Protocol',
+    title: 'Production Ownership That Extends Past Launch Day',
+    description:
+      'We stand behind every line of code we ship. Full development builds include a 14-day warranty period to ensure client satisfaction and zero launch panic.',
+    milestones: [
+      {
+        step: 'Day 01',
+        title: 'Production Cutover & Verification',
+        description:
+          'We assist with DNS propagation, SSL verification, edge caching warmup, and automated Lighthouse telemetry validation on the live domain.',
+      },
+      {
+        step: 'Day 07',
+        title: 'Mid-Point Telemetry Review',
+        description:
+          'Scheduled check-in to analyze error logs, responsive fidelity on real client devices, and resolve any discovered edge cases at zero cost.',
+      },
+      {
+        step: 'Day 14',
+        title: 'Final Acceptance & Maintenance Option',
+        description:
+          'Final sign-off milestone ensuring your account team and client are delighted, followed by transition to optional monthly retainer support.',
+      },
+    ],
+  },
+
   ctaBanner: {
     badge: 'Direct Engineering Access',
     title: 'Work Directly With the Principal Engineer',

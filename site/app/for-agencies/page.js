@@ -1,9 +1,12 @@
+import AgencyHeroSection from './_components/AgencyHeroSection.js';
+import PartnershipModelsSection from './_components/PartnershipModelsSection.js';
+import WorkflowSection from '../_components/WorkflowSection.js';
+import AgencyMarginsSection from './_components/AgencyMarginsSection.js';
+import AgencyConfidentialitySection from './_components/AgencyConfidentialitySection.js';
+import AgencyOnboardingSection from './_components/AgencyOnboardingSection.js';
+import FAQSection from '../_components/FAQSection.js';
 import FinalCTABanner from '../_components/FinalCTABanner.js';
 import ContactFormSection from '../_components/ContactFormSection.js';
-import FAQSection from '../_components/FAQSection.js';
-import WorkflowSection from '../_components/WorkflowSection.js';
-import PartnershipModelsSection from './_components/PartnershipModelsSection.js';
-import MotionFadeIn from '@/components/motion/MotionFadeIn.js';
 import Schema from '@/components/seo/Schema.js';
 import { buildLinkedGraph, buildRouteMetadata } from '@/lib/seo/index.js';
 import { forAgenciesContent } from '@/content/forAgencies.js';
@@ -30,19 +33,14 @@ export default function ForAgenciesPage() {
   });
 
   return (
-    <div className="py-8">
+    <div className="py-4">
       <Schema schema={jsonLd} />
-      <MotionFadeIn y={20} className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-8 pb-4">
-        <span className="font-mono text-xs uppercase tracking-wider text-[#10B981] font-semibold">Agency Partnership</span>
-        <h1 className="mt-2 font-heading text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl">
-          Built for Agency Margins & Client Peace of Mind
-        </h1>
-        <p className="mt-4 max-w-2xl text-base text-slate-600 dark:text-[#94A3B8]">
-          Say yes to complex client dev pitches without taking on permanent payroll or freelancer risk.
-        </p>
-      </MotionFadeIn>
+      <AgencyHeroSection content={forAgenciesContent.hero} />
       <PartnershipModelsSection />
       <WorkflowSection content={forAgenciesContent.workflow} />
+      <AgencyMarginsSection content={forAgenciesContent.margins} />
+      <AgencyConfidentialitySection content={forAgenciesContent.confidentiality} />
+      <AgencyOnboardingSection content={forAgenciesContent.onboarding} />
       <FAQSection content={forAgenciesContent.faqs} />
       <FinalCTABanner content={forAgenciesContent.ctaBanner} />
       <ContactFormSection content={forAgenciesContent.contactForm} />

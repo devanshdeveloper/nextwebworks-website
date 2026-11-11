@@ -9,10 +9,10 @@ export const servicesContent = {
     ctaPrimary: { text: 'Book a 30-Min Technical Call', href: '/book-a-call' },
     ctaSecondary: { text: 'Explore Capabilities ↓', href: '#services-capabilities' },
     pillars: [
-      { id: 'p1', label: '01 // CONFIDENTIAL', title: '100% White-Label' },
-      { id: 'p2', label: '02 // PREDICTABLE', title: 'Fixed-Price Quotes' },
-      { id: 'p3', label: '03 // RELIABLE', title: '14-Day Warranty' },
-      { id: 'p4', label: '04 // FAST TURN', title: 'Quote in 24 Hours' },
+      { id: 'p1', label: '01 · Confidential', title: '100% White-Label' },
+      { id: 'p2', label: '02 · Predictable', title: 'Fixed-Price Quotes' },
+      { id: 'p3', label: '03 · Reliable', title: '14-Day Warranty' },
+      { id: 'p4', label: '04 · Rapid Scoping', title: 'Quote in 24 Hours' },
     ],
   },
 
@@ -52,6 +52,81 @@ export const servicesContent = {
         tag: 'CODE SOVEREIGNTY',
         title: 'Direct Git Push & Warranty',
         desc: 'Clean commits transfer directly into your agency repository, supported by a 14-day post-launch defect fix window.',
+      },
+    ],
+  },
+
+  deliverables: {
+    eyebrow: 'Production Deliverables',
+    title: 'What Your Agency Receives on Every Build',
+    description:
+      'We hand over clean, production-verified assets engineered for long-term maintainability with zero proprietary developer lock-in.',
+    items: [
+      {
+        id: 'd1',
+        title: 'Full Source Code & Git History',
+        description:
+          'Atomic commits, clear semantic messages, and full branch history pushed directly to your agency private GitHub or GitLab repository.',
+      },
+      {
+        id: 'd2',
+        title: 'Automated CI/CD Deployment Scripts',
+        description:
+          'Ready-to-deploy GitHub Actions workflows, Dockerfiles, and environment templates configured for Vercel, AWS, or your client cloud.',
+      },
+      {
+        id: 'd3',
+        title: 'Comprehensive Technical Documentation',
+        description:
+          'Architecture READMEs, component prop matrices, CMS schema definitions, and local development environment setup guides.',
+      },
+      {
+        id: 'd4',
+        title: 'Responsive & Accessibility Audit Report',
+        description:
+          'Verified Lighthouse 95+ scores, WCAG 2.1 AA accessibility checklists, and cross-browser physical device verification records.',
+      },
+    ],
+  },
+
+  comparison: {
+    eyebrow: 'Capacity Model Comparison',
+    title: 'Why Agencies Choose a Dedicated Engineering Partner',
+    description:
+      'Compare our white-label partnership model against freelance gig marketplaces and permanent internal engineering payroll.',
+    models: [
+      {
+        id: 'nww',
+        name: 'NWW Engineering Partner',
+        badge: 'Recommended',
+        points: [
+          'Fixed-scope quote in 24h with zero rate surprises',
+          'Direct principal engineer access on every sprint',
+          '14-day post-launch defect fix warranty included',
+          'Zero payroll drag or unbillable bench overhead',
+        ],
+      },
+      {
+        id: 'freelance',
+        name: 'Freelance Platforms',
+        badge: 'High Friction',
+        points: [
+          'Unpredictable availability and mid-sprint churn',
+          'Varied code quality and inconsistent styling patterns',
+          'No post-launch defect warranty or SLA accountability',
+          'Frequent communication lag across multiple timezones',
+        ],
+      },
+      {
+        id: 'inhouse',
+        name: 'Permanent In-House Payroll',
+        badge: 'High Overhead',
+        points: [
+          'Substantial fixed payroll, benefits, and equity costs',
+          'Unbillable payroll drag during slow client quarters',
+          'Extensive hiring timelines and expensive recruiters',
+          'Limited tech stack diversity within a single hire',
+        ],
       },
     ],
   },

@@ -49,6 +49,59 @@ export const workContent = {
     ],
   },
 
+  stackDiversity: {
+    eyebrow: 'Architectural Versatility',
+    title: 'Cross-Framework Delivery Competence',
+    description:
+      'We bring deep, specialized mastery to each platform rather than shallow generalism. Explore how we engineer across four modern paradigms.',
+    stacks: [
+      {
+        id: 's1',
+        name: 'Modern Full-Stack Next.js',
+        desc: 'App Router, React 19 Server Components, Turbopack, and edge routing designed for ultra-high conversion web apps.',
+      },
+      {
+        id: 's2',
+        name: 'Headless & Gutenberg WordPress',
+        desc: 'Custom ACF Pro block architectures, Bedrock directory structures, and high-performance WPGraphQL API gateways.',
+      },
+      {
+        id: 's3',
+        name: 'Advanced Webflow & CMS',
+        desc: 'Visual design systems augmented with custom GSAP scroll interactions, attribute routing, and external webhook integrations.',
+      },
+      {
+        id: 's4',
+        name: 'Shared Mobile Core (React Native)',
+        desc: 'Production iOS and Android application builds sharing business logic and state management with web platforms.',
+      },
+    ],
+  },
+
+  confidentialityNotice: {
+    eyebrow: 'Client Protection Protocol',
+    title: 'Why Our Case Studies Respect White-Label Confidentiality',
+    description:
+      'Many agency partners ask why we showcase in-house products and sanitized builds instead of flaunting big-brand logos. Here is our ethical commitment.',
+    reasons: [
+      {
+        id: 'r1',
+        title: 'Your Agency Brand Takes the Credit',
+        desc: 'When an agency delivers an award-winning portal, their client should celebrate them. We never claim public glory or publish portfolio brag pieces.',
+      },
+      {
+        id: 'r2',
+        title: 'Non-Disclosure Is Absolute',
+        desc: 'Our bilateral mutual NDA prohibits leaking client identities, proprietary feature sets, or commercial terms under any circumstances.',
+      },
+      {
+        id: 'r3',
+        title: 'Zero Stock or Synthetic Metrics',
+        desc: 'Every technical specification and architecture blueprint we share represents verified engineering work, adhering to our strict Zero Stock policy.',
+      },
+    ],
+  },
+
   faqs: {
     eyebrow: 'Deliverable Verification FAQ',
     title: 'How We Ship, Stage, and Hand Over Code',

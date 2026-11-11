@@ -5,6 +5,29 @@ All notable changes to the Next Web Works platform will be documented in this fi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.9.0] - 2026-11-12
+
+### Added
+- **Enforced Minimum 5 Qualifying Body Sections Rule**:
+  - Updated `.agents/rules/min-sections-per-page.md` and `site/scripts/check-structure.mjs` to mandate $\ge 5$ substantive body sections per page strictly *excluding* `Nav`, `Footer`, `Hero`, `CTA`, `FAQ`, and `ContactForm`.
+  - Added new modular substantive body sections across all non-exempt pages:
+    - Home (`/`): `HomeTechStackSection` (deep dive into Next.js, WordPress, Webflow, and React Native execution pillars).
+    - About (`/about`): `AboutMissionSection`, `AboutPhilosophySection`, `AboutConfidentialitySection`, `AboutWarrantySection`.
+    - Services (`/services`): `ServicesDeliverablesSection`, `ServicesComparisonSection`.
+    - Service Detail (`/services/[slug]`): `ServiceDetailWorkflowSection`, `ServiceDetailDeliverablesSection` with 100% unique per-service data mapping.
+    - For Agencies (`/for-agencies`): `AgencyHeroSection`, `AgencyMarginsSection`, `AgencyConfidentialitySection`, `AgencyOnboardingSection`.
+    - Work (`/work`): `WorkStackDiversitySection`, `WorkConfidentialityNoticeSection`.
+    - Work Detail (`/work/[slug]`): `WorkDetailArchitectureSection`, `WorkDetailDeliverablesSection` with unique per-work data mapping.
+    - Blog (`/blog`): `BlogNewsletterSection`, `BlogEditorialStandardsSection`.
+    - Blog Post (`/blog/[slug]`): `BlogArticleKeyTakeawaysSection`, `BlogArticleDiscussionSection` with unique per-post data mapping.
+    - Book a Call (`/book-a-call`): `BookGuaranteeSection`, `BookConfidentialitySection`.
+    - Contact (`/contact`): `ContactBriefChecklistSection`, `ContactSecuritySection`, `ContactSlaSection`.
+
+### Changed
+- **Modernized Badge & Step Numeral Typography**:
+  - Replaced AI-sloopy `"01 // "` patterns sitewide with sleek, modern, professional agency design (`Step 01 · Specification Intake`, `01 · Confidential`, clean monospace badges with subtle dot separators).
+  - Updated allowlist and test fixtures across `.agents/rules/unique-content-per-page.md`, `site/scripts/check-content.mjs`, and OpenGraph templates.
+
 ## [0.8.0] - 2026-11-11
 
 ### Added

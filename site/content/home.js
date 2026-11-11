@@ -255,6 +255,47 @@ export const homeContent = {
     ],
   },
 
+  techStack: {
+    eyebrow: 'Full-Stack Execution Capability',
+    title: 'Production Engineering Across Four Core Stacks',
+    description:
+      'We never force clients into a one-size-fits-all framework. Our engineering bench builds in the exact stacks your agency accounts mandate.',
+    stacks: [
+      {
+        id: 'nextjs',
+        name: 'Custom Next.js & React',
+        badge: 'Web Applications',
+        description:
+          'Next.js 16 App Router architectures with Turbopack, React 19 Server Components, and sub-second edge routing for demanding client web platforms.',
+        features: ['Server-Driven React 19 Architecture', 'Pure Tailwind CSS styling', 'Sub-second TTFB on Vercel or AWS'],
+      },
+      {
+        id: 'wordpress',
+        name: 'Enterprise WordPress',
+        badge: 'Marketing Portals',
+        description:
+          'Clean Bedrock architectures, custom ACF Pro block configurations, and decoupled headless WPGraphQL setups with zero bloated third-party page builders.',
+        features: ['Gutenberg block architectures', 'Strict PHP 8.3 & Bedrock roots', 'Blazing fast Redis caching layers'],
+      },
+      {
+        id: 'webflow',
+        name: 'Advanced Webflow & CMS',
+        badge: 'Visual Frontends',
+        description:
+          'Design-system Webflow builds augmented with custom JavaScript attributes, complex GSAP ticker animations, and automated CMS reverse-proxies.',
+        features: ['Client-First naming taxonomy', 'Custom GSAP scroll synchronizations', 'Third-party API and webhook routing'],
+      },
+      {
+        id: 'mobile',
+        name: 'Cross-Platform Mobile',
+        badge: 'iOS & Android',
+        description:
+          'Unified React Native and Expo application builds sharing up to 85% business logic with web clients for cost-effective multi-screen rollouts.',
+        features: ['Expo Application Services (EAS)', 'Native biometric and push services', 'App Store and Play Store compliance'],
+      },
+    ],
+  },
+
   ctaBanner: {
     badge: 'Confidential Engineering Partner',
     title: 'Ready to Expand Your Agency’s Dev Capacity?',

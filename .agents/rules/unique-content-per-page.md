@@ -28,5 +28,5 @@ The following functional elements are strictly exempt from cross-page duplicatio
 4. Breadcrumb navigation labels (`"Home"`, `"Services"`, `"Work"`, `"Blog"`).
 5. Listing-card teasers linking to their own detail entry (`/services`, `/work`, `/blog`).
 6. Statutory legal/policy body text from CMS (`/privacy`, `/terms`).
-7. Step sequence badges (`"STEP 01 // INPUT"`) and publication date bylines (`"Published on ... · By Devansh, Principal Engineer"`).
+7. Step sequence badges (`"Step 01 · Specification Intake"`) and publication date bylines (`"Published on ... · By Devansh, Principal Engineer"`).
 

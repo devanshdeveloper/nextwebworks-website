@@ -16,6 +16,21 @@ const EXEMPT_PAGES = new Set([
   path.normalize('terms/page.js'),
 ]);
 
+const EXCLUDED_SECTION_PATTERNS = [
+  /hero/i,
+  /header/i,
+  /founder/i,
+  /(?:^|[^a-z])cta(?:[^a-z]|$)|finalcta|cta-banner|ctabanner/i,
+  /(?:^|[^a-z])faq(?:[^a-z]|$)|faqsection/i,
+  /contactform/i,
+  /contact-form/i,
+];
+
+function isExcludedSection(componentName, sectionId = '') {
+  const target = `${componentName} ${sectionId}`;
+  return EXCLUDED_SECTION_PATTERNS.some((pattern) => pattern.test(target));
+}
+
 function checkFileLines(filePath, maxLines, label) {
   if (!fs.existsSync(filePath)) return;
   const content = fs.readFileSync(filePath, 'utf8');
@@ -45,8 +60,11 @@ function resolveComponentPath(importPath, sourceFile) {
 function countPageSections(pagePath) {
   const content = fs.readFileSync(pagePath, 'utf8');
   const importLines = content.split('\n').filter((l) => l.trim().startsWith('import') && l.includes('from'));
-  let sectionCount = 0;
-  const foundSections = [];
+  let totalCount = 0;
+  let qualifyingCount = 0;
+  const allSections = [];
+  const qualifyingSections = [];
+  const excludedSections = [];
 
   for (const line of importLines) {
     const match = line.match(/import\s+([A-Za-z0-9_,\s{}*]+)\s+from\s+['"]([^'"]+)['"]/);
@@ -67,13 +85,23 @@ function countPageSections(pagePath) {
       const componentName = spec.replace(/[{}]/g, '').trim();
       const isRendered = content.includes(`<${componentName}`) || content.includes(`<${componentName.split(',')[0].trim()}`);
       if (isRendered) {
-        sectionCount++;
-        foundSections.push(componentName);
+        totalCount++;
+        allSections.push(componentName);
+
+        const sectionIdMatch = firstLine.match(/^\/\/\s*section:\s*([^\s]+)/);
+        const sectionId = sectionIdMatch ? sectionIdMatch[1] : '';
+
+        if (isExcludedSection(componentName, sectionId)) {
+          excludedSections.push(componentName);
+        } else {
+          qualifyingCount++;
+          qualifyingSections.push(componentName);
+        }
       }
     }
   }
 
-  return { count: sectionCount, sections: foundSections };
+  return { totalCount, qualifyingCount, allSections, qualifyingSections, excludedSections };
 }
 
 function scanDir(dir) {
@@ -91,14 +119,16 @@ function scanDir(dir) {
         errors++;
       }
 
-      // Check min 5 sections rule
+      // Check min 5 body sections rule (excluding Nav, Hero, CTA, FAQ, Contact Us, and Footer)
       const relPath = path.relative(appDir, fullPath);
       const isExempt = Array.from(EXEMPT_PAGES).some((exempt) => relPath.replace(/\\/g, '/') === exempt.replace(/\\/g, '/'));
 
       if (!isExempt) {
-        const { count, sections } = countPageSections(fullPath);
-        if (count < 5) {
-          console.error(`❌ [Min Sections Violation] ${relPath} composes only ${count} section component(s) [${sections.join(', ')}]. Minimum 5 required.`);
+        const { qualifyingCount, qualifyingSections, excludedSections } = countPageSections(fullPath);
+        if (qualifyingCount < 5) {
+          console.error(
+            `❌ [Min Sections Violation] ${relPath} composes only ${qualifyingCount} qualifying body section(s) [${qualifyingSections.join(', ')}] (excluded shells: [${excludedSections.join(', ')}]). Minimum 5 required.`
+          );
           errors++;
         }
       }

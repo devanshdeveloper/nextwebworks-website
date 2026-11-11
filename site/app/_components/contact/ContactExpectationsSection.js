@@ -39,7 +39,7 @@ export default function ContactExpectationsSection() {
               className="expectation-card rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0F172A] p-6 shadow-xs space-y-3 hover:-translate-y-0.5 hover:border-[#2563EB]/50 transition-all"
             >
               <span className="font-mono text-xs font-bold text-[#10B981]">
-                STEP {'//'} {s.step}
+                Step {s.step}
               </span>
               <h2 className="font-heading text-lg font-bold text-slate-900 dark:text-white">
                 {s.title}

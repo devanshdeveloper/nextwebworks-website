@@ -1,6 +1,85 @@
 // site/content/forAgencies.js - Agency partnership models, NDA guarantees, and per-page CTA banner
 
 export const forAgenciesContent = {
+  hero: {
+    eyebrow: 'Agency Partnership Model',
+    title: 'Built for Agency Margins & Client Peace of Mind',
+    description:
+      'Say yes to complex client dev pitches without taking on permanent payroll or freelancer risk. We engineer web and mobile platforms strictly under your agency brand.',
+  },
+
+  margins: {
+    eyebrow: 'Profitability & Margin Security',
+    title: 'Protect Your Agency Retainers From Scope Creep',
+    description:
+      'Agency margins vanish when development projects drag past deadlines or developers bill open-ended hourly fees. We build predictability into every project.',
+    pillars: [
+      {
+        id: 'p1',
+        title: 'Locked Fixed-Scope Quotations',
+        desc: 'Every sprint begins with an itemized specification and locked milestone quotation. You know exact deliverables and timing before kickoff.',
+      },
+      {
+        id: 'p2',
+        title: 'Zero Hourly Billing Surprises',
+        desc: 'We never charge open-ended hourly tabs. If a client brief expands, we isolate new requests in itemized change requests for written approval.',
+      },
+      {
+        id: 'p3',
+        title: 'Zero Payroll Bench Drag',
+        desc: 'Engage engineering capacity when client demand spikes, and scale back when pitch pipelines quiet down. Zero idle developer payroll expense.',
+      },
+    ],
+  },
+
+  confidentiality: {
+    eyebrow: 'Non-Solicitation & Brand Protection',
+    title: 'Absolute Discretion and Invisible Delivery',
+    description:
+      'We treat your agency relationships as sacred. Our entire operational architecture is built around confidentiality, non-solicitation, and ghost delivery.',
+    points: [
+      {
+        id: 'c1',
+        title: 'Enforceable Non-Solicitation',
+        desc: 'Strict non-solicitation is codified directly in our bilateral mutual NDA. We never approach, solicit, or contact your clients independently.',
+      },
+      {
+        id: 'c2',
+        title: 'Agency Handle Git Commits',
+        desc: 'We author commits under your company email addresses or anonymous developer handles, keeping version control histories completely native.',
+      },
+      {
+        id: 'c3',
+        title: 'Zero Portfolio Logo Bragging',
+        desc: 'We never publish your client logos, case studies, or confidential brand names on public marketing sites without explicit permission.',
+      },
+    ],
+  },
+
+  onboarding: {
+    eyebrow: 'Rapid Kickoff Lifecycle',
+    title: 'From First Brief to Active Sprint in Under 48 Hours',
+    description:
+      'We know agencies move at the speed of client pitches. Our lightweight onboarding protocol gets your first sprint scoped and moving immediately.',
+    steps: [
+      {
+        step: '01',
+        title: 'Discovery & Mutual NDA',
+        desc: 'Sign our mutual NDA and share active Figma designs, client briefs, or RFP specifications in a 30-minute scoping session.',
+      },
+      {
+        step: '02',
+        title: 'Itemized Milestone Quotation',
+        desc: 'Receive a comprehensive fixed-price milestone roadmap and confirmed delivery dates within 24 business hours.',
+      },
+      {
+        step: '03',
+        title: 'Sprint Kickoff & Private Staging',
+        desc: 'We spin up private staging, establish async Loom check-in routines, and begin production coding immediately.',
+      },
+    ],
+  },
+
   workflow: {
     eyebrow: 'Agency Engagement Pipeline',
     title: 'How We Ship Behind Your Brand in 4 Sprints',

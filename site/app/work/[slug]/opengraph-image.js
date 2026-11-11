@@ -55,7 +55,7 @@ export default async function Image({ params }) {
             >
               W
             </div>
-            <span style={{ fontSize: '22px', fontWeight: 'bold' }}>NEXT WEB WORKS // DELIVERABLE</span>
+            <span style={{ fontSize: '22px', fontWeight: 'bold' }}>NEXT WEB WORKS · DELIVERABLE</span>
           </div>
           <div
             style={{

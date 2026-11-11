@@ -3,6 +3,8 @@ import BlogHeroSection from '../_components/blog/BlogHeroSection.js';
 import BlogFeaturedSection from '../_components/blog/BlogFeaturedSection.js';
 import BlogGridSection from '../_components/blog/BlogGridSection.js';
 import BlogTopicsSection from '../_components/blog/BlogTopicsSection.js';
+import BlogNewsletterSection from './_components/BlogNewsletterSection.js';
+import BlogEditorialStandardsSection from './_components/BlogEditorialStandardsSection.js';
 import FinalCTABanner from '../_components/FinalCTABanner.js';
 import Schema from '@/components/seo/Schema.js';
 import { buildLinkedGraph, buildRouteMetadata } from '@/lib/seo/index.js';
@@ -46,6 +48,8 @@ export default async function BlogIndexPage() {
       <BlogFeaturedSection featuredPost={featuredPost} />
       <BlogGridSection posts={gridPosts.length > 0 ? gridPosts : processed} />
       <BlogTopicsSection />
+      <BlogNewsletterSection content={blogContent} />
+      <BlogEditorialStandardsSection content={blogContent} />
       <FinalCTABanner content={blogContent.indexCtaBanner} />
     </div>
   );

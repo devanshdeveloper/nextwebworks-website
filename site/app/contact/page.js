@@ -1,7 +1,10 @@
 import ContactHeroSection from '../_components/contact/ContactHeroSection.js';
 import ContactExpectationsSection from '../_components/contact/ContactExpectationsSection.js';
-import ContactFormSection from '../_components/ContactFormSection.js';
 import ContactChannelsSection from '../_components/contact/ContactChannelsSection.js';
+import ContactBriefChecklistSection from './_components/ContactBriefChecklistSection.js';
+import ContactSecuritySection from './_components/ContactSecuritySection.js';
+import ContactSlaSection from './_components/ContactSlaSection.js';
+import ContactFormSection from '../_components/ContactFormSection.js';
 import FinalCTABanner from '../_components/FinalCTABanner.js';
 import Schema from '@/components/seo/Schema.js';
 import { buildLinkedGraph, buildRouteMetadata } from '@/lib/seo/index.js';
@@ -32,8 +35,11 @@ export default function ContactPage() {
       <Schema schema={jsonLd} />
       <ContactHeroSection />
       <ContactExpectationsSection />
-      <ContactFormSection content={contactContent.contactForm} />
       <ContactChannelsSection />
+      <ContactBriefChecklistSection content={contactContent} />
+      <ContactSecuritySection content={contactContent} />
+      <ContactSlaSection content={contactContent} />
+      <ContactFormSection content={contactContent.contactForm} />
       <FinalCTABanner content={contactContent.ctaBanner} />
     </div>
   );

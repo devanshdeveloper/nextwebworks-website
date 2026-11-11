@@ -2,7 +2,7 @@
 
 ## Architecture
 - Root `layout.js` sets font variables, pre-launch guard metadata, `<Nav />`, `<Footer />`, and `<WhatsAppButton />`.
-- Page routes (`page.js`) are thin Server Components <= 80 lines rendering at least 5 section components in order (see .agents/rules/min-sections-per-page.md).
+- Page routes (`page.js`) are thin Server Components <= 80 lines rendering at least 5 qualifying body section components other than Nav, Hero, CTA, FAQ, Contact Us, and Footer (see .agents/rules/min-sections-per-page.md).
 - Route-specific components reside in `_components/` under each route folder, <= 250 lines each.
 - Dynamic CMS routes (`blog/`, `blog/[slug]/`, legal policies) consume class-based helpers from `@/lib/cms-kit`.
 - Blog articles support dual content formats: legacy sanitized HTML and CommonMark/GFM Markdown via `@/lib/markdown/pipeline.js`. Markdown is parsed to HAST server-side and rendered into native RSC elements with Shiki syntax highlighting, responsive tables, callout alerts, and lazy client-side Mermaid diagrams. Excerpts and reading times are derived via `@/lib/markdown/helpers.js`.

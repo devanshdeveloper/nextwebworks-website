@@ -130,7 +130,7 @@ export default function HeroSection({ content }) {
                 {/* Node 1 */}
                 <div className="rounded-xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0B0F19] p-4 shadow-2xs">
                   <div className="flex items-center justify-between text-xs font-mono text-slate-500 dark:text-[#94A3B8]">
-                    <span>STEP 01 // INPUT</span>
+                    <span>Step 01 · Specification Intake</span>
                     <span className="text-slate-800 dark:text-[#E2E8F0] font-medium">Your Agency Brand</span>
                   </div>
                   <p className="mt-1 text-sm font-semibold text-slate-900 dark:text-white">Client Brief & Figma Specs</p>
@@ -145,7 +145,7 @@ export default function HeroSection({ content }) {
                 {/* Node 2 */}
                 <div className="rounded-xl border border-[#2563EB]/60 bg-white dark:bg-[#0B0F19] p-4 shadow-sm">
                   <div className="flex items-center justify-between text-xs font-mono text-slate-500 dark:text-[#94A3B8]">
-                    <span>STEP 02 // EXECUTION</span>
+                    <span>Step 02 · Sprint Execution</span>
                     <span className="text-[#10B981] font-semibold">Invisible Delivery</span>
                   </div>
                   <p className="mt-1 text-sm font-semibold text-slate-900 dark:text-white">Dedicated NWW Engineering Bench</p>
@@ -160,7 +160,7 @@ export default function HeroSection({ content }) {
                 {/* Node 3 */}
                 <div className="rounded-xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0B0F19] p-4 shadow-2xs">
                   <div className="flex items-center justify-between text-xs font-mono text-slate-500 dark:text-[#94A3B8]">
-                    <span>STEP 03 // HANDOVER</span>
+                    <span>Step 03 · Delivery & Warranty</span>
                     <span className="text-[#10B981] font-semibold">Production</span>
                   </div>
                   <p className="mt-1 text-sm font-semibold text-slate-900 dark:text-white">Client Cloud Launch & 14-Day Fix Window</p>

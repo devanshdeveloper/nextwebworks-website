@@ -9,6 +9,8 @@ import ServiceDetailHeroSection from '../../_components/services/ServiceDetailHe
 import ServiceDetailOverviewSection from '../../_components/services/ServiceDetailOverviewSection.js';
 import ServiceDetailSpecsSection from '../../_components/services/ServiceDetailSpecsSection.js';
 import ServiceDetailStackSection from '../../_components/services/ServiceDetailStackSection.js';
+import ServiceDetailWorkflowSection from './_components/ServiceDetailWorkflowSection.js';
+import ServiceDetailDeliverablesSection from './_components/ServiceDetailDeliverablesSection.js';
 import FAQSection from '../../_components/FAQSection.js';
 import FinalCTABanner from '../../_components/FinalCTABanner.js';
 import ContactFormSection from '../../_components/ContactFormSection.js';
@@ -43,6 +45,8 @@ export default async function ServiceDetailPage({ params }) {
       <ServiceDetailOverviewSection service={service} />
       <ServiceDetailSpecsSection service={service} />
       <ServiceDetailStackSection service={service} />
+      <ServiceDetailWorkflowSection service={service} />
+      <ServiceDetailDeliverablesSection service={service} />
       <FAQSection content={detail.faqs} />
       <FinalCTABanner content={detail.ctaBanner} />
       <ContactFormSection content={detail.contactForm} />

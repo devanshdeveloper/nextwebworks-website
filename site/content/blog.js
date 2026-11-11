@@ -105,6 +105,37 @@ export const blogContent = {
       },
     ],
   },
+
+  newsletter: {
+    eyebrow: 'The Agency Digest',
+    title: 'Tactical Engineering Breakdowns for Agency Leaders',
+    description:
+      'Twice a month, we publish deep-dive breakdowns on white-label architectures, fixed-price scoping formulas, and client retention engineering. Zero sponsored filler.',
+  },
+
+  editorialStandards: {
+    eyebrow: 'Editorial Principles',
+    title: 'Our Engineering Writing Guidelines',
+    description:
+      'We write exclusively from active production consulting experience. Here are the core commitments behind every playbook we publish.',
+    pillars: [
+      {
+        id: 'es1',
+        title: 'Zero AI-Generated Fluff',
+        desc: 'Every article is authored and reviewed by practicing engineers with verified code snippets and real repository architectural patterns.',
+      },
+      {
+        id: 'es2',
+        title: 'Agency Operator Focus',
+        desc: 'We address the exact financial and technical friction points digital marketing agencies navigate: scope creep, client retention, and margin protection.',
+      },
+      {
+        id: 'es3',
+        title: 'Reproducible Benchmarks',
+        desc: 'Every performance statistic and technical recommendation is accompanied by reproducible audit criteria and production evidence.',
+      },
+    ],
+  },
 };
 
 export const blogSeoMeta = {

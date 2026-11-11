@@ -9,6 +9,8 @@ import BlogArticleHeaderSection from '../../_components/blog/BlogArticleHeaderSe
 import BlogArticleBodySection from '../../_components/blog/BlogArticleBodySection.js';
 import BlogArticleAuthorSection from '../../_components/blog/BlogArticleAuthorSection.js';
 import BlogArticleRelatedSection from '../../_components/blog/BlogArticleRelatedSection.js';
+import BlogArticleKeyTakeawaysSection from './_components/BlogArticleKeyTakeawaysSection.js';
+import BlogArticleDiscussionSection from './_components/BlogArticleDiscussionSection.js';
 import FinalCTABanner from '../../_components/FinalCTABanner.js';
 
 export async function generateStaticParams() {
@@ -50,6 +52,8 @@ export default async function BlogPostPage({ params }) {
       />
       <BlogArticleAuthorSection slug={slug} />
       <BlogArticleRelatedSection currentSlug={slug} />
+      <BlogArticleKeyTakeawaysSection post={post} />
+      <BlogArticleDiscussionSection post={post} />
       <FinalCTABanner content={blogContent.articleCtaBannerBySlug[slug] || blogContent.articleCtaBanner} />
     </article>
   );

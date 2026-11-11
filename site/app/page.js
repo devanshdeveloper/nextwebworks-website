@@ -6,6 +6,7 @@ import PainPointsSection from './_components/PainPointsSection.js';
 import WorkflowSection from './_components/WorkflowSection.js';
 import ServicesSection from './_components/ServicesSection.js';
 import WorkShowcaseSection from './_components/WorkShowcaseSection.js';
+import HomeTechStackSection from './_components/HomeTechStackSection.js';
 import FAQSection from './_components/FAQSection.js';
 import FinalCTABanner from './_components/FinalCTABanner.js';
 import ContactFormSection from './_components/ContactFormSection.js';
@@ -36,6 +37,7 @@ export default function HomePage() {
       <WorkflowSection content={homeContent.workflow} />
       <ServicesSection content={homeContent.services} />
       <WorkShowcaseSection content={homeContent.workShowcase} />
+      <HomeTechStackSection content={homeContent.techStack} />
       <FAQSection content={homeContent.faqs} />
       <FinalCTABanner content={homeContent.ctaBanner} />
       <ContactFormSection content={homeContent.contactForm} />

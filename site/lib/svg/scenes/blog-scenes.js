@@ -69,16 +69,16 @@ export function BlogSceneScoping({ prng }) {
       />
 
       <g transform="translate(0, 88)">
-        <SvgCard x={0} y={0} width={420} height={216} title="BOUNDARY_GATES // MILESTONE CONTROL">
+        <SvgCard x={0} y={0} width={420} height={216} title="MILESTONE CONTROL · BOUNDARY GATES">
           <g transform="translate(16, 20)">
-            <SvgChip x={0} y={0} label="NDA_SIGNED // PROTOCOL" state="emerald" width={220} height={24} />
+            <SvgChip x={0} y={0} label="NDA PROTOCOL · VERIFIED" state="emerald" width={220} height={24} />
             <SvgChip x={0} y={36} label="CHANGE_REQUEST_BARRIER" state="cobalt" width={220} height={24} />
-            <SvgChip x={0} y={72} label="ZERO_SCOPE_CREEP // 100%" state="emerald" width={220} height={24} />
+            <SvgChip x={0} y={72} label="ZERO SCOPE CREEP · 100%" state="emerald" width={220} height={24} />
             <SvgChip x={0} y={108} label="IP_TRANSFER_UNCONDITIONAL" state="neutral" width={220} height={24} />
           </g>
         </SvgCard>
 
-        <SvgCard x={440} y={0} width={264} height={216} title="SPEC_STATUS // QA AUDIT">
+        <SvgCard x={440} y={0} width={264} height={216} title="SPEC STATUS · QA AUDIT">
           <g transform="translate(118, 85)">
             <SvgRingMetric cx={0} cy={0} radius={48} progress={0.92 + (seedShift / 100)} value="100%" label="SPEC ACCURACY" />
           </g>

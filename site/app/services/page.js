@@ -2,6 +2,8 @@ import ServicesHeroSection from '../_components/services/ServicesHeroSection.js'
 import ServicesCapabilitiesSection from '../_components/services/ServicesCapabilitiesSection.js';
 import ServicesProcessSection from '../_components/services/ServicesProcessSection.js';
 import ServicesStackMatrixSection from '../_components/services/ServicesStackMatrixSection.js';
+import ServicesDeliverablesSection from './_components/ServicesDeliverablesSection.js';
+import ServicesComparisonSection from './_components/ServicesComparisonSection.js';
 import FAQSection from '../_components/FAQSection.js';
 import FinalCTABanner from '../_components/FinalCTABanner.js';
 import ContactFormSection from '../_components/ContactFormSection.js';
@@ -37,6 +39,8 @@ export default function ServicesPage() {
       <ServicesCapabilitiesSection />
       <ServicesProcessSection />
       <ServicesStackMatrixSection content={{ platforms: servicesContent.stackMatrix }} />
+      <ServicesDeliverablesSection content={servicesContent} />
+      <ServicesComparisonSection content={servicesContent} />
       <FAQSection content={servicesContent.faqs} />
       <FinalCTABanner content={servicesContent.ctaBanner} />
       <ContactFormSection content={servicesContent.contactForm} />
