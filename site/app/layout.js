@@ -4,6 +4,7 @@ import Nav from '@/components/Nav.js';
 import Footer from '@/components/Footer.js';
 import WhatsAppButton from '@/components/WhatsAppButton.js';
 import PreviewBanner from '@/components/PreviewBanner.js';
+import SmoothScrollProvider from '@/components/motion/SmoothScrollProvider.js';
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -73,13 +74,15 @@ export default function RootLayout({ children }) {
       className={`${plusJakarta.variable} ${inter.variable} ${jetbrainsMono.variable} h-full antialiased dark`}
     >
       <body className="min-h-full flex flex-col bg-[#0B0F19] text-[#F8FAFC] font-sans selection:bg-[#2563EB] selection:text-white">
-        <PreviewBanner />
-        <Nav />
-        <main id="main" className="flex-1">
-          {children}
-        </main>
-        <Footer />
-        <WhatsAppButton />
+        <SmoothScrollProvider>
+          <PreviewBanner />
+          <Nav />
+          <main id="main" className="flex-1">
+            {children}
+          </main>
+          <Footer />
+          <WhatsAppButton />
+        </SmoothScrollProvider>
       </body>
     </html>
   );

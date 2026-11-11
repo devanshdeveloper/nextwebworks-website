@@ -18,25 +18,10 @@ export async function submitLead(formData) {
     }
 
     if (formType === 'newsletter') {
-      await ContactUs.submit({
-        firstName: 'Newsletter',
-        lastName: 'Subscriber',
-        email,
-        phone: '+910000000000',
-        message: 'Newsletter subscription from website footer.',
-        status: 'pending',
-        metadata: {
-          category: 'newsletter',
-          tags: ['newsletter', 'footer'],
-          source: formData.get('source') || 'website-footer',
-          formType: 'newsletter',
-          submittedAt: new Date().toISOString(),
-        },
-      });
-
+      // Newsletter CMS Collection Strategy (F-01 Decision): keep dummy for now
       return {
         success: true,
-        message: "You're subscribed! We'll send our next engineering breakdown.",
+        message: "You're subscribed! We'll send our next engineering digest soon.",
       };
     }
 
