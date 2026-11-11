@@ -1,7 +1,9 @@
-import FinalCTABanner from '../_components/FinalCTABanner.js';
-import ContactFormSection from '../_components/ContactFormSection.js';
+import WorkHeroSection from '../_components/work/WorkHeroSection.js';
+import WorkStandardsSection from '../_components/work/WorkStandardsSection.js';
 import WorkShowcaseSection from '../_components/WorkShowcaseSection.js';
 import FAQSection from '../_components/FAQSection.js';
+import FinalCTABanner from '../_components/FinalCTABanner.js';
+import ContactFormSection from '../_components/ContactFormSection.js';
 import Schema from '@/components/seo/Schema.js';
 import { homeContent } from '@/content/home.js';
 import { workContent } from '@/content/work.js';
@@ -28,18 +30,11 @@ export default function WorkPage() {
   };
 
   return (
-    <div className="py-8">
+    <div>
       <Schema schema={[faqSchema]} />
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-8 pb-4">
-        <span className="font-mono text-xs uppercase tracking-wider text-[#10B981] font-semibold">Portfolio & Capabilities</span>
-        <h1 className="mt-2 font-heading text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl">
-          Flagship Products & Production Builds
-        </h1>
-        <p className="mt-4 max-w-2xl text-base text-slate-600 dark:text-[#94A3B8]">
-          Explore the proprietary platforms and client deliverables built and maintained by our engineering consultancy.
-        </p>
-      </div>
-      <WorkShowcaseSection content={homeContent.workShowcase} />
+      <WorkHeroSection />
+      <WorkStandardsSection />
+      <WorkShowcaseSection content={homeContent.workShowcase} hideHeader={true} />
       <FAQSection content={workContent.faqs} />
       <FinalCTABanner content={workContent.ctaBanner} />
       <ContactFormSection content={homeContent.contactForm} />

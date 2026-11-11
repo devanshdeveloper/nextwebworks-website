@@ -27,7 +27,7 @@ Always run commands with `--dir site` when invoked from the repository root:
 - `pnpm --dir site build`: Create optimized production build
 - `pnpm --dir site start`: Run local production server
 - `pnpm --dir site lint`: Run ESLint checks
-- `pnpm --dir site check:structure`: Validate file line ceilings (page <= 80, sections <= 250) and RSC rules
+- `pnpm --dir site check:structure`: Validate file line ceilings (page <= 80, sections <= 250), minimum 5 sections per page, and RSC rules
 - `pnpm --dir site check:assets`: Verify SVG byte budgets (<= 5.0 KB / 15 KB) and asset manifest
 - `pnpm --dir site check:all`: Run lint, structure audit, and asset audit in sequence
 

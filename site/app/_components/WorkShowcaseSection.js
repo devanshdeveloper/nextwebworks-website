@@ -4,7 +4,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
-export default function WorkShowcaseSection({ content }) {
+export default function WorkShowcaseSection({ content, hideHeader = false }) {
   const [activeTab, setActiveTab] = useState(content.samples[0].id);
 
   const activeSample = content.samples.find((s) => s.id === activeTab) || content.samples[0];
@@ -16,18 +16,20 @@ export default function WorkShowcaseSection({ content }) {
       className="py-20 md:py-28 border-b border-slate-200 dark:border-[#1E293B]/60 bg-slate-50 dark:bg-[#0B0F19] transition-colors"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="max-w-3xl space-y-4">
-          <p className="text-xs font-mono tracking-wider uppercase text-[#10B981] font-semibold">
-            {content.eyebrow}
-          </p>
-          <h2 className="font-heading text-3xl font-bold tracking-tight text-slate-900 dark:text-[#F8FAFC] sm:text-4xl">
-            {content.title}
-          </h2>
-          <p className="text-base leading-relaxed text-slate-600 dark:text-[#94A3B8]">
-            {content.description}
-          </p>
-        </div>
+        {/* Header (hidden if standalone page renders its own dedicated hero) */}
+        {!hideHeader && (
+          <div className="max-w-3xl space-y-4">
+            <p className="text-xs font-mono tracking-wider uppercase text-[#10B981] font-semibold">
+              {content.eyebrow}
+            </p>
+            <h2 className="font-heading text-3xl font-bold tracking-tight text-slate-900 dark:text-[#F8FAFC] sm:text-4xl">
+              {content.title}
+            </h2>
+            <p className="text-base leading-relaxed text-slate-600 dark:text-[#94A3B8]">
+              {content.description}
+            </p>
+          </div>
+        )}
 
         {/* Tab switcher */}
         <div className="mt-10 flex flex-wrap gap-3 border-b border-slate-200 dark:border-[#1E293B] pb-4">
@@ -58,7 +60,9 @@ export default function WorkShowcaseSection({ content }) {
                 {activeSample.badge}
               </span>
               <h3 className="mt-3 font-heading text-2xl font-bold text-slate-900 dark:text-white">
-                {activeSample.title}
+                <Link href={`/work/${activeSample.id}`} className="hover:text-[#2563EB] dark:hover:text-[#60A5FA] transition-colors">
+                  {activeSample.title}
+                </Link>
               </h3>
             </div>
             <span className="font-mono text-xs text-[#2563EB] dark:text-[#60A5FA] max-w-xs md:text-right font-medium">

@@ -2,7 +2,7 @@
 
 ## Architecture
 - Root `layout.js` sets font variables, pre-launch guard metadata, `<Nav />`, `<Footer />`, and `<WhatsAppButton />`.
-- Page routes (`page.js`) are thin Server Components <= 80 lines rendering section components in order.
+- Page routes (`page.js`) are thin Server Components <= 80 lines rendering at least 5 section components in order (see .agents/rules/min-sections-per-page.md).
 - Route-specific components reside in `_components/` under each route folder, <= 250 lines each.
 - Dynamic CMS routes (`blog/`, `blog/[slug]/`, legal policies) consume class-based helpers from `@/lib/cms-kit`.
 

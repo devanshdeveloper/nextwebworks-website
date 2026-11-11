@@ -5,7 +5,7 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import gsap from 'gsap';
 
-export default function ServicesSection({ content }) {
+export default function ServicesSection({ content, hideHeader = false }) {
   // Bug 4: All specs closed by default on load, independent toggles
   const [openDrawers, setOpenDrawers] = useState({});
   const gridRef = useRef(null);
@@ -64,32 +64,36 @@ export default function ServicesSection({ content }) {
       className="py-20 md:py-28 border-b border-slate-200 dark:border-[#1E293B]/60 bg-slate-50 dark:bg-[#0B0F19] transition-colors"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="max-w-3xl space-y-4">
-          <p className="text-xs font-mono tracking-wider uppercase text-[#10B981] font-semibold">
-            {content.eyebrow}
-          </p>
-          <h2 className="font-heading text-3xl font-bold tracking-tight text-slate-900 dark:text-[#F8FAFC] sm:text-4xl">
-            {content.title}
-          </h2>
-          <p className="text-base leading-relaxed text-slate-600 dark:text-[#94A3B8]">
-            {content.description}
-          </p>
-        </div>
+        {/* Header (hidden if standalone page renders its own dedicated hero) */}
+        {!hideHeader && (
+          <>
+            <div className="max-w-3xl space-y-4">
+              <p className="text-xs font-mono tracking-wider uppercase text-[#10B981] font-semibold">
+                {content.eyebrow}
+              </p>
+              <h2 className="font-heading text-3xl font-bold tracking-tight text-slate-900 dark:text-[#F8FAFC] sm:text-4xl">
+                {content.title}
+              </h2>
+              <p className="text-base leading-relaxed text-slate-600 dark:text-[#94A3B8]">
+                {content.description}
+              </p>
+            </div>
 
-        {/* Platform Pill Tags Banner */}
-        <div className="mt-8 flex flex-wrap gap-2 pt-2">
-          {content.platforms.map((group) =>
-            group.items.map((item) => (
-              <span
-                key={item}
-                className="rounded-full border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0F172A] px-3 py-1 font-mono text-xs text-slate-700 dark:text-[#94A3B8] shadow-xs"
-              >
-                {item}
-              </span>
-            ))
-          )}
-        </div>
+            {/* Platform Pill Tags Banner */}
+            <div className="mt-8 flex flex-wrap gap-2 pt-2">
+              {content.platforms.map((group) =>
+                group.items.map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0F172A] px-3 py-1 font-mono text-xs text-slate-700 dark:text-[#94A3B8] shadow-xs"
+                  >
+                    {item}
+                  </span>
+                ))
+              )}
+            </div>
+          </>
+        )}
 
         {/* 5-Card Bento Grid */}
         <div
@@ -121,7 +125,9 @@ export default function ServicesSection({ content }) {
                   </div>
 
                   <h3 className={`font-heading font-semibold text-slate-900 dark:text-white ${isHero ? 'text-2xl' : 'text-xl'}`}>
-                    {drawer.title}
+                    <Link href={`/services/${drawer.id}`} className="hover:text-[#2563EB] dark:hover:text-[#60A5FA] transition-colors">
+                      {drawer.title}
+                    </Link>
                   </h3>
                   <p className="text-sm leading-relaxed text-slate-600 dark:text-[#94A3B8]">
                     {drawer.summary}

@@ -5,6 +5,20 @@ All notable changes to the Next Web Works platform will be documented in this fi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.0] - 2026-11-11
+
+### Added
+- **Single Authoritative Hero Sections**: Resolved duplicate hero sections on `/services` and `/work` by implementing dedicated route hero components (`ServicesHeroSection.js`, `WorkHeroSection.js`) and adding a `hideHeader` prop to `ServicesSection` and `WorkShowcaseSection`.
+- **Dynamic Service Detail Routes (`/services/[slug]`)**: Created dynamic App Router detail pages backed by NWW CMS `Service` model with graceful static fallback for all 5 technical capability drawers. Included unique dynamic metadata, breadcrumbs, Service JSON-LD (zero rates), and sitemap generator.
+- **Dynamic Work Detail Routes (`/work/[slug]`)**: Created dynamic App Router deliverable detail pages backed by NWW CMS `Portfolio` model with strict white-label confidentiality enforcement (masking client identities unless marked `clientPublishable: true`), CreativeWork JSON-LD, and sitemap generator.
+- **Minimum 5 Sections per Page Rule**: Added `.agents/rules/min-sections-per-page.md` and updated `AGENTS.md` and `site/app/AGENTS.md`. Extended `site/scripts/check-structure.mjs` to strictly enforce that every non-exempt public route composes $\ge 5$ modular section components following the `// section: <id>` and `data-section="<id>"` contract.
+- **Modular Page Decompositions**: Upgraded `/services` (6 sections), `/work` (6 sections), `/blog` (5 sections), `/blog/[slug]` (5 sections), `/contact` (5 sections), `/book-a-call` (5 sections), `/services/[slug]` (7 sections), and `/work/[slug]` (7 sections). Route-scoped components are cleanly organized into subdirectories (`_components/services/`, `_components/work/`, `_components/blog/`, `_components/contact/`, `_components/book-a-call/`) ensuring no folder exceeds 10 files.
+- **Redesigned 16:9 Theme-Aware Blog Covers**: Re-engineered deterministic vector SVG covers ($\le 5.0$ KB) in `site/lib/blog-utils.js` across 4 category motifs (`agency-growth`, `project-scoping`, `architecture`, `general`) with theme-aware classes for crisp rendering in both light and dark modes.
+- **Clean Plain-Text Excerpt Deduplication**: Upgraded `stripHtml` in `site/lib/blog-utils.js` to strip leading heading tags, discard duplicate post title text at excerpt starts, decode HTML entities, and trim cleanly on word boundaries with an ellipsis only when truncated.
+
+### Changed
+- Bumped application version to `0.3.0`.
+
 ## [0.2.0] - 2026-11-11
 
 ### Added
