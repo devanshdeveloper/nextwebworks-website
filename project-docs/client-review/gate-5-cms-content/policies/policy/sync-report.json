@@ -1,0 +1,32 @@
+{
+  "timestamp": "2026-11-11T06:14:03.101Z",
+  "mode": "dry-run",
+  "serverUrl": "https://prod-server.nextwebworks.com",
+  "model": "policy",
+  "durationMs": 3,
+  "stats": {
+    "total": 2,
+    "created": 0,
+    "skipped": 0,
+    "alreadyExists": 0,
+    "failed": 0
+  },
+  "results": [
+    {
+      "file": "C:\\code\\personal\\nextwebworks-website\\project-docs\\client-review\\gate-5-cms-content\\policies\\policy\\privacy.json",
+      "slug": "privacy",
+      "status": "DRY_RUN_VALIDATED",
+      "message": "Payload verified for endpoint POST https://prod-server.nextwebworks.com/api/website-privacy-policy/create-one (Write suppressed: --apply not set)",
+      "attempts": 0,
+      "endpoint": "https://prod-server.nextwebworks.com/api/website-privacy-policy/create-one"
+    },
+    {
+      "file": "C:\\code\\personal\\nextwebworks-website\\project-docs\\client-review\\gate-5-cms-content\\policies\\policy\\terms.json",
+      "slug": "terms",
+      "status": "DRY_RUN_VALIDATED",
+      "message": "Payload verified for endpoint POST https://prod-server.nextwebworks.com/api/website-privacy-policy/create-one (Write suppressed: --apply not set)",
+      "attempts": 0,
+      "endpoint": "https://prod-server.nextwebworks.com/api/website-privacy-policy/create-one"
+    }
+  ]
+}
