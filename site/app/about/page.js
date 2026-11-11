@@ -4,32 +4,33 @@ import FAQSection from '../_components/FAQSection.js';
 import FinalCTABanner from '../_components/FinalCTABanner.js';
 import ContactFormSection from '../_components/ContactFormSection.js';
 import Schema from '@/components/seo/Schema.js';
+import { buildLinkedGraph, buildRouteMetadata } from '@/lib/seo/index.js';
 import { aboutContent } from '@/content/about.js';
 
-export const metadata = {
-  title: 'About the Engineering Team & Delivery Standards',
+export const metadata = buildRouteMetadata({
+  title: 'About Our Delivery Standards',
   description:
     'Meet Devansh, Founder & Lead Engineer at Next Web Works. Four core engineering principles, 14-day post-launch warranty, and Indore engineering operations.',
-  alternates: { canonical: 'https://nextwebworks.in/about' },
-};
+  path: '/about',
+});
 
 export default function AboutPage() {
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: aboutContent.faqs.items.map((item) => ({
-      '@type': 'Question',
-      name: item.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.answer,
-      },
-    })),
-  };
+  const jsonLd = buildLinkedGraph({
+    path: '/about',
+    title: 'About Our Delivery Standards | Next Web Works',
+    description: metadata.description,
+    pageType: 'AboutPage',
+    breadcrumbs: [
+      { name: 'Home', url: '/' },
+      { name: 'About', url: '/about' },
+    ],
+    faqs: aboutContent.faqs.items,
+    includeOrgAndSite: false,
+  });
 
   return (
     <div className="py-4">
-      <Schema schema={[faqSchema]} />
+      <Schema schema={jsonLd} />
       <AboutFounderSection content={aboutContent} />
       <AboutPrinciplesSection content={aboutContent} />
       <FAQSection content={aboutContent.faqs} />

@@ -5,6 +5,35 @@ All notable changes to the Next Web Works platform will be documented in this fi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.8.0] - 2026-11-11
+
+### Added
+- **Full Technical & On-Page SEO Engine (`site/lib/seo/`)**:
+  - Modular SEO architecture (`metadata/`, `jsonld/`, `config.js`) supporting safe metadata generation, OpenGraph/Twitter parity, and single linked `@graph` JSON-LD structured data.
+  - Linked Schema.org graph builder linking `#organization` (ProfessionalService), `#website`, `#webpage` (WebPage / AboutPage / ContactPage / CollectionPage / DigitalDocument), `#breadcrumb` (BreadcrumbList), `#service` (Service), `#article` (BlogPosting), `#project` (CreativeWork), and `#faq` (FAQPage).
+  - Strict structured-data sanitizer stripping all commercial prices, rates, offers, and review scores to uphold the Zero Rates Policy.
+  - Safe RSC serialization via `<Schema />` component escaping literal `<` to `\u003c` to neutralize XSS vulnerabilities.
+- **Dynamic Branded Open Graph Images (`next/og`)**:
+  - Implemented 1200x630 dynamic social sharing card generators at root (`site/app/opengraph-image.js`) and dynamic route segments: `/blog/[slug]`, `/services/[slug]`, and `/work/[slug]`.
+  - Styled with authentic in-house design tokens, dark slate themes, and SVG badge accents under the strict Zero Stock policy.
+- **Syndication RSS Feed (`site/app/feed.xml/route.js`)**:
+  - Implemented static-cached RSS 2.0 / Atom feed syndicating published blog posts and platform engineering playbooks.
+- **Post-Build Hard Gate Auditor (`site/scripts/check-seo.mjs` / `pnpm check:seo`)**:
+  - Automated compliance auditor validating prerendered HTML in `.next/server/app/`.
+  - Verifies title length (25–65), description length (70–160), unique content across all routes, self-referential canonicals, single `h1`, heading progression, image alt attributes, non-generic anchor text, JSON-LD validity, FAQPage visible text synchronization, sitemap route completeness, orphan route detection, and preview/production robots directives.
+- **Standards & Rule Architecture (`.agents/rules/seo-standards.md`)**:
+  - Codified technical SEO standards across `site/app/**`, `site/lib/seo/**`, and `site/content/**`.
+  - Integrated `check:seo` into `site/package.json`, `.agents/skills/verify/SKILL.md`, `release-checklist.md`, and `AGENTS.md`.
+
+### Changed
+- **Unified Title & Description Across Every Route**:
+  - Synchronized page titles and descriptions to eliminate duplication, respect length bounds, and eliminate SERP truncation across all 24 route endpoints.
+  - Refined `/book-a-call/thank-you` to declare explicit metadata and canonical tags while enforcing `noindex, nofollow`.
+  - Updated `404` (`site/app/not-found.js`) to export explicit `noindex, follow` metadata and provide descriptive internal links back to key routes.
+- **Robots & Crawl Control Synchronization**:
+  - Removed `/book-a-call/thank-you` from robots.txt `disallow` array to ensure search crawlers can access the page and read its `noindex` tag.
+  - Updated `sitemap.js` to emit real ISO `lastModified` dates from CMS records and include `/feed.xml`.
+
 ## [0.7.0] - 2026-11-11
 
 ### Added

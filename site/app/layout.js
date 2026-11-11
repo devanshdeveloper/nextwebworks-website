@@ -5,6 +5,8 @@ import Footer from '@/components/Footer.js';
 import WhatsAppButton from '@/components/WhatsAppButton.js';
 import PreviewBanner from '@/components/PreviewBanner.js';
 import SmoothScrollProvider from '@/components/motion/SmoothScrollProvider.js';
+import Schema from '@/components/seo/Schema.js';
+import { buildOrganizationNode, buildWebSiteNode } from '@/lib/seo/index.js';
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -26,10 +28,17 @@ const jetbrainsMono = JetBrains_Mono({
 
 const isPreview = process.env.NEXT_PUBLIC_PREVIEW_GUARD === 'true';
 
+export const viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#0B0F19' },
+  ],
+};
+
 export const metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://nextwebworks.in'),
   title: {
-    default: 'Next Web Works | White-Label Engineering Partner for Marketing Agencies',
+    default: 'White-Label Web Dev Partner | Next Web Works',
     template: '%s | Next Web Works',
   },
   description:
@@ -48,7 +57,7 @@ export const metadata = {
         },
       },
   openGraph: {
-    title: 'Next Web Works | White-Label Engineering Partner for Marketing Agencies',
+    title: 'White-Label Web Dev Partner | Next Web Works',
     description:
       'Dedicated white-label engineering partner for marketing agencies. WordPress, Webflow, custom Next.js, and mobile apps delivered under your brand with fixed quotes and zero overhead.',
     url: 'https://nextwebworks.in',
@@ -58,7 +67,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Next Web Works | White-Label Engineering Partner for Marketing Agencies',
+    title: 'White-Label Web Dev Partner | Next Web Works',
     description:
       'Dedicated white-label engineering partner for marketing agencies. Fixed-scope development under your agency brand.',
   },
@@ -73,6 +82,11 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const globalSchema = {
+    '@context': 'https://schema.org',
+    '@graph': [buildOrganizationNode(), buildWebSiteNode()],
+  };
+
   return (
     <html
       lang="en-IN"
@@ -87,6 +101,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="min-h-full flex flex-col bg-white dark:bg-[#0B0F19] text-slate-900 dark:text-[#F8FAFC] font-sans selection:bg-[#2563EB] selection:text-white transition-colors duration-200">
+        <Schema schema={globalSchema} />
         <SmoothScrollProvider>
           <PreviewBanner />
           <Nav />

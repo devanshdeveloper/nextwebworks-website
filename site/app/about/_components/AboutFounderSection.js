@@ -19,7 +19,7 @@ export default function AboutFounderSection({ content }) {
                 [FOUNDER HEADSHOT]
               </div>
               <div>
-                <h2 className="font-heading text-2xl font-bold text-slate-900 dark:text-white">{content.founder.name}</h2>
+                <p className="font-heading text-2xl font-bold text-slate-900 dark:text-white">{content.founder.name}</p>
                 <p className="font-mono text-xs font-semibold text-[#10B981]">{content.founder.title}</p>
                 <p className="font-mono text-xs text-slate-500 dark:text-[#64748B] mt-0.5">{content.founder.location}</p>
               </div>
@@ -46,7 +46,7 @@ export default function AboutFounderSection({ content }) {
             </p>
 
             <div className="border-t border-slate-200 dark:border-[#1E293B] pt-4 space-y-2">
-              <h3 className="font-heading text-base font-semibold text-slate-900 dark:text-white">14-Day Post-Launch Defect Warranty</h3>
+              <h2 className="font-heading text-base font-semibold text-slate-900 dark:text-white">14-Day Post-Launch Defect Warranty</h2>
               <p className="text-xs text-slate-600 dark:text-[#94A3B8] leading-relaxed">
                 Every full build includes a 14-day defect fix window with scheduled check-ins on Day 7 and Day 14. We own our work until your account team and client are completely delighted.
               </p>

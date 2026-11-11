@@ -302,4 +302,22 @@ export const workDetailContent = {
   },
 };
 
+export const workSeoMeta = {
+  'nww-cms-kit': {
+    title: 'NWW Headless CMS Kit Build',
+    description:
+      'Architecture case study of our zero-dependency headless CMS client delivering instantaneous edge caching, ISR revalidation, and typed schema models.',
+  },
+  classymenu: {
+    title: 'ClassyMenu SaaS Platform',
+    description:
+      'Architecture case study of a multi-tenant digital dining platform connecting table session state with automated WhatsApp Business order routing.',
+  },
+  ceramicsales: {
+    title: 'CeramicSales Wholesale ERP',
+    description:
+      'Technical case study of a B2B wholesale platform featuring atomic FIFO inventory tracking, multi-tier GST compliance, and server-side PDF exports.',
+  },
+};
+
 

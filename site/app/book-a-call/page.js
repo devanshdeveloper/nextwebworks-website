@@ -3,18 +3,33 @@ import BookAgendaSection from '../_components/book-a-call/BookAgendaSection.js';
 import BookCalSection from '../_components/book-a-call/BookCalSection.js';
 import BookPreparationSection from '../_components/book-a-call/BookPreparationSection.js';
 import FinalCTABanner from '../_components/FinalCTABanner.js';
+import Schema from '@/components/seo/Schema.js';
+import { buildLinkedGraph, buildRouteMetadata } from '@/lib/seo/index.js';
 import { bookACallContent } from '@/content/bookACall.js';
 
-export const metadata = {
-  title: 'Book a 30-Minute Technical Discovery Call',
+export const metadata = buildRouteMetadata({
+  title: 'Book a 30-Min Scoping Call',
   description:
     'Schedule a 30-minute scoping call directly with our founder. We review your client briefs, confirm stack fit, and deliver a fixed-scope quote in 24 hours.',
-  alternates: { canonical: 'https://nextwebworks.in/book-a-call' },
-};
+  path: '/book-a-call',
+});
 
 export default function BookACallPage() {
+  const jsonLd = buildLinkedGraph({
+    path: '/book-a-call',
+    title: 'Book a 30-Min Scoping Call | Next Web Works',
+    description: metadata.description,
+    pageType: 'ContactPage',
+    breadcrumbs: [
+      { name: 'Home', url: '/' },
+      { name: 'Book a Call', url: '/book-a-call' },
+    ],
+    includeOrgAndSite: false,
+  });
+
   return (
     <div>
+      <Schema schema={jsonLd} />
       <BookHeroSection />
       <BookAgendaSection />
       <BookCalSection />

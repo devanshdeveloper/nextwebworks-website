@@ -1,11 +1,15 @@
 import Link from 'next/link';
 import MotionFadeIn from '@/components/motion/MotionFadeIn.js';
 import MotionMagnetic from '@/components/motion/MotionMagnetic.js';
+import { buildRouteMetadata } from '@/lib/seo/index.js';
 
-export const metadata = {
-  title: 'Call Scheduled',
-  robots: { index: false, follow: false },
-};
+export const metadata = buildRouteMetadata({
+  title: 'Discovery Call Confirmed',
+  description:
+    'Your 30-minute discovery call has been confirmed. Review what to bring to the scoping session and our mutual NDA confidentiality reassurance.',
+  path: '/book-a-call/thank-you',
+  noIndex: true,
+});
 
 export default function ThankYouPage() {
   return (
@@ -23,7 +27,7 @@ export default function ThankYouPage() {
 
         {/* What to Bring Checklist */}
         <div className="mt-8 w-full max-w-md rounded-xl border border-[#1E293B] bg-[#0F172A] p-5 text-left text-xs space-y-3">
-          <span className="font-mono text-[11px] uppercase tracking-wider text-[#10B981]">What to Bring to the Call</span>
+          <h2 className="font-mono text-[11px] uppercase tracking-wider text-[#10B981]">What to Bring to the Call</h2>
           <ul className="space-y-2 text-[#CBD5E1]">
             <li className="flex items-center gap-2">
               <span className="text-[#10B981]">✓</span> Active client scope, RFP, or requirements doc

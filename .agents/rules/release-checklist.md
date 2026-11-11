@@ -12,6 +12,7 @@ Execute this checklist before deploying to Vercel production or delivering build
 - [ ] Run `pnpm --dir site check:assets` — verify all assets are present in manifest and adhere to zero-stock policy.
 - [ ] Run `pnpm --dir site lint` — verify ESLint passes with 0 errors.
 - [ ] Run `pnpm --dir site build` — verify all static and ISR routes compile cleanly without date evaluation or prefetching errors.
+- [ ] Run `pnpm --dir site check:seo` — verify zero title, description, canonical, OG, JSON-LD, heading, or sitemap violations (see .agents/rules/seo-standards.md).
 - [ ] Run `pnpm --dir site check:content` — verify zero cross-page text repeats, unique CTA/form copy, and FAQ depth compliance (>= 5 Q&As, answers >= 25 words).
 
 ## 2. Content & Brand Invariants
@@ -23,5 +24,5 @@ Execute this checklist before deploying to Vercel production or delivering build
 ## 3. SEO & Indexing Directives
 - [ ] Apex domain canonicalization active (`https://nextwebworks.in`).
 - [ ] Dynamic sitemap generated at `/sitemap.xml` with all indexable routes, excluding `/book-a-call/thank-you`.
-- [ ] Robots rules correct (`/robots.txt` disallows `/book-a-call/thank-you` and references sitemap).
+- [ ] Robots rules correct (`/robots.txt` allows indexing, references sitemap, disallows `/api/` and `/admin/`, and leaves `/book-a-call/thank-you` crawlable so search engines read its noindex tag).
 - [ ] For production launch: `NEXT_PUBLIC_PREVIEW_GUARD="false"` so search engines index the site and staging banner is hidden.

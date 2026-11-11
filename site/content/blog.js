@@ -106,3 +106,22 @@ export const blogContent = {
     ],
   },
 };
+
+export const blogSeoMeta = {
+  'the-white-label-playbook-for-marketing-agencies': {
+    title: 'White-Label Agency Playbook',
+    description:
+      'A practical operational blueprint for marketing agencies seeking to deliver custom web and mobile engineering without hiring in-house developers.',
+  },
+  'how-to-scope-fixed-price-web-projects-without-scope-creep': {
+    title: 'Scope Fixed-Price Projects',
+    description:
+      'Proven scoping techniques to eliminate scope creep, protect agency profit margins, and deliver client web applications within agreed timelines.',
+  },
+  'headless-nextjs-vs-wordpress-vs-webflow': {
+    title: 'Next.js vs WordPress vs Webflow',
+    description:
+      'An honest architectural comparison of Next.js, WordPress, and Webflow to help marketing agency leaders choose the right stack for client websites.',
+  },
+};
+

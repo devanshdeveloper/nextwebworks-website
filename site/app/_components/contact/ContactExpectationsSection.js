@@ -41,9 +41,9 @@ export default function ContactExpectationsSection() {
               <span className="font-mono text-xs font-bold text-[#10B981]">
                 STEP {'//'} {s.step}
               </span>
-              <h3 className="font-heading text-lg font-bold text-slate-900 dark:text-white">
+              <h2 className="font-heading text-lg font-bold text-slate-900 dark:text-white">
                 {s.title}
-              </h3>
+              </h2>
               <p className="text-xs leading-relaxed text-slate-600 dark:text-[#94A3B8]">
                 {s.desc}
               </p>

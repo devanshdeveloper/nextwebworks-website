@@ -6,32 +6,33 @@ import FAQSection from '../_components/FAQSection.js';
 import FinalCTABanner from '../_components/FinalCTABanner.js';
 import ContactFormSection from '../_components/ContactFormSection.js';
 import Schema from '@/components/seo/Schema.js';
+import { buildLinkedGraph, buildRouteMetadata } from '@/lib/seo/index.js';
 import { workContent } from '@/content/work.js';
 
-export const metadata = {
-  title: 'Flagship Products & Technical Deliverables',
+export const metadata = buildRouteMetadata({
+  title: 'Flagship Products & Builds',
   description:
-    'Explore our in-house products and client builds: NWW Headless CMS Kit, ClassyMenu digital dining SaaS, and CeramicSales wholesale inventory ERP.',
-  alternates: { canonical: 'https://nextwebworks.in/work' },
-};
+    'Explore our proprietary products and client platform builds: NWW Headless CMS Kit, ClassyMenu digital dining SaaS, and CeramicSales wholesale ERP.',
+  path: '/work',
+});
 
 export default function WorkPage() {
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: workContent.faqs.items.map((item) => ({
-      '@type': 'Question',
-      name: item.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.answer,
-      },
-    })),
-  };
+  const jsonLd = buildLinkedGraph({
+    path: '/work',
+    title: 'Flagship Products & Builds | Next Web Works',
+    description: metadata.description,
+    pageType: 'CollectionPage',
+    breadcrumbs: [
+      { name: 'Home', url: '/' },
+      { name: 'Work', url: '/work' },
+    ],
+    faqs: workContent.faqs.items,
+    includeOrgAndSite: false,
+  });
 
   return (
     <div>
-      <Schema schema={[faqSchema]} />
+      <Schema schema={jsonLd} />
       <WorkHeroSection />
       <WorkStandardsSection />
       <WorkShowcaseGridSection />

@@ -11,8 +11,9 @@ Next Web Works is a high-performance marketing agency engineering consultancy pl
   - **`components/motion/`**: `SmoothScrollProvider.js` integrating Lenis and GSAP ticker sync for desktop while preserving mobile battery life.
   - **`content/`**: Decoupled static page copy modules (`home.js`, `shared/nav.js`, `shared/footer.js`).
   - **`lib/cms-kit/`**: Direct class-based client layer for NWW CMS (`Blog`, `ContactUs`, `Policy`, `SEOHelper`).
+  - **`lib/seo/`**: Modular technical SEO subsystem (`metadata/`, `jsonld/`, `config.js`) providing length-checked metadata builders and single linked `@graph` JSON-LD compiler with stable `@id` anchors.
   - **`public/assets/`**: In-house optimized vector graphics and asset manifest.
-  - **`scripts/`**: Automated compliance auditors (`check-structure.mjs`, `check-assets.mjs`).
+  - **`scripts/`**: Automated compliance auditors (`check-structure.mjs`, `check-assets.mjs`, `check-content.mjs`, `check-seo.mjs`).
 - **`client-context/`**: Approved brand guidelines, verified answers, content blueprints, and conversion requirements.
 - **`project-docs/`**: Client review gates, master pipeline router state (`router-state.md`), and stock provenance audits.
 
@@ -21,9 +22,11 @@ Next Web Works is a high-performance marketing agency engineering consultancy pl
 2. **Newsletter Signups:** Footer newsletter forms validate email syntax and immediately return a clean confirmation.
 3. **Dynamic Content:** Blog posts and legal policies fetch from NWW CMS during build and ISR revalidation tagged with `cms:blog` and `cms:policy`.
 4. **Motion System:** `SmoothScrollProvider` mounts Lenis and synchronizes ticks via `gsap.ticker.add()` only when `(pointer: fine)` and `prefers-reduced-motion` is not active.
+5. **Technical SEO & Structured Data:** Pages compile metadata and single linked Schema.org `@graph` payloads (`#organization`, `#website`, `#webpage`, `#breadcrumb`, `#service`, `#article`, `#project`, `#faq`). Dynamic social images generate via `next/og` (`opengraph-image.js`). RSS feeds syndicate via `/feed.xml`. Pre-release verification is enforced by `check:seo`.
 
 ## 4. Key Constraints
 - **Zero Rates Policy:** Strictly zero rates, pricing formulas, retainers, or split percentages in JSX, metadata, or JSON-LD.
 - **Line Ceilings:** `page.js` <= 80 lines; section components in `_components/` <= 250 lines.
 - **RSC Boundaries:** `page.js` and root `layout.js` are pure Server Components; `'use client'` is reserved for interactive leaf components.
+- **Technical SEO Hard Gate:** All pages must pass `check:seo` with title 25–65 characters, description 70–160 characters, single `h1`, non-skipping heading levels, self-referential canonicals, zero orphan sitemap routes, and zero commercial/rating disclosures in JSON-LD.
 

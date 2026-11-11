@@ -1,8 +1,10 @@
 import { notFound } from 'next/navigation';
 import { Service } from '@/lib/cms-kit/service.js';
 import { homeContent } from '@/content/home.js';
-import { servicesContent, serviceDetailContent } from '@/content/services.js';
+import { serviceSeoMeta } from '@/content/services.js';
 import Schema from '@/components/seo/Schema.js';
+import { getServiceData } from '@/lib/seo/helpers.js';
+import { buildRouteMetadata } from '@/lib/seo/index.js';
 import ServiceDetailHeroSection from '../../_components/services/ServiceDetailHeroSection.js';
 import ServiceDetailOverviewSection from '../../_components/services/ServiceDetailOverviewSection.js';
 import ServiceDetailSpecsSection from '../../_components/services/ServiceDetailSpecsSection.js';
@@ -11,62 +13,39 @@ import FAQSection from '../../_components/FAQSection.js';
 import FinalCTABanner from '../../_components/FinalCTABanner.js';
 import ContactFormSection from '../../_components/ContactFormSection.js';
 
-const STATIC_SERVICES = homeContent.services.drawers;
-
-async function getService(slug) {
-  const fromCms = await Service.readOne(slug).catch(() => null);
-  if (fromCms) return fromCms;
-  return STATIC_SERVICES.find((s) => s.id === slug) || null;
-}
-
 export async function generateStaticParams() {
-  const cmsSlugs = await Service.getSlugs({ limit: 50 }).catch(() => []);
-  const allSlugs = Array.from(new Set([...cmsSlugs, ...STATIC_SERVICES.map((s) => s.id)]));
-  return allSlugs.map((slug) => ({ slug }));
+  const cms = await Service.getSlugs({ limit: 50 }).catch(() => []);
+  const stat = homeContent.services.drawers.map((s) => s.id);
+  return Array.from(new Set([...cms, ...stat])).map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const service = await getService(slug);
-  if (!service) return { title: 'Service Not Found' };
-  return {
-    title: `${service.title} - White-Label Capabilities`,
-    description: service.summary || service.description,
-    alternates: { canonical: `https://nextwebworks.in/services/${slug}` },
-  };
+  const meta = serviceSeoMeta[slug];
+  if (!meta) return { title: 'Service Not Found' };
+  return buildRouteMetadata({
+    title: meta.title,
+    description: meta.description,
+    path: `/services/${slug}`,
+  });
 }
 
 export default async function ServiceDetailPage({ params }) {
   const { slug } = await params;
-  const service = await getService(slug);
-  if (!service) notFound();
-
-  const detailContent = serviceDetailContent[slug] || {
-    faqs: servicesContent.faqs,
-    ctaBanner: servicesContent.ctaBanner,
-    contactForm: servicesContent.contactForm,
-  };
-
-  const serviceSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: service.title,
-    description: service.summary || service.description,
-    provider: { '@type': 'Organization', name: 'Next Web Works', url: 'https://nextwebworks.in' },
-    areaServed: 'Worldwide',
-  };
+  const data = await getServiceData(slug);
+  if (!data) notFound();
+  const { service, detail, jsonLd } = data;
 
   return (
     <div>
-      <Schema schema={[serviceSchema]} />
+      <Schema schema={jsonLd} />
       <ServiceDetailHeroSection service={service} />
       <ServiceDetailOverviewSection service={service} />
       <ServiceDetailSpecsSection service={service} />
       <ServiceDetailStackSection service={service} />
-      <FAQSection content={detailContent.faqs} />
-      <FinalCTABanner content={detailContent.ctaBanner} />
-      <ContactFormSection content={detailContent.contactForm} />
+      <FAQSection content={detail.faqs} />
+      <FinalCTABanner content={detail.ctaBanner} />
+      <ContactFormSection content={detail.contactForm} />
     </div>
   );
 }
-

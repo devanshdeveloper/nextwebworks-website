@@ -433,4 +433,32 @@ export const serviceDetailContent = {
   },
 };
 
+export const serviceSeoMeta = {
+  websites: {
+    title: 'Marketing Website Development',
+    description:
+      'Pixel-perfect Figma-to-code marketing websites built in WordPress, Webflow, and Next.js with sub-second page loads and turnkey agency handover.',
+  },
+  'web-apps': {
+    title: 'Custom Web App Development',
+    description:
+      'Full-stack Next.js web applications, client portals, and multi-tenant SaaS tools built with React Server Components, RBAC, and verified delivery.',
+  },
+  erps: {
+    title: 'Operations & ERP Development',
+    description:
+      'Proprietary business systems: atomic FIFO inventory allocations, multi-tier GST calculation engines, and server-side vector PDF invoice generation.',
+  },
+  'mobile-apps': {
+    title: 'Mobile Application Development',
+    description:
+      'Native-feel iOS and Android mobile applications engineered from a single shared TypeScript codebase with offline sync, push notifications, and camera.',
+  },
+  'cms-platforms': {
+    title: 'Agency CMS & No-Code Builds',
+    description:
+      'Custom WordPress themes, clean Gutenberg blocks, and advanced Webflow CMS builds delivered under your agency brand with zero third-party lock-in.',
+  },
+};
+
 

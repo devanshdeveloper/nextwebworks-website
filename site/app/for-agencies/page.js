@@ -5,32 +5,33 @@ import WorkflowSection from '../_components/WorkflowSection.js';
 import PartnershipModelsSection from './_components/PartnershipModelsSection.js';
 import MotionFadeIn from '@/components/motion/MotionFadeIn.js';
 import Schema from '@/components/seo/Schema.js';
+import { buildLinkedGraph, buildRouteMetadata } from '@/lib/seo/index.js';
 import { forAgenciesContent } from '@/content/forAgencies.js';
 
-export const metadata = {
-  title: 'White-Label Partnership Models for Agencies',
+export const metadata = buildRouteMetadata({
+  title: 'Outsource Dev for Agencies',
   description:
-    'Dedicated dev bench, fixed-price sprints, and scoped pilot builds for marketing agencies. 100% white-label with full non-solicitation guarantees.',
-  alternates: { canonical: 'https://nextwebworks.in/for-agencies' },
-};
+    'Scale your agency with a dedicated white-label dev bench or fixed-price sprints. Zero overhead, 24-hour quotes, and strict non-solicitation guarantees.',
+  path: '/for-agencies',
+});
 
 export default function ForAgenciesPage() {
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: forAgenciesContent.faqs.items.map((item) => ({
-      '@type': 'Question',
-      name: item.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.answer,
-      },
-    })),
-  };
+  const jsonLd = buildLinkedGraph({
+    path: '/for-agencies',
+    title: 'Outsource Dev for Agencies | Next Web Works',
+    description: metadata.description,
+    pageType: 'WebPage',
+    breadcrumbs: [
+      { name: 'Home', url: '/' },
+      { name: 'For Agencies', url: '/for-agencies' },
+    ],
+    faqs: forAgenciesContent.faqs.items,
+    includeOrgAndSite: false,
+  });
 
   return (
     <div className="py-8">
-      <Schema schema={[faqSchema]} />
+      <Schema schema={jsonLd} />
       <MotionFadeIn y={20} className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-8 pb-4">
         <span className="font-mono text-xs uppercase tracking-wider text-[#10B981] font-semibold">Agency Partnership</span>
         <h1 className="mt-2 font-heading text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl">

@@ -1,3 +1,5 @@
+import { SEO_CONFIG } from '@/lib/seo/config.js';
+
 export default function robots() {
   const isPreview = process.env.NEXT_PUBLIC_PREVIEW_GUARD === 'true';
 
@@ -14,8 +16,8 @@ export default function robots() {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/api/', '/admin/', '/book-a-call/thank-you'],
+      disallow: ['/api/', '/admin/'],
     },
-    sitemap: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://nextwebworks.in'}/sitemap.xml`,
+    sitemap: `${SEO_CONFIG.siteUrl}/sitemap.xml`,
   };
 }

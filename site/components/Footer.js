@@ -73,9 +73,9 @@ export default function Footer() {
 
           {/* Col 2: Navigation Links */}
           <div>
-            <h3 className="text-sm font-semibold tracking-wider text-slate-900 dark:text-[#F8FAFC] uppercase font-mono">
+            <p className="text-sm font-semibold tracking-wider text-slate-900 dark:text-[#F8FAFC] uppercase font-mono">
               Navigation
-            </h3>
+            </p>
             <ul className="mt-4 space-y-2.5 text-sm">
               <li>
                 <Link href="/services" className="hover:text-slate-900 dark:hover:text-white transition-colors duration-150">
@@ -112,9 +112,9 @@ export default function Footer() {
 
           {/* Col 3: Direct Conversion & Legal */}
           <div>
-            <h3 className="text-sm font-semibold tracking-wider text-slate-900 dark:text-[#F8FAFC] uppercase font-mono">
+            <p className="text-sm font-semibold tracking-wider text-slate-900 dark:text-[#F8FAFC] uppercase font-mono">
               Connect & Legal
-            </h3>
+            </p>
             <ul className="mt-4 space-y-2.5 text-sm">
               <li>
                 <Link href="/book-a-call" className="text-[#2563EB] dark:text-[#3B82F6] hover:underline font-medium transition-colors">
@@ -146,9 +146,9 @@ export default function Footer() {
 
           {/* Col 4: Newsletter Signup */}
           <div className="space-y-4">
-            <h3 className="text-sm font-semibold tracking-wider text-slate-900 dark:text-[#F8FAFC] uppercase font-mono">
+            <p className="text-sm font-semibold tracking-wider text-slate-900 dark:text-[#F8FAFC] uppercase font-mono">
               The Agency Digest
-            </h3>
+            </p>
             <p className="text-sm text-slate-600 dark:text-[#94A3B8] leading-relaxed">
               Tactical white-label engineering breakdowns for agency operators. 2 posts a month at most. Zero fluff.
             </p>
