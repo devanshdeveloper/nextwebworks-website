@@ -80,17 +80,17 @@ export default function ContactFormSection({ content }) {
     <section
       id="home-s8-contact-form"
       data-section="home-s8-contact-form"
-      className="py-20 md:py-28 bg-[#0B0F19]"
+      className="py-20 md:py-28 bg-white dark:bg-[#0B0F19] transition-colors"
     >
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-3">
           <p className="text-xs font-mono uppercase tracking-wider text-[#10B981] font-semibold">
             Inbound Brief
           </p>
-          <h2 className="font-heading text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <h2 className="font-heading text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
             {content.leadIn}
           </h2>
-          <p className="text-sm leading-relaxed text-[#94A3B8]">
+          <p className="text-sm leading-relaxed text-slate-600 dark:text-[#94A3B8]">
             {content.description}
           </p>
         </div>
@@ -113,7 +113,7 @@ export default function ContactFormSection({ content }) {
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             {/* Field 1: Name */}
             <div>
-              <label htmlFor="name" className="block text-xs font-mono uppercase text-[#E2E8F0]">
+              <label htmlFor="name" className="block text-xs font-mono uppercase text-slate-700 dark:text-[#E2E8F0]">
                 Your Name <span className="text-[#2563EB]">*</span>
               </label>
               <input
@@ -124,17 +124,17 @@ export default function ContactFormSection({ content }) {
                 onChange={handleChange}
                 onBlur={() => handleBlur('name')}
                 placeholder="Sarah Jenkins"
-                className="mt-2 w-full rounded-lg border border-[#1E293B] bg-[#0F172A] px-4 py-3 text-sm text-white placeholder-[#64748B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
+                className="mt-2 w-full rounded-lg border border-slate-300 dark:border-[#1E293B] bg-slate-50 dark:bg-[#0F172A] px-4 py-3 text-sm text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-[#64748B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
                 required
               />
               {touched.name && !isValidName && (
-                <p className="mt-1 text-xs text-rose-400">Please provide your name.</p>
+                <p className="mt-1 text-xs text-rose-500">Please provide your name.</p>
               )}
             </div>
 
             {/* Field 2: Email */}
             <div>
-              <label htmlFor="email" className="block text-xs font-mono uppercase text-[#E2E8F0]">
+              <label htmlFor="email" className="block text-xs font-mono uppercase text-slate-700 dark:text-[#E2E8F0]">
                 Agency Work Email <span className="text-[#2563EB]">*</span>
               </label>
               <input
@@ -145,11 +145,11 @@ export default function ContactFormSection({ content }) {
                 onChange={handleChange}
                 onBlur={() => handleBlur('email')}
                 placeholder="sarah@growthagency.com"
-                className="mt-2 w-full rounded-lg border border-[#1E293B] bg-[#0F172A] px-4 py-3 text-sm text-white placeholder-[#64748B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
+                className="mt-2 w-full rounded-lg border border-slate-300 dark:border-[#1E293B] bg-slate-50 dark:bg-[#0F172A] px-4 py-3 text-sm text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-[#64748B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
                 required
               />
               {touched.email && !isValidEmail && (
-                <p className="mt-1 text-xs text-rose-400">Please provide a valid work email.</p>
+                <p className="mt-1 text-xs text-rose-500">Please provide a valid work email.</p>
               )}
             </div>
           </div>
@@ -157,7 +157,7 @@ export default function ContactFormSection({ content }) {
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             {/* Field 3: Agency Name */}
             <div>
-              <label htmlFor="agencyName" className="block text-xs font-mono uppercase text-[#E2E8F0]">
+              <label htmlFor="agencyName" className="block text-xs font-mono uppercase text-slate-700 dark:text-[#E2E8F0]">
                 Agency Name / Website
               </label>
               <input
@@ -167,13 +167,13 @@ export default function ContactFormSection({ content }) {
                 value={formData.agencyName}
                 onChange={handleChange}
                 placeholder="Apex Creative · apexcreative.co"
-                className="mt-2 w-full rounded-lg border border-[#1E293B] bg-[#0F172A] px-4 py-3 text-sm text-white placeholder-[#64748B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
+                className="mt-2 w-full rounded-lg border border-slate-300 dark:border-[#1E293B] bg-slate-50 dark:bg-[#0F172A] px-4 py-3 text-sm text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-[#64748B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
               />
             </div>
 
             {/* Field 4: Platform / Scope */}
             <div>
-              <label htmlFor="scopePlatform" className="block text-xs font-mono uppercase text-[#E2E8F0]">
+              <label htmlFor="scopePlatform" className="block text-xs font-mono uppercase text-slate-700 dark:text-[#E2E8F0]">
                 Target Platform / Stack
               </label>
               <select
@@ -181,7 +181,7 @@ export default function ContactFormSection({ content }) {
                 name="scopePlatform"
                 value={formData.scopePlatform}
                 onChange={handleChange}
-                className="mt-2 w-full rounded-lg border border-[#1E293B] bg-[#0F172A] px-4 py-3 text-sm text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
+                className="mt-2 w-full rounded-lg border border-slate-300 dark:border-[#1E293B] bg-slate-50 dark:bg-[#0F172A] px-4 py-3 text-sm text-slate-900 dark:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
               >
                 <option value="Next.js App Router">Next.js App Router / Custom Web App</option>
                 <option value="WordPress Custom Theme">WordPress / WooCommerce</option>
@@ -195,7 +195,7 @@ export default function ContactFormSection({ content }) {
 
           {/* Field 5: Brief Details */}
           <div>
-            <label htmlFor="message" className="block text-xs font-mono uppercase text-[#E2E8F0]">
+            <label htmlFor="message" className="block text-xs font-mono uppercase text-slate-700 dark:text-[#E2E8F0]">
               Brief Overview & Target Launch Date
             </label>
             <textarea
@@ -205,15 +205,15 @@ export default function ContactFormSection({ content }) {
               value={formData.message}
               onChange={handleChange}
               placeholder="Tell us about the project, Figma availability, client requirements, and approximate timeline..."
-              className="mt-2 w-full rounded-lg border border-[#1E293B] bg-[#0F172A] px-4 py-3 text-sm text-white placeholder-[#64748B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
+              className="mt-2 w-full rounded-lg border border-slate-300 dark:border-[#1E293B] bg-slate-50 dark:bg-[#0F172A] px-4 py-3 text-sm text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-[#64748B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
             />
           </div>
 
           {/* Consent line */}
-          <div className="text-xs text-[#64748B] leading-relaxed">
+          <div className="text-xs text-slate-500 dark:text-[#64748B] leading-relaxed">
             By submitting, you agree to receive communications regarding your brief. We operate under strict mutual NDA
             and never share client details. View our{' '}
-            <Link href="/privacy" className="underline hover:text-white transition-colors">
+            <Link href="/privacy" className="underline hover:text-slate-900 dark:hover:text-white transition-colors">
               Privacy Policy
             </Link>
             .
@@ -224,8 +224,8 @@ export default function ContactFormSection({ content }) {
             <div
               className={`rounded-lg p-4 text-xs font-mono ${
                 status.type === 'success'
-                  ? 'border border-emerald-500/30 bg-emerald-500/10 text-emerald-300'
-                  : 'border border-rose-500/30 bg-rose-500/10 text-rose-300'
+                  ? 'border border-emerald-500/30 bg-emerald-500/10 text-emerald-600 dark:text-emerald-300'
+                  : 'border border-rose-500/30 bg-rose-500/10 text-rose-600 dark:text-rose-300'
               }`}
             >
               {status.message}

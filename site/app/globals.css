@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-canvas: #0B0F19;
   --color-surface: #0F172A;
@@ -19,13 +21,19 @@
 }
 
 :root {
+  --background: #FFFFFF;
+  --foreground: #0F172A;
+}
+
+.dark {
   --background: #0B0F19;
   --foreground: #F8FAFC;
 }
 
 body {
-  background-color: #0B0F19;
-  color: #F8FAFC;
+  background-color: var(--background);
+  color: var(--foreground);
   font-family: var(--font-sans);
   overflow-x: hidden;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }

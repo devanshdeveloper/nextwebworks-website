@@ -62,6 +62,11 @@ export const metadata = {
     description:
       'Dedicated white-label engineering partner for marketing agencies. Fixed-scope development under your agency brand.',
   },
+  icons: {
+    icon: '/assets/logo-mark.svg',
+    shortcut: '/assets/logo-mark.svg',
+    apple: '/assets/logo-mark.svg',
+  },
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
   },
@@ -71,9 +76,17 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en-IN"
-      className={`${plusJakarta.variable} ${inter.variable} ${jetbrainsMono.variable} h-full antialiased dark`}
+      className={`${plusJakarta.variable} ${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col bg-[#0B0F19] text-[#F8FAFC] font-sans selection:bg-[#2563EB] selection:text-white">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('nww-theme');if(t==='dark'){document.documentElement.classList.add('dark')}else{document.documentElement.classList.remove('dark')}}catch(e){}})()`,
+          }}
+        />
+      </head>
+      <body className="min-h-full flex flex-col bg-white dark:bg-[#0B0F19] text-slate-900 dark:text-[#F8FAFC] font-sans selection:bg-[#2563EB] selection:text-white transition-colors duration-200">
         <SmoothScrollProvider>
           <PreviewBanner />
           <Nav />

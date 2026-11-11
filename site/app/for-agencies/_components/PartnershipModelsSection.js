@@ -43,14 +43,14 @@ const models = [
 
 export default function PartnershipModelsSection() {
   return (
-    <section data-section="partnership-models" className="py-16 md:py-20 border-t border-[#1E293B]/60">
+    <section data-section="partnership-models" className="py-16 md:py-20 border-t border-slate-200 dark:border-[#1E293B]/60 transition-colors">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <span className="font-mono text-xs uppercase tracking-wider text-[#10B981]">Engagement Models</span>
-          <h2 className="font-heading text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <span className="font-mono text-xs uppercase tracking-wider text-[#10B981] font-semibold">Engagement Models</span>
+          <h2 className="font-heading text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
             Flexible Partnership Architecture
           </h2>
-          <p className="text-sm text-[#94A3B8]">
+          <p className="text-sm text-slate-600 dark:text-[#94A3B8]">
             Choose the engagement model that matches your agency’s pipeline. Every model operates under strict mutual NDA and 100% white-label confidentiality.
           </p>
         </div>
@@ -61,18 +61,18 @@ export default function PartnershipModelsSection() {
               key={model.name}
               className={`flex flex-col justify-between rounded-2xl border p-8 transition-colors ${
                 model.highlighted
-                  ? 'border-[#2563EB] bg-[#0F172A] shadow-lg shadow-[#2563EB]/10'
-                  : 'border-[#1E293B] bg-[#0B0F19]'
+                  ? 'border-[#2563EB] bg-slate-50 dark:bg-[#0F172A] shadow-md shadow-[#2563EB]/10'
+                  : 'border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0B0F19]'
               }`}
             >
               <div>
-                <span className="inline-block rounded-full bg-[#1E293B] px-3 py-1 font-mono text-[11px] text-[#10B981]">
+                <span className="inline-block rounded-full bg-slate-200/80 dark:bg-[#1E293B] px-3 py-1 font-mono text-[11px] font-semibold text-emerald-600 dark:text-[#10B981]">
                   {model.tag}
                 </span>
-                <h3 className="mt-4 font-heading text-2xl font-bold text-white">{model.name}</h3>
-                <p className="mt-3 text-xs leading-relaxed text-[#94A3B8]">{model.desc}</p>
+                <h3 className="mt-4 font-heading text-2xl font-bold text-slate-900 dark:text-white">{model.name}</h3>
+                <p className="mt-3 text-xs leading-relaxed text-slate-600 dark:text-[#94A3B8]">{model.desc}</p>
 
-                <ul className="mt-6 space-y-3 text-xs text-[#CBD5E1]">
+                <ul className="mt-6 space-y-3 text-xs text-slate-700 dark:text-[#CBD5E1]">
                   {model.features.map((feat) => (
                     <li key={feat} className="flex items-start gap-2">
                       <span className="text-[#10B981] font-bold">✓</span>
@@ -82,13 +82,13 @@ export default function PartnershipModelsSection() {
                 </ul>
               </div>
 
-              <div className="mt-8 pt-6 border-t border-[#1E293B]">
+              <div className="mt-8 pt-6 border-t border-slate-200 dark:border-[#1E293B]">
                 <Link
                   href="/book-a-call"
                   className={`block w-full text-center rounded-xl py-3 px-4 text-xs font-semibold transition-colors ${
                     model.highlighted
                       ? 'bg-[#2563EB] text-white hover:bg-[#1D4ED8]'
-                      : 'border border-[#1E293B] bg-[#0F172A] text-white hover:bg-[#1E293B]'
+                      : 'border border-slate-300 dark:border-[#1E293B] bg-slate-100 dark:bg-[#0F172A] text-slate-800 dark:text-white hover:bg-slate-200 dark:hover:bg-[#1E293B]'
                   }`}
                 >
                   {model.cta} →
@@ -98,7 +98,7 @@ export default function PartnershipModelsSection() {
           ))}
         </div>
 
-        <p className="mt-8 text-center font-mono text-xs text-[#64748B]">
+        <p className="mt-8 text-center font-mono text-xs text-slate-500 dark:text-[#64748B]">
           Terms discussed on discovery call. No figures.
         </p>
       </div>

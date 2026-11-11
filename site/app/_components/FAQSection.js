@@ -14,7 +14,7 @@ export default function FAQSection({ content }) {
     <section
       id="home-s6-faq"
       data-section="home-s6-faq"
-      className="py-20 md:py-28 border-b border-[#1E293B]/60 bg-[#0B0F19]"
+      className="py-20 md:py-28 border-b border-slate-200 dark:border-[#1E293B]/60 bg-white dark:bg-[#0B0F19] transition-colors"
     >
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -22,10 +22,10 @@ export default function FAQSection({ content }) {
           <p className="text-xs font-mono tracking-wider uppercase text-[#10B981] font-semibold">
             {content.eyebrow}
           </p>
-          <h2 className="font-heading text-3xl font-bold tracking-tight text-[#F8FAFC] sm:text-4xl">
+          <h2 className="font-heading text-3xl font-bold tracking-tight text-slate-900 dark:text-[#F8FAFC] sm:text-4xl">
             {content.title}
           </h2>
-          <p className="text-base leading-relaxed text-[#94A3B8]">
+          <p className="text-base leading-relaxed text-slate-600 dark:text-[#94A3B8]">
             {content.description}
           </p>
         </div>
@@ -37,7 +37,7 @@ export default function FAQSection({ content }) {
             return (
               <div
                 key={faq.question}
-                className="rounded-2xl border border-[#1E293B] bg-[#0F172A] transition-colors"
+                className="rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-slate-50 dark:bg-[#0F172A] transition-colors shadow-xs"
               >
                 <button
                   type="button"
@@ -45,16 +45,16 @@ export default function FAQSection({ content }) {
                   className="flex w-full items-center justify-between p-6 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB] rounded-2xl"
                   aria-expanded={isOpen}
                 >
-                  <span className="font-heading text-base sm:text-lg font-semibold text-white pr-4">
+                  <span className="font-heading text-base sm:text-lg font-semibold text-slate-900 dark:text-white pr-4">
                     {faq.question}
                   </span>
-                  <span className="font-mono text-sm text-[#2563EB] shrink-0">
+                  <span className="font-mono text-base font-bold text-[#2563EB] dark:text-[#60A5FA] shrink-0">
                     {isOpen ? '−' : '+'}
                   </span>
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-6 pt-0 text-sm leading-relaxed text-[#94A3B8] border-t border-[#1E293B]/60 mt-1">
+                  <div className="px-6 pb-6 pt-0 text-sm leading-relaxed text-slate-600 dark:text-[#94A3B8] border-t border-slate-200 dark:border-[#1E293B]/60 mt-1 animate-fade-in">
                     <p className="pt-4">{faq.answer}</p>
                   </div>
                 )}

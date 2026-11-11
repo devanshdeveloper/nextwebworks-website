@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Logo from './Logo.js';
 import { submitLead } from '@/app/actions/lead.js';
 import { getWhatsAppHref } from './WhatsAppButton.js';
 
@@ -51,23 +52,20 @@ export default function Footer() {
   };
 
   return (
-    <footer className="border-t border-[#1E293B] bg-[#0B0F19] text-[#94A3B8]">
+    <footer className="border-t border-slate-200 dark:border-[#1E293B] bg-slate-50 dark:bg-[#0B0F19] text-slate-600 dark:text-[#94A3B8] transition-colors">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-4">
           {/* Col 1: Brand & Positioning */}
           <div className="space-y-4">
-            <Link href="/" className="flex items-center gap-2.5 text-base font-semibold text-white">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#10B981]" />
-              </span>
-              <span className="font-heading">Next Web Works</span>
+            <Link href="/" className="inline-block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB] rounded">
+              <Logo />
             </Link>
-            <p className="text-sm leading-relaxed text-[#94A3B8]">
+            <p className="text-sm leading-relaxed text-slate-600 dark:text-[#94A3B8]">
               White-label engineering partner for marketing agencies. We build client websites, web apps, and mobile
               platforms under your brand with fixed quotes and zero agency overhead.
             </p>
             <div className="pt-2">
-              <span className="inline-flex items-center rounded-full bg-[#0F172A] border border-[#1E293B] px-3 py-1 text-xs font-mono text-[#E2E8F0]">
+              <span className="inline-flex items-center rounded-full bg-slate-200/80 dark:bg-[#0F172A] border border-slate-300 dark:border-[#1E293B] px-3 py-1 text-xs font-mono text-slate-800 dark:text-[#E2E8F0]">
                 Mon–Fri · 10:00 AM – 7:00 PM IST
               </span>
             </div>
@@ -75,35 +73,37 @@ export default function Footer() {
 
           {/* Col 2: Navigation Links */}
           <div>
-            <h3 className="text-sm font-semibold tracking-wider text-[#F8FAFC] uppercase font-mono">Navigation</h3>
+            <h3 className="text-sm font-semibold tracking-wider text-slate-900 dark:text-[#F8FAFC] uppercase font-mono">
+              Navigation
+            </h3>
             <ul className="mt-4 space-y-2.5 text-sm">
               <li>
-                <Link href="/services" className="hover:text-white transition-colors duration-150">
+                <Link href="/services" className="hover:text-slate-900 dark:hover:text-white transition-colors duration-150">
                   Services & Specs
                 </Link>
               </li>
               <li>
-                <Link href="/for-agencies" className="hover:text-white transition-colors duration-150">
+                <Link href="/for-agencies" className="hover:text-slate-900 dark:hover:text-white transition-colors duration-150">
                   For Agencies & Models
                 </Link>
               </li>
               <li>
-                <Link href="/work" className="hover:text-white transition-colors duration-150">
+                <Link href="/work" className="hover:text-slate-900 dark:hover:text-white transition-colors duration-150">
                   Illustrative Work
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="hover:text-white transition-colors duration-150">
+                <Link href="/about" className="hover:text-slate-900 dark:hover:text-white transition-colors duration-150">
                   About & Founder
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="hover:text-white transition-colors duration-150">
+                <Link href="/blog" className="hover:text-slate-900 dark:hover:text-white transition-colors duration-150">
                   Engineering Blog
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-white transition-colors duration-150">
+                <Link href="/contact" className="hover:text-slate-900 dark:hover:text-white transition-colors duration-150">
                   Send a Brief
                 </Link>
               </li>
@@ -112,10 +112,12 @@ export default function Footer() {
 
           {/* Col 3: Direct Conversion & Legal */}
           <div>
-            <h3 className="text-sm font-semibold tracking-wider text-[#F8FAFC] uppercase font-mono">Connect & Legal</h3>
+            <h3 className="text-sm font-semibold tracking-wider text-slate-900 dark:text-[#F8FAFC] uppercase font-mono">
+              Connect & Legal
+            </h3>
             <ul className="mt-4 space-y-2.5 text-sm">
               <li>
-                <Link href="/book-a-call" className="text-[#2563EB] hover:text-[#3B82F6] font-medium transition-colors">
+                <Link href="/book-a-call" className="text-[#2563EB] dark:text-[#3B82F6] hover:underline font-medium transition-colors">
                   Book a 20-Min Call →
                 </Link>
               </li>
@@ -123,19 +125,19 @@ export default function Footer() {
                 <a
                   href="https://wa.me/917999934815"
                   onClick={handleWhatsAppClick}
-                  className="hover:text-white transition-colors duration-150 inline-flex items-center gap-1.5"
+                  className="hover:text-slate-900 dark:hover:text-white transition-colors duration-150 inline-flex items-center gap-1.5"
                 >
                   <span className="w-2 h-2 rounded-full bg-[#10B981]" />
                   Chat on WhatsApp
                 </a>
               </li>
               <li>
-                <Link href="/privacy" className="hover:text-white transition-colors duration-150">
+                <Link href="/privacy" className="hover:text-slate-900 dark:hover:text-white transition-colors duration-150">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="/terms" className="hover:text-white transition-colors duration-150">
+                <Link href="/terms" className="hover:text-slate-900 dark:hover:text-white transition-colors duration-150">
                   Terms of Service
                 </Link>
               </li>
@@ -144,10 +146,10 @@ export default function Footer() {
 
           {/* Col 4: Newsletter Signup */}
           <div className="space-y-4">
-            <h3 className="text-sm font-semibold tracking-wider text-[#F8FAFC] uppercase font-mono">
+            <h3 className="text-sm font-semibold tracking-wider text-slate-900 dark:text-[#F8FAFC] uppercase font-mono">
               The Agency Digest
             </h3>
-            <p className="text-sm text-[#94A3B8] leading-relaxed">
+            <p className="text-sm text-slate-600 dark:text-[#94A3B8] leading-relaxed">
               Tactical white-label engineering breakdowns for agency operators. 2 posts a month at most. Zero fluff.
             </p>
 
@@ -159,7 +161,7 @@ export default function Footer() {
                   onChange={(e) => setEmail(e.target.value)}
                   onBlur={() => setTouched(true)}
                   placeholder="agency@example.com"
-                  className="w-full rounded-lg bg-[#0F172A] border border-[#1E293B] px-3.5 py-2.5 text-sm text-white placeholder-[#64748B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB] focus-visible:border-transparent transition-colors"
+                  className="w-full rounded-lg bg-white dark:bg-[#0F172A] border border-slate-300 dark:border-[#1E293B] px-3.5 py-2.5 text-sm text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-[#64748B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB] focus-visible:border-transparent transition-colors"
                   aria-label="Email address for newsletter"
                   required
                 />
@@ -174,20 +176,20 @@ export default function Footer() {
 
               {/* Inline validation after touch */}
               {touched && !isValidEmail && email.length > 0 && (
-                <p className="text-xs text-rose-400">Please enter a valid email address.</p>
+                <p className="text-xs text-rose-500">Please enter a valid email address.</p>
               )}
 
               {/* Status alerts */}
               {status && (
-                <p className={`text-xs ${status.type === 'success' ? 'text-emerald-400' : 'text-rose-400'}`}>
+                <p className={`text-xs ${status.type === 'success' ? 'text-emerald-500' : 'text-rose-500'}`}>
                   {status.message}
                 </p>
               )}
 
               {/* Consent notice */}
-              <p className="text-xs text-[#64748B] leading-relaxed">
+              <p className="text-xs text-slate-500 dark:text-[#64748B] leading-relaxed">
                 We&apos;ll email you new articles. Unsubscribe any time.{' '}
-                <Link href="/privacy" className="underline hover:text-white transition-colors">
+                <Link href="/privacy" className="underline hover:text-slate-900 dark:hover:text-white transition-colors">
                   Privacy Policy
                 </Link>
                 .
@@ -197,7 +199,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 border-t border-[#1E293B]/60 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#64748B]">
+        <div className="mt-12 border-t border-slate-200 dark:border-[#1E293B]/60 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-[#64748B]">
           <p>
             Next Web Works is a proprietary engineering consultancy operated by Devansh [PROPRIETOR FULL LEGAL NAME - TO PROVIDE]. All rights reserved.
           </p>

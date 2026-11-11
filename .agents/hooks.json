@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node .agents/hooks/edit-guard.mjs",
+            "command": "node hooks/edit-guard.mjs",
             "timeout": 10
           }
         ]
@@ -20,7 +20,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node .agents/hooks/secret-guard.mjs",
+            "command": "node hooks/secret-guard.mjs",
             "timeout": 10
           }
         ]
@@ -30,7 +30,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node .agents/hooks/secret-guard.mjs",
+            "command": "node hooks/secret-guard.mjs",
             "timeout": 10
           }
         ]
@@ -42,7 +42,7 @@
     "Stop": [
       {
         "type": "command",
-        "command": "node .agents/hooks/verify-gate.mjs",
+        "command": "node hooks/verify-gate.mjs",
         "timeout": 30
       }
     ]
