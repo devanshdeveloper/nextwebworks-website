@@ -1,0 +1,38 @@
+{
+  "PreToolUse": [
+    {
+      "matcher": "run_command",
+      "hooks": [
+        {
+          "type": "command",
+          "command": "node .agents/hooks/edit-guard.mjs",
+          "timeout": 10
+        },
+        {
+          "type": "command",
+          "command": "node .agents/hooks/secret-guard.mjs",
+          "timeout": 10
+        }
+      ]
+    },
+    {
+      "matcher": "write_file|edit_file|read_file",
+      "hooks": [
+        {
+          "type": "command",
+          "command": "node .agents/hooks/secret-guard.mjs",
+          "timeout": 10
+        }
+      ]
+    }
+  ],
+  "Stop": [
+    {
+      "type": "command",
+      "command": "node .agents/hooks/verify-gate.mjs",
+      "timeout": 30,
+      "enabled": false
+    }
+  ]
+}
+
