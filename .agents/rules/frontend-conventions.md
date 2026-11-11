@@ -1,6 +1,7 @@
 ---
 trigger: glob
-globs: ["site/app/**", "site/components/**"]
+globs: "**/site/app/**, **/site/components/**"
+description: Rules for Next.js 16 RSC, line ceilings (page <= 80, section <= 250), and pure Tailwind CSS.
 ---
 
 # Frontend Architecture & Conventions
@@ -30,4 +31,3 @@ All public informational pages must preserve the exact approved stack sequence b
 - Zero `@apply` directives in `site/app/globals.css`.
 - Surface contrast: Ensure all text meets WCAG AA standards (>= 4.5:1). Cobalt `#2563EB` is restricted to buttons and interactive accents; use `#E2E8F0` or `#94A3B8` for readable canvas typography.
 - Visible focus rings mandatory: `focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B0F19]`.
-

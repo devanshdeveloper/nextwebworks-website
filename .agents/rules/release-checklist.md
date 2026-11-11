@@ -1,5 +1,6 @@
 ---
 trigger: manual
+description: Pre-release verification checklist covering line ceilings, byte budgets, dynamic sitemap, and robots directives.
 ---
 
 # Pre-Release & Deployment Checklist
@@ -23,4 +24,3 @@ Execute this checklist before deploying to Vercel production or delivering build
 - [ ] Dynamic sitemap generated at `/sitemap.xml` with all indexable routes, excluding `/book-a-call/thank-you`.
 - [ ] Robots rules correct (`/robots.txt` disallows `/book-a-call/thank-you` and references sitemap).
 - [ ] For production launch: `NEXT_PUBLIC_PREVIEW_GUARD="false"` so search engines index the site and staging banner is hidden.
-

@@ -1,6 +1,7 @@
 ---
 trigger: glob
-globs: ["site/components/motion/**", "site/lib/motion.js", "site/app/_components/**"]
+globs: "**/site/components/motion/**, **/site/lib/motion.js, **/site/app/_components/**"
+description: Ultra motion tier, Lenis smooth scroll, and mobile battery conservation.
 ---
 
 # Motion & Smooth Scroll Architecture (`ultra` Tier)
@@ -18,4 +19,3 @@ globs: ["site/components/motion/**", "site/lib/motion.js", "site/app/_components
   - Reduced motion is preferred (`window.matchMedia('(prefers-reduced-motion: reduce)').matches`).
 - **Graceful Fallback:** Mobile devices must use 100% native momentum scrolling with zero background ticker CPU/battery drain.
 - **Content Availability:** Content, hero CTAs, and forms must render immediately and remain interactive regardless of animation loading state.
-

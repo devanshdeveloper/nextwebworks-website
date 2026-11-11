@@ -1,6 +1,7 @@
 ---
 trigger: glob
-globs: ["site/lib/cms-kit/**", "site/app/actions/**"]
+globs: "**/site/lib/cms-kit/**, **/site/app/actions/**"
+description: Rules for class-based NWW CMS models, ISR caching, and Server Actions.
 ---
 
 # NWW CMS Integration & Data Access
@@ -17,4 +18,3 @@ globs: ["site/lib/cms-kit/**", "site/app/actions/**"]
 - **Inbound Inquiries:** Submit agency name, team size, dev work type, and scope to `ContactUs.submit`. Always sanitize inputs.
 - **Newsletter Signups (F-01 Strategy):** Validate email format and return a dummy success confirmation immediately to prevent unrouted backend schema errors.
 - **Error Handling:** Catch errors gracefully and return actionable error messages with fallback direct email (`contact@nextwebworks.in`) and WhatsApp links.
-

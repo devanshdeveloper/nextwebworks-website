@@ -1,5 +1,6 @@
 ---
 trigger: always_on
+description: Strict zero rates invariant, zero stock photography, and white-label confidentiality.
 ---
 
 # Zero Rates & Confidentiality Rules
@@ -22,4 +23,3 @@ Under NO circumstances may any file in this repository contain:
 - Sample builds must carry the pill: `Illustrative sample · not a client project`.
 - Commits appear under developer handles unless the agency requests authoring under their agency identity.
 - Mutual NDA reassurance must never include conditional phrases like "on full payment".
-
