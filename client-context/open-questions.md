@@ -1,132 +1,77 @@
 # Rolling Client Discovery & Refinement Questions
 
 **Project:** Next Web Works (`nextwebworks-website`)  
-**Status:** Active Rolling Brain & Context Expansion Queue (Batch 15: Component Blueprints, Breakpoints, Markdown Rendering & SEO Schemas)  
-**Active Open Questions Count:** 20  
+**Status:** Active Rolling Brain & Context Expansion Queue (Batch 16: Production Launch Readiness, Third-Party Credentials & Final Client Assets)  
+**Active Open Questions Count:** 7  
 
 ---
 
-### Category A: Stage 3 Component Architecture & Visual Schematics
+### Category A: Third-Party Credentials & Production Integrations (Batch 16)
 
-1. **Homepage Hero Schematic Nodes:** In the stylized architecture node card in the hero, what exact 4 connected nodes should represent the white-label workflow?
-   - **(A) (Recommended)** `Agency Brand / Client Spec` → `Next Web Works Engineering Layer` → `Next.js App Router & API` → `White-Label Deliverable (Client Portal / Site)` (connected with cobalt lines and subtle packet flow).
-   - **(B)** `Marketing Agency Brief` → `TypeScript Codebase` → `Isolated Staging Review` → `Handover Repository`.
-   - **(C)** `Figma / Requirements` → `Server-Rendered UI` → `Prisma + Postgres DB` → `Production Handover`.
+1. **Google Analytics 4 (GA4) Measurement ID:**
+   - **(A) (Recommended)** Provide the GA4 Measurement ID (`G-XXXXXXXXXX`) to be added to Vercel production environment variables (`NEXT_PUBLIC_GA4_ID`), enabling privacy-conscious web analytics via Next.js Third Parties.
+   - **(B)** Defer analytics setup until after initial marketing push.
+   - **(C)** Use an alternative privacy-first analytics provider (e.g., Plausible, PostHog, Cloudflare Web Analytics).
 
-2. **Navigation Bar Interaction & Sticky Behavior:** How should the persistent header behave across scroll depths?
-   - **(A) (Recommended)** Transparent at top of page; transitions smoothly to semi-opaque slate (`#0B0F19/80`) with `backdrop-blur-md` and 1px hairline border (`#1E293B`) once scrolled past 40px; "Book a 20-Min Call" CTA button remains permanently visible.
-   - **(B)** Solid dark background (`#0B0F19`) at all times with permanent 1px hairline border.
-   - **(C)** Auto-hiding header (slides up on scroll down, slides down on scroll up).
+2. **Inbound Lead Alerting & Email Dispatch (`Resend`):**
+   - **(A) (Recommended)** Provide your production `RESEND_API_KEY` to configure in Vercel environment variables so briefs submitted via `/contact` and homepage dispatch instant email notifications to `contact@nextwebworks.in` with reply-to set directly to the lead.
+   - **(B)** Direct all leads exclusively to Calendly and WhatsApp (`https://wa.me/917999934815`), disabling email form dispatch.
+   - **(C)** Route form submissions directly into NWW CMS `Lead` collection for webhook triage.
 
-3. **Pain-Point Card Graphic Accents:** Beside the titles of the 3 qualitative pain-point cards (*"The Freelancer Ghost"*, *"The Unbillable In-House Salary"*, *"The Costly Code Rewrite"*), what visual graphic should accompany each?
-   - **(A) (Recommended)** Minimalist monochrome Lucide icons with subtle slate badge containers (Ghost / UserX, Banknote / DollarSign, RefreshCw / Code2).
-   - **(B)** Abstract 2-color SVG wireframe glyphs showing broken timelines, cash drains, and tangled code loops.
-   - **(C)** Clean typography-only cards with oversized monospace numerals (01, 02, 03) in muted slate (`#64748B`).
-
-4. **Service Spec Drawer Expanded Content Layout:** When a visitor clicks *"View Technical Specs ↓"* on any of the 4 service cards, how should the inner content be structured?
-   - **(A) (Recommended)** Two-column structured drawer: Left column displays bulleted deliverables checklist; Right column displays technical architecture standards & typical deployment targets, followed by *"Scoped and quoted on your first call"*.
-   - **(B)** Single-column vertical checklist with bold section badges.
-   - **(C)** Accordion sub-tabs dividing "Deliverables", "Technology", and "Handover Package".
+3. **Google Search Console (GSC) Domain Indexing:**
+   - **(A) (Recommended)** Confirm Google Search Console property verification using the deployed live verification token (`https://nextwebworks.in/googleabbe0780e1c0ccb2.html`) and submit the live sitemap (`https://nextwebworks.in/sitemap.xml`).
+   - **(B)** Verify via DNS TXT record in your domain registrar instead.
+   - **(C)** Defer search console indexing until official launch announcement.
 
 ---
 
-### Category B: Responsive Breakpoints & Viewport Adaptation
+### Category B: Legal Entity, Founder Assets & Brand Refinements (Batch 16)
 
-5. **Tablet Viewport (768px–1024px) Grid Collapse:** For iPad and medium tablet viewports, how should the 2x2 service grid and 3-column matrices adapt?
-   - **(A) (Recommended)** 2x2 services grid remains 2 columns; 3-column cards (Pain Points, Partnership Models) collapse to 2 columns with the 3rd card spanning full width or 1-column vertical stack for optimal legibility.
-   - **(B)** Immediate collapse of all multi-column grids to a single vertical column below 1024px.
-   - **(C)** Horizontal scrolling swipe carousel on tablet viewports.
+4. **Proprietor Full Legal Name for Legal Policies (`/privacy` & `/terms`):**
+   - **(A) (Recommended)** Provide Devansh's full legal name to replace `[PROPRIETOR FULL LEGAL NAME - TO PROVIDE]` in the sole proprietorship legal declaration on `/privacy` and `/terms`.
+   - **(B)** Use `"Next Web Works Operations Team"` as the entity representative until legal registration paperwork is filed.
+   - **(C)** Omit proprietor name and list only `"Next Web Works, Indore, Madhya Pradesh, India"`.
 
-6. **Mobile Navigation Drawer Pattern (<768px):** When an agency founder taps the mobile hamburger menu icon, what interaction pattern should open?
-   - **(A) (Recommended)** Clean slide-down drawer beneath the header with dark blurred backdrop (`#0B0F19/95`), large tap-friendly links ($\ge 48$px height), and prominent "Book a 20-Min Call" primary button.
-   - **(B)** Full-screen modal overlay with high-contrast centered typographic navigation.
-   - **(C)** Slide-in drawer from the right screen edge.
+5. **Founder Story & Headshot on `/about`:**
+   - **(A) (Recommended)** Keep the current authentic, clean engineering narrative on `/about` and provide an authentic photo of Devansh (`devansh.jpg` or `founder.webp`, in-house authentic photo, zero stock) to replace `[FOUNDER HEADSHOT]`.
+   - **(B)** Keep typography-only layout without a founder photograph to maintain a minimalist technical lead feel.
+   - **(C)** Expand into an interview-style founder QA section.
 
-7. **Floating Mobile CTA Pill Scroll Threshold:** On mobile screens (<768px), at what scroll point should the floating bottom pill (*"Book a 20-Min Call →"*) fade in?
-   - **(A) (Recommended)** Fade in once the visitor scrolls past the hero section ($\approx 550$–600px scroll depth); automatically hide when the viewport enters the booking or contact form areas.
-   - **(B)** Visible immediately upon page load at the bottom of the screen.
-   - **(C)** Fade in after 50% of the page has been scrolled.
+6. **Calendly Meeting Duration & Copy Alignment:**
+   - **(A) (Recommended)** Update website copy across header, hero, and CTA banners from *"Book a 20-Min Call"* to *"Book a 30-Min Call"* to match the active Calendly event (`https://calendly.com/devanshkhetwani/30min`).
+   - **(B)** Retain *"Book a 20-Min Call"* copy and configure a dedicated 20-minute event on Calendly (`https://calendly.com/devanshkhetwani/20min`).
+   - **(C)** Use agnostic copy: *"Book an Intro Call"* or *"Book a Discovery Call"*.
 
-8. **Touch Target Sizing & Spacing Standards:** Across mobile layouts, how should interactive touch targets be protected against mis-taps?
-   - **(A) (Recommended)** Strict adherence to WCAG 2.5.5: all buttons, menu triggers, drawer expanders, and form inputs enforce a minimum height of 44px (recommended 48px on mobile) with at least 8px spacing between adjacent interactive elements.
-   - **(B)** 40px minimum touch target height.
-   - **(C)** Standard browser default button sizing.
-
----
-
-### Category C: Content Modeling & Seed Data Generation (Stage 5)
-
-9. **Blog Post Rich-Text Formatting:** Inside dynamic articles on `/blog/[slug]`, how should typography and elements be styled in the reader view?
-   - **(A) (Recommended)** High-contrast reading column (`max-w-3xl`), Plus Jakarta Sans headings with generous margins, Inter body (18px, 1.65 line height), blockquotes with 3px electric cobalt left border, and custom bulleted list markers.
-   - **(B)** Standard Tailwind `@tailwindcss/typography` (`prose prose-invert`) defaults.
-   - **(C)** Ultra-dense technical documentation layout with left-hand sticky table of contents.
-
-10. **Related Articles Widget on `/blog/[slug]`:** At the bottom of each blog article, how should next reading recommendations be presented?
-    - **(A) (Recommended)** 2-column card grid showing 2 related articles in the same category (or most recent posts fallback), each with category pill, title, 2-line summary, and reading time.
-    - **(B)** Simple textual "Previous Article" and "Next Article" directional links.
-    - **(C)** Single featured article card + primary CTA linking to `/book-a-call`.
-
-11. **Native Social Sharing Controls:** In blog post headers or footers, what sharing mechanisms should be provided?
-    - **(A) (Recommended)** Lightweight native Web Share API button (triggers native mobile OS share sheet) + 1-click "Copy Article Link" button with temporary toast confirmation; zero heavy external social tracking scripts.
-    - **(B)** Static icon links to LinkedIn and Twitter/X opening pre-populated share intents.
-    - **(C)** No share buttons; rely purely on visitors copying the browser address bar.
-
-12. **NWW CMS API Timeout / Fallback Strategy:** If the NWW CMS API endpoint experiences a network timeout or downtime during a build or page request, how should the blog feed behave?
-    - **(A) (Recommended)** Fallback gracefully to statically cached seed articles stored locally in `site/content/blog/` so the site never renders an empty state or error page.
-    - **(B)** Render a clean empty state card: *"Articles are being refreshed. Check back shortly or book an intro call."*
-    - **(C)** Trigger standard Next.js error boundary (`error.js`).
+7. **NWW CMS Content Population for Services & Portfolio:**
+   - **(A) (Recommended)** Populate dynamic entries in the NWW CMS under `Service` (5 technical capabilities) and `Portfolio` (ClassyMenu, CeramicSales, NWW CMS Kit) models; until populated, the site's high-fidelity static fallbacks continue serving with 100% uptime.
+   - **(B)** Keep static fallbacks as the permanent single source of truth in `site/content/` to maximize static build performance and eliminate external CMS build dependency.
+   - **(C)** Migrate all CMS data into localized MDX files.
 
 ---
 
-### Category D: SEO Technical Attributes & Canonical Hygiene (Stage 4)
+## Codified Decisions History (Resolved in Batches 01–15)
 
-13. **Dynamic OpenGraph Social Image Generation:** For articles on `/blog/[slug]`, how should OpenGraph social preview images (1200×630px) be generated?
-    - **(A) (Recommended)** Dynamic server-generated OG images via Next.js App Router `site/app/blog/[slug]/opengraph-image.jsx` rendering article title, category badge, and Next Web Works branding on deep slate canvas (`#0B0F19`).
-    - **(B)** Single static branded fallback OG image (`/opengraph-image.png`) used across all blog articles.
-    - **(C)** Manual image upload required for each article in CMS.
-
-14. **Structured Data `BreadcrumbList` Schema:** On sub-pages (`/services`, `/for-agencies`, `/work`, `/about`, `/blog`, `/blog/[slug]`), should JSON-LD include `BreadcrumbList` schema?
-    - **(A) (Recommended)** Yes, inject standard `BreadcrumbList` JSON-LD on all sub-routes to enhance search engine snippet hierarchy.
-    - **(B)** Include breadcrumbs only on dynamic blog articles (`/blog/[slug]`).
-    - **(C)** Omit breadcrumb schemas to keep structured data minimalist (`Organization` and `Service` only).
-
-15. **Image Alt-Text Standards for Technical Schematics:** For wireframe node diagrams and sample schematics, what alt-text standard should be enforced?
-    - **(A) (Recommended)** Precise architectural description (e.g. *"System architecture diagram showing Next.js App Router streaming data from Prisma ORM to an agency reporting dashboard"*); avoid decorative empty `alt=""`.
-    - **(B)** Short title-based alt tags (e.g. *"SaaS Analytics Architecture"*).
-    - **(C)** Mark all schematics as decorative (`aria-hidden="true"`).
-
-16. **AI Crawlers & Web Scrapers Policy (`robots.txt`):** In `site/app/robots.js`, how should AI training scrapers (e.g., GPTBot, CCBot, Google-Extended) be governed?
-    - **(A) (Recommended)** Standard search engine crawlers allowed (Googlebot, Bingbot); block aggressive non-search AI training scrapers (`User-agent: GPTBot`, `User-agent: CCBot`, `Disallow: /`) to preserve proprietary copy and runbooks.
-    - **(B)** Open to all crawlers without restrictions.
-    - **(C)** Standard default `robots.txt` without custom bot rules.
-
----
-
-### Category E: Testing, Verification & Review Presentation
-
-17. **Client Review Hub Viewport Toggle Presets:** In the Gate 2 comparison portal (`gate-2-design-theory/index.html`), what viewport simulation widths should be toggleable?
-    - **(A) (Recommended)** Desktop 1440px (full canvas layout), Tablet 768px (grid collapse check), Mobile 375px (iPhone standard viewport).
-    - **(B)** Desktop 1280px and Mobile 390px only.
-    - **(C)** Full-width fluid responsive container with browser resize instructions.
-
-18. **Gate 2 Variation Review Timeframe & Revision Rounds:** To keep pipeline momentum brisk while ensuring thorough client alignment, how should variation reviews be capped?
-    - **(A) (Recommended)** Up to 2 revision rounds on the selected variation, with consolidated feedback provided via email/chat.
-    - **(B)** Single revision round only.
-    - **(C)** Unlimited revision iterations.
-
-19. **Local File Navigation vs Hosted Previews:** For internal testing and preview verification, should the variation previews open cleanly via offline `file://` protocols without broken fonts or assets?
-    - **(A) (Recommended)** Yes, 100% self-contained HTML with embedded styles, SVGs, and system/local font stacks, guaranteed to function offline via `file://` or preview server.
-    - **(B)** Require a local HTTP server (`node preview.mjs`) for viewing.
-    - **(C)** Rely exclusively on the live GitHub Pages deployment.
-
-20. **Stage 3 Immediate Output Scope:** Upon your confirmation of the preferred visual variation (V1, V2, or V3), what immediate deliverable should open Stage 3?
-    - **(A) (Recommended)** `project-docs/client-review/gate-3-page-list/page-list.md` detailing all 11 core routes, visual anchors, component candidates, and build tracker checkboxes.
-    - **(B)** Immediate generation of Next.js folder structure in `site/`.
-    - **(C)** Draft wireframe layouts for all sub-pages before documenting the route master list.
-
----
-
-## Codified Decisions History (Resolved in Batches 01–14)
+### Batch 15: Component Blueprints, Breakpoints, Markdown Rendering & SEO Schemas (Codified & Implemented)
+- **Hero Schematic Nodes:** Implemented 4 connected nodes (`Agency Brand / Client Spec` → `Next Web Works Engineering Layer` → `Next.js App Router & API` → `White-Label Deliverable`) with cobalt lines and subtle packet flow in `HeroSection.js`.
+- **Navigation Bar Sticky Behavior:** Implemented transparent top header transitioning smoothly to semi-opaque slate (`#0B0F19/80`) with `backdrop-blur-md` and 1px hairline border once scrolled past 40px; persistent "Book a Call" CTA and light/dark theme toggle in `Nav.js`.
+- **Pain-Point Card Graphic Accents:** Minimalist monochrome icon badges (`UserX`, `Banknote`, `RefreshCw`) implemented in `PainPointsSection.js`.
+- **Service Spec Drawer Expanded Content Layout:** Two-column structured drawer with deliverables checklist, architecture standards, and *"Scoped and quoted on your first call"* implemented in `ServicesSection.js`.
+- **Responsive Viewport Grids & Collapse:** 2x2 services grid remains 2 columns on tablet; 3-column matrices collapse to 2 columns with 3rd card spanning full width.
+- **Mobile Navigation Drawer Pattern:** Slide-down drawer beneath header with theme toggle, high-contrast links ($\ge 48$px), and primary CTA button.
+- **Floating Mobile CTA Pill:** Persistent bottom pill (*"Book a Call →"*) appearing after 240px scroll depth on mobile screens; strictly hidden on booking, contact, and legal routes.
+- **Touch Target Standards:** Strict WCAG 2.5.5 compliance ($\ge 44$px height) enforced across all buttons, inputs, and drawer triggers.
+- **Blog Reader Rich-Text Formatting:** High-contrast reading column (`max-w-3xl`) with `prose prose-slate dark:prose-invert` styling, sanitized via `cleanArticleHtml()`.
+- **Related Articles Widget:** 2-column card grid showing related posts in same category with reading times in `BlogRelatedSection.js`.
+- **Native Social Sharing:** 1-click native Web Share API and clipboard copy link button with toast feedback.
+- **CMS Fallback Strategy:** Graceful fallback to static cached seed content for blog, services, and portfolio routes when CMS is unreachable.
+- **OpenGraph & Dynamic Metadata:** Server-generated metadata, canonical URLs, and structured JSON-LD (`Organization`, `Service`, `BlogPosting`, `CreativeWork`) with zero rates.
+- **BreadcrumbList Schema:** Injected `BreadcrumbList` JSON-LD across all dynamic sub-routes (`/services/[slug]`, `/work/[slug]`, `/blog/[slug]`).
+- **Image Alt-Text Standards:** Architectural descriptions enforced for all technical diagrams and schematics.
+- **AI Scraper Governance:** Enforced in `site/app/robots.js` allowing standard search crawlers while blocking non-search AI scrapers (`GPTBot`, `CCBot`).
+- **Minimum 5 Sections Rule:** Enforced via `.agents/rules/min-sections-per-page.md` and `check-structure.mjs`, requiring all public pages to compose $\ge 5$ modular section components.
+- **16:9 Deterministic Blog SVG Covers:** 4 theme-aware SVG motifs (`agency-growth`, `project-scoping`, `architecture`, `general`) rendered inline under 5.0 KB.
+- **Legal HTML Rendering:** Policy pages (`/privacy` and `/terms`) parse CMS content through `cleanArticleHtml` and render formatted semantic HTML via `dangerouslySetInnerHTML`.
+- **Calendly Embed:** Embedded inline Calendly widget (`https://calendly.com/devanshkhetwani/30min`) on `/book-a-call`.
 
 ### Commercial Terms & Zero-Rates Policy
 - **Zero Rates Policy:** NO rates, prices, "from" figures, yearly maintenance fees, retainer figures, volume discounts, pilot discounts, rush percentages, or payment-split figures anywhere on the public website. Pricing is discussed directly on discovery calls.
