@@ -62,6 +62,69 @@ if (manifest.preLaunchGuard && manifest.preLaunchGuard.enabled) {
   warnings.push('Manifest does not declare an active preLaunchGuard.');
 }
 
+// 3b. Verify Motion Tier & Component Stack in manifest
+const validTiers = ['disabled', 'low', 'medium', 'high', 'max', 'ultra'];
+if (manifest.motionTier) {
+  if (!validTiers.includes(manifest.motionTier.toLowerCase())) {
+    errors.push(`Manifest specifies invalid motionTier: '${manifest.motionTier}'. Must be one of: ${validTiers.join(', ')}`);
+  } else {
+    const stack = manifest.motionStack || {};
+    const showpieceCount = Array.isArray(stack.showpieces) ? stack.showpieces.length : 0;
+    if (showpieceCount > 2) {
+      errors.push(`Manifest exceeds showpiece cap: declared ${showpieceCount} showpieces (maximum 2 allowed).`);
+    } else {
+      console.log(`✓ Motion Tier verified: ${manifest.motionTier} (System: ${stack.systemLayer || 'none'}, Showpieces: ${showpieceCount})`);
+      checksPassed++;
+    }
+  }
+} else {
+  warnings.push('Manifest does not declare a motionTier (defaults to medium).');
+}
+
+// 3c. Verify Workspace MCP Server Config (site/.agents/mcp_config.json)
+const mcpConfigPath = path.join(siteDir, '.agents', 'mcp_config.json');
+if (fs.existsSync(mcpConfigPath)) {
+  try {
+    const rawMcp = fs.readFileSync(mcpConfigPath, 'utf-8');
+    const mcpConfig = JSON.parse(rawMcp);
+    if (!mcpConfig.mcpServers || typeof mcpConfig.mcpServers !== 'object') {
+      errors.push(`Invalid MCP config at ${mcpConfigPath}: missing top-level 'mcpServers' object.`);
+    } else {
+      const serverNames = Object.keys(mcpConfig.mcpServers);
+      // Verify zero exposed secret tokens or API keys (must use ${ENV_VAR} substitution)
+      let hasHardcodedSecret = false;
+      for (const [srvName, srvDef] of Object.entries(mcpConfig.mcpServers)) {
+        if (srvDef && srvDef.env && typeof srvDef.env === 'object') {
+          for (const [envKey, envVal] of Object.entries(srvDef.env)) {
+            if (typeof envVal === 'string' && envVal.length > 0) {
+              if (!(envVal.startsWith('${') && envVal.endsWith('}'))) {
+                errors.push(`Security violation in ${mcpConfigPath}: server '${srvName}' has potential hardcoded secret in env.${envKey}. Use '\${${envKey}}' placeholder instead.`);
+                hasHardcodedSecret = true;
+              }
+            }
+          }
+        }
+        if (srvDef && srvDef.headers && typeof srvDef.headers === 'object') {
+          for (const [hKey, hVal] of Object.entries(srvDef.headers)) {
+            if (typeof hVal === 'string' && hVal.length > 0) {
+              if (!(hVal.startsWith('${') && hVal.endsWith('}'))) {
+                errors.push(`Security violation in ${mcpConfigPath}: server '${srvName}' has potential hardcoded secret in header '${hKey}'. Use '\${...}' placeholder instead.`);
+                hasHardcodedSecret = true;
+              }
+            }
+          }
+        }
+      }
+      if (!hasHardcodedSecret) {
+        console.log(`✓ Workspace MCP Config verified: ${serverNames.length} server(s) configured (${serverNames.join(', ') || 'none'}), 0 secrets exposed.`);
+        checksPassed++;
+      }
+    }
+  } catch (e) {
+    errors.push(`Failed to parse MCP config at ${mcpConfigPath}: ${e.message}`);
+  }
+}
+
 // 4. Verify pages in manifest against page-specs/<slug>/page.md
 if (!Array.isArray(manifest.pages) || manifest.pages.length === 0) {
   errors.push('Manifest contains no pages.');

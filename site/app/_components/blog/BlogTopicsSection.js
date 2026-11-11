@@ -1,5 +1,6 @@
 // section: blog-topics
-import Link from 'next/link';
+import MotionFadeIn from '@/components/motion/MotionFadeIn.js';
+import MotionStagger from '@/components/motion/MotionStagger.js';
 
 export default function BlogTopicsSection() {
   const topics = [
@@ -27,7 +28,7 @@ export default function BlogTopicsSection() {
       className="py-12 md:py-16 border-b border-slate-200 dark:border-[#1E293B]/60 bg-slate-50 dark:bg-[#0B0F19] transition-colors"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="max-w-2xl space-y-2">
+        <MotionFadeIn y={15} className="max-w-2xl space-y-2">
           <span className="font-mono text-xs uppercase tracking-wider text-[#10B981] font-semibold">
             Editorial Focus
           </span>
@@ -37,13 +38,18 @@ export default function BlogTopicsSection() {
           <p className="text-sm text-slate-600 dark:text-[#94A3B8]">
             Practical guides built on real production deployments, not theoretical frameworks.
           </p>
-        </div>
+        </MotionFadeIn>
 
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <MotionStagger
+          itemSelector=".topic-card"
+          stagger={0.08}
+          y={15}
+          className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6"
+        >
           {topics.map((t) => (
             <div
               key={t.title}
-              className="rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0F172A] p-6 shadow-xs space-y-3"
+              className="topic-card rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0F172A] p-6 shadow-xs space-y-3 hover:-translate-y-0.5 hover:border-[#2563EB]/50 transition-all"
             >
               <span className="font-mono text-xs text-[#2563EB] dark:text-[#60A5FA] font-medium">
                 {t.tag}
@@ -56,9 +62,8 @@ export default function BlogTopicsSection() {
               </p>
             </div>
           ))}
-        </div>
+        </MotionStagger>
       </div>
     </section>
   );
 }
-

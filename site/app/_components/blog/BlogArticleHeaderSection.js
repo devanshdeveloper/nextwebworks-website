@@ -1,6 +1,7 @@
 // section: blog-article-header
 import Link from 'next/link';
 import { SvgScene } from '@/lib/svg/index.js';
+import MotionFadeIn from '@/components/motion/MotionFadeIn.js';
 
 export default function BlogArticleHeaderSection({ post, category }) {
   return (
@@ -18,7 +19,7 @@ export default function BlogArticleHeaderSection({ post, category }) {
           <span className="text-[#2563EB] dark:text-[#60A5FA] font-semibold">{category}</span>
         </nav>
 
-        <div className="space-y-4">
+        <MotionFadeIn y={20} className="space-y-4">
           <span className="font-mono text-xs font-semibold text-[#10B981] uppercase tracking-wider">
             {category}
           </span>
@@ -28,7 +29,7 @@ export default function BlogArticleHeaderSection({ post, category }) {
           <p className="font-mono text-xs text-slate-500 dark:text-[#64748B]">
             Published on {new Date(post.createdAt || '2026-11-11').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} · By Devansh, Principal Engineer
           </p>
-        </div>
+        </MotionFadeIn>
 
         {/* 16:9 Theme-Aware Vector Cover Art */}
         <div className="w-full aspect-[16/9] overflow-hidden rounded-2xl border border-slate-200 dark:border-[#1E293B]">
@@ -44,4 +45,3 @@ export default function BlogArticleHeaderSection({ post, category }) {
     </section>
   );
 }
-

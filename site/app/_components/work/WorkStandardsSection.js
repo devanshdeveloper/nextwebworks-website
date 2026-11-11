@@ -1,4 +1,7 @@
 // section: work-standards
+import MotionFadeIn from '@/components/motion/MotionFadeIn.js';
+import MotionStagger from '@/components/motion/MotionStagger.js';
+
 export default function WorkStandardsSection() {
   const standards = [
     {
@@ -30,7 +33,7 @@ export default function WorkStandardsSection() {
       className="py-12 md:py-16 border-b border-slate-200 dark:border-[#1E293B]/60 bg-slate-50 dark:bg-[#0B0F19] transition-colors"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="max-w-2xl space-y-2">
+        <MotionFadeIn y={15} className="max-w-2xl space-y-2">
           <span className="font-mono text-xs uppercase tracking-wider text-[#10B981] font-semibold">
             Engineering Verification
           </span>
@@ -40,13 +43,18 @@ export default function WorkStandardsSection() {
           <p className="text-sm text-slate-600 dark:text-[#94A3B8]">
             We build and test against strict architectural constraints before any client review link is shared.
           </p>
-        </div>
+        </MotionFadeIn>
 
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <MotionStagger
+          itemSelector=".standard-tile"
+          stagger={0.08}
+          y={20}
+          className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+        >
           {standards.map((std) => (
             <div
               key={std.title}
-              className="rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0F172A] p-6 shadow-xs space-y-3 hover:-translate-y-0.5 hover:border-[#2563EB]/50 transition-all"
+              className="standard-tile rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0F172A] p-6 shadow-xs space-y-3 hover:-translate-y-0.5 hover:border-[#2563EB]/50 transition-all"
             >
               <span className="font-mono text-xs text-[#2563EB] dark:text-[#60A5FA] font-medium">
                 {std.tag}
@@ -59,9 +67,8 @@ export default function WorkStandardsSection() {
               </p>
             </div>
           ))}
-        </div>
+        </MotionStagger>
       </div>
     </section>
   );
 }
-

@@ -1,5 +1,7 @@
 // section: work-process
 import { workContent } from '@/content/work.js';
+import MotionFadeIn from '@/components/motion/MotionFadeIn.js';
+import MotionStagger from '@/components/motion/MotionStagger.js';
 
 export default function WorkProcessSection() {
   const { process } = workContent;
@@ -11,7 +13,7 @@ export default function WorkProcessSection() {
       className="py-16 md:py-24 border-b border-slate-200 dark:border-[#1E293B]/60 bg-white dark:bg-[#0B0F19] transition-colors"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="max-w-2xl space-y-3">
+        <MotionFadeIn y={20} className="max-w-2xl space-y-3">
           <span className="font-mono text-xs uppercase tracking-wider text-[#10B981] font-semibold">
             {process.eyebrow}
           </span>
@@ -21,14 +23,19 @@ export default function WorkProcessSection() {
           <p className="text-sm text-slate-600 dark:text-[#94A3B8]">
             {process.description}
           </p>
-        </div>
+        </MotionFadeIn>
 
-        {/* 4-Stage Connected Node Pipeline */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-4 gap-6 relative">
+        {/* 4-Stage Connected Node Pipeline with Stagger */}
+        <MotionStagger
+          itemSelector=".process-card"
+          stagger={0.12}
+          y={20}
+          className="mt-12 grid grid-cols-1 md:grid-cols-4 gap-6 relative"
+        >
           {process.steps.map((item) => (
             <div
               key={item.step}
-              className="relative flex flex-col justify-between rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-slate-50 dark:bg-[#0F172A] p-6 shadow-xs space-y-4 hover:border-[#2563EB]/50 transition-colors"
+              className="process-card relative flex flex-col justify-between rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-slate-50 dark:bg-[#0F172A] p-6 shadow-xs space-y-4 hover:border-[#2563EB]/50 transition-colors"
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
@@ -55,7 +62,7 @@ export default function WorkProcessSection() {
               </div>
             </div>
           ))}
-        </div>
+        </MotionStagger>
       </div>
     </section>
   );

@@ -2,6 +2,8 @@
 import Link from 'next/link';
 import { SvgScene } from '@/lib/svg/index.js';
 import { servicesContent } from '@/content/services.js';
+import MotionFadeIn from '@/components/motion/MotionFadeIn.js';
+import MotionStagger from '@/components/motion/MotionStagger.js';
 
 export default function ServicesCapabilitiesSection() {
   const { capabilitiesHeader, drawers } = servicesContent;
@@ -14,7 +16,7 @@ export default function ServicesCapabilitiesSection() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl space-y-3">
+        <MotionFadeIn y={20} className="max-w-3xl space-y-3">
           <span className="font-mono text-xs uppercase tracking-wider text-[#10B981] font-semibold">
             {capabilitiesHeader.eyebrow}
           </span>
@@ -24,10 +26,15 @@ export default function ServicesCapabilitiesSection() {
           <p className="text-base leading-relaxed text-slate-600 dark:text-[#94A3B8]">
             {capabilitiesHeader.description}
           </p>
-        </div>
+        </MotionFadeIn>
 
-        {/* 5-Platform Architecture Bento Grid */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
+        {/* 5-Platform Architecture Bento Grid with Stagger */}
+        <MotionStagger
+          itemSelector=".capability-card"
+          stagger={0.1}
+          y={24}
+          className="mt-12 grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch"
+        >
           {drawers.map((item, index) => {
             const isWide = index === 0 || index === 1;
             const colSpan = isWide ? 'md:col-span-6' : 'md:col-span-4';
@@ -35,7 +42,7 @@ export default function ServicesCapabilitiesSection() {
             return (
               <article
                 key={item.id}
-                className={`flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0F172A] p-6 md:p-8 shadow-xs transition-all hover:-translate-y-1 hover:border-[#2563EB]/60 hover:shadow-md ${colSpan}`}
+                className={`capability-card flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0F172A] p-6 md:p-8 shadow-xs transition-all hover:-translate-y-1 hover:border-[#2563EB]/60 hover:shadow-md ${colSpan}`}
               >
                 <div className="space-y-5">
                   {/* Category SVG Diagram */}
@@ -87,7 +94,7 @@ export default function ServicesCapabilitiesSection() {
               </article>
             );
           })}
-        </div>
+        </MotionStagger>
       </div>
     </section>
   );

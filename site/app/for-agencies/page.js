@@ -3,6 +3,7 @@ import ContactFormSection from '../_components/ContactFormSection.js';
 import FAQSection from '../_components/FAQSection.js';
 import WorkflowSection from '../_components/WorkflowSection.js';
 import PartnershipModelsSection from './_components/PartnershipModelsSection.js';
+import MotionFadeIn from '@/components/motion/MotionFadeIn.js';
 import Schema from '@/components/seo/Schema.js';
 import { forAgenciesContent } from '@/content/forAgencies.js';
 
@@ -30,7 +31,7 @@ export default function ForAgenciesPage() {
   return (
     <div className="py-8">
       <Schema schema={[faqSchema]} />
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-8 pb-4">
+      <MotionFadeIn y={20} className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-8 pb-4">
         <span className="font-mono text-xs uppercase tracking-wider text-[#10B981] font-semibold">Agency Partnership</span>
         <h1 className="mt-2 font-heading text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl">
           Built for Agency Margins & Client Peace of Mind
@@ -38,7 +39,7 @@ export default function ForAgenciesPage() {
         <p className="mt-4 max-w-2xl text-base text-slate-600 dark:text-[#94A3B8]">
           Say yes to complex client dev pitches without taking on permanent payroll or freelancer risk.
         </p>
-      </div>
+      </MotionFadeIn>
       <PartnershipModelsSection />
       <WorkflowSection content={forAgenciesContent.workflow} />
       <FAQSection content={forAgenciesContent.faqs} />

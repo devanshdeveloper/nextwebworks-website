@@ -1,4 +1,6 @@
 // section: blog-hero
+import MotionFadeIn from '@/components/motion/MotionFadeIn.js';
+
 export default function BlogHeroSection() {
   return (
     <section
@@ -7,7 +9,7 @@ export default function BlogHeroSection() {
       className="py-16 md:py-20 border-b border-slate-200 dark:border-[#1E293B]/60 bg-white dark:bg-[#0B0F19] transition-colors"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl space-y-4">
+        <MotionFadeIn y={20} className="max-w-3xl space-y-4">
           <span className="font-mono text-xs uppercase tracking-wider text-[#10B981] font-semibold">
             Engineering Digest
           </span>
@@ -17,9 +19,8 @@ export default function BlogHeroSection() {
           <p className="text-base leading-relaxed text-slate-600 dark:text-[#94A3B8]">
             Pragmatic breakdowns on fixed-price scoping, platform tradeoffs, and white-label engineering delivery without hiring overhead.
           </p>
-        </div>
+        </MotionFadeIn>
       </div>
     </section>
   );
 }
-

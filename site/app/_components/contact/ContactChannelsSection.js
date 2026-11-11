@@ -1,4 +1,6 @@
 // section: contact-channels
+import MotionFadeIn from '@/components/motion/MotionFadeIn.js';
+
 export default function ContactChannelsSection() {
   return (
     <section
@@ -7,7 +9,10 @@ export default function ContactChannelsSection() {
       className="py-12 md:py-16 border-b border-slate-200 dark:border-[#1E293B]/60 bg-white dark:bg-[#0B0F19] transition-colors"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-slate-50 dark:bg-[#0F172A] p-8 md:p-10 shadow-xs grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+        <MotionFadeIn
+          y={15}
+          className="rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-slate-50 dark:bg-[#0F172A] p-8 md:p-10 shadow-xs grid grid-cols-1 md:grid-cols-3 gap-6 text-center"
+        >
           <div className="space-y-2">
             <span className="font-mono text-xs uppercase tracking-wider text-[#2563EB] dark:text-[#60A5FA] font-semibold">
               DIRECT EMAIL
@@ -43,9 +48,8 @@ export default function ContactChannelsSection() {
               IST Business Hours: Mon–Fri, 10:00–19:00
             </p>
           </div>
-        </div>
+        </MotionFadeIn>
       </div>
     </section>
   );
 }
-

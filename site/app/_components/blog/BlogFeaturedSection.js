@@ -1,6 +1,7 @@
 // section: blog-featured
 import Link from 'next/link';
 import { SvgScene } from '@/lib/svg/index.js';
+import MotionFadeIn from '@/components/motion/MotionFadeIn.js';
 
 export default function BlogFeaturedSection({ featuredPost }) {
   if (!featuredPost) return null;
@@ -14,13 +15,17 @@ export default function BlogFeaturedSection({ featuredPost }) {
       className="py-12 md:py-16 border-b border-slate-200 dark:border-[#1E293B]/60 bg-slate-50 dark:bg-[#0B0F19] transition-colors"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-6">
+        <MotionFadeIn y={15} className="mb-6">
           <span className="font-mono text-xs uppercase tracking-wider text-[#2563EB] dark:text-[#60A5FA] font-semibold">
             Featured Playbook
           </span>
-        </div>
+        </MotionFadeIn>
 
-        <div className="overflow-hidden rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0F172A] shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-0 items-center">
+        <MotionFadeIn
+          y={24}
+          duration={0.8}
+          className="overflow-hidden rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0F172A] shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-0 items-center"
+        >
           <div className="lg:col-span-7 aspect-[16/9] w-full overflow-hidden border-b lg:border-b-0 lg:border-r border-slate-200 dark:border-[#1E293B]">
             <SvgScene
               kind="blog"
@@ -53,9 +58,8 @@ export default function BlogFeaturedSection({ featuredPost }) {
               </Link>
             </div>
           </div>
-        </div>
+        </MotionFadeIn>
       </div>
     </section>
   );
 }
-

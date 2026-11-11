@@ -4,6 +4,9 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import MotionFadeIn from '@/components/motion/MotionFadeIn.js';
+import MotionTilt from '@/components/motion/MotionTilt.js';
+import MotionMagnetic from '@/components/motion/MotionMagnetic.js';
 
 export default function HeroSection({ content }) {
   const router = useRouter();
@@ -11,7 +14,6 @@ export default function HeroSection({ content }) {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Show mobile pill after scrolling down 240px
       if (window.scrollY > 240) {
         setShowMobilePill(true);
       } else {
@@ -58,7 +60,7 @@ export default function HeroSection({ content }) {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center">
           {/* Left Column: Value Proposition */}
-          <div className="lg:col-span-7 space-y-6 text-left">
+          <MotionFadeIn y={24} duration={0.8} className="lg:col-span-7 space-y-6 text-left">
             {/* Eyebrow badge */}
             <div className="inline-flex items-center gap-2 rounded-full border border-slate-300 dark:border-[#1E293B] bg-white dark:bg-[#0F172A] px-3.5 py-1.5 text-xs font-mono text-slate-800 dark:text-[#E2E8F0] shadow-xs">
               <span className="h-2 w-2 rounded-full bg-[#10B981] animate-pulse" />
@@ -78,12 +80,14 @@ export default function HeroSection({ content }) {
 
             {/* Dual CTAs (primary + secondary) */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
-              <Link
-                href={content.primaryCta.href}
-                className="inline-flex items-center justify-center rounded-lg bg-[#2563EB] px-6 py-3.5 text-base font-medium text-white shadow-sm hover:bg-[#1D4ED8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB] focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-[#0B0F19] transition-all duration-200"
-              >
-                {content.primaryCta.text}
-              </Link>
+              <MotionMagnetic>
+                <Link
+                  href={content.primaryCta.href}
+                  className="inline-flex w-full sm:w-auto items-center justify-center rounded-lg bg-[#2563EB] px-6 py-3.5 text-base font-medium text-white shadow-sm hover:bg-[#1D4ED8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB] focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-[#0B0F19] transition-all duration-200"
+                >
+                  {content.primaryCta.text}
+                </Link>
+              </MotionMagnetic>
               <a
                 href={content.secondaryCta.href}
                 onClick={handleSecondaryCtaClick}
@@ -105,11 +109,14 @@ export default function HeroSection({ content }) {
                 <span className="text-[#10B981]">✓</span> Full IP ownership
               </span>
             </div>
-          </div>
+          </MotionFadeIn>
 
-          {/* Right Column: Architectural Node Schematic */}
+          {/* Right Column: Architectural Node Schematic with 60fps 3D Cursor Tilt */}
           <div className="lg:col-span-5">
-            <div className="relative rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-slate-50 dark:bg-[#0F172A]/90 p-6 shadow-xl backdrop-blur-sm transition-colors">
+            <MotionTilt
+              maxTilt={12}
+              className="relative rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-slate-50 dark:bg-[#0F172A]/90 p-6 shadow-xl backdrop-blur-sm transition-colors"
+            >
               <div className="flex items-center justify-between border-b border-slate-200 dark:border-[#1E293B] pb-4 mb-5">
                 <div className="flex items-center gap-2">
                   <span className="h-3 w-3 rounded-full bg-[#EF4444]/80" />
@@ -160,7 +167,7 @@ export default function HeroSection({ content }) {
                   <p className="text-xs text-slate-500 dark:text-[#94A3B8] mt-0.5">Vercel · AWS · DigitalOcean · 100% Client IP</p>
                 </div>
               </div>
-            </div>
+            </MotionTilt>
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 // section: blog-article-body
 import Link from 'next/link';
+import MotionFadeIn from '@/components/motion/MotionFadeIn.js';
 
 export default function BlogArticleBodySection({ cleanContent, callout }) {
   const box = callout || {
@@ -17,7 +18,7 @@ export default function BlogArticleBodySection({ cleanContent, callout }) {
     >
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 space-y-8">
         {/* Mid-Article Agency Callout Box */}
-        <div className="rounded-xl border border-[#2563EB]/40 bg-slate-50 dark:bg-[#0F172A] p-6 text-sm space-y-2">
+        <MotionFadeIn y={15} className="rounded-xl border border-[#2563EB]/40 bg-slate-50 dark:bg-[#0F172A] p-6 text-sm space-y-2">
           <p className="font-semibold text-slate-900 dark:text-white">
             {box.title}
           </p>
@@ -29,9 +30,9 @@ export default function BlogArticleBodySection({ cleanContent, callout }) {
               {box.cta}
             </Link>
           </div>
-        </div>
+        </MotionFadeIn>
 
-        {/* Clean Sanitized Article Content */}
+        {/* Clean Sanitized Article Content (Static for Reading Comfort) */}
         <div
           className="prose prose-slate dark:prose-invert max-w-none text-sm leading-relaxed text-slate-700 dark:text-[#CBD5E1]"
           dangerouslySetInnerHTML={{ __html: cleanContent }}
@@ -40,4 +41,3 @@ export default function BlogArticleBodySection({ cleanContent, callout }) {
     </section>
   );
 }
-

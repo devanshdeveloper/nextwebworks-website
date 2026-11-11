@@ -1,6 +1,9 @@
 // section: service-detail-hero
 import Link from 'next/link';
 import { SvgScene } from '@/lib/svg/index.js';
+import MotionFadeIn from '@/components/motion/MotionFadeIn.js';
+import MotionMagnetic from '@/components/motion/MotionMagnetic.js';
+import MotionTilt from '@/components/motion/MotionTilt.js';
 
 const SERVICE_PILLS = {
   websites: ['FIGMA 1:1 PRECISION', 'GREEN CORE WEB VITALS', 'EDITORIAL WORKFLOWS'],
@@ -31,7 +34,7 @@ export default function ServiceDetailHeroSection({ service }) {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           {/* Left Column */}
-          <div className="lg:col-span-7 space-y-5">
+          <MotionFadeIn y={24} duration={0.8} className="lg:col-span-7 space-y-5">
             <div className="flex flex-wrap items-center gap-3">
               <span className="font-mono text-xs uppercase tracking-wider text-[#10B981] font-semibold">
                 Platform Specification
@@ -62,12 +65,14 @@ export default function ServiceDetailHeroSection({ service }) {
             </div>
 
             <div className="pt-4 flex flex-wrap items-center gap-4">
-              <Link
-                href="/book-a-call"
-                className="rounded-lg bg-[#2563EB] px-6 py-3 text-xs font-semibold text-white shadow-sm hover:bg-[#1D4ED8] transition-all hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
-              >
-                Scope {service.title} With Engineering →
-              </Link>
+              <MotionMagnetic>
+                <Link
+                  href="/book-a-call"
+                  className="rounded-lg bg-[#2563EB] px-6 py-3 text-xs font-semibold text-white shadow-sm hover:bg-[#1D4ED8] transition-all hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
+                >
+                  Scope {service.title} With Engineering →
+                </Link>
+              </MotionMagnetic>
               <Link
                 href="/services"
                 className="rounded-lg border border-slate-200 dark:border-[#1E293B] bg-slate-50 dark:bg-[#0F172A] px-5 py-3 text-xs font-semibold text-slate-700 dark:text-[#94A3B8] hover:text-slate-900 dark:hover:text-white transition-all hover:-translate-y-0.5"
@@ -75,17 +80,22 @@ export default function ServiceDetailHeroSection({ service }) {
                 ← Back to All Services
               </Link>
             </div>
-          </div>
+          </MotionFadeIn>
 
-          {/* Right Column: Deterministic Service SVG Scene */}
-          <div className="lg:col-span-5 aspect-[16/10] w-full overflow-hidden rounded-2xl border border-slate-200 dark:border-[#1E293B] shadow-sm">
-            <SvgScene
-              kind="service"
-              category={service.title}
-              slug={serviceId}
-              aspectRatio="16/10"
-              ariaLabel={`${service.title} Architecture Schematic`}
-            />
+          {/* Right Column: Deterministic Service SVG Scene with 3D Tilt */}
+          <div className="lg:col-span-5">
+            <MotionTilt
+              maxTilt={10}
+              className="aspect-[16/10] w-full overflow-hidden rounded-2xl border border-slate-200 dark:border-[#1E293B] shadow-sm"
+            >
+              <SvgScene
+                kind="service"
+                category={service.title}
+                slug={serviceId}
+                aspectRatio="16/10"
+                ariaLabel={`${service.title} Architecture Schematic`}
+              />
+            </MotionTilt>
           </div>
         </div>
       </div>

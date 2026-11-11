@@ -1,11 +1,14 @@
 // section: about-s2-principles
+import MotionFadeIn from '@/components/motion/MotionFadeIn.js';
+import MotionStagger from '@/components/motion/MotionStagger.js';
+
 export default function AboutPrinciplesSection({ content }) {
   return (
     <section data-section="about-s2-principles" className="py-16 md:py-24 border-t border-slate-200 dark:border-[#1E293B]/60 transition-colors">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-20">
         {/* 4 Core Engineering Principles */}
         <div>
-          <div className="max-w-3xl space-y-3">
+          <MotionFadeIn y={20} className="max-w-3xl space-y-3">
             <span className="font-mono text-xs uppercase tracking-wider text-[#10B981] font-semibold">
               Operational Standards
             </span>
@@ -15,13 +18,18 @@ export default function AboutPrinciplesSection({ content }) {
             <p className="text-sm text-slate-600 dark:text-[#94A3B8]">
               The architectural rules and client commitments that govern every line of code we ship.
             </p>
-          </div>
+          </MotionFadeIn>
 
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <MotionStagger
+            itemSelector=".principle-card"
+            stagger={0.08}
+            y={20}
+            className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          >
             {content.principles.map((principle) => (
               <div
                 key={principle.number}
-                className="flex flex-col justify-between rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0F172A] p-6 shadow-xs transition-colors"
+                className="principle-card flex flex-col justify-between rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0F172A] p-6 shadow-xs transition-colors hover:-translate-y-0.5 hover:border-[#2563EB]/50"
               >
                 <div className="space-y-3">
                   <span className="font-mono text-xs font-bold text-[#2563EB] dark:text-[#60A5FA]">
@@ -36,12 +44,12 @@ export default function AboutPrinciplesSection({ content }) {
                 </div>
               </div>
             ))}
-          </div>
+          </MotionStagger>
         </div>
 
         {/* 4 What We Do NOT Do Boundaries */}
         <div>
-          <div className="max-w-3xl space-y-3">
+          <MotionFadeIn y={20} className="max-w-3xl space-y-3">
             <span className="font-mono text-xs uppercase tracking-wider text-rose-500 font-semibold">
               Clear Boundaries
             </span>
@@ -51,13 +59,18 @@ export default function AboutPrinciplesSection({ content }) {
             <p className="text-sm text-slate-600 dark:text-[#94A3B8]">
               We protect our partners by being transparent about what we deliberately refuse to do.
             </p>
-          </div>
+          </MotionFadeIn>
 
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <MotionStagger
+            itemSelector=".boundary-card"
+            stagger={0.08}
+            y={20}
+            className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6"
+          >
             {content.boundaries.map((boundary) => (
               <div
                 key={boundary.title}
-                className="rounded-2xl border border-rose-200/80 dark:border-rose-950/60 bg-rose-50/40 dark:bg-[#0F172A] p-6 space-y-2 shadow-xs transition-colors"
+                className="boundary-card rounded-2xl border border-rose-200/80 dark:border-rose-950/60 bg-rose-50/40 dark:bg-[#0F172A] p-6 space-y-2 shadow-xs transition-colors hover:border-rose-400"
               >
                 <div className="flex items-center gap-2">
                   <span className="text-rose-500 font-bold" aria-hidden="true">✕</span>
@@ -70,11 +83,11 @@ export default function AboutPrinciplesSection({ content }) {
                 </p>
               </div>
             ))}
-          </div>
+          </MotionStagger>
         </div>
 
-        {/* Engineering Studio & Operations Box */}
-        <div className="rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-slate-50 dark:bg-[#0B0F19] p-8 md:p-10 space-y-4 shadow-xs">
+        {/* Engineering Studio & Operations Box with MotionFadeIn */}
+        <MotionFadeIn y={20} className="rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-slate-50 dark:bg-[#0B0F19] p-8 md:p-10 space-y-4 shadow-xs">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200 dark:border-[#1E293B] pb-6">
             <div>
               <span className="font-mono text-xs text-[#10B981] uppercase tracking-wider font-semibold">Engineering Operations</span>
@@ -98,9 +111,8 @@ export default function AboutPrinciplesSection({ content }) {
               <p>Zero client logos, zero portfolio bragging rights. Commits delivered under developer handles or authored under agency identities.</p>
             </div>
           </div>
-        </div>
+        </MotionFadeIn>
       </div>
     </section>
   );
 }
-

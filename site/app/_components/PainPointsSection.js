@@ -1,5 +1,7 @@
 // section: home-s2-pain-points
 import Link from 'next/link';
+import MotionFadeIn from '@/components/motion/MotionFadeIn.js';
+import MotionStagger from '@/components/motion/MotionStagger.js';
 
 export default function PainPointsSection({ content }) {
   return (
@@ -10,7 +12,7 @@ export default function PainPointsSection({ content }) {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl space-y-4">
+        <MotionFadeIn y={20} className="max-w-3xl space-y-4">
           <p className="text-xs font-mono tracking-wider uppercase text-[#10B981] font-semibold">
             {content.eyebrow}
           </p>
@@ -20,14 +22,19 @@ export default function PainPointsSection({ content }) {
           <p className="text-base leading-relaxed text-slate-600 dark:text-[#94A3B8]">
             {content.description}
           </p>
-        </div>
+        </MotionFadeIn>
 
-        {/* 3-Column Pain-Point Cards */}
-        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
+        {/* 3-Column Pain-Point Cards with Staggered Entrance */}
+        <MotionStagger
+          itemSelector=".pain-card"
+          stagger={0.12}
+          y={28}
+          className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3"
+        >
           {content.cards.map((card, idx) => (
             <div
               key={card.title}
-              className="group relative flex flex-col justify-between rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-slate-50 dark:bg-[#0F172A] p-7 transition-all duration-200 hover:border-[#2563EB]/60 hover:-translate-y-0.5 shadow-xs"
+              className="pain-card group relative flex flex-col justify-between rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-slate-50 dark:bg-[#0F172A] p-7 transition-all duration-200 hover:border-[#2563EB]/60 hover:-translate-y-1 shadow-xs"
             >
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
@@ -48,7 +55,7 @@ export default function PainPointsSection({ content }) {
               </div>
             </div>
           ))}
-        </div>
+        </MotionStagger>
 
         {/* CTA after pain-point cards */}
         <div className="mt-12 flex justify-start">

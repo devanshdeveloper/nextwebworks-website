@@ -1,5 +1,7 @@
 // section: home-s3-workflow
 import Link from 'next/link';
+import MotionFadeIn from '@/components/motion/MotionFadeIn.js';
+import MotionStagger from '@/components/motion/MotionStagger.js';
 
 export default function WorkflowSection({ content }) {
   return (
@@ -10,7 +12,7 @@ export default function WorkflowSection({ content }) {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl space-y-4">
+        <MotionFadeIn y={20} className="max-w-3xl space-y-4">
           <p className="text-xs font-mono tracking-wider uppercase text-[#10B981] font-semibold">
             {content.eyebrow}
           </p>
@@ -20,12 +22,17 @@ export default function WorkflowSection({ content }) {
           <p className="text-base leading-relaxed text-slate-600 dark:text-[#94A3B8]">
             {content.description}
           </p>
-        </div>
+        </MotionFadeIn>
 
-        {/* 4-Step Connected Pipeline */}
-        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-4 relative">
+        {/* 4-Step Connected Pipeline with Staggered Entrance */}
+        <MotionStagger
+          itemSelector=".step-card"
+          stagger={0.15}
+          y={24}
+          className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-4 relative"
+        >
           {content.steps.map((step, idx) => (
-            <div key={step.number} className="relative flex flex-col justify-between">
+            <div key={step.number} className="step-card relative flex flex-col justify-between">
               {/* Step indicator */}
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
@@ -49,7 +56,7 @@ export default function WorkflowSection({ content }) {
               </div>
             </div>
           ))}
-        </div>
+        </MotionStagger>
 
         {/* CTA after 4-step workflow */}
         <div className="mt-14 flex items-center justify-between border-t border-slate-200 dark:border-[#1E293B]/80 pt-8 flex-wrap gap-4">

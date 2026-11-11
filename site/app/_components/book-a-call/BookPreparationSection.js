@@ -1,5 +1,7 @@
 // section: book-preparation
 import Link from 'next/link';
+import MotionFadeIn from '@/components/motion/MotionFadeIn.js';
+import MotionStagger from '@/components/motion/MotionStagger.js';
 
 export default function BookPreparationSection() {
   const checklists = [
@@ -16,7 +18,7 @@ export default function BookPreparationSection() {
       className="py-12 md:py-16 border-b border-slate-200 dark:border-[#1E293B]/60 bg-slate-50 dark:bg-[#0B0F19] transition-colors"
     >
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <div className="rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0F172A] p-8 shadow-xs space-y-4">
+        <MotionFadeIn y={15} className="rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0F172A] p-8 shadow-xs space-y-4">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
               <span className="font-mono text-xs uppercase tracking-wider text-[#10B981] font-semibold">
@@ -34,20 +36,19 @@ export default function BookPreparationSection() {
             </Link>
           </div>
 
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+          <MotionStagger itemSelector=".prep-item" stagger={0.06} y={10} as="ul" className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
             {checklists.map((item) => (
               <li
                 key={item}
-                className="flex items-start gap-2.5 text-xs text-slate-700 dark:text-[#CBD5E1]"
+                className="prep-item flex items-start gap-2.5 text-xs text-slate-700 dark:text-[#CBD5E1]"
               >
                 <span className="text-[#10B981] font-bold" aria-hidden="true">✓</span>
                 <span>{item}</span>
               </li>
             ))}
-          </ul>
-        </div>
+          </MotionStagger>
+        </MotionFadeIn>
       </div>
     </section>
   );
 }
-

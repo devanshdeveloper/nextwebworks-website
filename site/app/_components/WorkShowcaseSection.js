@@ -3,6 +3,8 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import MotionFadeIn from '@/components/motion/MotionFadeIn.js';
+import MotionMagnetic from '@/components/motion/MotionMagnetic.js';
 
 export default function WorkShowcaseSection({ content, hideHeader = false }) {
   const [activeTab, setActiveTab] = useState(content.samples[0].id);
@@ -19,7 +21,7 @@ export default function WorkShowcaseSection({ content, hideHeader = false }) {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header (hidden if standalone page renders its own dedicated hero) */}
         {!hideHeader && (
-          <div className="max-w-3xl space-y-4">
+          <MotionFadeIn y={20} className="max-w-3xl space-y-4">
             <p className="text-xs font-mono tracking-wider uppercase text-[#10B981] font-semibold">
               {content.eyebrow}
             </p>
@@ -29,7 +31,7 @@ export default function WorkShowcaseSection({ content, hideHeader = false }) {
             <p className="text-base leading-relaxed text-slate-600 dark:text-[#94A3B8]">
               {content.description}
             </p>
-          </div>
+          </MotionFadeIn>
         )}
 
         {/* Tab switcher */}
@@ -53,8 +55,8 @@ export default function WorkShowcaseSection({ content, hideHeader = false }) {
           })}
         </div>
 
-        {/* Active Sample Card */}
-        <div className="mt-8 rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0F172A] p-8 md:p-10 shadow-xs">
+        {/* Active Sample Card with Smooth Viewport Fade */}
+        <MotionFadeIn key={activeSample.id} y={15} duration={0.4} className="mt-8 rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0F172A] p-8 md:p-10 shadow-xs">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200 dark:border-[#1E293B] pb-6">
             <div>
               <span className="inline-block rounded-full bg-slate-100 dark:bg-[#0B0F19] border border-slate-200 dark:border-[#1E293B] px-3 py-1 font-mono text-xs text-slate-600 dark:text-[#64748B]">
@@ -103,16 +105,18 @@ export default function WorkShowcaseSection({ content, hideHeader = false }) {
               </div>
 
               <div className="pt-4 border-t border-slate-200 dark:border-[#1E293B]">
-                <Link
-                  href="/book-a-call"
-                  className="inline-flex w-full items-center justify-center rounded-lg bg-[#2563EB] px-4 py-2.5 text-sm font-medium text-white hover:bg-[#1D4ED8] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
-                >
-                  {activeSample.ctaText} →
-                </Link>
+                <MotionMagnetic>
+                  <Link
+                    href="/book-a-call"
+                    className="inline-flex w-full items-center justify-center rounded-lg bg-[#2563EB] px-4 py-2.5 text-sm font-medium text-white hover:bg-[#1D4ED8] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
+                  >
+                    {activeSample.ctaText} →
+                  </Link>
+                </MotionMagnetic>
               </div>
             </div>
           </div>
-        </div>
+        </MotionFadeIn>
       </div>
     </section>
   );

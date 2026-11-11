@@ -2,6 +2,9 @@
 import Link from 'next/link';
 import { SvgScene } from '@/lib/svg/index.js';
 import { workContent } from '@/content/work.js';
+import MotionFadeIn from '@/components/motion/MotionFadeIn.js';
+import MotionMagnetic from '@/components/motion/MotionMagnetic.js';
+import MotionTilt from '@/components/motion/MotionTilt.js';
 
 export default function WorkHeroSection() {
   const content = workContent.hero;
@@ -15,7 +18,7 @@ export default function WorkHeroSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           {/* Left Column: Deliberate Anatomy */}
-          <div className="lg:col-span-7 space-y-6">
+          <MotionFadeIn y={24} duration={0.8} className="lg:col-span-7 space-y-6">
             <span className="font-mono text-xs uppercase tracking-wider text-[#10B981] font-semibold">
               {content.eyebrow}
             </span>
@@ -30,12 +33,14 @@ export default function WorkHeroSection() {
 
             {/* Actions */}
             <div className="pt-2 flex flex-wrap items-center gap-4">
-              <Link
-                href={content.ctaPrimary.href}
-                className="rounded-lg bg-[#2563EB] px-6 py-3 text-xs font-semibold text-white shadow-sm hover:bg-[#1D4ED8] transition-all hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
-              >
-                {content.ctaPrimary.text} →
-              </Link>
+              <MotionMagnetic>
+                <Link
+                  href={content.ctaPrimary.href}
+                  className="rounded-lg bg-[#2563EB] px-6 py-3 text-xs font-semibold text-white shadow-sm hover:bg-[#1D4ED8] transition-all hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
+                >
+                  {content.ctaPrimary.text} →
+                </Link>
+              </MotionMagnetic>
               <a
                 href={content.ctaSecondary.href}
                 className="rounded-lg border border-slate-200 dark:border-[#1E293B] bg-slate-50 dark:bg-[#0F172A] px-5 py-3 text-xs font-semibold text-slate-700 dark:text-[#94A3B8] hover:text-slate-900 dark:hover:text-white transition-all hover:-translate-y-0.5"
@@ -60,17 +65,22 @@ export default function WorkHeroSection() {
                 </div>
               ))}
             </div>
-          </div>
+          </MotionFadeIn>
 
-          {/* Right Column: Hero Preview SVG Scene */}
-          <div className="lg:col-span-5 aspect-[16/10] w-full overflow-hidden rounded-2xl border border-slate-200 dark:border-[#1E293B] shadow-sm">
-            <SvgScene
-              kind="work"
-              category="Platform Architecture"
-              slug="work-hero-preview"
-              aspectRatio="16/10"
-              ariaLabel="Next Web Works Deliverable Showcase Architecture"
-            />
+          {/* Right Column: Hero Preview SVG Scene with 3D Tilt */}
+          <div className="lg:col-span-5">
+            <MotionTilt
+              maxTilt={10}
+              className="aspect-[16/10] w-full overflow-hidden rounded-2xl border border-slate-200 dark:border-[#1E293B] shadow-sm"
+            >
+              <SvgScene
+                kind="work"
+                category="Platform Architecture"
+                slug="work-hero-preview"
+                aspectRatio="16/10"
+                ariaLabel="Next Web Works Deliverable Showcase Architecture"
+              />
+            </MotionTilt>
           </div>
         </div>
       </div>

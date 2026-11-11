@@ -1,14 +1,13 @@
 // section: home-s4-services
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
-import gsap from 'gsap';
+import MotionFadeIn from '@/components/motion/MotionFadeIn.js';
+import MotionStagger from '@/components/motion/MotionStagger.js';
 
 export default function ServicesSection({ content, hideHeader = false }) {
-  // Bug 4: All specs closed by default on load, independent toggles
   const [openDrawers, setOpenDrawers] = useState({});
-  const gridRef = useRef(null);
 
   const toggleDrawer = (id) => {
     setOpenDrawers((prev) => ({
@@ -16,46 +15,6 @@ export default function ServicesSection({ content, hideHeader = false }) {
       [id]: !prev[id],
     }));
   };
-
-  // Bug 5: Ultra motion tier staggered reveal with reduced-motion and touch fallback
-  useEffect(() => {
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const isTouchOrMobile =
-      'ontouchstart' in window ||
-      navigator.maxTouchPoints > 0 ||
-      window.matchMedia('(pointer: coarse)').matches ||
-      window.innerWidth < 768;
-
-    if (prefersReducedMotion || isTouchOrMobile || !gridRef.current) return;
-
-    const cards = gridRef.current.querySelectorAll('.bento-card');
-    if (!cards || cards.length === 0) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            gsap.fromTo(
-              cards,
-              { opacity: 0, y: 24 },
-              {
-                opacity: 1,
-                y: 0,
-                duration: 0.6,
-                stagger: 0.08,
-                ease: 'power2.out',
-              }
-            );
-            observer.disconnect();
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-
-    observer.observe(gridRef.current);
-    return () => observer.disconnect();
-  }, []);
 
   return (
     <section
@@ -67,7 +26,7 @@ export default function ServicesSection({ content, hideHeader = false }) {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header (hidden if standalone page renders its own dedicated hero) */}
         {!hideHeader && (
-          <>
+          <MotionFadeIn y={20}>
             <div className="max-w-3xl space-y-4">
               <p className="text-xs font-mono tracking-wider uppercase text-[#10B981] font-semibold">
                 {content.eyebrow}
@@ -93,12 +52,14 @@ export default function ServicesSection({ content, hideHeader = false }) {
                 ))
               )}
             </div>
-          </>
+          </MotionFadeIn>
         )}
 
-        {/* 5-Card Bento Grid */}
-        <div
-          ref={gridRef}
+        {/* 5-Card Bento Grid with Ultra Tier Stagger */}
+        <MotionStagger
+          itemSelector=".bento-card"
+          stagger={0.08}
+          y={20}
           className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {content.drawers.map((drawer, idx) => {
@@ -182,7 +143,7 @@ export default function ServicesSection({ content, hideHeader = false }) {
               </div>
             );
           })}
-        </div>
+        </MotionStagger>
       </div>
     </section>
   );

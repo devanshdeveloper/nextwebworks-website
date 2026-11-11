@@ -1,6 +1,8 @@
 // section: blog-grid
 import Link from 'next/link';
 import { SvgScene } from '@/lib/svg/index.js';
+import MotionFadeIn from '@/components/motion/MotionFadeIn.js';
+import MotionStagger from '@/components/motion/MotionStagger.js';
 
 export default function BlogGridSection({ posts }) {
   if (!posts || posts.length === 0) return null;
@@ -12,23 +14,28 @@ export default function BlogGridSection({ posts }) {
       className="py-16 md:py-20 border-b border-slate-200 dark:border-[#1E293B]/60 bg-white dark:bg-[#0B0F19] transition-colors"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-8">
+        <MotionFadeIn y={15} className="mb-8">
           <span className="font-mono text-xs uppercase tracking-wider text-[#10B981] font-semibold">
             All Engineering Guides
           </span>
           <h2 className="mt-1 font-heading text-2xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-3xl">
             Recent Articles & Scoping Blueprints
           </h2>
-        </div>
+        </MotionFadeIn>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <MotionStagger
+          itemSelector=".blog-card"
+          stagger={0.1}
+          y={20}
+          className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
+        >
           {posts.map((post) => {
             const category = post.metadata?.category || 'White-Label Engineering';
 
             return (
               <article
                 key={post._id || post.slug}
-                className="flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0F172A] hover:border-[#2563EB]/60 transition-colors shadow-sm"
+                className="blog-card flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0F172A] hover:border-[#2563EB]/60 hover:-translate-y-1 transition-all shadow-sm"
               >
                 {/* 16:9 In-House Deterministic Theme-Aware SVG Cover */}
                 <div className="w-full aspect-[16/9] overflow-hidden border-b border-slate-200 dark:border-[#1E293B]">
@@ -66,9 +73,8 @@ export default function BlogGridSection({ posts }) {
               </article>
             );
           })}
-        </div>
+        </MotionStagger>
       </div>
     </section>
   );
 }
-

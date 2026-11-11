@@ -1,6 +1,8 @@
 // section: blog-article-related
 import Link from 'next/link';
 import { blogContent } from '@/content/blog.js';
+import MotionFadeIn from '@/components/motion/MotionFadeIn.js';
+import MotionStagger from '@/components/motion/MotionStagger.js';
 
 export default function BlogArticleRelatedSection({ currentSlug = '' }) {
   const recommendations =
@@ -24,20 +26,25 @@ export default function BlogArticleRelatedSection({ currentSlug = '' }) {
       className="py-12 md:py-16 border-b border-slate-200 dark:border-[#1E293B]/60 bg-slate-50 dark:bg-[#0B0F19] transition-colors"
     >
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-6">
+        <MotionFadeIn y={15} className="mb-6">
           <span className="font-mono text-xs uppercase tracking-wider text-[#10B981] font-semibold">
             Further Reading
           </span>
           <h2 className="mt-1 font-heading text-xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-2xl">
             Related Engineering Playbooks
           </h2>
-        </div>
+        </MotionFadeIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <MotionStagger
+          itemSelector=".related-card"
+          stagger={0.1}
+          y={15}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+        >
           {recommendations.map((rec) => (
             <div
               key={rec.title}
-              className="rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0F172A] p-6 shadow-xs space-y-3"
+              className="related-card rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0F172A] p-6 shadow-xs space-y-3 hover:-translate-y-0.5 hover:border-[#2563EB]/50 transition-all"
             >
               <h3 className="font-heading text-base font-bold text-slate-900 dark:text-white hover:text-[#2563EB] dark:hover:text-[#60A5FA] transition-colors">
                 <Link href={rec.href}>{rec.title}</Link>
@@ -50,9 +57,8 @@ export default function BlogArticleRelatedSection({ currentSlug = '' }) {
               </Link>
             </div>
           ))}
-        </div>
+        </MotionStagger>
       </div>
     </section>
   );
 }
-

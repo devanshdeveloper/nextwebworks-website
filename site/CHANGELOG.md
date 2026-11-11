@@ -5,6 +5,23 @@ All notable changes to the Next Web Works platform will be documented in this fi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.6.0] - 2026-11-11
+
+### Added
+- **Ultra Motion System & GSAP Primitives (`site/components/motion/`)**: Built a reusable motion system powered by GSAP 3.15.1, `@gsap/react` 2.1.2, and Lenis 1.3.27. Includes reusable client primitives:
+  - `MotionFadeIn`: Viewport scroll-triggered fade and slide with `@gsap/react` scoping and matchMedia fallback.
+  - `MotionStagger`: Coordinated staggered entrance for card grids, timelines, and feature lists.
+  - `MotionTilt`: 60fps cursor tilt card interaction using `gsap.quickTo()` with 3D transform perspectives.
+  - `MotionMagnetic`: Physics-based cursor spring magnet for high-intent primary CTA buttons.
+  - `MotionNumberTicker`: Numerical counter transition for metrics and statistics.
+  - `MotionPathDraw`: SVG stroke draw reveal for schematics and architectural lines.
+- **Shared Motion Tokens (`site/lib/motion.js`)**: Codified standardized duration tokens (`instant`, `fast`, `base`, `smooth`, `epic`), GSAP easing curves (`power2.out`, `power3.out`, `back.out(1.4)`, `power2.inOut`), stagger delays, and the `shouldAnimate()` guard enforcing system `prefers-reduced-motion` and touch hardware awareness.
+
+### Changed
+- **Full-Site Motion & Design Polish Across All Pages & Sections**: Upgraded every page and every section (Home, Services list & details, Work list & details, For Agencies, About, Blog list & articles, Contact, Book a Call, Thank You, 404, and Error) with purposeful entrance choreography, magnetic actions, and 3D card tilts.
+- **Layout & Rhythm Diversity**: Ensured no adjacent sections share identical layout and entrance choreography, eliminating uniform fade-up patterns and generic templates.
+- **Strict Accessibility & Performance Guardrails**: Zero layout shift, full SSR/prerender content preservation, automatic event cleanup via `useGSAP` contexts, touch fallbacks, and zero new runtime dependencies (static chunk size reduced to ~799 KB).
+
 ## [0.5.2] - 2026-11-11
 
 ### Fixed

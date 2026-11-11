@@ -1,4 +1,6 @@
 // section: service-detail-specs
+import MotionFadeIn from '@/components/motion/MotionFadeIn.js';
+import MotionStagger from '@/components/motion/MotionStagger.js';
 
 const SPECS_HEADER_BY_SERVICE = {
   websites: {
@@ -43,7 +45,7 @@ export default function ServiceDetailSpecsSection({ service }) {
       className="py-16 md:py-20 border-b border-slate-200 dark:border-[#1E293B]/60 bg-white dark:bg-[#0B0F19] transition-colors"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="max-w-2xl space-y-2">
+        <MotionFadeIn y={20} className="max-w-2xl space-y-2">
           <span className="font-mono text-xs uppercase tracking-wider text-[#10B981] font-semibold">
             Quality Constraints
           </span>
@@ -53,23 +55,27 @@ export default function ServiceDetailSpecsSection({ service }) {
           <p className="text-sm text-slate-600 dark:text-[#94A3B8]">
             {headerInfo.desc}
           </p>
-        </div>
+        </MotionFadeIn>
 
         <div className="mt-8 rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-slate-50 dark:bg-[#0F172A] p-8">
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <MotionStagger
+            itemSelector=".spec-item"
+            stagger={0.06}
+            y={12}
+            className="grid grid-cols-1 md:grid-cols-2 gap-4"
+          >
             {specs.map((spec) => (
               <li
                 key={spec}
-                className="flex items-start gap-3 rounded-xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0B0F19] p-4 text-xs text-slate-800 dark:text-[#E2E8F0] hover:border-[#2563EB]/40 transition-colors"
+                className="spec-item flex items-start gap-3 rounded-xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0B0F19] p-4 text-xs text-slate-800 dark:text-[#E2E8F0] hover:border-[#2563EB]/40 transition-colors list-none"
               >
                 <span className="text-[#10B981] font-bold text-sm" aria-hidden="true">✓</span>
                 <span className="leading-relaxed">{spec}</span>
               </li>
             ))}
-          </ul>
+          </MotionStagger>
         </div>
       </div>
     </section>
   );
 }
-
