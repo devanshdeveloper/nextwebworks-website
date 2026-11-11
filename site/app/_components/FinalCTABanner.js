@@ -20,7 +20,7 @@ export default function FinalCTABanner({ content }) {
 
           <div className="mx-auto max-w-2xl space-y-6">
             <span className="inline-flex items-center rounded-full bg-slate-100 dark:bg-[#0B0F19] border border-slate-300 dark:border-[#1E293B] px-3.5 py-1 text-xs font-mono font-semibold text-emerald-600 dark:text-[#10B981]">
-              Discovery Call · Direct with Founder
+              {content.badge || 'Discovery Call · Direct with Founder'}
             </span>
 
             <h2 className="font-heading text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
@@ -41,7 +41,7 @@ export default function FinalCTABanner({ content }) {
             </div>
 
             <p className="text-xs font-mono text-slate-500 dark:text-[#64748B]">
-              Fixed quote within 24 business hours · Zero client contact · Strict NDA
+              {content.footnote || 'Fixed quote within 24 business hours · Zero client contact · Strict NDA'}
             </p>
           </div>
         </div>

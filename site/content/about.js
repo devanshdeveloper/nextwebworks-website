@@ -72,7 +72,7 @@ export const aboutContent = {
       {
         question: 'Do I communicate directly with the engineer building our project?',
         answer:
-          'Yes. You communicate directly with Devansh, our founder and principal engineer. There are zero layers of junior account coordinators or miscommunicated game-of-telephone briefs.',
+          'Yes. You communicate directly with Devansh, our founder and principal engineer. There are zero layers of junior account coordinators or miscommunicated game-of-telephone briefs, ensuring technical specifications translate directly into production code.',
       },
       {
         question: 'Why do you uphold a strict zero rates policy on your public website?',
@@ -80,23 +80,32 @@ export const aboutContent = {
           'Because we operate strictly as a white-label partner to digital marketing agencies. Public rate cards compromise agency client trust and margin negotiation. Every project receives a private, itemized fixed-price quotation tailored to its exact technical specification within 24 hours.',
       },
       {
-        question: 'How does the 14-day post-launch warranty work in practice?',
+        question: 'How do you structure post-launch warranty reviews and defect resolution?',
         answer:
-          'Once a website or application goes live on your client’s production domain, we schedule proactive review checkpoints on Day 7 and Day 14 to verify telemetry, error logs, and responsive layout fidelity, fixing any defects at zero additional charge.',
+          'Once a website or application goes live on your client domain, we schedule proactive review checkpoints on Day 7 and Day 14. We monitor error telemetry, verify responsive fidelity across physical devices, and resolve any functional defects at zero additional charge.',
       },
       {
-        question: 'What happens if we need long-term ongoing maintenance after launch?',
+        question: 'What happens if our agency needs ongoing maintenance after the warranty window?',
         answer:
-          'Following the 14-day warranty period, agencies have the option to engage ongoing maintenance support covering regular dependency updates, security patches, and minor editorial changes.',
+          'Following the 14-day warranty period, agencies have the option to engage ongoing maintenance support covering regular dependency updates, security patches, minor editorial revisions, and monthly uptime monitoring with dedicated developer priority.',
       },
     ],
   },
 
   ctaBanner: {
+    badge: 'Direct Engineering Access',
     title: 'Work Directly With the Principal Engineer',
     description:
       'Cut out account manager layers and speak directly with engineering leadership. Book a 30-minute discovery call to review your upcoming client roadmap.',
     primaryButton: { text: 'Book Discovery Call With Devansh', href: '/book-a-call' },
+    footnote: 'Direct 1-on-1 engineering dialogue · No sales pitch · Strict mutual NDA',
+  },
+
+  contactForm: {
+    eyebrow: 'Direct Technical Inquiry',
+    leadIn: 'Connect Directly With Engineering Leadership',
+    description:
+      'Have a question about our code standards, warranty terms, or developer background? Send Devansh a note directly for a thoughtful technical reply.',
   },
 };
 

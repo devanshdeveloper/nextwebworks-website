@@ -19,10 +19,10 @@ export default function BlogArticleAuthorSection() {
                 Devansh
               </p>
               <p className="font-mono text-xs text-[#2563EB] dark:text-[#60A5FA]">
-                Founder & Principal Engineer
+                Founder & Technical Lead
               </p>
               <p className="text-xs text-slate-600 dark:text-[#94A3B8]">
-                Operating an agency engineering consultancy in Indore, India. Dedicated to fixed-price delivery and zero technical debt.
+                Providing transparent technical execution and predictable white-label sprint capacity for marketing agencies.
               </p>
             </div>
           </div>

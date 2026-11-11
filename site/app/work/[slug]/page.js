@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import { Portfolio } from '@/lib/cms-kit/portfolio.js';
 import { homeContent } from '@/content/home.js';
-import { workContent } from '@/content/work.js';
+import { workContent, workDetailContent } from '@/content/work.js';
 import Schema from '@/components/seo/Schema.js';
 import WorkDetailHeroSection from '../../_components/work/WorkDetailHeroSection.js';
 import WorkDetailOverviewSection from '../../_components/work/WorkDetailOverviewSection.js';
@@ -41,6 +41,12 @@ export default async function WorkDetailPage({ params }) {
   const work = await getWork(slug);
   if (!work) notFound();
 
+  const detailContent = workDetailContent[slug] || {
+    faqs: workContent.faqs,
+    ctaBanner: workContent.ctaBanner,
+    contactForm: workContent.contactForm,
+  };
+
   const creativeWorkSchema = {
     '@context': 'https://schema.org',
     '@type': 'CreativeWork',
@@ -55,10 +61,10 @@ export default async function WorkDetailPage({ params }) {
       <WorkDetailHeroSection work={work} />
       <WorkDetailOverviewSection work={work} />
       <WorkDetailHighlightsSection work={work} />
-      <WorkDetailConfidentialitySection />
-      <FAQSection content={workContent.faqs} />
-      <FinalCTABanner content={workContent.ctaBanner} />
-      <ContactFormSection content={homeContent.contactForm} />
+      <WorkDetailConfidentialitySection work={work} />
+      <FAQSection content={detailContent.faqs} />
+      <FinalCTABanner content={detailContent.ctaBanner} />
+      <ContactFormSection content={detailContent.contactForm} />
     </div>
   );
 }

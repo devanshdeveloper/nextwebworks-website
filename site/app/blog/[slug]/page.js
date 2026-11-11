@@ -5,7 +5,7 @@ import BlogArticleBodySection from '../../_components/blog/BlogArticleBodySectio
 import BlogArticleAuthorSection from '../../_components/blog/BlogArticleAuthorSection.js';
 import BlogArticleRelatedSection from '../../_components/blog/BlogArticleRelatedSection.js';
 import FinalCTABanner from '../../_components/FinalCTABanner.js';
-import { homeContent } from '@/content/home.js';
+import { blogContent } from '@/content/blog.js';
 import { stripHtml, cleanArticleHtml } from '@/lib/blog-utils.js';
 
 export async function generateStaticParams() {
@@ -37,8 +37,8 @@ export default async function BlogPostPage({ params }) {
       <BlogArticleHeaderSection post={post} category={category} />
       <BlogArticleBodySection cleanContent={cleanContent} />
       <BlogArticleAuthorSection />
-      <BlogArticleRelatedSection />
-      <FinalCTABanner content={homeContent.ctaBanner} />
+      <BlogArticleRelatedSection currentSlug={slug} />
+      <FinalCTABanner content={blogContent.articleCtaBanner} />
     </article>
   );
 }

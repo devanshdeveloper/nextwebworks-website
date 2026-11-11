@@ -44,7 +44,7 @@ export default function PainPointsSection({ content }) {
                 </p>
               </div>
               <div className="mt-6 pt-4 border-t border-slate-200 dark:border-[#1E293B]/80 text-xs font-mono text-slate-500 dark:text-[#64748B]">
-                Risk Factor: High Margin Erosion
+                {card.risk || 'Risk Factor: Margin Erosion'}
               </div>
             </div>
           ))}

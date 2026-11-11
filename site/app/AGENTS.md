@@ -10,6 +10,7 @@
 - Every section component begins with `// section: <id>` and attaches `data-section="<id>"`.
 - Standard page-bottom stack strictly preserved: FAQ Accordion -> Final CTA Banner -> Contact Form -> Footer.
 - Interactive leaves (`'use client'`) isolated to spec drawers, accordion toggles, and form submissions.
+- Unique content invariant strictly enforced: zero cross-page text repeats, unique CTA/form copy, and FAQ floor >= 5 Q&As >= 25 words (see .agents/rules/unique-content-per-page.md).
 
 ## Anti-patterns
 - Never add `'use client'` to `page.js` or `layout.js`.
@@ -18,3 +19,4 @@
 
 ## Commands
 - `pnpm check:structure`: Validate line ceilings and RSC boundaries.
+- `pnpm check:content`: Validate unique content and FAQ depth.

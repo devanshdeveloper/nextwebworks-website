@@ -1,7 +1,15 @@
 // section: work-detail-confidentiality
 import Link from 'next/link';
 
-export default function WorkDetailConfidentialitySection() {
+export default function WorkDetailConfidentialitySection({ work }) {
+  const eyebrow = work?.confidentiality?.eyebrow || 'Confidentiality & White-Label Guarantee';
+  const title = work?.confidentiality?.title || (work?.title ? `${work.title} Non-Disclosure Protocol` : 'Strict Mutual Non-Disclosure');
+  const description = work?.confidentiality?.description || (
+    work?.title
+      ? `Architectural deliverables and repository assets for ${work.title} are engineered under mutual confidentiality agreements. Code ownership, database configurations, and deployment pipelines transfer in full to the client organization upon handover.`
+      : 'All technical deliverables are engineered under white-label terms. Client names, commercial agreements, and proprietary source codes remain strictly confidential. Intellectual property is transferred in full to the client organization upon completion.'
+  );
+
   return (
     <section
       id="work-detail-confidentiality"
@@ -12,13 +20,13 @@ export default function WorkDetailConfidentialitySection() {
         <div className="rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0F172A] p-8 md:p-10 shadow-xs flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="max-w-2xl space-y-2">
             <span className="font-mono text-xs uppercase tracking-wider text-[#10B981] font-semibold">
-              Confidentiality & White-Label Guarantee
+              {eyebrow}
             </span>
             <h3 className="font-heading text-xl font-bold text-slate-900 dark:text-white">
-              Strict Mutual Non-Disclosure
+              {title}
             </h3>
             <p className="text-xs leading-relaxed text-slate-600 dark:text-[#94A3B8]">
-              All technical deliverables are engineered under white-label terms. Client names, commercial agreements, and proprietary source codes remain strictly confidential. Intellectual property is transferred in full to the client organization upon completion.
+              {description}
             </p>
           </div>
 

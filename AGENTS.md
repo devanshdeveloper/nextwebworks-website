@@ -29,6 +29,7 @@ Always run commands with `--dir site` when invoked from the repository root:
 - `pnpm --dir site lint`: Run ESLint checks
 - `pnpm --dir site check:structure`: Validate file line ceilings (page <= 80, sections <= 250), minimum 5 sections per page, and RSC rules
 - `pnpm --dir site check:assets`: Verify SVG byte budgets (<= 5.0 KB / 15 KB) and asset manifest
+- `pnpm --dir site check:content`: Validate hard content uniqueness, zero cross-page text repeats, and FAQ depth floor (run after build)
 - `pnpm --dir site check:all`: Run lint, structure audit, and asset audit in sequence
 
 ## 5. Workflow Discipline
@@ -53,7 +54,8 @@ Never declare a task completed without measured evidence:
 1. Run `pnpm --dir site check:structure` to ensure line ceilings and RSC rules pass with 0 errors.
 2. Run `pnpm --dir site check:assets` to ensure byte budgets and asset manifests remain valid.
 3. Run `pnpm --dir site build` to confirm zero static prerender or compilation errors across all routes.
-4. Verify responsiveness and visual rendering in the browser.
+4. Run `pnpm --dir site check:content` to confirm zero content repeats and FAQ depth compliance across prerendered routes.
+5. Verify responsiveness and visual rendering in the browser.
 
 ## 9. Definition of Done
 A task is done only when all automated checks pass cleanly, all line ceilings are respected, git status shows only intentional changes, and tangible verification output is presented.

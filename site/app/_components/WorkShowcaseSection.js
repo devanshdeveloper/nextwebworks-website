@@ -78,7 +78,7 @@ export default function WorkShowcaseSection({ content, hideHeader = false }) {
               </p>
               <div className="pt-2 space-y-2">
                 <p className="font-mono text-xs text-slate-500 dark:text-[#64748B] uppercase tracking-wider font-semibold">
-                  Technical Architecture Highlights:
+                  {content.highlightsLabel || 'Technical Architecture Highlights:'}
                 </p>
                 <ul className="space-y-1.5 text-xs text-slate-600 dark:text-[#94A3B8]">
                   {activeSample.highlights.map((h) => (
@@ -94,9 +94,11 @@ export default function WorkShowcaseSection({ content, hideHeader = false }) {
             <div className="md:col-span-5 flex flex-col justify-between rounded-xl border border-slate-200 dark:border-[#1E293B] bg-slate-50 dark:bg-[#0B0F19] p-6 space-y-4">
               <div>
                 <p className="font-mono text-xs text-slate-500 dark:text-[#64748B] font-semibold">ENGINEERING STANDARD</p>
-                <p className="text-sm font-semibold text-slate-900 dark:text-white mt-1">Direct Technical Delivery</p>
+                <p className="text-sm font-semibold text-slate-900 dark:text-white mt-1">
+                  {content.deliveryLabel || 'Direct Technical Delivery'}
+                </p>
                 <p className="text-xs text-slate-600 dark:text-[#94A3B8] mt-1">
-                  Full source code transfer, automated CI/CD pipelines, and clean documentation included.
+                  {content.deliveryDesc || 'Full source code transfer, automated CI/CD pipelines, and clean documentation included.'}
                 </p>
               </div>
 

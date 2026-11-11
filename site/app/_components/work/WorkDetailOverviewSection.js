@@ -1,9 +1,64 @@
 // section: work-detail-overview
+
+const PILLARS_BY_WORK = {
+  'nww-cms-kit': [
+    {
+      label: 'CACHE REVALIDATION',
+      title: 'Edge-Tag Invalidation',
+      desc: 'Instantaneous webhook-driven cache purges targeting granular model tags.',
+    },
+    {
+      label: 'CLIENT SDK',
+      title: 'Class Encapsulation',
+      desc: 'Typed query normalization with isolated error handling and zero REST leaks.',
+    },
+    {
+      label: 'SEO & METRICS',
+      title: 'Structured JSON-LD',
+      desc: 'Automated breadcrumb and article schema generation embedded at build time.',
+    },
+  ],
+  classymenu: [
+    {
+      label: 'CONCURRENCY',
+      title: 'Real-Time Table Sync',
+      desc: 'Optimistic UI updates synchronized across all diners sharing a table session.',
+    },
+    {
+      label: 'CONVERSION',
+      title: 'WhatsApp Direct Bridge',
+      desc: 'Frictionless ordering flow routing structured payloads directly to kitchen staff.',
+    },
+    {
+      label: 'ASSET PIPELINE',
+      title: 'Next-Gen Responsive Media',
+      desc: 'Sub-second catalog browsing and 60fps scrolling across thousands of menu items.',
+    },
+  ],
+  ceramicsales: [
+    {
+      label: 'WAREHOUSE FIFO',
+      title: 'Atomic Inventory Locks',
+      desc: 'Row-level database locks preventing duplicate allocations during peak wholesale checkout.',
+    },
+    {
+      label: 'TAX ENGINE',
+      title: 'Automated GST Calculation',
+      desc: 'Dynamic CGST, SGST, and IGST line-item evaluations with complete audit ledgers.',
+    },
+    {
+      label: 'DOCUMENT PIPELINE',
+      title: 'Server-Side Vector PDFs',
+      desc: 'Instant memory-streamed tax invoices and delivery challans with barcode verification.',
+    },
+  ],
+};
+
 export default function WorkDetailOverviewSection({ work }) {
-  const highlights = [
+  const highlights = PILLARS_BY_WORK[work?.id] || [
     {
       label: 'ARCHITECTURE',
-      title: 'Scalable System Architecture',
+      title: `${work?.title || 'System'} Architecture`,
       desc: 'Engineered for sub-second page performance, zero layout shifts, and multi-tenant isolation.',
     },
     {
@@ -30,10 +85,10 @@ export default function WorkDetailOverviewSection({ work }) {
             Engineering Scope
           </span>
           <h2 className="font-heading text-2xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-3xl">
-            Platform Capabilities & Implementation
+            {work?.title ? `${work.title} Architecture` : 'Platform Capabilities & Implementation'}
           </h2>
           <p className="text-sm text-slate-600 dark:text-[#94A3B8]">
-            Architectural breakdown of technical requirements, integrations, and production standards.
+            {work?.overview || 'Architectural breakdown of technical requirements, integrations, and production standards.'}
           </p>
         </div>
 

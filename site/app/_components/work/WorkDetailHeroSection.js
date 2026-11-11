@@ -29,7 +29,7 @@ export default function WorkDetailHeroSection({ work }) {
               {work.badge || 'Production Platform'}
             </span>
             <span className="rounded-full border border-slate-200 dark:border-[#1E293B] bg-slate-50 dark:bg-[#0F172A] px-3 py-0.5 font-mono text-xs text-slate-500 dark:text-[#64748B]">
-              Client: {clientDisplay}
+              {work.clientLabel ? work.clientLabel : `Client: ${clientDisplay}`}
             </span>
           </div>
 
@@ -42,7 +42,7 @@ export default function WorkDetailHeroSection({ work }) {
           </p>
 
           <p className="text-base leading-relaxed text-slate-600 dark:text-[#94A3B8]">
-            {work.overview || work.description}
+            {work.tagline || work.summary || work.overview || work.description}
           </p>
 
           <div className="pt-4 flex flex-wrap items-center gap-4">
@@ -50,7 +50,7 @@ export default function WorkDetailHeroSection({ work }) {
               href="/book-a-call"
               className="rounded-lg bg-[#2563EB] px-5 py-2.5 text-xs font-semibold text-white hover:bg-[#1D4ED8] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
             >
-              Discuss a Build Like This →
+              Discuss {work.title} Architecture →
             </Link>
             <Link
               href="/work"

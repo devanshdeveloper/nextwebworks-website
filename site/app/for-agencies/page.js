@@ -4,7 +4,6 @@ import FAQSection from '../_components/FAQSection.js';
 import WorkflowSection from '../_components/WorkflowSection.js';
 import PartnershipModelsSection from './_components/PartnershipModelsSection.js';
 import Schema from '@/components/seo/Schema.js';
-import { homeContent } from '@/content/home.js';
 import { forAgenciesContent } from '@/content/forAgencies.js';
 
 export const metadata = {
@@ -41,10 +40,10 @@ export default function ForAgenciesPage() {
         </p>
       </div>
       <PartnershipModelsSection />
-      <WorkflowSection content={homeContent.workflow} />
+      <WorkflowSection content={forAgenciesContent.workflow} />
       <FAQSection content={forAgenciesContent.faqs} />
       <FinalCTABanner content={forAgenciesContent.ctaBanner} />
-      <ContactFormSection content={homeContent.contactForm} />
+      <ContactFormSection content={forAgenciesContent.contactForm} />
     </div>
   );
 }

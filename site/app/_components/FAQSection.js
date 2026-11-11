@@ -54,11 +54,13 @@ export default function FAQSection({ content }) {
                   </span>
                 </button>
 
-                {isOpen && (
-                  <div className="px-6 pb-6 pt-0 text-sm leading-relaxed text-slate-600 dark:text-[#94A3B8] border-t border-slate-200 dark:border-[#1E293B]/60 mt-1 animate-fade-in">
-                    <p className="pt-4">{faq.answer}</p>
-                  </div>
-                )}
+                <div
+                  className={`px-6 pb-6 pt-0 text-sm leading-relaxed text-slate-600 dark:text-[#94A3B8] border-t border-slate-200 dark:border-[#1E293B]/60 mt-1 ${
+                    isOpen ? 'block' : 'hidden'
+                  }`}
+                >
+                  <p className="pt-4">{faq.answer}</p>
+                </div>
               </div>
             );
           })}

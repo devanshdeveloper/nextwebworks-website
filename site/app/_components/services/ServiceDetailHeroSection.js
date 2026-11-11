@@ -20,7 +20,7 @@ export default function ServiceDetailHeroSection({ service }) {
         <div className="max-w-3xl space-y-4">
           <div className="flex flex-wrap items-center gap-3">
             <span className="font-mono text-xs uppercase tracking-wider text-[#10B981] font-semibold">
-              Technical Specification
+              {service.title ? `${service.title} Spec` : 'Technical Specification'}
             </span>
             <span className="rounded-full border border-slate-200 dark:border-[#1E293B] bg-slate-50 dark:bg-[#0F172A] px-3 py-0.5 font-mono text-xs text-slate-600 dark:text-[#94A3B8]">
               {service.tag || 'White-Label Delivery'}
@@ -40,7 +40,7 @@ export default function ServiceDetailHeroSection({ service }) {
               href="/book-a-call"
               className="rounded-lg bg-[#2563EB] px-5 py-2.5 text-xs font-semibold text-white hover:bg-[#1D4ED8] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
             >
-              Discuss This Build With Engineering →
+              Scope {service.title} With Engineering →
             </Link>
             <Link
               href="/services"

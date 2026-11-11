@@ -33,11 +33,14 @@ export default function ServicesPage() {
     <div>
       <Schema schema={[faqSchema]} />
       <ServicesHeroSection />
-      <ServicesStackMatrixSection content={homeContent.services} />
-      <ServicesSection content={homeContent.services} hideHeader={true} />
+      <ServicesStackMatrixSection content={{ platforms: servicesContent.stackMatrix }} />
+      <ServicesSection
+        content={{ ...homeContent.services, drawers: servicesContent.drawers }}
+        hideHeader={true}
+      />
       <FAQSection content={servicesContent.faqs} />
       <FinalCTABanner content={servicesContent.ctaBanner} />
-      <ContactFormSection content={homeContent.contactForm} />
+      <ContactFormSection content={servicesContent.contactForm} />
     </div>
   );
 }

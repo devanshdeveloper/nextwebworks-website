@@ -5,6 +5,19 @@ All notable changes to the Next Web Works platform will be documented in this fi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.0] - 2026-11-11
+
+### Added
+- **Hard Content-Uniqueness Rule**: Added `.agents/rules/unique-content-per-page.md` (`trigger: always_on`) strictly prohibiting content block duplicates ($\ge 4$ words or $\ge 25$ chars), exact section repeats, thin FAQs ($< 5$ Q&A or answers $< 25$ words), and near-duplicate answers sitewide. Added invariant directives to `AGENTS.md` and `site/app/AGENTS.md`.
+- **Lightweight Pre-Render HTML Content Auditor (`check:content`)**: Created `site/scripts/check-content.mjs` and wired `"check:content"` into `package.json`, `.agents/skills/verify/SKILL.md`, `release-checklist.md`, and `AGENTS.md`. Parses prerendered HTML output under `.next/server/app/**/*.html`, evaluating Jaccard shingle similarity, section hashes, FAQ item depth, and an explicit approved allowlist.
+- **Dedicated Decoupled Content Modules**: Created `site/content/contact.js`, `site/content/bookACall.js`, and `site/content/blog.js`, and expanded `site/content/home.js`, `site/content/about.js`, `site/content/forAgencies.js`, `site/content/services.js`, and `site/content/work.js`. Every page features distinct hero, CTA, contact form, and FAQ content.
+- **Dynamic Blog Related Reading System**: Enhanced `BlogArticleRelatedSection.js` to accept `currentSlug` and render distinct, article-specific playbooks from `blogContent.relatedArticlesBySlug` with zero repetitive text across blog posts.
+
+### Changed
+- **FAQ Component Accessibility & Prerendering**: Updated `FAQSection.js` accordion body to toggle `block` vs `hidden` classes instead of unmounting so all questions and answers render completely into SSR HTML for search engine indexing and automated content audits.
+- **Dynamic CTA & Contact Form Intros**: Parameterized `FinalCTABanner.js` (`content.badge`, `content.footnote`) and `ContactFormSection.js` (`content.eyebrow`, `content.leadIn`, `content.description`) to eliminate sitewide boilerplate cloning.
+- **Route-Specific Capability & Showcase Grids**: Decoupled `/services` and `/work` card grids from Homepage summaries (`servicesContent.drawers`, `servicesContent.stackMatrix`, `workContent.showcase`), providing deep technical architecture specifications.
+
 ## [0.3.2] - 2026-11-11
 
 ### Changed

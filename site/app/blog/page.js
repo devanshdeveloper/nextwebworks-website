@@ -4,7 +4,7 @@ import BlogFeaturedSection from '../_components/blog/BlogFeaturedSection.js';
 import BlogGridSection from '../_components/blog/BlogGridSection.js';
 import BlogTopicsSection from '../_components/blog/BlogTopicsSection.js';
 import FinalCTABanner from '../_components/FinalCTABanner.js';
-import { homeContent } from '@/content/home.js';
+import { blogContent } from '@/content/blog.js';
 import { stripHtml } from '@/lib/blog-utils.js';
 
 export const metadata = {
@@ -31,7 +31,7 @@ export default async function BlogIndexPage() {
       <BlogFeaturedSection featuredPost={featuredPost} />
       <BlogGridSection posts={gridPosts.length > 0 ? gridPosts : processed} />
       <BlogTopicsSection />
-      <FinalCTABanner content={homeContent.ctaBanner} />
+      <FinalCTABanner content={blogContent.indexCtaBanner} />
     </div>
   );
 }

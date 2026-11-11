@@ -5,7 +5,6 @@ import FAQSection from '../_components/FAQSection.js';
 import FinalCTABanner from '../_components/FinalCTABanner.js';
 import ContactFormSection from '../_components/ContactFormSection.js';
 import Schema from '@/components/seo/Schema.js';
-import { homeContent } from '@/content/home.js';
 import { workContent } from '@/content/work.js';
 
 export const metadata = {
@@ -34,10 +33,10 @@ export default function WorkPage() {
       <Schema schema={[faqSchema]} />
       <WorkHeroSection />
       <WorkStandardsSection />
-      <WorkShowcaseSection content={homeContent.workShowcase} hideHeader={true} />
+      <WorkShowcaseSection content={workContent.showcase} hideHeader={true} />
       <FAQSection content={workContent.faqs} />
       <FinalCTABanner content={workContent.ctaBanner} />
-      <ContactFormSection content={homeContent.contactForm} />
+      <ContactFormSection content={workContent.contactForm} />
     </div>
   );
 }

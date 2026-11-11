@@ -8,7 +8,7 @@ export const homeContent = {
       'We handle the complete development, staging, and deployment under your brand. WordPress, Webflow, custom Next.js, and mobile apps. Fixed-scope pricing. Zero client contact.',
     primaryCta: { text: 'Book a 30-Min Call', href: '/book-a-call' },
     secondaryCta: { text: 'Explore Services & How We Work ↓', href: '#services' },
-    mobilePill: { text: 'Book a 30-Min Call →', href: '/book-a-call' },
+    mobilePill: { text: 'Schedule Scoping Call →', href: '/book-a-call' },
   },
 
   painPoints: {
@@ -22,18 +22,21 @@ export const homeContent = {
         title: 'The Freelancer Ghost',
         description:
           'Solo contractors take on other gigs and vanish mid-sprint, leaving your account managers to apologize to irate enterprise clients when deadlines blow past.',
+        risk: 'Risk: Mid-Sprint Contractor Disappearance',
       },
       {
         tag: 'The Fixed Overhead',
         title: 'The Unbillable In-House Salary',
         description:
           'Full-time senior engineers cost substantial payroll and benefits. When client retainers pause or pitch cycles stall, you carry dead unbillable bench overhead.',
+        risk: 'Risk: Unbillable Fixed Payroll & Cash Drag',
       },
       {
         tag: 'The Technical Debt',
         title: 'The Costly Code Rewrite',
         description:
           'Offshore discount shops deliver fragile code that fails client security audits, breaks under traffic spikes, and forces your agency to pay for an emergency rebuild.',
+        risk: 'Risk: Code Failure & Emergency Agency Rebuild',
       },
     ],
     cta: { text: 'Tell us what your clients keep asking for', href: '/book-a-call' },
@@ -159,12 +162,17 @@ export const homeContent = {
     title: 'Flagship Products & Production Platforms',
     description:
       'In addition to confidential white-label agency delivery, we build and operate our own proprietary software products and custom client platforms. Explore our architectural depth below.',
+    highlightsLabel: 'Featured Architecture Capabilities:',
+    deliveryLabel: 'Production Engineering Standards',
+    deliveryDesc: 'White-label delivery with complete source code transfer and automated CI/CD pipelines.',
     samples: [
       {
         id: 'nww-cms-kit',
         title: 'NWW Headless CMS Kit',
         stack: 'Class-Based ISR Engine · Next.js App Router · Edge Revalidation',
         badge: 'In-House Proprietary Engine',
+        clientLabel: 'In-House Engine',
+        tagline: 'Zero-dependency headless CMS client providing instantaneous edge caching and typed schema models.',
         overview:
           'Class-based headless CMS client kit delivering sub-second ISR content rendering, deterministic schema generation, and zero-dependency API query pipelines.',
         highlights: [
@@ -179,6 +187,8 @@ export const homeContent = {
         title: 'ClassyMenu Digital Dining Platform',
         stack: 'Multi-Tenant SaaS · Next.js · Node.js · WhatsApp API Bridge',
         badge: 'In-House Proprietary Platform',
+        clientLabel: 'In-House SaaS Product',
+        tagline: 'Contactless hospitality platform connecting digital table sessions with direct WhatsApp kitchen ordering.',
         overview:
           'Multi-tenant contactless dining and hospitality ordering engine with sub-second catalog search, live table session synchronization, and automated WhatsApp order routing.',
         highlights: [
@@ -193,6 +203,8 @@ export const homeContent = {
         title: 'CeramicSales B2B Wholesale Portal',
         stack: 'Custom ERP Engine · React Server Components · PostgreSQL · Vector PDF',
         badge: 'Direct Client Deliverable',
+        clientLabel: 'Confidential B2B Wholesale Partner',
+        tagline: 'Full-stack enterprise inventory and invoicing portal engineered for high-concurrency wholesale trade.',
         overview:
           'B2B wholesale catalog and stock operations portal handling atomic FIFO inventory allocation, multi-tier GST compliance, and instant server-side PDF invoice generation.',
         highlights: [
@@ -211,47 +223,49 @@ export const homeContent = {
     description: 'Direct answers to standard questions about white-label operations, scoping, and code handover.',
     items: [
       {
-        question: 'Who owns the code?',
-        answer: 'You do: the repository is transferred to your organization at handover.',
-      },
-      {
-        question: 'Will our client find out?',
+        question: 'How does Next Web Works operate behind our marketing agency brand?',
         answer:
-          'We deliver under your brand with no NWW credits or watermarks. You can introduce us as your in-house developer. Commits appear under our developer handle unless you ask us to author them under your agency’s identity.',
+          'We operate as an invisible white-label engineering partner. All deliverables carry zero external vendor branding, public credits, or runtime tracking. Your agency owns client communication, account management, and pricing negotiation, while our engineering desk delivers the staging previews and production code.',
       },
       {
-        question: 'What if a bug appears after launch?',
+        question: 'How quickly can your engineering desk review a brief and deliver a quote?',
         answer:
-          '14-day post-launch fix window included on full builds (proactive check-ins on Day 7 and Day 14), followed by an optional ongoing maintenance plan covering up to 1 hour of copy edits per month (excludes domain and hosting).',
+          'Once you submit a client brief or schedule an initial discovery session, we review the specifications, confirm stack feasibility, and return an itemized fixed-scope proposal within 24 business hours. Qualified projects can kick off as early as the same business day.',
       },
       {
-        question: 'Can you join client calls?',
-        answer: 'We can join client calls as your technical lead when you introduce us.',
-      },
-      {
-        question: 'What stacks do you support?',
-        answer: 'Next.js, WordPress, Webflow, Wix, React.js, MERN, PHP, and React Native.',
-      },
-      {
-        question: 'How do scope changes work?',
-        answer: 'Written change request with an itemized, revised quote before any out-of-scope work proceeds.',
-      },
-      {
-        question: 'How do we get started?',
+        question: 'What platforms and tech stacks do you build on for agency clients?',
         answer:
-          'Book a 30-min call, sign a mutual NDA, review your brief, quote in 24 hours, and kickoff the same day. (Small-task and critical-blocker turnaround: typical).',
+          'Our engineering bench specializes in Next.js 16 App Router, TypeScript, React 19, and Tailwind CSS for custom web applications. For CMS ecosystems, we deliver custom Gutenberg WordPress themes and Webflow CMS implementations. For cross-platform mobile apps, we deploy shared React Native and Expo architectures.',
+      },
+      {
+        question: 'What post-deployment warranty is included with full development builds?',
+        answer:
+          'Every full build includes a 14-day warranty period with proactive telemetry check-ins on Day 7 and Day 14. We fix any defects or responsive regressions deviating from the approved specification at zero additional cost before offering ongoing maintenance support.',
+      },
+      {
+        question: 'How are code repositories and intellectual property handed over?',
+        answer:
+          'Upon milestone completion, full source code ownership, commit history, deployment scripts, and database configurations transfer entirely to your agency. Private GitHub repositories are transferred directly to your organization with comprehensive documentation and zero proprietary runtime lock-in.',
+      },
+      {
+        question: 'How are scope changes and unexpected feature additions managed during a sprint?',
+        answer:
+          'If your client requests additional features mid-sprint that deviate from the signed brief, we isolate the new items and prepare an itemized change request quotation. Out-of-scope work proceeds only upon your written approval, protecting agency profit margins from unbudgeted creep.',
       },
     ],
   },
 
   ctaBanner: {
+    badge: 'Confidential Engineering Partner',
     title: 'Ready to Expand Your Agency’s Dev Capacity?',
     description:
       'Book a 30-minute discovery call with our founder. We’ll review your active client briefs, match stacks, and provide a fixed-scope pilot quote within 24 hours.',
     primaryButton: { text: 'Book a 30-Min Call', href: '/book-a-call' },
+    footnote: 'Fixed quote within 24 business hours · Zero client contact · Strict NDA',
   },
 
   contactForm: {
+    eyebrow: 'Inbound Project Brief',
     leadIn: 'Prefer to write? Send us your brief.',
     description:
       'Tell us about your client’s project, timeline, and preferred stack. We review briefs and reply within 24 hours.',

@@ -4,7 +4,6 @@ import FAQSection from '../_components/FAQSection.js';
 import FinalCTABanner from '../_components/FinalCTABanner.js';
 import ContactFormSection from '../_components/ContactFormSection.js';
 import Schema from '@/components/seo/Schema.js';
-import { homeContent } from '@/content/home.js';
 import { aboutContent } from '@/content/about.js';
 
 export const metadata = {
@@ -35,7 +34,7 @@ export default function AboutPage() {
       <AboutPrinciplesSection content={aboutContent} />
       <FAQSection content={aboutContent.faqs} />
       <FinalCTABanner content={aboutContent.ctaBanner} />
-      <ContactFormSection content={homeContent.contactForm} />
+      <ContactFormSection content={aboutContent.contactForm} />
     </div>
   );
 }

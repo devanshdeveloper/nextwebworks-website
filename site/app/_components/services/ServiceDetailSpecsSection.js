@@ -1,5 +1,34 @@
 // section: service-detail-specs
+
+const SPECS_HEADER_BY_SERVICE = {
+  websites: {
+    title: 'Frontend & Web Vitals Benchmarks',
+    desc: 'Engineered for sub-second paint targets, zero layout shifts, and client editorial autonomy.',
+  },
+  'web-apps': {
+    title: 'Application Architecture & Security Standards',
+    desc: 'Built with React Server Components, transactional schemas, and hardened RBAC authorization guards.',
+  },
+  erps: {
+    title: 'Operational Integrity & Tax Specifications',
+    desc: 'Enforcing atomic FIFO calculations, multi-tier GST compliance, and server-side vector PDF exports.',
+  },
+  'mobile-apps': {
+    title: 'Cross-Platform Mobile Specifications',
+    desc: 'Native 60fps performance, hardware sensor bridging, and automated store submission compliance.',
+  },
+  'cms-platforms': {
+    title: 'CMS Architecture & Governance Standards',
+    desc: 'Lightweight Gutenberg themes, modular Webflow collections, and clean agency handover documentation.',
+  },
+};
+
 export default function ServiceDetailSpecsSection({ service }) {
+  const headerInfo = SPECS_HEADER_BY_SERVICE[service?.id] || {
+    title: `${service?.title || 'Platform'} Specifications`,
+    desc: 'Every line of code is held to strict agency delivery benchmarks.',
+  };
+
   const specs = service.specs || [
     'Clean componentized code matching Figma 1:1 down to 1px precision',
     'Core Web Vitals optimized with zero layout shift and sub-second paint targets',
@@ -19,10 +48,10 @@ export default function ServiceDetailSpecsSection({ service }) {
             Quality Constraints
           </span>
           <h2 className="font-heading text-2xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-3xl">
-            Technical Architecture Specifications
+            {headerInfo.title}
           </h2>
           <p className="text-sm text-slate-600 dark:text-[#94A3B8]">
-            Every line of code is held to strict agency delivery benchmarks.
+            {headerInfo.desc}
           </p>
         </div>
 

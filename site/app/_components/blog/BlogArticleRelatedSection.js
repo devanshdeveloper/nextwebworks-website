@@ -1,19 +1,21 @@
 // section: blog-article-related
 import Link from 'next/link';
+import { blogContent } from '@/content/blog.js';
 
-export default function BlogArticleRelatedSection() {
-  const recommendations = [
-    {
-      title: 'How to Scope Fixed-Price Web Projects Without Scope Creep',
-      desc: 'Locking functional requirements and milestone reviews to protect agency profitability.',
-      href: '/blog',
-    },
-    {
-      title: 'Headless Next.js vs WordPress vs Webflow: Choosing the Right Stack',
-      desc: 'Architectural evaluation criteria based on client editor autonomy and performance benchmarks.',
-      href: '/blog',
-    },
-  ];
+export default function BlogArticleRelatedSection({ currentSlug = '' }) {
+  const recommendations =
+    blogContent.relatedArticlesBySlug[currentSlug] || [
+      {
+        title: 'Modern Front-End Engineering & Headless Architectures',
+        desc: 'Evaluating headless Next.js vs visual site builders for agency scalability.',
+        href: '/blog',
+      },
+      {
+        title: 'Technical Scoping & Milestone Delivery Protocols',
+        desc: 'Frameworks for fixed-price quoting and preventing scope creep on client projects.',
+        href: '/blog',
+      },
+    ];
 
   return (
     <section

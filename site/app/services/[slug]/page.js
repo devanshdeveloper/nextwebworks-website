@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import { Service } from '@/lib/cms-kit/service.js';
 import { homeContent } from '@/content/home.js';
-import { servicesContent } from '@/content/services.js';
+import { servicesContent, serviceDetailContent } from '@/content/services.js';
 import Schema from '@/components/seo/Schema.js';
 import ServiceDetailHeroSection from '../../_components/services/ServiceDetailHeroSection.js';
 import ServiceDetailOverviewSection from '../../_components/services/ServiceDetailOverviewSection.js';
@@ -41,6 +41,12 @@ export default async function ServiceDetailPage({ params }) {
   const service = await getService(slug);
   if (!service) notFound();
 
+  const detailContent = serviceDetailContent[slug] || {
+    faqs: servicesContent.faqs,
+    ctaBanner: servicesContent.ctaBanner,
+    contactForm: servicesContent.contactForm,
+  };
+
   const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -57,9 +63,9 @@ export default async function ServiceDetailPage({ params }) {
       <ServiceDetailOverviewSection service={service} />
       <ServiceDetailSpecsSection service={service} />
       <ServiceDetailStackSection service={service} />
-      <FAQSection content={servicesContent.faqs} />
-      <FinalCTABanner content={servicesContent.ctaBanner} />
-      <ContactFormSection content={homeContent.contactForm} />
+      <FAQSection content={detailContent.faqs} />
+      <FinalCTABanner content={detailContent.ctaBanner} />
+      <ContactFormSection content={detailContent.contactForm} />
     </div>
   );
 }

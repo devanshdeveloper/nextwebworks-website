@@ -1,6 +1,27 @@
 // section: work-detail-highlights
+
+const HIGHLIGHTS_HEADER_BY_WORK = {
+  'nww-cms-kit': {
+    title: 'NWW CMS Kit Technical Highlights',
+    desc: 'Key architectural components delivered in this incremental static regeneration engine.',
+  },
+  classymenu: {
+    title: 'ClassyMenu Platform Highlights',
+    desc: 'Core capabilities delivered in this multi-tenant real-time ordering and dining engine.',
+  },
+  ceramicsales: {
+    title: 'CeramicSales Enterprise Highlights',
+    desc: 'Mission-critical operational capabilities verified in this wholesale ERP portal deployment.',
+  },
+};
+
 export default function WorkDetailHighlightsSection({ work }) {
-  const highlights = work.highlights || [
+  const headerInfo = HIGHLIGHTS_HEADER_BY_WORK[work?.id] || {
+    title: `${work?.title || 'Deliverable'} Highlights`,
+    desc: 'Key architectural components delivered in this production release.',
+  };
+
+  const highlights = work?.highlights || [
     'Sub-second page transitions and deterministic state synchronization',
     'Custom webhook pipelines and third-party API integration',
     'Full test coverage with zero layout shift on mobile and desktop viewports',
@@ -18,10 +39,10 @@ export default function WorkDetailHighlightsSection({ work }) {
             Deliverable Features
           </span>
           <h2 className="font-heading text-2xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-3xl">
-            Verified Technical Highlights
+            {headerInfo.title}
           </h2>
           <p className="text-sm text-slate-600 dark:text-[#94A3B8]">
-            Key architectural components delivered in this production release.
+            {headerInfo.desc}
           </p>
         </div>
 

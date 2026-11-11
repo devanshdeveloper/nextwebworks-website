@@ -3,7 +3,7 @@ import BookAgendaSection from '../_components/book-a-call/BookAgendaSection.js';
 import BookCalSection from '../_components/book-a-call/BookCalSection.js';
 import BookPreparationSection from '../_components/book-a-call/BookPreparationSection.js';
 import FinalCTABanner from '../_components/FinalCTABanner.js';
-import { homeContent } from '@/content/home.js';
+import { bookACallContent } from '@/content/bookACall.js';
 
 export const metadata = {
   title: 'Book a 30-Minute Technical Discovery Call | Next Web Works',
@@ -19,7 +19,7 @@ export default function BookACallPage() {
       <BookAgendaSection />
       <BookCalSection />
       <BookPreparationSection />
-      <FinalCTABanner content={homeContent.ctaBanner} />
+      <FinalCTABanner content={bookACallContent.ctaBanner} />
     </div>
   );
 }

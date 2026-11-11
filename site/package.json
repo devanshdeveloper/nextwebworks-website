@@ -1,6 +1,6 @@
 {
   "name": "nextwebworks-website",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,6 +9,7 @@
     "lint": "eslint",
     "check:structure": "node scripts/check-structure.mjs",
     "check:assets": "node scripts/check-assets.mjs",
+    "check:content": "node scripts/check-content.mjs",
     "check:all": "pnpm lint && pnpm check:structure && pnpm check:assets"
   },
   "dependencies": {

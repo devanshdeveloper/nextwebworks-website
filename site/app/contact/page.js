@@ -3,7 +3,7 @@ import ContactExpectationsSection from '../_components/contact/ContactExpectatio
 import ContactFormSection from '../_components/ContactFormSection.js';
 import ContactChannelsSection from '../_components/contact/ContactChannelsSection.js';
 import FinalCTABanner from '../_components/FinalCTABanner.js';
-import { homeContent } from '@/content/home.js';
+import { contactContent } from '@/content/contact.js';
 
 export const metadata = {
   title: 'Send an Agency Project Brief | Next Web Works',
@@ -13,19 +13,13 @@ export const metadata = {
 };
 
 export default function ContactPage() {
-  const content = {
-    leadIn: 'Send Us Your Project Brief',
-    description:
-      'Have an active client RFP, Figma design, or technical specification? Submit your details below for a fixed quote within 24 business hours.',
-  };
-
   return (
     <div>
       <ContactHeroSection />
       <ContactExpectationsSection />
-      <ContactFormSection content={content} />
+      <ContactFormSection content={contactContent.contactForm} />
       <ContactChannelsSection />
-      <FinalCTABanner content={homeContent.ctaBanner} />
+      <FinalCTABanner content={contactContent.ctaBanner} />
     </div>
   );
 }

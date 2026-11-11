@@ -12,7 +12,8 @@ Run the following commands verbatim from the repository root:
 1. `pnpm --dir site check:structure`: Assert 0 line ceiling violations (page <= 80 lines, section <= 250 lines) and 0 RSC boundary errors.
 2. `pnpm --dir site check:assets`: Assert all SVGs are within byte budget (<= 5.0 KB / 15 KB) and declared in `site/public/assets/manifest.json`.
 3. `pnpm --dir site lint`: Assert ESLint passes with 0 errors and 0 warnings.
-4. `pnpm --dir site build`: Assert Next.js compiles and prerenders all 27+ static and ISR routes with 0 errors.
+4. `pnpm --dir site build`: Assert Next.js compiles and prerenders all static and ISR routes with 0 errors.
+5. `pnpm --dir site check:content`: Assert zero cross-page text repeats, unique CTA/form copy, and FAQ depth compliance (>= 5 items, answers >= 25 words).
 
 ## 2. Invariant & Policy Verification
 - **Zero Rates Check:** Search codebase for accidental rate disclosures or dollar signs.

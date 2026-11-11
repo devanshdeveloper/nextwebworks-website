@@ -86,7 +86,7 @@ export default function ContactFormSection({ content }) {
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-3">
           <p className="text-xs font-mono uppercase tracking-wider text-[#10B981] font-semibold">
-            Inbound Brief
+            {content.eyebrow || 'Inbound Brief'}
           </p>
           <h2 className="font-heading text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
             {content.leadIn}

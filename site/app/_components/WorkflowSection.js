@@ -54,13 +54,13 @@ export default function WorkflowSection({ content }) {
         {/* CTA after 4-step workflow */}
         <div className="mt-14 flex items-center justify-between border-t border-slate-200 dark:border-[#1E293B]/80 pt-8 flex-wrap gap-4">
           <p className="text-sm text-slate-600 dark:text-[#94A3B8]">
-            Need to evaluate code quality before committing client retainers?
+            {content.cta?.prompt || 'Need to evaluate code quality before committing client retainers?'}
           </p>
           <Link
-            href={content.cta.href}
+            href={content.cta?.href || '/book-a-call'}
             className="inline-flex items-center justify-center rounded-lg bg-[#2563EB] px-5 py-2.5 text-sm font-medium text-white hover:bg-[#1D4ED8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB] transition-colors"
           >
-            {content.cta.text} →
+            {content.cta?.text || 'Start with a scoped pilot'} →
           </Link>
         </div>
       </div>
