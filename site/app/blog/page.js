@@ -45,7 +45,7 @@ export default async function BlogIndexPage() {
               </div>
 
               <div className="mt-6 pt-4 border-t border-[#1E293B] flex items-center justify-between text-xs font-mono text-[#64748B]">
-                <span>{new Date(post.createdAt || Date.now()).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+                <span>{new Date(post.createdAt || '2026-11-11').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
                 <Link href={`/blog/${post.slug}`} className="text-[#2563EB] hover:underline">
                   Read Article →
                 </Link>

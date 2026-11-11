@@ -36,7 +36,7 @@ export default async function BlogPostPage({ params }) {
             {post.title}
           </h1>
           <p className="mt-3 font-mono text-xs text-[#64748B]">
-            Published on {new Date(post.createdAt || Date.now()).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} · By Devansh
+            Published on {new Date(post.createdAt || '2026-11-11').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} · By Devansh
           </p>
         </div>
 

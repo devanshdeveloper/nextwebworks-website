@@ -32,7 +32,7 @@ export default function PainPointsSection({ content }) {
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <span className="font-mono text-xs uppercase tracking-wider text-[#64748B]">
-                    0{idx + 1} // {card.tag}
+                    0{idx + 1} {'//'} {card.tag}
                   </span>
                   <span className="h-2 w-2 rounded-full bg-[#EF4444]/70" />
                 </div>
