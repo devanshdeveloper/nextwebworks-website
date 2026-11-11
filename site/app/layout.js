@@ -68,7 +68,7 @@ export const metadata = {
     apple: '/assets/logo-mark.svg',
   },
   verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || 'googleabbe0780e1c0ccb2',
   },
 };
 
