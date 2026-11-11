@@ -41,3 +41,4 @@ export default function BlogArticleHeaderSection({ post, category }) {
     </section>
   );
 }
+

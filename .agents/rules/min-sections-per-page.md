@@ -33,3 +33,4 @@ The following conversion and statutory compliance routes are strictly exempt fro
 1. `site/app/book-a-call/thank-you/page.js`: Post-booking confirmation screen (must preserve high-trust focused confirmation without clutter).
 2. `site/app/privacy/page.js`: Statutory legal compliance text rendered dynamically from CMS Policy model.
 3. `site/app/terms/page.js`: Statutory legal terms of service rendered dynamically from CMS Policy model.
+

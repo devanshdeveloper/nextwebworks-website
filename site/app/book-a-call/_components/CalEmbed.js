@@ -1,76 +1,80 @@
 // section: cal-embed
 'use client';
 
-import { useState } from 'react';
+import { useEffect } from 'react';
 import Link from 'next/link';
+import Script from 'next/script';
 
 export default function CalEmbed() {
-  const [hasError, setHasError] = useState(false);
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.Calendly) {
+      window.Calendly.initInlineWidgets();
+    }
+  }, []);
+
+  const handleScriptLoad = () => {
+    if (typeof window !== 'undefined' && window.Calendly) {
+      window.Calendly.initInlineWidgets();
+    }
+  };
 
   return (
-    <div data-section="cal-embed" className="mt-8 rounded-2xl border border-[#1E293B] bg-[#0F172A] p-4 sm:p-8">
-      {!hasError ? (
-        <div className="space-y-4">
-          <div className="relative min-h-[580px] w-full rounded-xl overflow-hidden bg-[#0B0F19]">
-            <iframe
-              src="https://cal.com/nextwebworks/intro-20?embed=true"
-              title="Cal.com scheduling embed"
-              className="w-full h-[600px] border-0"
-              loading="lazy"
-              onError={() => setHasError(true)}
-            />
-          </div>
+    <div
+      data-section="cal-embed"
+      className="mt-6 rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0F172A] p-4 sm:p-6 shadow-xs transition-colors"
+    >
+      <Script
+        src="https://assets.calendly.com/assets/external/widget.js"
+        strategy="lazyOnload"
+        onLoad={handleScriptLoad}
+      />
 
-          <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-[#1E293B] text-xs text-[#94A3B8]">
-            <div className="flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-[#10B981]" />
-              <span>Direct engineer calendar slot (IST / UTC-aligned)</span>
-            </div>
-            <a
-              href="https://cal.com/nextwebworks/intro-20"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#60A5FA] hover:underline"
-            >
-              Open in standalone tab ↗
-            </a>
-          </div>
+      {/* Calendly Inline Widget styled to current brand tokens */}
+      <div className="relative min-h-[700px] w-full rounded-xl overflow-hidden bg-slate-50 dark:bg-[#0B0F19] border border-slate-200/60 dark:border-[#1E293B]/60">
+        <div
+          className="calendly-inline-widget w-full"
+          data-url="https://calendly.com/devanshkhetwani/30min?primary_color=2563eb"
+          style={{ minWidth: '320px', height: '700px' }}
+        />
+      </div>
+
+      {/* Footer Info & Direct Access Fallbacks */}
+      <div className="mt-6 pt-4 border-t border-slate-200 dark:border-[#1E293B] flex flex-wrap items-center justify-between gap-4 text-xs text-slate-600 dark:text-[#94A3B8]">
+        <div className="flex items-center gap-2">
+          <span className="h-2 w-2 rounded-full bg-[#10B981] animate-pulse" aria-hidden="true" />
+          <span className="font-medium text-slate-800 dark:text-[#E2E8F0]">
+            Direct Founder Calendar (30-Min Technical Review)
+          </span>
         </div>
-      ) : (
-        <div className="p-8 text-center space-y-4">
-          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#1E293B] text-[#94A3B8]">
-            📅
-          </div>
-          <h3 className="font-heading text-lg font-bold text-white">Calendar Embed Blocked by Browser</h3>
-          <p className="max-w-md mx-auto text-xs text-[#94A3B8]">
-            Adblockers or browser shields may block third-party scheduling iframes. Use one of our direct booking paths below:
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
-            <a
-              href="https://cal.com/nextwebworks/intro-20"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-lg bg-[#2563EB] px-5 py-2.5 text-xs font-semibold text-white hover:bg-[#1D4ED8] transition-colors"
-            >
-              Open Cal.com Directly →
-            </a>
-            <a
-              href="https://wa.me/917999934815?text=Hi%2C%20I%20want%20to%20book%20a%20technical%20discovery%20call."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-lg border border-[#1E293B] bg-[#0B0F19] px-5 py-2.5 text-xs font-semibold text-[#10B981] hover:bg-[#1E293B] transition-colors"
-            >
-              WhatsApp Us (+91 79999 34815)
-            </a>
-            <Link
-              href="/contact"
-              className="rounded-lg border border-[#1E293B] bg-[#0B0F19] px-5 py-2.5 text-xs font-semibold text-[#E2E8F0] hover:bg-[#1E293B] transition-colors"
-            >
-              Send Brief via Form
-            </Link>
-          </div>
+        <div className="flex flex-wrap items-center gap-3">
+          <a
+            href="https://calendly.com/devanshkhetwani/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#2563EB] dark:text-[#60A5FA] font-medium hover:underline inline-flex items-center gap-1"
+          >
+            <span>Open Calendly</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+          <span className="text-slate-300 dark:text-slate-700" aria-hidden="true">|</span>
+          <a
+            href="https://wa.me/917999934815?text=Hi%2C%20I%20want%20to%20book%20a%20technical%20discovery%20call."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#10B981] font-medium hover:underline inline-flex items-center gap-1"
+          >
+            <span>WhatsApp Us</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+          <span className="text-slate-300 dark:text-slate-700" aria-hidden="true">|</span>
+          <Link
+            href="/contact"
+            className="text-slate-700 dark:text-slate-300 font-medium hover:underline"
+          >
+            Send Written Brief
+          </Link>
         </div>
-      )}
+      </div>
     </div>
   );
 }

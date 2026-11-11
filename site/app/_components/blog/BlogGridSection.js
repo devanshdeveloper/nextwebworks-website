@@ -67,3 +67,4 @@ export default function BlogGridSection({ posts }) {
     </section>
   );
 }
+

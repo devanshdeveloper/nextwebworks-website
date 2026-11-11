@@ -43,3 +43,4 @@ export default function ServiceDetailSpecsSection({ service }) {
     </section>
   );
 }
+

@@ -42,3 +42,4 @@ export default function WorkDetailHighlightsSection({ work }) {
     </section>
   );
 }
+
