@@ -5,9 +5,9 @@
 **CMS Mode:** cms  
 **Current Stage:** 2  
 **Current Gate:** Gate 2  
-**Status:** Awaiting Client Decision Among Variations (via public review deployment)  
+**Status:** Awaiting Client Decision Among Variations (Deployed live at https://devanshdeveloper.github.io/nextwebworks-website/gate-2-design-theory/index.html)  
 **Webhook Status:** pending  
-**Last Updated:** 2026-11-11 11:20
+**Last Updated:** 2026-11-11 11:32
 
 ## Stage Progress
 
