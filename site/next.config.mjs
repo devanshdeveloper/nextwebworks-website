@@ -8,6 +8,21 @@ const nextConfig = {
       },
     },
   },
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'www.nextwebworks.in',
+          },
+        ],
+        destination: 'https://nextwebworks.in/:path*',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

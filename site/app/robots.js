@@ -14,7 +14,7 @@ export default function robots() {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/api/', '/admin/'],
+      disallow: ['/api/', '/admin/', '/book-a-call/thank-you'],
     },
     sitemap: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://nextwebworks.in'}/sitemap.xml`,
   };

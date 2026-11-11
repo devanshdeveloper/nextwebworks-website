@@ -61,6 +61,9 @@ export const metadata = {
     description:
       'Dedicated white-label engineering partner for marketing agencies. Fixed-scope development under your agency brand.',
   },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
+  },
 };
 
 export default function RootLayout({ children }) {
