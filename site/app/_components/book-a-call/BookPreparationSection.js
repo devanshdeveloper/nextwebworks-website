@@ -2,14 +2,10 @@
 import Link from 'next/link';
 import MotionFadeIn from '@/components/motion/MotionFadeIn.js';
 import MotionStagger from '@/components/motion/MotionStagger.js';
+import { bookACallContent } from '@/content/bookACall.js';
 
-export default function BookPreparationSection() {
-  const checklists = [
-    'Active client requirements document, scope list, or RFP',
-    'Figma design links or visual references (if available)',
-    'Target delivery dates and platform preferences',
-    'Known third-party integrations (payment gateways, CRMs, APIs)',
-  ];
+export default function BookPreparationSection({ content = bookACallContent }) {
+  const prep = content?.preparation || bookACallContent.preparation;
 
   return (
     <section
@@ -22,29 +18,37 @@ export default function BookPreparationSection() {
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
               <span className="font-mono text-xs uppercase tracking-wider text-[#10B981] font-semibold">
-                Meeting Preparation
+                {prep.eyebrow}
               </span>
               <h3 className="font-heading text-lg font-bold text-slate-900 dark:text-white mt-1">
-                What to Have Ready for the Review
+                {prep.title}
               </h3>
+              <p className="text-xs text-slate-600 dark:text-[#94A3B8] mt-1">
+                {prep.description}
+              </p>
             </div>
             <Link
               href="/contact"
-              className="inline-flex items-center text-xs font-mono font-semibold text-[#2563EB] dark:text-[#60A5FA] hover:underline"
+              className="inline-flex items-center text-xs font-mono font-semibold text-[#2563EB] dark:text-[#60A5FA] hover:underline shrink-0"
             >
               Prefer to send written brief? →
             </Link>
           </div>
 
-          <MotionStagger itemSelector=".prep-item" stagger={0.06} y={10} as="ul" className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-            {checklists.map((item) => (
-              <li
-                key={item}
-                className="prep-item flex items-start gap-2.5 text-xs text-slate-700 dark:text-[#CBD5E1]"
+          <MotionStagger itemSelector=".prep-item" stagger={0.06} y={10} className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+            {prep.items.map((item) => (
+              <div
+                key={item.title}
+                className="prep-item rounded-xl border border-slate-200 dark:border-[#1E293B] bg-slate-50 dark:bg-[#0B0F19] p-4 text-xs space-y-1.5"
               >
-                <span className="text-[#10B981] font-bold" aria-hidden="true">✓</span>
-                <span>{item}</span>
-              </li>
+                <div className="flex items-center gap-2">
+                  <span className="text-[#10B981] font-bold" aria-hidden="true">✓</span>
+                  <span className="font-semibold text-slate-900 dark:text-white">{item.title}</span>
+                </div>
+                <p className="text-slate-600 dark:text-[#94A3B8] leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
             ))}
           </MotionStagger>
         </MotionFadeIn>

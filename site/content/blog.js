@@ -2,12 +2,13 @@
 
 export const blogContent = {
   indexCtaBanner: {
-    badge: 'White-Label Playbooks',
-    title: 'Have a Development Challenge Not Covered in Our Guides?',
+    sectionId: 'blog-cta',
+    badge: 'Direct Engineering Scoping',
+    title: 'Discuss an Upcoming Client Build',
     description:
-      'Our engineering lead is available for 30-minute scoping sessions to audit your architecture, code repos, or client technical roadmaps.',
-    primaryButton: { text: 'Discuss With Engineering', href: '/book-a-call' },
-    footnote: 'Direct technical consultation · Zero commercial jargon · 24h follow-up',
+      'Have a client asking for a custom web application or complex platform? Schedule a 30-minute scoping call directly with Devansh.',
+    primaryButton: { text: 'Book a 30-Min Call', href: '/book-a-call' },
+    footnote: 'Direct technical consultation · Zero commercial jargon · 24h quote turnaround',
   },
 
   articleCtaBanner: {
@@ -33,7 +34,7 @@ export const blogContent = {
       title: 'Have a Client Scope Brief That Needs Immediate Technical Feasibility?',
       description:
         'Send us your Figma files, functional specifications, or RFPs. We deliver milestone-gated quotations within 24 business hours.',
-      primaryButton: { text: 'Request a Fixed-Price Project Quote', href: '/contact' },
+      primaryButton: { text: 'Book a 30-Min Call', href: '/book-a-call' },
       footnote: 'Milestone-gated sprints · Change request firewalls · 14-day warranty',
     },
     'headless-nextjs-vs-wordpress-vs-webflow': {
@@ -56,8 +57,8 @@ export const blogContent = {
     'how-to-scope-fixed-price-web-projects-without-scope-creep': {
       title: 'Have a complex client RFP or scoping brief to review?',
       desc: 'Send us your functional requirements and Figma files for an immediate technical feasibility check.',
-      cta: 'Request a Fixed-Price Scope Audit →',
-      href: '/contact',
+      cta: 'Book a 30-Min Technical Scoping Call →',
+      href: '/book-a-call',
     },
     'headless-nextjs-vs-wordpress-vs-webflow': {
       title: 'Evaluating frontend frameworks for an upcoming client build?',
@@ -107,32 +108,27 @@ export const blogContent = {
   },
 
   newsletter: {
-    eyebrow: 'The Agency Digest',
-    title: 'Tactical Engineering Breakdowns for Agency Leaders',
+    eyebrow: 'ENGINEERING DIGEST',
+    title: 'The White-Label Engineering Digest',
     description:
-      'Twice a month, we publish deep-dive breakdowns on white-label architectures, fixed-price scoping formulas, and client retention engineering. Zero sponsored filler.',
+      'At most two tactical articles a month on agency dev scoping and delivery. Zero marketing fluff.',
   },
 
   editorialStandards: {
-    eyebrow: 'Editorial Principles',
-    title: 'Our Engineering Writing Guidelines',
+    eyebrow: 'EDITORIAL INTEGRITY',
+    title: 'Tested Architectures. Zero Sponsored Fluff.',
     description:
-      'We write exclusively from active production consulting experience. Here are the core commitments behind every playbook we publish.',
+      'Every playbook published on Next Web Works is written by our lead developer and grounded in production codebases.',
     pillars: [
       {
         id: 'es1',
-        title: 'Zero AI-Generated Fluff',
-        desc: 'Every article is authored and reviewed by practicing engineers with verified code snippets and real repository architectural patterns.',
+        title: 'Code-Verified Implementations',
+        desc: 'Code snippets and architecture diagrams reflect real, working configurations tested in production environments.',
       },
       {
         id: 'es2',
-        title: 'Agency Operator Focus',
-        desc: 'We address the exact financial and technical friction points digital marketing agencies navigate: scope creep, client retention, and margin protection.',
-      },
-      {
-        id: 'es3',
-        title: 'Reproducible Benchmarks',
-        desc: 'Every performance statistic and technical recommendation is accompanied by reproducible audit criteria and production evidence.',
+        title: 'Zero Sponsored Content',
+        desc: 'We do not publish sponsored posts or third-party affiliate promotions. Our content is written strictly to solve agency delivery challenges.',
       },
     ],
   },

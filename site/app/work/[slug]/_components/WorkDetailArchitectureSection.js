@@ -11,7 +11,7 @@ const ARCH_BY_WORK = {
       { id: 'n1', title: 'File-Based Model Classes', desc: 'Lightweight static model classes reading frontmatter markdown directly with sub-5ms lookup latency.' },
       { id: 'n2', title: 'Server-Side Syntax Pipeline', desc: 'Unified Markdown engine compiling code blocks through Shiki with zero client bundle weight.' },
       { id: 'n3', title: 'Dynamic OpenGraph Rendering', desc: 'Satori edge generator compiling 1200x630 social preview cards on-the-fly from model titles.' },
-      { id: 'n4', title: 'Zero Third-Party Vendor Lock', desc: 'Stateless file-backed architecture running seamlessly on standard Node and serverless runtimes.' },
+      { id: 'n4', title: 'Zero Third-Party Vendor Lock', desc: 'Stateless file-backed architecture running reliably on standard Node and serverless runtimes.' },
     ],
   },
   classymenu: {

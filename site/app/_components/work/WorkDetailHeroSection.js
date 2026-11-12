@@ -42,7 +42,7 @@ export default function WorkDetailHeroSection({ work }) {
                 {work.badge || 'Production Platform'}
               </span>
               <span className="rounded-full border border-slate-200 dark:border-[#1E293B] bg-slate-50 dark:bg-[#0F172A] px-3 py-0.5 font-mono text-xs text-slate-500 dark:text-[#64748B]">
-                {work.clientLabel ? work.clientLabel : `Client: ${clientDisplay}`}
+                {work.pill || 'Illustrative sample · not a client project'}
               </span>
             </div>
 

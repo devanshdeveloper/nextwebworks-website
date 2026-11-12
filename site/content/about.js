@@ -1,222 +1,212 @@
-// site/content/about.js - Engineering philosophy, 4 principles, 4 boundaries, and per-page FAQ/CTA
+// site/content/about.js - Engineering philosophy, 4 principles, mission, operations, warranty, and per-page FAQ/CTA
 
 export const aboutContent = {
   founder: {
-    name: 'Devansh',
-    title: 'Founder & Principal Engineer',
-    location: 'Indore, India',
-    positioning:
-      'Operating an engineering consultancy based in Indore, India, dedicated to helping digital agencies scale dev capacity safely and sustainably.',
+    name: 'Devansh Khetwani',
+    title: 'Founder & Lead Engineer',
+    location: 'Indore, Madhya Pradesh, India',
+    badge: 'DK · Lead Engineer',
+    bio: 'Devansh is the Founder & Lead Engineer at Next Web Works, based in Indore, India. He partners directly with digital agencies to architect and ship custom Next.js web applications, headless CMS platforms, and ERPs behind their brand, eliminating payroll drag and delivery churn.',
+    eyebrow: 'LEAD ENGINEER & FOUNDER',
+    titleMain: "Engineering Craft Behind Your Agency's Brand",
+    description:
+      'Next Web Works was founded by Devansh Khetwani to solve a specific, expensive friction point: digital agencies winning complex contracts but losing sleep and margin to unreliable freelancers and bloated payroll.',
+    paragraphs: [
+      'We operate as your dedicated technical partner. When you pitch a custom web application, enterprise WordPress build, or React Native mobile platform, we review your specifications, verify technical constraints, and deliver the production code strictly under your brand.',
+      'Operating from Indore, India, we maintain standard business hours (10:00 AM – 7:00 PM IST) and direct engineering communication. You always speak directly with the developer writing your code—never an account manager or junior intermediary.',
+    ],
+    cta: { text: 'Talk Directly With Devansh →', href: '/book-a-call' },
   },
 
   principles: [
     {
       number: '01',
-      title: 'Code Sovereignty',
+      title: 'Strict White-Label Discretion',
       description:
-        'Full source code, clean commit history, and deployment configurations belong entirely to your agency. Zero proprietary runtime traps or vendor lock-in.',
+        'Zero watermarks, zero public portfolio boasting, and zero client solicitation. We work silently behind your brand, or author commits under your agency email handles.',
     },
     {
       number: '02',
-      title: 'Strict Confidentiality',
+      title: 'Direct Senior Engineering Access',
       description:
-        'We operate strictly under mutual NDA. Your client names, project scopes, and agency brand identity are protected with legally enforceable non-solicitation guarantees.',
+        'No account managers, sales representatives, or junior hand-offs. You collaborate directly with the lead engineer who reviews your brief and writes your code.',
     },
     {
       number: '03',
-      title: 'Predictable Delivery',
+      title: 'Zero Rate Surprises & Fixed Scopes',
       description:
-        'Fixed-scope quotations within 24 hours, transparent milestone delivery schedules, and regular async Loom check-ins so your account team stays ahead of deadlines.',
+        'We evaluate specifications thoroughly and quote fixed milestones within 24 hours. When scope is agreed upon, your price is locked with zero surprise charges.',
     },
     {
       number: '04',
-      title: 'Post-Launch Ownership',
+      title: 'Complete Codebase Sovereignty',
       description:
-        'We never vanish after deployment. Every full build includes a 14-day defect fix window with scheduled check-ins on Day 7 and Day 14 until your team is delighted.',
+        'We deliver full repository ownership directly to your agency with clear setup guides, automated CI/CD pipelines, and zero proprietary developer lock-in.',
+      referenceText: 'View Handover Deliverables →',
+      referenceHref: '/services#deliverables',
     },
   ],
-
-  boundaries: [
-    {
-      title: 'No Cut-Corner Outsourcing',
-      description:
-        'We never hand off your client work to untested third parties or offshore gig pools. All code is authored directly in our engineering consultancy.',
-    },
-    {
-      title: 'No Speculative Unpaid Pitching',
-      description:
-        'We provide rigorous technical reviews and fixed-price quotes on qualified briefs, but we do not write uncompensated speculative code for agency pitches.',
-    },
-    {
-      title: 'No Hostage Code or Hidden Keys',
-      description:
-        'Your agency retains complete repository access and ownership from sprint kickoff to production launch. We never withhold code or infrastructure access.',
-    },
-    {
-      title: 'No Direct Client Solicitation',
-      description:
-        'We never contact or solicit your clients behind your back. Our strict non-solicitation commitment is written permanently into our mutual NDA.',
-    },
-  ],
-
-  faqs: {
-    eyebrow: 'Engineering Team FAQ',
-    title: 'How Our Consultancy Operates',
-    description: 'Direct answers about our operations, location in Indore, time zone coverage, and engineering standards.',
-    items: [
-      {
-        question: 'Where is Next Web Works based and what are your operating hours?',
-        answer:
-          'Next Web Works is based in Indore, India. We operate Monday through Friday from 10:00 AM to 7:00 PM IST, providing steady daily overlap with European mornings and US Eastern mornings for synchronous alignment and seamless async milestone handovers.',
-      },
-      {
-        question: 'Do I communicate directly with the engineer building our project?',
-        answer:
-          'Yes. You communicate directly with Devansh, our founder and principal engineer. There are zero layers of junior account coordinators or miscommunicated game-of-telephone briefs, ensuring technical specifications translate directly into production code.',
-      },
-      {
-        question: 'Why do you uphold a strict zero rates policy on your public website?',
-        answer:
-          'Because we operate strictly as a white-label partner to digital marketing agencies. Public rate cards compromise agency client trust and margin negotiation. Every project receives a private, itemized fixed-price quotation tailored to its exact technical specification within 24 hours.',
-      },
-      {
-        question: 'How do you structure post-launch warranty reviews and defect resolution?',
-        answer:
-          'Once a website or application goes live on your client domain, we schedule proactive review checkpoints on Day 7 and Day 14. We monitor error telemetry, verify responsive fidelity across physical devices, and resolve any functional defects at zero additional charge.',
-      },
-      {
-        question: 'What happens if our agency needs ongoing maintenance after the warranty window?',
-        answer:
-          'Following the 14-day warranty period, agencies have the option to engage ongoing maintenance support covering regular dependency updates, security patches, minor editorial revisions, and monthly uptime monitoring with dedicated developer priority.',
-      },
-    ],
-  },
 
   mission: {
-    eyebrow: 'Agency Back-Office Mission',
-    title: 'Why We Built a Dedicated White-Label Engineering Partner',
+    eyebrow: 'CONSULTANCY MISSION',
+    title: 'Eliminating Technical Overhead for Growth Agencies',
     description:
-      'Digital agencies win high-value accounts on strategy, brand, and design. But delivering modern web applications and headless portals without a bloated payroll bench is an expensive operational trap.',
-    cards: [
+      'Marketing agencies and creative studios should focus on strategy, client relationships, and creative design—not debugging server configurations.',
+    pillars: [
       {
         id: 'm1',
-        title: 'Freelancers Cannot Scale With Agency Demand',
+        title: 'Enabling Confident Agency Pitches',
         description:
-          'Solo freelancers juggle multiple conflicting gigs, drop offline during critical client sprint demos, and lack systematic defect resolution workflows.',
+          'We enable agencies to pitch sophisticated web apps, custom portals, and mobile platforms without the fear of being unable to deliver.',
       },
       {
         id: 'm2',
-        title: 'Permanent In-House Engineering Carries Dead Weight',
+        title: 'Protecting Agency Profitability',
         description:
-          'Hiring senior fullstack developers on permanent payroll burns agency cash reserves when client retainers fluctuate or pitch pipelines experience delays.',
+          'We replace unbillable developer payroll and freelancer churn with predictable, milestone-based engineering execution.',
       },
       {
         id: 'm3',
-        title: 'The Dedicated Invisible Partner Model Wins',
+        title: 'Delivering Sustainable Software',
         description:
-          'We bridge the gap: on-demand senior engineering horsepower with fixed-scope quotes, predictable sprint milestones, and zero payroll liability.',
+          'We write clean, typed, documented code that client organizations can maintain and operate for years without technical bankruptcy.',
       },
     ],
   },
 
   philosophy: {
-    eyebrow: 'Architectural Standards',
-    title: 'Engineering Quality Over Premature Framework Complexity',
+    eyebrow: 'ARCHITECTURE PHILOSOPHY',
+    title: 'Clean Typed Architectures Over Framework Hype',
     description:
-      'We write production code designed to be maintained for years. Every repository adheres to strict line ceilings, pure Tailwind utility styling, and zero third-party bloat.',
+      'We choose proven, resilient engineering tools that solve real business problems rather than chasing fleeting developer trends.',
     pillars: [
       {
         id: 'ph1',
-        title: 'Thin Server Components',
+        title: 'Lean Dependencies & Zero Bloat',
         description:
-          'We isolate client interactivity strictly to interactive leaves, ensuring maximum streaming efficiency, sub-second TTFB, and zero client bundle dead weight.',
+          'Every third-party package introduced into a repository must justify its weight. We avoid dependency bloat that slows down page loads and creates security vulnerabilities.',
       },
       {
         id: 'ph2',
-        title: 'Zero Stock Photography Policy',
+        title: 'Predictable Data Contracts',
         description:
-          'Every graphic element is an in-house programmatic SVG or authentic photograph, ensuring zero generic corporate stock aesthetic on your client builds.',
+          'Frontend and backend services communicate through explicit, typed data contracts. We validate data at system boundaries so that bugs are caught during development.',
       },
       {
         id: 'ph3',
-        title: 'Automated Compliance Gates',
+        title: 'Deterministic Verification Before Delivery',
         description:
-          'Every commit passes rigorous automated lint, line ceiling, zero-stock asset verification, and technical SEO audits before code ever touches production.',
+          'Code is verified against automated linter gates, accessibility standards, and physical device performance benchmarks before we request milestone review.',
+        referenceText: 'View Verification Lab Standards →',
+        referenceHref: '/work#verification',
       },
     ],
   },
 
-  confidentiality: {
-    eyebrow: 'White-Label Protocol',
-    title: 'Uncompromised Anonymity & Code Sovereignty',
+  operations: {
+    eyebrow: 'DAILY OPERATIONS',
+    title: 'Transparent Collaboration on a Predictable Schedule',
     description:
-      'Your clients never know we exist. We work strictly behind your agency veil, protecting your brand equity and agency-client relationships.',
+      'Clear communication rhythms and transparent task tracking keep agency account managers in complete control of sprint timelines.',
     items: [
       {
-        id: 'c1',
-        badge: 'Ghost Authoring',
-        title: 'Developer Handles or Agency Commits',
+        id: 'op1',
+        title: 'Predictable Working Hours',
         description:
-          'We push git commits under developer pseudonyms or directly through your agency GitHub organization accounts with zero external attribution.',
+          'Operating Monday through Friday, 10:00 AM to 7:00 PM IST, providing solid working overlap with agencies across Europe, the Middle East, and Asia-Pacific.',
       },
       {
-        id: 'c2',
-        badge: 'Mutual NDA',
-        title: 'Ironclad Legal Protection',
+        id: 'op2',
+        title: 'Asynchronous Task Visibility',
         description:
-          'Every collaboration is governed by a bilateral mutual non-disclosure agreement with strict non-solicitation and confidential brief protections.',
+          'We provide regular sprint status updates, linking directly to staging preview URLs and transparent task checklists so account managers never have to guess progress.',
       },
       {
-        id: 'c3',
-        badge: 'Direct IP Transfer',
-        title: 'Unconditional Code Ownership',
+        id: 'op3',
+        title: 'Direct Technical Triage',
         description:
-          'Full intellectual property, commit histories, infrastructure access, and environment keys transfer directly and unconditionally to your agency.',
+          'When questions or scope clarifications arise, we resolve them quickly through shared agency channels, keeping project momentum high.',
       },
     ],
   },
 
   warranty: {
-    eyebrow: 'Post-Deployment Warranty Protocol',
-    title: 'Production Ownership That Extends Past Launch Day',
+    eyebrow: 'POST-LAUNCH WARRANTY',
+    title: '14-Day Post-Launch Defect Warranty on Every Full Build',
     description:
-      'We stand behind every line of code we ship. Full development builds include a 14-day warranty period to ensure client satisfaction and zero launch panic.',
-    milestones: [
+      'We own our work until your account team and client are completely satisfied. Every full project build includes an active 14-day fix window.',
+    checkpoints: [
       {
-        step: 'Day 01',
-        title: 'Production Cutover & Verification',
+        step: 'Check 01',
+        title: 'Full Defect Coverage Against Approved Specs',
         description:
-          'We assist with DNS propagation, SSL verification, edge caching warmup, and automated Lighthouse telemetry validation on the live domain.',
+          'During the 14 calendar days following client staging sign-off, we resolve any code defects, layout misalignments, or functional bugs against approved specifications promptly at zero additional cost.',
       },
       {
-        step: 'Day 07',
-        title: 'Mid-Point Telemetry Review',
+        step: 'Check 02',
+        title: 'Scheduled Day 7 and Day 14 Check-Ins',
         description:
-          'Scheduled check-in to analyze error logs, responsive fidelity on real client devices, and resolve any discovered edge cases at zero cost.',
+          'We schedule proactive check-ins at Day 7 and Day 14 post-launch to review real-world telemetry, address client feedback, and ensure smooth operational handover.',
       },
       {
-        step: 'Day 14',
-        title: 'Final Acceptance & Maintenance Option',
+        step: 'Check 03',
+        title: 'Clear Boundary Definitions',
         description:
-          'Final sign-off milestone ensuring your account team and client are delighted, followed by transition to optional monthly retainer support.',
+          'The warranty covers code bugs and defects against signed specifications. It excludes new feature requests, client content copy additions, and external third-party platform API disruptions.',
+      },
+    ],
+  },
+
+  faqs: {
+    sectionId: 'about-faqs',
+    eyebrow: 'Engineering Team FAQ',
+    title: 'About Next Web Works & Founder Operations FAQs',
+    description:
+      'Direct answers about our operations, location in Indore, time zone coverage, and engineering standards.',
+    items: [
+      {
+        question: 'Where is Next Web Works legally registered and operated?',
+        answer:
+          'Next Web Works is legally registered as a sole proprietorship founded by Devansh Khetwani in Indore, Madhya Pradesh, India. We operate from Indore and partner remotely with digital marketing agencies and creative studios globally.',
+      },
+      {
+        question: 'Do you outsource development to junior subcontractors or offshore agencies?',
+        answer:
+          'No. Every project is architected, developed, and verified directly by our lead engineer, Devansh. We do not pass your client work down to junior developers or third-party offshore subcontractors.',
+      },
+      {
+        question: 'How do you handle client discovery calls across different time zones?',
+        answer:
+          'We accommodate discovery and technical scoping calls within our standard business hours (10:00 AM – 7:00 PM IST) and can schedule morning or evening slots to accommodate European, Australian, or US agency time zones.',
+      },
+      {
+        question: "Can you sign our agency's standard mutual NDA and master services agreement?",
+        answer:
+          'Yes. We routinely review and execute agency-provided mutual non-disclosure agreements and master services agreements prior to reviewing client briefs, Figma design libraries, or proprietary project documentation.',
+      },
+      {
+        question: 'What happens after the 14-day post-launch warranty window concludes?',
+        answer:
+          'At the conclusion of the 14-day defect window on Day 14, we perform a formal sign-off. Agencies can either take full ownership of the codebase or transition into our optional monthly dedicated dev bench for ongoing feature updates.',
       },
     ],
   },
 
   ctaBanner: {
+    sectionId: 'about-cta',
     badge: 'Direct Engineering Access',
-    title: 'Work Directly With the Principal Engineer',
+    title: 'Talk Directly With Our Lead Engineer',
     description:
-      'Cut out account manager layers and speak directly with engineering leadership. Book a 30-minute discovery call to review your upcoming client roadmap.',
-    primaryButton: { text: 'Book Discovery Call With Devansh', href: '/book-a-call' },
+      'Schedule a 30-minute scoping call directly with Devansh. We will discuss your client pipeline, evaluate technical feasibility, and quote within 24 hours.',
+    primaryButton: { text: 'Book a 30-Min Call', href: '/book-a-call' },
     footnote: 'Direct 1-on-1 engineering dialogue · No sales pitch · Strict mutual NDA',
   },
 
   contactForm: {
+    sectionId: 'about-contact-form',
     eyebrow: 'Direct Technical Inquiry',
-    leadIn: 'Connect Directly With Engineering Leadership',
+    leadIn: 'Send Devansh a Note About Your Agency',
     description:
-      'Have a question about our code standards, warranty terms, or developer background? Send Devansh a note directly for a thoughtful technical reply.',
+      'Have a question about how we collaborate or want to review an upcoming client RFP? Send a message directly to our engineering desk.',
   },
 };
-

@@ -49,12 +49,12 @@ export default function PartnershipModelsSection() {
     <section data-section="partnership-models" className="py-16 md:py-20 border-t border-slate-200 dark:border-[#1E293B]/60 transition-colors">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <MotionFadeIn y={20} className="text-center max-w-3xl mx-auto space-y-3">
-          <span className="font-mono text-xs uppercase tracking-wider text-[#10B981] font-semibold">Engagement Models</span>
+          <span className="font-mono text-xs uppercase tracking-wider text-[#10B981] font-semibold">ENGAGEMENT MODELS</span>
           <h2 className="font-heading text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
-            Flexible Partnership Architecture
+            Three Ways to Integrate Next Web Works Into Your Agency
           </h2>
           <p className="text-sm text-slate-600 dark:text-[#94A3B8]">
-            Choose the engagement model that matches your agency’s pipeline. Every model operates under strict mutual NDA and 100% white-label confidentiality.
+            Choose the commercial model that fits your current client pipeline. Terms and milestone schedules are discussed directly on your discovery call.
           </p>
         </MotionFadeIn>
 

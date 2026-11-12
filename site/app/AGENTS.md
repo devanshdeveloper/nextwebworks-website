@@ -11,7 +11,7 @@
 - Every section component begins with `// section: <id>` and attaches `data-section="<id>"`.
 - Standard page-bottom stack strictly preserved: FAQ Accordion -> Final CTA Banner -> Contact Form -> Footer.
 - Interactive leaves (`'use client'`) isolated to spec drawers, accordion toggles, and form submissions.
-- Unique content invariant strictly enforced: zero cross-page text repeats, unique CTA/form copy, and FAQ floor >= 5 Q&As >= 25 words (see .agents/rules/unique-content-per-page.md).
+- Unique content invariant strictly enforced: zero cross-page text repeats, unique CTA/form copy, FAQ floor >= 5 Q&As >= 25 words, and strict 'One Concept, One Home' copy standards (see .agents/rules/copy-standards.md and .agents/rules/unique-content-per-page.md).
 - Technical SEO standards strictly enforced: title 25-65 chars, description 70-160 chars, linked @graph JSON-LD, self canonicals, exactly 1 h1, and zero orphan routes (see .agents/rules/seo-standards.md).
 
 ## Anti-patterns

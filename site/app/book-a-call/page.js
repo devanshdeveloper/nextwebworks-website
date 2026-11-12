@@ -4,7 +4,8 @@ import BookCalSection from '../_components/book-a-call/BookCalSection.js';
 import BookPreparationSection from '../_components/book-a-call/BookPreparationSection.js';
 import BookGuaranteeSection from './_components/BookGuaranteeSection.js';
 import BookConfidentialitySection from './_components/BookConfidentialitySection.js';
-import FinalCTABanner from '../_components/FinalCTABanner.js';
+import BookFallbackChannelsSection from './_components/BookFallbackChannelsSection.js';
+import BookWrittenAlternativeSection from './_components/BookWrittenAlternativeSection.js';
 import Schema from '@/components/seo/Schema.js';
 import { buildLinkedGraph, buildRouteMetadata } from '@/lib/seo/index.js';
 import { bookACallContent } from '@/content/bookACall.js';
@@ -33,12 +34,13 @@ export default function BookACallPage() {
     <div>
       <Schema schema={jsonLd} />
       <BookHeroSection />
-      <BookAgendaSection />
+      <BookAgendaSection content={bookACallContent} />
       <BookCalSection />
-      <BookPreparationSection />
+      <BookPreparationSection content={bookACallContent} />
       <BookGuaranteeSection content={bookACallContent} />
       <BookConfidentialitySection content={bookACallContent} />
-      <FinalCTABanner content={bookACallContent.ctaBanner} />
+      <BookFallbackChannelsSection content={bookACallContent} />
+      <BookWrittenAlternativeSection content={bookACallContent} />
     </div>
   );
 }

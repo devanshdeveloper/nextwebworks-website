@@ -13,7 +13,7 @@ Execute this checklist before deploying to Vercel production or delivering build
 - [ ] Run `pnpm --dir site lint` — verify ESLint passes with 0 errors.
 - [ ] Run `pnpm --dir site build` — verify all static and ISR routes compile cleanly without date evaluation or prefetching errors.
 - [ ] Run `pnpm --dir site check:seo` — verify zero title, description, canonical, OG, JSON-LD, heading, or sitemap violations (see .agents/rules/seo-standards.md).
-- [ ] Run `pnpm --dir site check:content` — verify zero cross-page text repeats, unique CTA/form copy, and FAQ depth compliance (>= 5 Q&As, answers >= 25 words).
+- [ ] Run `pnpm --dir site check:content` — verify zero cross-page text repeats, single-objective section mapping, concept ownership compliance, and zero banned phrases (see .agents/rules/copy-standards.md and .agents/rules/unique-content-per-page.md).
 
 ## 2. Content & Brand Invariants
 - [ ] Zero rates, prices, hourly figures, retainers, or split percentages anywhere in the build.

@@ -1,6 +1,6 @@
 import ServicesHeroSection from '../_components/services/ServicesHeroSection.js';
 import ServicesCapabilitiesSection from '../_components/services/ServicesCapabilitiesSection.js';
-import ServicesProcessSection from '../_components/services/ServicesProcessSection.js';
+import ServicesIntegrationStandardsSection from '../_components/services/ServicesIntegrationStandardsSection.js';
 import ServicesStackMatrixSection from '../_components/services/ServicesStackMatrixSection.js';
 import ServicesDeliverablesSection from './_components/ServicesDeliverablesSection.js';
 import ServicesComparisonSection from './_components/ServicesComparisonSection.js';
@@ -37,7 +37,7 @@ export default function ServicesPage() {
       <Schema schema={jsonLd} />
       <ServicesHeroSection />
       <ServicesCapabilitiesSection />
-      <ServicesProcessSection />
+      <ServicesIntegrationStandardsSection content={servicesContent} />
       <ServicesStackMatrixSection content={{ platforms: servicesContent.stackMatrix }} />
       <ServicesDeliverablesSection content={servicesContent} />
       <ServicesComparisonSection content={servicesContent} />

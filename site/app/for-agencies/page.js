@@ -1,9 +1,9 @@
 import AgencyHeroSection from './_components/AgencyHeroSection.js';
 import PartnershipModelsSection from './_components/PartnershipModelsSection.js';
-import WorkflowSection from '../_components/WorkflowSection.js';
 import AgencyMarginsSection from './_components/AgencyMarginsSection.js';
 import AgencyConfidentialitySection from './_components/AgencyConfidentialitySection.js';
-import AgencyOnboardingSection from './_components/AgencyOnboardingSection.js';
+import AgencySlaSection from './_components/AgencySlaSection.js';
+import AgencyRiskReversalSection from './_components/AgencyRiskReversalSection.js';
 import FAQSection from '../_components/FAQSection.js';
 import FinalCTABanner from '../_components/FinalCTABanner.js';
 import ContactFormSection from '../_components/ContactFormSection.js';
@@ -37,10 +37,10 @@ export default function ForAgenciesPage() {
       <Schema schema={jsonLd} />
       <AgencyHeroSection content={forAgenciesContent.hero} />
       <PartnershipModelsSection />
-      <WorkflowSection content={forAgenciesContent.workflow} />
       <AgencyMarginsSection content={forAgenciesContent.margins} />
       <AgencyConfidentialitySection content={forAgenciesContent.confidentiality} />
-      <AgencyOnboardingSection content={forAgenciesContent.onboarding} />
+      <AgencySlaSection content={forAgenciesContent.sla} />
+      <AgencyRiskReversalSection content={forAgenciesContent.riskReversal} />
       <FAQSection content={forAgenciesContent.faqs} />
       <FinalCTABanner content={forAgenciesContent.ctaBanner} />
       <ContactFormSection content={forAgenciesContent.contactForm} />

@@ -1,4 +1,5 @@
-// section: home-tech-stack
+// section: home-engineering-standards
+import Link from 'next/link';
 import MotionFadeIn from '@/components/motion/MotionFadeIn.js';
 import MotionStagger from '@/components/motion/MotionStagger.js';
 
@@ -7,8 +8,8 @@ export default function HomeTechStackSection({ content }) {
 
   return (
     <section
-      id="home-tech-stack"
-      data-section="home-tech-stack"
+      id="home-engineering-standards"
+      data-section="home-engineering-standards"
       className="py-16 md:py-24 border-b border-slate-200 dark:border-[#1E293B]/60 bg-slate-50 dark:bg-[#0B0F19] transition-colors"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -25,46 +26,46 @@ export default function HomeTechStackSection({ content }) {
         </MotionFadeIn>
 
         <MotionStagger
-          itemSelector=".stack-card"
+          itemSelector=".standard-card"
           stagger={0.08}
           y={20}
           className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6"
         >
-          {content.stacks.map((stack) => (
+          {content.standards.map((standard) => (
             <div
-              key={stack.id}
-              className="stack-card flex flex-col justify-between rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0F172A] p-7 shadow-xs hover:-translate-y-0.5 hover:border-[#2563EB]/50 transition-all"
+              key={standard.id}
+              className="standard-card flex flex-col justify-between rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0F172A] p-7 shadow-xs hover:-translate-y-0.5 hover:border-[#2563EB]/50 transition-all"
             >
-              <div className="space-y-4">
+              <div className="space-y-3">
                 <div className="flex items-center justify-between gap-4">
                   <span className="inline-flex items-center rounded-md bg-[#2563EB]/10 px-2.5 py-1 font-mono text-xs font-semibold text-[#2563EB] dark:text-[#60A5FA]">
-                    {stack.badge}
+                    Standard
                   </span>
                   <span className="font-mono text-xs text-slate-400 dark:text-[#64748B]">
                     Production Verified
                   </span>
                 </div>
                 <h3 className="font-heading text-xl font-bold text-slate-900 dark:text-white">
-                  {stack.name}
+                  {standard.title}
                 </h3>
                 <p className="text-sm text-slate-600 dark:text-[#94A3B8] leading-relaxed">
-                  {stack.description}
+                  {standard.description}
                 </p>
-              </div>
-
-              <div className="mt-6 pt-5 border-t border-slate-100 dark:border-[#1E293B]/70">
-                <ul className="space-y-2 text-xs font-mono text-slate-600 dark:text-[#CBD5E1]">
-                  {stack.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center gap-2">
-                      <span className="h-1.5 w-1.5 rounded-full bg-[#10B981]" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
               </div>
             </div>
           ))}
         </MotionStagger>
+
+        {content.cta && (
+          <div className="mt-10">
+            <Link
+              href={content.cta.href}
+              className="inline-flex items-center gap-2 font-mono text-xs font-semibold text-[#2563EB] dark:text-[#60A5FA] hover:underline"
+            >
+              {content.cta.text}
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );

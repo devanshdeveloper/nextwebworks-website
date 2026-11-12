@@ -32,3 +32,4 @@ export default function BlogNewsletterSection({ content }) {
     </section>
   );
 }
+

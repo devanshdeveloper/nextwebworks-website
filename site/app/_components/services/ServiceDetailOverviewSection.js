@@ -20,7 +20,7 @@ const CAPABILITIES_BY_SERVICE = {
   ],
   'mobile-apps': [
     { label: 'CODEBASE', title: 'Shared TypeScript Core', desc: 'Single maintainable React Native codebase powering native experiences across iOS and Android.' },
-    { label: 'HARDWARE', title: 'Native Sensor Integration', desc: 'Seamless camera capture, geolocation mapping, and biometric FaceID authentication.' },
+    { label: 'HARDWARE', title: 'Native Sensor Integration', desc: 'Native camera capture, geolocation mapping, and biometric FaceID authentication.' },
     { label: 'DISTRIBUTION', title: 'App Store Submission Support', desc: 'Complete certificate signing, privacy manifest compliance, and store review management.' },
   ],
   'cms-platforms': [

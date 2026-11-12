@@ -18,7 +18,21 @@ export async function submitLead(formData) {
     }
 
     if (formType === 'newsletter') {
-      // Newsletter CMS Collection Strategy (F-01 Decision): keep dummy for now
+      // Store in CMS ContactUs table with category: 'newsletter' (FLAG-07 resolution)
+      await ContactUs.submit({
+        firstName: 'Newsletter',
+        lastName: 'Subscriber',
+        email,
+        phone: '+917999934815',
+        message: 'Newsletter subscription',
+        status: 'pending',
+        metadata: {
+          category: 'newsletter',
+          source: formData.get('source') || 'footer-newsletter',
+          formType: 'newsletter',
+          submittedAt: new Date().toISOString(),
+        },
+      });
       return {
         success: true,
         message: "You're subscribed! We'll send our next engineering digest soon.",

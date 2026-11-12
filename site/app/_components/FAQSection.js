@@ -15,7 +15,7 @@ export default function FAQSection({ content }) {
   return (
     <section
       id="faq"
-      data-section="home-s6-faq"
+      data-section={content?.sectionId || 'home-s6-faq'}
       className="py-20 md:py-28 border-b border-slate-200 dark:border-[#1E293B]/60 bg-white dark:bg-[#0B0F19] transition-colors scroll-mt-16 relative"
     >
       <div id="home-s6-faq" className="absolute -top-16 left-0" aria-hidden="true" />

@@ -19,7 +19,7 @@ Next Web Works is a high-performance marketing agency engineering consultancy pl
 
 ## 3. Data & State Flow
 1. **Public Inquiries:** Client brief submissions in `ContactFormSection` invoke the Server Action `submitLead` (`site/app/actions/lead.js`), validate honeypots, and ingest into `ContactUs` on `https://prod-server.nextwebworks.in`.
-2. **Newsletter Signups:** Footer newsletter forms validate email syntax and immediately return a clean confirmation.
+2. **Newsletter Signups:** Footer newsletter forms validate email syntax and persist subscribers to the NWW CMS `ContactUs` collection (`category: 'newsletter'`).
 3. **Dynamic Content:** Blog posts and legal policies fetch from NWW CMS during build and ISR revalidation tagged with `cms:blog` and `cms:policy`.
 4. **Motion System:** `SmoothScrollProvider` mounts Lenis and synchronizes ticks via `gsap.ticker.add()` only when `(pointer: fine)` and `prefers-reduced-motion` is not active.
 5. **Technical SEO & Structured Data:** Pages compile metadata and single linked Schema.org `@graph` payloads (`#organization`, `#website`, `#webpage`, `#breadcrumb`, `#service`, `#article`, `#project`, `#faq`). Dynamic social images generate via `next/og` (`opengraph-image.js`). RSS feeds syndicate via `/feed.xml`. Pre-release verification is enforced by `check:seo`.
@@ -29,4 +29,5 @@ Next Web Works is a high-performance marketing agency engineering consultancy pl
 - **Line Ceilings:** `page.js` <= 80 lines; section components in `_components/` <= 250 lines.
 - **RSC Boundaries:** `page.js` and root `layout.js` are pure Server Components; `'use client'` is reserved for interactive leaf components.
 - **Technical SEO Hard Gate:** All pages must pass `check:seo` with title 25–65 characters, description 70–160 characters, single `h1`, non-skipping heading levels, self-referential canonicals, zero orphan sitemap routes, and zero commercial/rating disclosures in JSON-LD.
+- **Content Architecture Hard Gate:** All pages must maintain minimum 5 qualifying body sections with distinct objectives registered in `project-docs/concept-map.json`, adhere to the 'One Concept, One Home' rule, enforce zero banned phrases, and pass `check:content`.
 

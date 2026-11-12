@@ -5,9 +5,9 @@ export const servicesContent = {
     eyebrow: 'ENGINEERING CAPABILITIES',
     title: 'Enterprise-Grade Web & Mobile Engineering for Agencies',
     description:
-      'We engineer pixel-perfect frontends, scalable web applications, and cross-platform mobile apps strictly under your agency brand. Built on the modern architectures your accounts require with zero technical debt.',
-    ctaPrimary: { text: 'Book a 30-Min Technical Call', href: '/book-a-call' },
-    ctaSecondary: { text: 'Explore Capabilities ↓', href: '#services-capabilities' },
+      'We engineer custom frontends, scalable web applications, and mobile apps strictly under your agency brand. Built on modern architectures with zero technical debt.',
+    ctaPrimary: { text: 'Book a 30-Min Call', href: '/book-a-call' },
+    ctaSecondary: { text: 'Explore Platform Capabilities ↓', href: '#services-capabilities' },
     pillars: [
       { id: 'p1', label: '01 · Confidential', title: '100% White-Label' },
       { id: 'p2', label: '02 · Predictable', title: 'Fixed-Price Quotes' },
@@ -17,47 +17,41 @@ export const servicesContent = {
   },
 
   capabilitiesHeader: {
-    eyebrow: 'CORE CAPABILITIES',
+    eyebrow: 'CORE PLATFORMS',
     title: 'Engineered Across Five Strategic Platforms',
     description:
-      'From sub-second marketing websites to high-concurrency ERP software, we build in the frameworks your clients require.',
+      'From sub-second marketing websites to high-concurrency ERP software, we build in the frameworks your accounts require.',
   },
 
-  process: {
-    eyebrow: 'DELIVERY PROTOCOL',
-    title: 'Predictable White-Label Engineering Pipeline',
+  integrationStandards: {
+    eyebrow: 'DEPLOYMENT INTEGRATION',
+    title: 'Configured Directly in Your Agency Cloud Accounts',
     description:
-      'Every engagement follows an explicit 4-stage governance model designed to protect agency margins and eliminate delivery friction.',
-    steps: [
+      'We never hold client hosting hostage. Production environments are configured directly within your agency or client cloud infrastructure.',
+    points: [
       {
-        step: '01',
-        tag: 'BRIEF & MUTUAL NDA',
-        title: 'Scope & Confidentiality Lock',
-        desc: 'We sign mutual NDAs before reviewing briefs or codebases, guaranteeing strict confidentiality for your clients.',
+        id: 'cloud',
+        title: 'Direct Cloud Infrastructure Access',
+        description:
+          'We set up production directly on Vercel, AWS, DigitalOcean, or your preferred cloud provider. Secret variables remain in your accounts.',
       },
       {
-        step: '02',
-        tag: 'TECHNICAL FEASIBILITY',
-        title: '24-Hour Fixed Quotation',
-        desc: 'Our principal engineer evaluates database schemas, APIs, and Figma files to deliver a fixed-scope milestone quotation within 24 business hours.',
+        id: 'staging',
+        title: 'White-Label Staging Previews',
+        description:
+          'Preview deployments run on your agency domain or neutral URLs with password protection and strict search-engine exclusion.',
       },
       {
-        step: '03',
-        tag: 'PRIVATE STAGING',
-        title: 'Sprint Execution & QA Pass',
-        desc: 'We develop in isolated staging environments with automated linting, Core Web Vitals profiling, and WCAG contrast audits.',
-      },
-      {
-        step: '04',
-        tag: 'CODE SOVEREIGNTY',
-        title: 'Direct Git Push & Warranty',
-        desc: 'Clean commits transfer directly into your agency repository, supported by a 14-day post-launch defect fix window.',
+        id: 'cicd',
+        title: 'Automated Deployment Pipelines',
+        description:
+          'Every repository includes turnkey CI/CD workflows so that merging to your production branch executes automated tests and edge deployments.',
       },
     ],
   },
 
   deliverables: {
-    eyebrow: 'Production Deliverables',
+    eyebrow: 'PRODUCTION DELIVERABLES',
     title: 'What Your Agency Receives on Every Build',
     description:
       'We hand over clean, production-verified assets engineered for long-term maintainability with zero proprietary developer lock-in.',
@@ -82,7 +76,7 @@ export const servicesContent = {
       },
       {
         id: 'd4',
-        title: 'Responsive & Accessibility Audit Report',
+        title: 'Performance & Accessibility Audit Report',
         description:
           'Verified Lighthouse 95+ scores, WCAG 2.1 AA accessibility checklists, and cross-browser physical device verification records.',
       },
@@ -90,14 +84,14 @@ export const servicesContent = {
   },
 
   comparison: {
-    eyebrow: 'Capacity Model Comparison',
+    eyebrow: 'CAPACITY MODEL COMPARISON',
     title: 'Why Agencies Choose a Dedicated Engineering Partner',
     description:
-      'Compare our white-label partnership model against freelance gig marketplaces and permanent internal engineering payroll.',
+      'Compare our white-label partnership model against freelance gig platforms and permanent internal engineering payroll.',
     models: [
       {
         id: 'nww',
-        name: 'NWW Engineering Partner',
+        name: 'Next Web Works Partner',
         badge: 'Recommended',
         points: [
           'Fixed-scope quote in 24h with zero rate surprises',
@@ -132,52 +126,55 @@ export const servicesContent = {
   },
 
   faqs: {
-    eyebrow: 'Technical Specifications FAQ',
+    sectionId: 'services-faqs',
+    eyebrow: 'TECHNICAL SPECIFICATIONS FAQ',
     title: 'Answers to Architecture & Platform Questions',
-    description: 'Detailed answers on stack fit, performance guarantees, and platform implementations.',
+    description: 'Guidance on stack selection, performance guarantees, and integration workflows.',
     items: [
       {
         question: 'How do you decide between Next.js, WordPress, and Webflow for a build?',
         answer:
-          'Stack selection depends entirely on your client’s editorial workflow and data requirements. We recommend Next.js App Router for dynamic web applications, high-density portals, and sub-second TTFB targets. For marketing sites requiring client content autonomy, we recommend headless CMS setups, clean custom WordPress themes with custom Gutenberg blocks, or Webflow CMS with tailored custom code embeds.',
+          'Stack selection depends entirely on your client editorial workflow and data requirements. We recommend Next.js App Router for dynamic web applications, high-density portals, and sub-second TTFB targets. For marketing sites requiring client content autonomy, we recommend headless CMS setups, clean custom WordPress themes with custom Gutenberg blocks, or Webflow CMS with tailored custom code embeds.',
       },
       {
-        question: 'Do you guarantee Core Web Vitals performance benchmarks?',
+        question: 'Do you build responsive mobile apps for both iOS and Android?',
         answer:
-          'Yes. All custom Next.js builds are architected with React Server Components, image dimension enforcement, dynamic sitemaps, and strict layout stability rules to achieve green Core Web Vitals across mobile and desktop viewports.',
+          'Yes. We build cross-platform mobile apps using React Native and TypeScript from a single shared codebase. This approach delivers authentic native performance across iOS and Android while dramatically reducing development timelines and ongoing maintenance overhead for your client accounts.',
       },
       {
-        question: 'Can you integrate third-party APIs, payment gateways, and CRMs?',
+        question: 'How do you handle database migrations and data security in web apps?',
         answer:
-          'Yes. We regularly build custom webhook pipelines, REST and GraphQL integrations, OAuth authentications, and CRM integrations for platforms like HubSpot, Salesforce, Zoho, Stripe, and proprietary enterprise endpoints, complete with exponential backoff retries and audit logging.',
+          'We utilize structured migration tooling such as Prisma ORM for relational PostgreSQL databases and versioned Mongoose schemas for MongoDB. All sensitive data is protected using encrypted environment secrets, prepared statements, and role-based access route guards to eliminate SQL and NoSQL injection risks.',
       },
       {
-        question: 'How are cross-platform mobile apps architected?',
+        question: 'Can you take over an existing legacy codebase from another developer?',
         answer:
-          'We engineer mobile applications using React Native and Expo with TypeScript, sharing business logic, API clients, and state management across iOS and Android while maintaining native look, feel, and performance.',
+          'Yes, subject to a technical feasibility review. We inspect the repository, audit dependencies, assess code quality, and provide an honest assessment of whether the codebase can be reliably maintained or if specific modules require refactoring before expanding features.',
       },
       {
-        question: 'How do you handle client handover and CMS training?',
+        question: 'What performance metrics do you guarantee for website frontends?',
         answer:
-          'Every CMS delivery includes structured documentation and async video walkthroughs showing your account team exactly how to manage content, menus, and media without risking styling regressions or site breakage.',
+          'Every website build is engineered to meet strict Core Web Vitals standards: Largest Contentful Paint under 2.5 seconds, Cumulative Layout Shift under 0.1, and high-contrast WCAG 2.1 AA accessibility compliance across both mobile and desktop viewports before code handover.',
       },
     ],
   },
 
   ctaBanner: {
+    sectionId: 'services-cta',
     badge: 'Platform Engineering Bench',
-    title: 'Need a Specific Platform or Architecture Built?',
+    title: 'Review Your Client Architecture With an Engineer',
     description:
-      'Book a 30-minute technical review with our principal engineer. We will review your stack requirements, verify technical feasibility, and deliver a fixed-scope quotation within 24 hours.',
-    primaryButton: { text: 'Discuss Your Stack With Engineering', href: '/book-a-call' },
+      'Schedule a 30-minute scoping call directly with Devansh. We will evaluate technical requirements, recommend the optimal stack, and quote within 24 hours.',
+    primaryButton: { text: 'Book a 30-Min Call', href: '/book-a-call' },
     footnote: 'Strict NDA protection · Direct repository access · 24h technical quotes',
   },
 
   contactForm: {
+    sectionId: 'services-contact-form',
     eyebrow: 'Technical Scoping Inquiry',
-    leadIn: 'Request Platform Architecture & Engineering Scoping',
+    leadIn: 'Submit an Architecture Brief for Quotation',
     description:
-      'Have a client specification, platform migration, or custom application build? Outline your tech stack and target deliverables below.',
+      'Send your client requirements, Figma designs, and preferred stack. We will review the technical constraints under mutual NDA and deliver a fixed quote in 24 hours.',
   },
 
   stackMatrix: [
@@ -388,7 +385,7 @@ export const serviceDetailContent = {
         {
           question: 'Can your platform support complex multi-tier tax computations like CGST, SGST, and IGST?',
           answer:
-            'Yes. Our tax engine evaluates customer jurisdiction, inter-state classification, product HSN/SAC codes, and reverse-charge rules dynamically at line-item levels, generating compliant invoice totals and automated tax breakdown reports for seamless accounting reconciliation.',
+            'Yes. Our tax engine evaluates customer jurisdiction, inter-state classification, product HSN/SAC codes, and reverse-charge rules dynamically at line-item levels, generating compliant invoice totals and automated tax breakdown reports for reliable accounting reconciliation.',
         },
         {
           question: 'How are high-volume, multi-page vector PDF invoices and receipts generated?',
@@ -432,7 +429,7 @@ export const serviceDetailContent = {
         {
           question: 'How does a cross-platform React Native app compare to native Swift and Kotlin code?',
           answer:
-            'By compiling to native view hierarchies and leveraging native UI thread bridging, modern React Native applications deliver identical 60fps scrolling, fluid gestures, and native ergonomics while sharing over 90% of business logic across iOS and Android.',
+            'By compiling to native view hierarchies and utilizing native UI thread bridging, modern React Native applications deliver identical 60fps scrolling, fluid gestures, and native ergonomics while sharing over 90% of business logic across iOS and Android.',
         },
         {
           question: 'How do you handle offline storage, data caching, and background synchronization?',

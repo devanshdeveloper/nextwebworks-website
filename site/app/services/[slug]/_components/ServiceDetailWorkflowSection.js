@@ -5,7 +5,7 @@ import MotionStagger from '@/components/motion/MotionStagger.js';
 const WORKFLOW_BY_SERVICE = {
   websites: {
     eyebrow: 'Frontend Sprint Lifecycle',
-    title: 'How We Ship Your Marketing Website',
+    title: 'Marketing Website Delivery Sprints',
     desc: 'From Figma design tokens to sub-second Core Web Vitals on live production domains.',
     phases: [
       { step: '01', title: 'Figma Token Audit', desc: 'We extract colors, responsive grids, and font subsets from your design files into Tailwind v4 tokens.' },
@@ -16,7 +16,7 @@ const WORKFLOW_BY_SERVICE = {
   },
   'web-apps': {
     eyebrow: 'Fullstack Lifecycle',
-    title: 'How We Build Your Custom Web Application',
+    title: 'Custom Web Application Delivery Sprints',
     desc: 'Architecting scalable server-rendered portals with enterprise database security.',
     phases: [
       { step: '01', title: 'Schema & Auth Scoping', desc: 'We design transactional database models, session stores, and role-based access permission matrices.' },
@@ -27,7 +27,7 @@ const WORKFLOW_BY_SERVICE = {
   },
   erps: {
     eyebrow: 'Operations Lifecycle',
-    title: 'How We Engineer Your Business ERP',
+    title: 'Business ERP Delivery Sprints',
     desc: 'Deterministic inventory logic, multi-tier taxation rules, and streaming documents.',
     phases: [
       { step: '01', title: 'Business Logic Modeling', desc: 'Mapping physical inventory workflows, FIFO warehouse depletion rules, and GST tax schemas.' },
@@ -38,7 +38,7 @@ const WORKFLOW_BY_SERVICE = {
   },
   'mobile-apps': {
     eyebrow: 'Mobile App Lifecycle',
-    title: 'How We Deploy Your Mobile Application',
+    title: 'Mobile Application Delivery Sprints',
     desc: 'Unified React Native and Expo engineering for iOS and Android store distribution.',
     phases: [
       { step: '01', title: 'Native Bridge Architecture', desc: 'Configuring Expo EAS plugins, native biometric sensors, and cross-platform navigation hierarchies.' },
@@ -49,7 +49,7 @@ const WORKFLOW_BY_SERVICE = {
   },
   'cms-platforms': {
     eyebrow: 'CMS Engineering Lifecycle',
-    title: 'How We Deliver Your Headless CMS Portal',
+    title: 'Headless CMS Delivery Sprints',
     desc: 'Clean Gutenberg block development and scalable Webflow CMS architectures.',
     phases: [
       { step: '01', title: 'Editorial Model Mapping', desc: 'Defining clean content schemas, custom post types, and multi-reference relational data structures.' },

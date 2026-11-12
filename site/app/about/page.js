@@ -2,7 +2,7 @@ import AboutFounderSection from './_components/AboutFounderSection.js';
 import AboutPrinciplesSection from './_components/AboutPrinciplesSection.js';
 import AboutMissionSection from './_components/AboutMissionSection.js';
 import AboutPhilosophySection from './_components/AboutPhilosophySection.js';
-import AboutConfidentialitySection from './_components/AboutConfidentialitySection.js';
+import AboutOperationsSection from './_components/AboutOperationsSection.js';
 import AboutWarrantySection from './_components/AboutWarrantySection.js';
 import FAQSection from '../_components/FAQSection.js';
 import FinalCTABanner from '../_components/FinalCTABanner.js';
@@ -39,7 +39,7 @@ export default function AboutPage() {
       <AboutPrinciplesSection content={aboutContent} />
       <AboutMissionSection content={aboutContent} />
       <AboutPhilosophySection content={aboutContent} />
-      <AboutConfidentialitySection content={aboutContent} />
+      <AboutOperationsSection content={aboutContent} />
       <AboutWarrantySection content={aboutContent} />
       <FAQSection content={aboutContent.faqs} />
       <FinalCTABanner content={aboutContent.ctaBanner} />

@@ -1,15 +1,16 @@
-// section: about-mission
+// section: about-s3-mission
 import MotionFadeIn from '@/components/motion/MotionFadeIn.js';
 import MotionStagger from '@/components/motion/MotionStagger.js';
+import { aboutContent } from '@/content/about.js';
 
-export default function AboutMissionSection({ content }) {
-  if (!content?.mission) return null;
-  const { mission } = content;
+export default function AboutMissionSection({ content = aboutContent }) {
+  const mission = content?.mission || aboutContent.mission;
+  const items = mission?.pillars || mission?.cards || [];
 
   return (
     <section
-      id="about-mission"
-      data-section="about-mission"
+      id="mission"
+      data-section="about-s3-mission"
       className="py-16 md:py-24 border-t border-slate-200 dark:border-[#1E293B]/60 bg-slate-50 dark:bg-[#0B0F19] transition-colors"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -31,7 +32,7 @@ export default function AboutMissionSection({ content }) {
           y={20}
           className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6"
         >
-          {mission.cards.map((card) => (
+          {items.map((card) => (
             <div
               key={card.id}
               className="mission-card rounded-2xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0F172A] p-7 shadow-xs hover:-translate-y-0.5 hover:border-[#2563EB]/50 transition-all space-y-3"

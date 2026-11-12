@@ -55,7 +55,7 @@ Never declare a task completed without measured evidence:
 1. Run `pnpm --dir site check:structure` to ensure line ceilings and RSC rules pass with 0 errors.
 2. Run `pnpm --dir site check:assets` to ensure asset manifests and zero-stock integrity remain valid.
 3. Run `pnpm --dir site build` to confirm zero static prerender or compilation errors across all routes.
-4. Run `pnpm --dir site check:content` to confirm zero content repeats and FAQ depth compliance across prerendered routes.
+4. Run `pnpm --dir site check:content` to confirm zero content repeats, single-objective section mapping, and concept ownership compliance (see .agents/rules/copy-standards.md and .agents/rules/unique-content-per-page.md).
 5. Run `pnpm --dir site check:seo` to confirm zero metadata, canonical, JSON-LD, heading, or sitemap violations (see .agents/rules/seo-standards.md).
 6. Verify responsiveness and visual rendering in the browser.
 

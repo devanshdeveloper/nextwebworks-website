@@ -198,6 +198,34 @@ export const ALLOWLIST = new Set([
   'we deliver custom next js wordpress and mobile builds directly under your brand with fix',
   'we deliver custom nextjs wordpress and mobile builds directly under your brand with fix',
 
+  // Master Listing-Card Teasers (Detail titles & summaries linking to their own detail entry)
+  'websites marketing platforms',
+  'cross platform mobile apps',
+  'custom web applications',
+  'operations business erps',
+  'agency cms no code platforms',
+  'sub second page loads responsive layouts and zero layout shift built for high traffic marketing campaigns and client conversion goals',
+  'secure role based client dashboards authenticated workflows and real time data streaming built on next js postgresql and prisma',
+  'automated invoicing multi tier tax engines high speed questpdf vector rendering and audit ready data tracking for growing businesses',
+  'native ios and android apps compiled from a unified typescript repository complete with camera capture push alerts and app store submission support',
+  'intuitive visual editing workspaces built on custom block architectures giving client content teams autonomy without breaking page layouts',
+  'decoupled next js app router frontend paired with an express rest api automated webhook revalidation keeps ttfb under 50ms while instantly purging edge cache on content updates',
+  'decoupled next js app router frontend paired with an express rest api automated webhook revalidation purges edge cache instantly with sub 50ms ttfb',
+  'high concurrency menu management system with sub second catalog search responsive image optimization and role based kitchen routing for hospitality operations',
+  'atomic fifo inventory lot depletion using mongodb session transactions paired with an asp net core microservice for sub second questpdf vector compilation',
+  'next js app router headless web',
+  'next js postgresql prisma',
+  'inventory billing multi tier gst',
+  'react native ios android',
+  'wordpress acf webflow cms',
+  'next js 16 app router isr webhooks express',
+  'react 18 vite node js express mongodb',
+  'asp net core questpdf mongodb sessions',
+  'universal model helpers for articles case studies and lead intake',
+  'client confidential agency partner',
+  'confidential agency partner',
+  'high concurrency menu management system with sub second catalog search responsive image optimization and role based kitchen routing for hospitality',
+
   // Blog Markdown & Article UI Microcopy
   'copy code to clipboard',
   'copied to clipboard',
@@ -284,12 +312,13 @@ function getHtmlFiles(dir) {
  * Custom lightweight HTML parser that extracts text blocks strictly within data-section elements.
  */
 function parseSectionsFromHtml(html, pageName) {
-  // 1. Remove comments, scripts, styles, SVGs
+  // 1. Remove comments, scripts, styles, SVGs, and navigation breadcrumbs
   const cleanHtml = html
     .replace(/<!--[\s\S]*?-->/g, ' ')
     .replace(/<script\b[\s\S]*?<\/script>/gi, ' ')
     .replace(/<style\b[\s\S]*?<\/style>/gi, ' ')
-    .replace(/<svg\b[\s\S]*?<\/svg>/gi, ' ');
+    .replace(/<svg\b[\s\S]*?<\/svg>/gi, ' ')
+    .replace(/<nav\b[\s\S]*?<\/nav>/gi, ' ');
 
   const blocks = [];
   const sections = new Map(); // sectionId -> { id, texts: [], rawCombined: '' }
@@ -574,6 +603,218 @@ for (const [page, items] of pageFaqGroups.entries()) {
         detail: `Answer has only ${item.answerWords} words (< ${THRESHOLDS.MIN_FAQ_ANSWER_WORDS}): "${item.question}"`,
       });
     }
+  }
+}
+
+// ============================================================================
+// ARCHITECTURAL CONCEPT MAP & COPY STANDARDS HARD GATES (TASK 5)
+// ============================================================================
+// Commented Constants Block (Tunable Thresholds & Exclusions):
+const CONCEPT_GATE_CONFIG = {
+  // Concept keywords threshold in non-owner section: >= 3 triggers concept leak
+  KEYWORD_LEAK_THRESHOLD: 3,
+
+  // Pages exempt from single primary CTA requirement (e.g. booking page, policy pages, utility)
+  CTA_EXEMPT_PAGES: new Set([
+    'book-a-call.html',
+    'book-a-call/thank-you.html',
+    'privacy.html',
+    'terms.html',
+  ]),
+
+  // Canonical Primary CTA destination
+  PRIMARY_CTA_HREF: '/book-a-call',
+
+  // Sections exempt from concept keyword leak audits (navigation, footer, shell link lists, blog articles)
+  CONCEPT_LEAK_EXEMPT_SECTIONS: new Set([
+    'article-toc',
+    'article-copy-button',
+    'article-mermaid-diagram',
+    'blog-article-body',
+  ]),
+};
+
+// Load concept-map.json
+const conceptMapPath = path.resolve(rootDir, '..', 'project-docs', 'concept-map.json');
+let conceptMap = { concepts: [], sections: {}, glossary: {}, bannedPhrases: [] };
+if (fs.existsSync(conceptMapPath)) {
+  try {
+    conceptMap = JSON.parse(fs.readFileSync(conceptMapPath, 'utf8'));
+  } catch (err) {
+    console.error(`❌ Failed to parse concept-map.json: ${err.message}`);
+    process.exit(1);
+  }
+} else {
+  console.error(`❌ concept-map.json missing at ${conceptMapPath}`);
+  process.exit(1);
+}
+
+// ----------------------------------------------------------------------------
+// Check (f): Data-Section ID Objective Registration
+// Every data-section id found in prerendered HTML must have an entry in conceptMap.sections
+// ----------------------------------------------------------------------------
+for (const p of allPages) {
+  for (const [secId] of p.sections.entries()) {
+    if (!conceptMap.sections[secId]) {
+      violations.push({
+        type: 'MISSING_SECTION_OBJECTIVE',
+        pages: [p.page],
+        sectionId: secId,
+        detail: `Section "${secId}" has no objective entry registered in concept-map.json`,
+      });
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------
+// Check (g): Non-Owner Section Concept Leaks
+// A non-owner section contains >= 3 distinct keywords of one concept set, or restates canonical headings
+// ----------------------------------------------------------------------------
+for (const concept of conceptMap.concepts || []) {
+  const owningSection = concept.owningSectionId;
+  const canonicalHeadingsNorm = (concept.canonicalHeadings || []).map((h) => normalizeText(h));
+  const keywordsNorm = (concept.keywords || []).map((k) => normalizeText(k));
+
+  for (const p of allPages) {
+    for (const [secId, secData] of p.sections.entries()) {
+      if (secId === owningSection) continue;
+      if (CONCEPT_GATE_CONFIG.CONCEPT_LEAK_EXEMPT_SECTIONS.has(secId)) continue;
+
+      const combinedText = secData.texts.join(' ');
+
+      // 1. Check if restates canonical heading terms (exact normalized match)
+      for (const ch of canonicalHeadingsNorm) {
+        if (ch.length >= 20 && combinedText.includes(ch)) {
+          violations.push({
+            type: 'CONCEPT_HEADING_RESTATED',
+            pages: [p.page],
+            sectionId: secId,
+            detail: `Non-owner section restates canonical heading of "${concept.canonicalName}": "${ch}"`,
+          });
+        }
+      }
+
+      // 2. Check if contains >= 3 distinct keywords of this concept set
+      let matchedKeywords = 0;
+      const matchedList = [];
+      for (const kw of keywordsNorm) {
+        if (kw.length >= 4 && combinedText.includes(kw)) {
+          matchedKeywords++;
+          matchedList.push(kw);
+        }
+      }
+
+      if (matchedKeywords >= CONCEPT_GATE_CONFIG.KEYWORD_LEAK_THRESHOLD) {
+        violations.push({
+          type: 'CONCEPT_KEYWORD_LEAK',
+          pages: [p.page],
+          sectionId: secId,
+          detail: `Non-owner section contains ${matchedKeywords} keywords of "${concept.canonicalName}": [${matchedList.join(', ')}]`,
+        });
+      }
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------
+// Check (h): Glossary Prohibited Aliases
+// Prohibited aliases from conceptMap.glossary must not appear in page copy
+// ----------------------------------------------------------------------------
+for (const [term, data] of Object.entries(conceptMap.glossary || {})) {
+  const prohibited = data.prohibitedAliases || [];
+  for (const alias of prohibited) {
+    const aliasNorm = normalizeText(alias);
+    if (!aliasNorm) continue;
+    const aliasRegex = new RegExp(`\\b${aliasNorm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i');
+
+    for (const p of allPages) {
+      for (const b of p.blocks) {
+        // CMS article entry body is external content (standing rule: untouched, reported in audit)
+        if (b.sectionId === 'blog-article-body' || b.tag === 'code' || b.tag === 'pre') continue;
+        if (aliasRegex.test(b.norm)) {
+          violations.push({
+            type: 'GLOSSARY_PROHIBITED_ALIAS',
+            pages: [p.page],
+            sectionId: b.sectionId,
+            detail: `Used prohibited alias "${alias}" for canonical term "${term}" in "${b.raw.slice(0, 60)}..."`,
+          });
+        }
+      }
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------
+// Check (i): Banned Marketing Phrases
+// Generic marketing filler phrases from conceptMap.bannedPhrases must not appear
+// ----------------------------------------------------------------------------
+for (const phrase of conceptMap.bannedPhrases || []) {
+  const phraseNorm = normalizeText(phrase);
+  if (!phraseNorm) continue;
+  const phraseRegex = new RegExp(`\\b${phraseNorm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i');
+
+  for (const p of allPages) {
+    for (const b of p.blocks) {
+      // Exclude markdown code blocks or external CMS article body
+      if (b.sectionId === 'blog-article-body' || b.tag === 'code' || b.tag === 'pre') continue;
+      if (phraseRegex.test(b.norm)) {
+        violations.push({
+          type: 'BANNED_PHRASE',
+          pages: [p.page],
+          sectionId: b.sectionId,
+          detail: `Contains banned phrase "${phrase}" in "${b.raw.slice(0, 60)}..."`,
+        });
+      }
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------
+// Check (j): Single Primary CTA Per Page
+// Non-exempt pages must have at least one primary CTA linking to /book-a-call and zero conflicting primary CTAs
+// ----------------------------------------------------------------------------
+for (const p of allPages) {
+  if (CONCEPT_GATE_CONFIG.CTA_EXEMPT_PAGES.has(p.page)) continue;
+
+  const pageFile = path.join(appBuildDir, p.page);
+  const rawHtml = fs.readFileSync(pageFile, 'utf8');
+
+  const linkRegex = /<a\b[^>]*href="([^"]*)"[^>]*>([\s\S]*?)<\/a>/gi;
+  let linkMatch;
+  let bookACallCount = 0;
+  const primaryButtons = [];
+
+  while ((linkMatch = linkRegex.exec(rawHtml)) !== null) {
+    const [fullTag, href, text] = linkMatch;
+    const cleanText = text.replace(/<[^>]*>/g, '').trim();
+
+    const isPrimaryStyled = fullTag.includes('bg-[#2563EB]') || fullTag.includes('bg-blue-600');
+    if (isPrimaryStyled) {
+      primaryButtons.push({ href, text: cleanText });
+    }
+
+    if (href === '/book-a-call') {
+      bookACallCount++;
+    }
+  }
+
+  if (bookACallCount === 0) {
+    violations.push({
+      type: 'MISSING_PRIMARY_CTA',
+      pages: [p.page],
+      sectionId: 'page-level',
+      detail: `Page has no primary CTA linking to "${CONCEPT_GATE_CONFIG.PRIMARY_CTA_HREF}"`,
+    });
+  }
+
+  const conflictingPrimary = primaryButtons.filter((b) => b.href !== '/book-a-call' && !b.href.startsWith('#'));
+  if (conflictingPrimary.length > 0) {
+    violations.push({
+      type: 'CONFLICTING_PRIMARY_CTA',
+      pages: [p.page],
+      sectionId: 'page-level',
+      detail: `Page has conflicting primary buttons: ${conflictingPrimary.map((c) => `"${c.text}" -> ${c.href}`).join(', ')}`,
+    });
   }
 }
 

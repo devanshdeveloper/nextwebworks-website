@@ -1,314 +1,312 @@
-// site/content/home.js - Verbatim copy and data structures for Home page showcase
+// site/content/home.js - Copy and data structures for Home page
+// Adheres strictly to .agents/rules/copy-standards.md and .agents/rules/unique-content-per-page.md
 
 export const homeContent = {
   hero: {
-    eyebrow: 'White-Label Engineering Partner for Marketing Agencies',
+    eyebrow: 'WHITE-LABEL ENGINEERING PARTNER',
     title: 'Say Yes to Every Client Dev Request. Without Hiring Developers.',
     description:
-      'We handle the complete development, staging, and deployment under your brand. WordPress, Webflow, custom Next.js, and mobile apps. Fixed-scope pricing. Zero client contact.',
+      'We build web applications, ERPs, and mobile apps under your agency brand. Direct principal engineer access, fixed-price quotes in 24 hours, and zero payroll drag.',
     primaryCta: { text: 'Book a 30-Min Call', href: '/book-a-call' },
-    secondaryCta: { text: 'Explore Services & How We Work ↓', href: '#services' },
-    mobilePill: { text: 'Schedule Scoping Call →', href: '/book-a-call' },
+    secondaryCta: { text: 'Explore Services & Delivery Protocol ↓', href: '#home-services' },
+    mobilePill: { text: 'Book a 30-Min Call →', href: '/book-a-call' },
+    schematicNodes: [
+      { id: 'spec', label: 'Agency Spec / Client Brief' },
+      { id: 'layer', label: 'Next Web Works Engineering Layer' },
+      { id: 'stack', label: 'Next.js App Router & Cloud APIs' },
+      { id: 'output', label: 'White-Label Deliverable Under Your Brand' },
+    ],
   },
 
   painPoints: {
-    eyebrow: 'Why Agencies Partner With Us',
-    title: 'Three Dev Problems Killing Your Margin',
+    eyebrow: 'AGENCY DELIVERY BOTTLENECKS',
+    title: 'Where Client Dev Projects Fall Apart',
     description:
-      'Marketing agencies lose margin and client trust to unpredictable engineering capacity. Here is why hiring in-house or relying on solo contractors fails at scale.',
+      'Winning client retainers is profitable. Delivering complex custom code without a dedicated technical lead burns your team and your margins.',
     cards: [
       {
-        tag: 'The Reliability Trap',
+        tag: 'Mid-Sprint Contractor Disappearance',
         title: 'The Freelancer Ghost',
         description:
-          'Solo contractors take on other gigs and vanish mid-sprint, leaving your account managers to apologize to irate enterprise clients when deadlines blow past.',
-        risk: 'Risk: Mid-Sprint Contractor Disappearance',
+          'Freelance marketplaces offer cheap starts but zero delivery accountability. When a freelancer vanishes before launch, your account team absorbs the client fallout.',
+        risk: 'Risk: Blown Client Launch Deadlines',
       },
       {
-        tag: 'The Fixed Overhead',
+        tag: 'Fixed Payroll Overhead',
         title: 'The Unbillable In-House Salary',
         description:
-          'Full-time senior engineers cost substantial payroll and benefits. When client retainers pause or pitch cycles stall, you carry dead unbillable bench overhead.',
-        risk: 'Risk: Unbillable Fixed Payroll & Cash Drag',
+          'Hiring a full-time senior engineer adds substantial monthly overhead. During slow quarters, that unbillable salary drags down agency profitability.',
+        risk: 'Risk: Margin Drain During Slow Cycles',
       },
       {
-        tag: 'The Technical Debt',
+        tag: 'Technical Debt Accumulation',
         title: 'The Costly Code Rewrite',
         description:
-          'Offshore discount shops deliver fragile code that fails client security audits, breaks under traffic spikes, and forces your agency to pay for an emergency rebuild.',
-        risk: 'Risk: Code Failure & Emergency Agency Rebuild',
+          'Hurried offshore codebases lack automated tests, typed contracts, and clean documentation. When the client requests phase two, your team has to rewrite from scratch.',
+        risk: 'Risk: Emergency Agency Code Rebuild',
       },
     ],
-    cta: { text: 'Tell us what your clients keep asking for', href: '/book-a-call' },
-  },
-
-  workflow: {
-    eyebrow: 'Execution Blueprint',
-    title: 'From Agency Brief to Production Launch in 4 Steps',
-    description:
-      'A repeatable, transparent engineering workflow designed specifically for marketing agency account directors.',
-    steps: [
-      {
-        number: '01',
-        title: 'Scoped Discovery',
-        desc: '20-minute technical review with our founder. We review your client brief, confirm stack fit, and deliver a fixed-scope quote in 24 hours.',
-      },
-      {
-        number: '02',
-        title: 'White-Label Setup',
-        desc: 'We set up a dedicated private repository and staging environment on your agency domain or neutral preview URL. Zero NWW branding.',
-      },
-      {
-        number: '03',
-        title: 'Sprint Delivery',
-        desc: 'Milestone-based development with regular async loom check-ins. Your team reviews staging links before your client ever sees them.',
-      },
-      {
-        number: '04',
-        title: 'Production Handover',
-        desc: 'We deploy directly to Vercel, AWS, or your client’s cloud. 14-day post-launch defect fix window included on full builds.',
-      },
-    ],
-    cta: { text: 'Start with a scoped pilot', href: '/book-a-call' },
+    cta: { text: 'See How We Eliminate Delivery Churn ↓', href: '#home-services' },
   },
 
   services: {
-    eyebrow: 'Engineering Capabilities',
-    title: 'Builds in the Platform Your Client Already Uses',
+    eyebrow: 'TECHNICAL CAPABILITIES',
+    title: 'Five Platform Capabilities Behind Your Agency',
     description:
-      'From rapid CMS marketing hubs to enterprise multi-tenant SaaS. Scoped and quoted on your first call.',
-    platforms: [
-      { category: 'CMS & No-Code', items: ['WordPress', 'Webflow', 'Wix Studio', 'Shopify'] },
-      { category: 'Custom Web & SaaS', items: ['Next.js App Router', 'React.js', 'Node.js / Express', 'PHP / Laravel'] },
-      { category: 'Mobile Apps', items: ['React Native', 'Expo', 'iOS & Android Builds'] },
-      { category: 'Cloud & Staging', items: ['Vercel', 'AWS', 'DigitalOcean', 'Cloudflare'] },
-    ],
+      'Every build is delivered in the platform your client already uses, engineered to enterprise standards with complete repository ownership.',
     drawers: [
       {
         id: 'websites',
-        title: 'High-Performance Marketing Websites',
-        tag: 'WordPress · Webflow · Next.js',
+        title: 'Websites & Marketing Platforms',
+        tag: 'Next.js App Router · Headless Web',
         summary:
-          'Pixel-perfect Figma-to-code implementations with sub-second page loads, strict accessibility, and turnkey client editor workflows.',
+          'Sub-second page loads, responsive layouts, and zero layout shift. Built for high-traffic marketing campaigns and client conversion goals.',
         specs: [
-          'Clean, componentized code matching Figma 1:1 down to 1px precision',
-          'Core Web Vitals optimized with zero layout shift and sub-second paint targets',
-          'Client-friendly visual editors or headless CMS custom field groups',
-          'Structured data schema, OpenGraph, dynamic sitemaps, and technical SEO',
+          'Next.js 16 App Router architectures with Turbopack and React 19',
+          'Strict Core Web Vitals profiling with sub-second paint targets',
+          'Automated dynamic sitemaps, semantic JSON-LD, and OpenGraph tags',
+          'Decoupled headless CMS integrations giving clients autonomy',
         ],
-        ctaText: 'Discuss this build',
+        ctaText: 'View Website Specifications →',
+        href: '/services/websites',
       },
       {
         id: 'web-apps',
-        title: 'Custom Web Applications & Portals',
-        tag: 'Next.js · React · Node.js',
+        title: 'Custom Web Applications',
+        tag: 'Next.js · PostgreSQL · Prisma',
         summary:
-          'Scalable interactive web applications, client portals, internal dashboards, and multi-tenant SaaS tools built on robust architectures.',
+          'Secure role-based client dashboards, authenticated workflows, and real-time data streaming built on Next.js, PostgreSQL, and Prisma.',
         specs: [
-          'React Server Components for instant data streaming and sub-second TTFB',
-          'Role-based access control (RBAC), multi-tenant data schemas, and audit logs',
-          'Third-party REST/GraphQL API integrations and webhook pipelines',
-          'Comprehensive automated testing, error boundaries, and telemetry',
+          'React Server Components for instant data streaming and sub-50ms TTFB',
+          'Role-based access control (RBAC) and multi-tenant data schemas',
+          'Third-party REST and GraphQL API orchestration with webhooks',
+          'Strict TypeScript typing discipline and runtime Zod validation',
         ],
-        ctaText: 'Discuss this build',
+        ctaText: 'View Web Application Specifications →',
+        href: '/services/web-apps',
       },
       {
         id: 'erps',
         title: 'Operations & Business ERPs',
-        tag: 'Full-Stack Custom Engine',
+        tag: 'Inventory · Billing · Multi-Tier GST',
         summary:
-          'Proprietary product capabilities: multi-tier GST tax engine, atomic FIFO inventory transactions, and high-fidelity PDF report generation.',
+          'Automated invoicing, multi-tier tax engines, high-speed QuestPDF vector rendering, and audit-ready data tracking for growing businesses.',
         specs: [
-          'Atomic FIFO stock depletion with transactional rollbacks',
-          'Multi-tier GST tax engines (CGST / SGST / IGST) and compliance audits',
-          'Server-side vector PDF generation and automated financial exports',
-          'Enterprise role-based permissions with immutable event logs',
+          'Atomic FIFO inventory lot depletion using MongoDB session transactions',
+          'Multi-tier GST tax calculation engine (CGST, SGST, IGST)',
+          'Dedicated ASP.NET Core QuestPDF vector document compilation',
+          'Enterprise role-based permissions with immutable audit logs',
         ],
-        ctaText: 'Discuss this build',
+        ctaText: 'View ERP Specifications →',
+        href: '/services/erps',
       },
       {
         id: 'mobile-apps',
-        title: 'Cross-Platform Mobile Applications',
-        tag: 'React Native · Expo',
+        title: 'Cross-Platform Mobile Apps',
+        tag: 'React Native · iOS & Android',
         summary:
-          'Native-feel iOS and Android applications built from a single shared TypeScript codebase with camera, location, and offline sync.',
+          'Native iOS and Android apps compiled from a unified TypeScript repository, complete with camera capture, push alerts, and app store submission support.',
         specs: [
           'Single shared React Native codebase targeting iOS and Android',
-          'Hardware API access: native camera capture, geolocation, and biometrics',
+          'Hardware access: native camera capture, geolocation, and push alerts',
           'Push notification workflows via Apple APNs and Firebase Cloud Messaging',
           'End-to-end Apple App Store and Google Play Store submission support',
         ],
-        ctaText: 'Discuss this build',
+        ctaText: 'View Mobile Application Specifications →',
+        href: '/services/mobile-apps',
       },
       {
         id: 'cms-platforms',
         title: 'Agency CMS & No-Code Platforms',
-        tag: 'WordPress · Webflow · Wix Studio',
+        tag: 'WordPress ACF · Webflow CMS',
         summary:
-          'Expert implementation across standard client CMS ecosystems. Custom themes, Gutenberg blocks, Webflow CMS collections, and visual client handover.',
+          'Intuitive visual editing workspaces built on custom block architectures, giving client content teams autonomy without breaking page layouts.',
         specs: [
-          'Custom WordPress themes and Gutenberg block development without bloated page builders',
-          'Advanced Webflow CMS architecture, interactions, and custom code embeds',
+          'Custom WordPress themes and Gutenberg blocks without bloated builders',
+          'Advanced Webflow CMS architecture, interactions, and custom code',
           'Turnkey client editor documentation and video walkthroughs',
-          'Zero NWW branding; ready for agency delivery under your brand',
+          'Strict white-label delivery with zero Next Web Works branding',
         ],
-        ctaText: 'Discuss this build',
+        ctaText: 'View CMS Specifications →',
+        href: '/services/cms-platforms',
       },
     ],
   },
 
-  workShowcase: {
-    eyebrow: 'Deliverable Showcase',
-    title: 'Flagship Products & Production Platforms',
+  workflow: {
+    eyebrow: 'DELIVERY PROTOCOL',
+    title: 'From Client Brief to Clean Staging in Four Milestones',
     description:
-      'In addition to confidential white-label agency delivery, we build and operate our own proprietary software products and custom client platforms. Explore our architectural depth below.',
-    highlightsLabel: 'Featured Architecture Capabilities:',
-    deliveryLabel: 'Production Engineering Standards',
-    deliveryDesc: 'White-label delivery with complete source code transfer and automated CI/CD pipelines.',
+      'A predictable engineering pipeline designed to protect agency timelines, eliminate scope creep, and keep client account teams informed.',
+    steps: [
+      {
+        step: '01',
+        tag: 'SPECIFICATION & NDA',
+        title: 'Step 01 · Specification & NDA',
+        desc: 'We execute a mutual non-disclosure agreement before reviewing your Figma designs or client brief. We confirm stack fit and technical constraints directly with your team.',
+      },
+      {
+        step: '02',
+        tag: '24-HOUR QUOTATION',
+        title: 'Step 02 · 24-Hour Fixed Quotation',
+        desc: 'Our lead engineer evaluates data schemas, APIs, and component specifications. Within 24 business hours, you receive a binding fixed-scope milestone quotation with zero hidden fees.',
+      },
+      {
+        step: '03',
+        tag: 'PRIVATE STAGING',
+        title: 'Step 03 · Private Staging & QA Pass',
+        desc: 'We build in isolated preview environments under neutral URLs. Every build passes automated linting, Core Web Vitals profiling, and WCAG contrast testing before review.',
+      },
+      {
+        step: '04',
+        tag: 'CODE SOVEREIGNTY',
+        title: 'Step 04 · Direct Git Push & Warranty',
+        desc: 'Production commits transfer directly into your agency repository. Every full build includes our 14-day defect fix window with scheduled check-ins on Day 7 and Day 14.',
+      },
+    ],
+    cta: { text: 'Start With a Scoped Pilot Build →', href: '/book-a-call' },
+  },
+
+  workShowcase: {
+    eyebrow: 'PROVEN ARCHITECTURE',
+    title: 'Three Production Systems Engineered Behind Agency Doors',
+    description:
+      'Real codebases, real database schemas, and enterprise architectures built to handle high concurrency and strict data isolation.',
     samples: [
       {
         id: 'nww-cms-kit',
         title: 'NWW Headless CMS Kit',
-        stack: 'Class-Based ISR Engine · Next.js App Router · Edge Revalidation',
-        badge: 'In-House Proprietary Engine',
-        clientLabel: 'In-House Engine',
-        tagline: 'Zero-dependency headless CMS client providing instantaneous edge caching and typed schema models.',
+        tagline:
+          'Production-ready headless publishing engine pairing decoupled Next.js App Router frontends with Express microservices.',
+        stack: 'Next.js 16 · App Router · ISR Webhooks · Express',
+        badge: 'Illustrative sample · not a client project',
         overview:
-          'Class-based headless CMS client kit delivering sub-second ISR content rendering, deterministic schema generation, and zero-dependency API query pipelines.',
+          'Decoupled Next.js App Router frontend paired with an Express REST API. Automated webhook revalidation purges edge cache instantly with sub-50ms TTFB.',
         highlights: [
           'Dynamic on-demand cache revalidation via secure webhook architecture',
-          'Universal model helpers for articles, case studies, FAQs, and lead pipelines',
+          'Universal model helpers for articles, case studies, and lead intake',
           'Native Schema.org JSON-LD generation with automated dynamic sitemaps',
         ],
-        ctaText: 'Discuss CMS architecture',
+        ctaText: 'View Architecture Breakdown →',
+        href: '/work/nww-cms-kit',
       },
       {
         id: 'classymenu',
-        title: 'ClassyMenu Digital Dining Platform',
-        stack: 'Multi-Tenant SaaS · Next.js · Node.js · WhatsApp API Bridge',
-        badge: 'In-House Proprietary Platform',
-        clientLabel: 'In-House SaaS Product',
-        tagline: 'Contactless hospitality platform connecting digital table sessions with direct WhatsApp kitchen ordering.',
+        title: 'ClassyMenu Dining Platform',
+        tagline:
+          'Multi-tenant digital dining software built for high concurrency and zero-login ordering workflows.',
+        stack: 'React 18 · Node.js · Express · MongoDB · Redis',
+        badge: 'Illustrative sample · not a client project',
         overview:
-          'Multi-tenant contactless dining and hospitality ordering engine with sub-second catalog search, live table session synchronization, and automated WhatsApp order routing.',
+          'High-concurrency menu management system with sub-second catalog search, responsive image optimization, and role-based kitchen display routing.',
         highlights: [
-          'Zero-latency dynamic catalog navigation supporting thousands of menu variants',
-          'Live multi-device table session synchronization with optimistic UI updates',
+          'Zero-latency dynamic catalog navigation supporting thousands of items',
+          'Live multi-device table session synchronization with optimistic updates',
           'Direct WhatsApp Business ordering bridge with zero customer login friction',
         ],
-        ctaText: 'Discuss SaaS engineering',
+        ctaText: 'View Architecture Breakdown →',
+        href: '/work/classymenu',
       },
       {
         id: 'ceramicsales',
-        title: 'CeramicSales B2B Wholesale Portal',
-        stack: 'Custom ERP Engine · React Server Components · PostgreSQL · Vector PDF',
-        badge: 'Direct Client Deliverable',
-        clientLabel: 'Confidential B2B Wholesale Partner',
-        tagline: 'Full-stack enterprise inventory and invoicing portal engineered for high-concurrency wholesale trade.',
+        title: 'CeramicSales Wholesale ERP',
+        tagline:
+          'Enterprise wholesale ERP platform featuring multi-tier GST tax engines and real-time inventory reconciliation.',
+        stack: 'React 18 · Express · ASP.NET Core · QuestPDF · MongoDB',
+        badge: 'Illustrative sample · not a client project',
         overview:
-          'B2B wholesale catalog and stock operations portal handling atomic FIFO inventory allocation, multi-tier GST compliance, and instant server-side PDF invoice generation.',
+          'Atomic FIFO inventory lot depletion using MongoDB session transactions, paired with an ASP.NET Core QuestPDF document compilation microservice.',
         highlights: [
           'Atomic FIFO stock depletion with transactional rollbacks on concurrent orders',
           'Automated multi-tier GST calculation engine (CGST, SGST, IGST) with audit logs',
           'High-fidelity server-side vector PDF generation for quotes and tax invoices',
         ],
-        ctaText: 'Discuss custom ERP builds',
+        ctaText: 'View Architecture Breakdown →',
+        href: '/work/ceramicsales',
       },
     ],
+  },
+
+  engineeringStandards: {
+    eyebrow: 'ENGINEERING STANDARDS',
+    title: 'Production Code Built for Agency Sovereignty',
+    description:
+      'We do not cut corners with messy code or unmaintained third-party templates. Every repository is structured for long-term maintainability.',
+    standards: [
+      {
+        id: 'typed',
+        title: 'Clean Typed Architectures',
+        description:
+          'Structured TypeScript and modern ECMAScript standards with strict linting rules. Components are decoupled, self-documenting, and free from bloated dependencies.',
+      },
+      {
+        id: 'performance',
+        title: 'Core Web Vitals Enforcement',
+        description:
+          'Sub-second Largest Contentful Paint (LCP < 2.5s), zero Cumulative Layout Shift (CLS < 0.1), and responsive asset optimization verified before handover.',
+      },
+      {
+        id: 'sovereignty',
+        title: 'Zero Proprietary Lock-In',
+        description:
+          'Atomic Git commits pushed directly into your agency repository. Complete with environment variable templates, setup guides, and automated CI/CD deployment scripts.',
+      },
+      {
+        id: 'discretion',
+        title: 'Anonymous Commit Authoring',
+        description:
+          'Zero Next Web Works watermarks, author credits, or public marketing mentions. We work silently behind your brand, or commit under your agency email handles.',
+      },
+    ],
+    cta: { text: 'Read Our Engineering Principles →', href: '/about' },
   },
 
   faqs: {
-    eyebrow: 'Frequently Asked Questions',
-    title: 'Everything Agencies Ask Before Their First Build',
-    description: 'Direct answers to standard questions about white-label operations, scoping, and code handover.',
+    eyebrow: 'FREQUENTLY ASKED QUESTIONS',
+    title: 'Common Questions From Agency Founders',
+    description: 'Straightforward answers on how we collaborate, quote projects, and protect your agency brand.',
     items: [
       {
-        question: 'How does Next Web Works operate behind our marketing agency brand?',
+        question: 'Who owns the intellectual property and code?',
         answer:
-          'We operate as an invisible white-label engineering partner. All deliverables carry zero external vendor branding, public credits, or runtime tracking. Your agency owns client communication, account management, and pricing negotiation, while our engineering desk delivers the staging previews and production code.',
+          'Your agency retains 100% ownership of all source code, design assets, and database schemas upon milestone delivery. The Git repository is transferred directly to your organization with full commit history and zero vendor lock-in.',
       },
       {
-        question: 'How quickly can your engineering desk review a brief and deliver a quote?',
+        question: 'Will our client ever find out about Next Web Works?',
         answer:
-          'Once you submit a client brief or schedule an initial discovery session, we review the specifications, confirm stack feasibility, and return an itemized fixed-scope proposal within 24 business hours. Qualified projects can kick off as early as the same business day.',
+          'No. We deliver strictly under your agency brand with zero public credits, watermarks, or agency marketing announcements. Commits appear under our developer handles unless you request that we author them directly under your agency email handles.',
       },
       {
-        question: 'What platforms and tech stacks do you build on for agency clients?',
+        question: 'What happens if a bug appears after launch?',
         answer:
-          'Our engineering bench specializes in Next.js 16 App Router, TypeScript, React 19, and Tailwind CSS for custom web applications. For CMS ecosystems, we deliver custom Gutenberg WordPress themes and Webflow CMS implementations. For cross-platform mobile apps, we deploy shared React Native and Expo architectures.',
+          'Every full build includes our 14-day post-launch defect fix window with scheduled check-ins on Day 7 and Day 14. We fix any code defects against approved specifications promptly, followed by an optional monthly maintenance plan.',
       },
       {
-        question: 'What post-deployment warranty is included with full development builds?',
+        question: 'Can you join client scoping calls as our technical lead?',
         answer:
-          'Every full build includes a 14-day warranty period with proactive telemetry check-ins on Day 7 and Day 14. We fix any defects or responsive regressions deviating from the approved specification at zero additional cost before offering ongoing maintenance support.',
+          'Yes. When you introduce us as your technical lead or senior developer, we can attend client discovery calls to review architecture constraints, database requirements, and integration feasibility on your agency behalf.',
       },
       {
-        question: 'How are code repositories and intellectual property handed over?',
+        question: 'What do you need from our team to start?',
         answer:
-          'Upon milestone completion, full source code ownership, commit history, deployment scripts, and database configurations transfer entirely to your agency. Private GitHub repositories are transferred directly to your organization with comprehensive documentation and zero proprietary runtime lock-in.',
-      },
-      {
-        question: 'How are scope changes and unexpected feature additions managed during a sprint?',
-        answer:
-          'If your client requests additional features mid-sprint that deviate from the signed brief, we isolate the new items and prepare an itemized change request quotation. Out-of-scope work proceeds only upon your written approval, protecting agency profit margins from unbudgeted creep.',
-      },
-    ],
-  },
-
-  techStack: {
-    eyebrow: 'Full-Stack Execution Capability',
-    title: 'Production Engineering Across Four Core Stacks',
-    description:
-      'We never force clients into a one-size-fits-all framework. Our engineering bench builds in the exact stacks your agency accounts mandate.',
-    stacks: [
-      {
-        id: 'nextjs',
-        name: 'Custom Next.js & React',
-        badge: 'Web Applications',
-        description:
-          'Next.js 16 App Router architectures with Turbopack, React 19 Server Components, and sub-second edge routing for demanding client web platforms.',
-        features: ['Server-Driven React 19 Architecture', 'Pure Tailwind CSS styling', 'Sub-second TTFB on Vercel or AWS'],
-      },
-      {
-        id: 'wordpress',
-        name: 'Enterprise WordPress',
-        badge: 'Marketing Portals',
-        description:
-          'Clean Bedrock architectures, custom ACF Pro block configurations, and decoupled headless WPGraphQL setups with zero bloated third-party page builders.',
-        features: ['Gutenberg block architectures', 'Strict PHP 8.3 & Bedrock roots', 'Blazing fast Redis caching layers'],
-      },
-      {
-        id: 'webflow',
-        name: 'Advanced Webflow & CMS',
-        badge: 'Visual Frontends',
-        description:
-          'Design-system Webflow builds augmented with custom JavaScript attributes, complex GSAP ticker animations, and automated CMS reverse-proxies.',
-        features: ['Client-First naming taxonomy', 'Custom GSAP scroll synchronizations', 'Third-party API and webhook routing'],
-      },
-      {
-        id: 'mobile',
-        name: 'Cross-Platform Mobile',
-        badge: 'iOS & Android',
-        description:
-          'Unified React Native and Expo application builds sharing up to 85% business logic with web clients for cost-effective multi-screen rollouts.',
-        features: ['Expo Application Services (EAS)', 'Native biometric and push services', 'App Store and Play Store compliance'],
+          'We start with a 30-minute discovery call to review your client brief, Figma design files, and target milestones. We sign a mutual NDA, deliver a binding fixed-scope quote within 24 business hours, and can kick off work the same day.',
       },
     ],
   },
 
   ctaBanner: {
     badge: 'Confidential Engineering Partner',
-    title: 'Ready to Expand Your Agency’s Dev Capacity?',
+    title: 'Scale Your Agency Dev Capacity This Week',
     description:
-      'Book a 30-minute discovery call with our founder. We’ll review your active client briefs, match stacks, and provide a fixed-scope pilot quote within 24 hours.',
+      'Schedule a 30-minute scoping call directly with Devansh. We will review your client brief, confirm technical constraints, and deliver a fixed quote in 24 hours.',
     primaryButton: { text: 'Book a 30-Min Call', href: '/book-a-call' },
-    footnote: 'Fixed quote within 24 business hours · Zero client contact · Strict NDA',
+    footnote: 'Direct engineering conversation · No sales pitch · Mutual NDA protection',
   },
 
   contactForm: {
     eyebrow: 'Inbound Project Brief',
-    leadIn: 'Prefer to write? Send us your brief.',
+    leadIn: 'Prefer to Write? Send Us Your Project Brief',
     description:
-      'Tell us about your client’s project, timeline, and preferred stack. We review briefs and reply within 24 hours.',
+      'Submit your requirements, Figma references, and target timeline. We will review the specifications under mutual NDA and reply within 24 business hours.',
   },
 };

@@ -51,16 +51,16 @@ export default function BlogArticleDiscussionSection({ post }) {
           </p>
           <div className="pt-2 flex flex-wrap items-center gap-4">
             <Link
-              href="/contact"
+              href="/book-a-call"
               className="inline-flex items-center gap-2 rounded-xl bg-[#2563EB] px-5 py-2.5 text-xs font-semibold text-white hover:bg-[#1D4ED8] transition-colors shadow-xs"
             >
-              {data.btnPrimary}
+              {data.btnSecondary} →
             </Link>
             <Link
-              href="/book-a-call"
+              href="/contact"
               className="inline-flex items-center gap-2 rounded-xl border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#0B0F19] px-5 py-2.5 text-xs font-semibold text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-[#1E293B] transition-colors"
             >
-              {data.btnSecondary}
+              {data.btnPrimary}
             </Link>
           </div>
         </MotionFadeIn>

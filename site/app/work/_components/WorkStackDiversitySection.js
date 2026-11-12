@@ -49,3 +49,4 @@ export default function WorkStackDiversitySection({ content }) {
     </section>
   );
 }
+

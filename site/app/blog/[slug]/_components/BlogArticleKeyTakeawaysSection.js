@@ -7,7 +7,7 @@ const TAKEAWAYS_BY_SLUG = {
     title: 'Core Lessons on White-Label Scaling',
     desc: 'Actionable guidelines for marketing agencies scaling technical capacity safely.',
     points: [
-      { id: 'p1', title: 'Protect Agency Margin', desc: 'Avoid unbillable bench payroll during slow seasons by leveraging an invisible on-demand engineering desk.' },
+      { id: 'p1', title: 'Protect Agency Margin', desc: 'Avoid unbillable bench payroll during slow seasons by utilizing an invisible on-demand engineering desk.' },
       { id: 'p2', title: 'Enforce Developer Anonymity', desc: 'Require code commits under agency handles and bilateral non-solicitation protection on every engagement.' },
       { id: 'p3', title: 'Prioritize Code Sovereignty', desc: 'Guarantee full source code ownership and clean git repositories transfer directly to your organization.' },
     ],

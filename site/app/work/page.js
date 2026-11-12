@@ -1,9 +1,9 @@
 import WorkHeroSection from '../_components/work/WorkHeroSection.js';
 import WorkStandardsSection from '../_components/work/WorkStandardsSection.js';
 import WorkShowcaseGridSection from '../_components/work/WorkShowcaseGridSection.js';
-import WorkProcessSection from '../_components/work/WorkProcessSection.js';
-import WorkStackDiversitySection from './_components/WorkStackDiversitySection.js';
+import WorkVerificationSection from '../_components/work/WorkVerificationSection.js';
 import WorkConfidentialityNoticeSection from './_components/WorkConfidentialityNoticeSection.js';
+import WorkCodeSovereigntySection from './_components/WorkCodeSovereigntySection.js';
 import FAQSection from '../_components/FAQSection.js';
 import FinalCTABanner from '../_components/FinalCTABanner.js';
 import ContactFormSection from '../_components/ContactFormSection.js';
@@ -38,9 +38,9 @@ export default function WorkPage() {
       <WorkHeroSection />
       <WorkStandardsSection />
       <WorkShowcaseGridSection />
-      <WorkProcessSection />
-      <WorkStackDiversitySection content={workContent} />
+      <WorkVerificationSection />
       <WorkConfidentialityNoticeSection content={workContent} />
+      <WorkCodeSovereigntySection />
       <FAQSection content={workContent.faqs} />
       <FinalCTABanner content={workContent.ctaBanner} />
       <ContactFormSection content={workContent.contactForm} />

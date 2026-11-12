@@ -49,3 +49,4 @@ export default function BookGuaranteeSection({ content }) {
     </section>
   );
 }
+

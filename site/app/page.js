@@ -37,7 +37,7 @@ export default function HomePage() {
       <WorkflowSection content={homeContent.workflow} />
       <ServicesSection content={homeContent.services} />
       <WorkShowcaseSection content={homeContent.workShowcase} />
-      <HomeTechStackSection content={homeContent.techStack} />
+      <HomeTechStackSection content={homeContent.engineeringStandards} />
       <FAQSection content={homeContent.faqs} />
       <FinalCTABanner content={homeContent.ctaBanner} />
       <ContactFormSection content={homeContent.contactForm} />

@@ -72,7 +72,7 @@ export default function ContactFormSection({ content }) {
   return (
     <section
       id="contact"
-      data-section="home-s8-contact-form"
+      data-section={content?.sectionId || 'home-s8-contact-form'}
       className="py-20 md:py-28 bg-white dark:bg-[#0B0F19] transition-colors scroll-mt-16 relative"
     >
       <div id="home-s8-contact-form" className="absolute -top-16 left-0" aria-hidden="true" />

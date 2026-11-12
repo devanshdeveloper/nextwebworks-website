@@ -14,7 +14,7 @@ Run the following commands verbatim from the repository root:
 3. `pnpm --dir site lint`: Assert ESLint passes with 0 errors and 0 warnings.
 4. `pnpm --dir site build`: Assert Next.js compiles and prerenders all static and ISR routes with 0 errors.
 5. `pnpm --dir site check:seo`: Assert zero metadata, canonical, JSON-LD, heading, or sitemap violations.
-6. `pnpm --dir site check:content`: Assert zero cross-page text repeats, unique CTA/form copy, and FAQ depth compliance (>= 5 items, answers >= 25 words).
+6. `pnpm --dir site check:content`: Assert zero cross-page text repeats, single-objective section mapping, concept ownership, zero banned phrases, and FAQ depth compliance (see .agents/rules/copy-standards.md and .agents/rules/unique-content-per-page.md).
 
 ## 2. Invariant & Policy Verification
 - **Zero Rates Check:** Search codebase for accidental rate disclosures or dollar signs.

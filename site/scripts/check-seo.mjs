@@ -189,6 +189,9 @@ function parseHtmlMetadata(html, routePath) {
     .replace(/<style\b[\s\S]*?<\/style>/gi, ' ')
     .replace(/<svg\b[\s\S]*?<\/svg>/gi, ' ')
     .replace(/<[^>]+>/g, ' ')
+    .replace(/&#x27;|&#39;|&apos;/gi, "'")
+    .replace(/&quot;/gi, '"')
+    .replace(/&amp;/gi, '&')
     .replace(/\s+/g, ' ')
     .toLowerCase();
 

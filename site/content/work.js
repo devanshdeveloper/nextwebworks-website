@@ -2,11 +2,11 @@
 
 export const workContent = {
   hero: {
-    eyebrow: 'PORTFOLIO & DELIVERABLES',
-    title: 'Production Case Studies & In-House Platforms',
+    eyebrow: 'ENGINEERING PROOF',
+    title: 'Flagship Products & Architectural Builds',
     description:
-      'Technical breakdowns of our proprietary software products and confidential white-label agency builds. Built with modern architectures and sovereign repository ownership.',
-    ctaPrimary: { text: 'Book a 30-Min Architecture Call', href: '/book-a-call' },
+      'Explore real production software systems engineered by our lead developer. Real schemas, real transaction pipelines, and clean Git commits with zero synthetic marketing metrics.',
+    ctaPrimary: { text: 'Book a 30-Min Call', href: '/book-a-call' },
     ctaSecondary: { text: 'View Deliverables ↓', href: '#work-showcase' },
     pillars: [
       { id: 'wp1', label: 'PROPRIETARY', title: 'In-House Platforms' },
@@ -16,139 +16,161 @@ export const workContent = {
     ],
   },
 
-  process: {
-    eyebrow: 'STAGING & TRANSFER PROTOCOL',
-    title: 'From Staging Preview to Sovereign Code Handover',
+  standards: {
+    eyebrow: 'ARCHITECTURAL STANDARDS',
+    title: 'Engineered for High Concurrency and Zero Maintenance Drag',
     description:
-      'We eliminate deployment surprises through strict repository hygiene, automated branch verifications, and unbranded staging domains.',
-    steps: [
+      'We architect codebases to withstand real-world traffic spikes, complex multi-user workflows, and strict regulatory standards.',
+    items: [
       {
-        step: '01',
-        tag: 'PRIVATE PREVIEW DOMAIN',
-        title: 'Staging Environment Setup',
-        desc: 'Milestones deploy to password-protected staging domains or your cloud infrastructure for internal agency review.',
+        id: 'st1',
+        title: 'Strict Type Safety & Data Validation',
+        description:
+          'Every API route and component boundary enforces strict TypeScript interfaces or runtime schema validation using Zod, eliminating unexpected runtime crashes.',
       },
       {
-        step: '02',
-        tag: 'AUTOMATED QA AUDIT',
-        title: 'Multi-Device & Performance Verification',
-        desc: 'Every branch passes automated linting, Core Web Vitals checks, and responsive stress testing across screen sizes.',
+        id: 'st2',
+        title: 'ACID Transaction Integrity',
+        description:
+          'Financial and inventory operations execute inside atomic multi-document database sessions, preventing inventory race conditions and calculation drift.',
       },
       {
-        step: '03',
-        tag: 'REPOSITORY TRANSFER',
-        title: 'Direct Git Push to Agency Org',
-        desc: 'Clean commits transfer to your GitHub or GitLab organization with complete setup documentation and environment guides.',
-      },
-      {
-        step: '04',
-        tag: 'DEFECT WARRANTY',
-        title: '14-Day Post-Launch Coverage',
-        desc: 'Scheduled check-ins on Day 7 and Day 14 resolve any unforeseen responsive edge cases or DNS deployment bugs.',
+        id: 'st3',
+        title: 'Asynchronous Compute Offloading',
+        description:
+          'Heavy compute tasks, such as multi-page vector PDF generation and image resizing, are offloaded to dedicated microservices to protect core API response times.',
       },
     ],
   },
 
-  stackDiversity: {
-    eyebrow: 'Architectural Versatility',
-    title: 'Cross-Framework Delivery Competence',
+  verification: {
+    eyebrow: 'QUALITY VERIFICATION',
+    title: 'Rigorous Pre-Handover Verification in Every Sprint',
     description:
-      'We bring deep, specialized mastery to each platform rather than shallow generalism. Explore how we engineer across four modern paradigms.',
-    stacks: [
+      'We do not rely on hopeful manual testing. Every repository undergoes rigorous automated and physical device testing before delivery.',
+    gates: [
       {
-        id: 's1',
-        name: 'Modern Full-Stack Next.js',
-        desc: 'App Router, React 19 Server Components, Turbopack, and edge routing designed for ultra-high conversion web apps.',
+        id: 'v1',
+        title: 'Automated CI/CD Lint & Security Audits',
+        description:
+          'Every build passes automated ESLint rule checks, formatting validation, and dependency vulnerability scans within automated GitHub Actions pipelines.',
       },
       {
-        id: 's2',
-        name: 'Headless & Gutenberg WordPress',
-        desc: 'Custom ACF Pro block architectures, Bedrock directory structures, and high-performance WPGraphQL API gateways.',
+        id: 'v2',
+        title: 'Physical Device & Responsive Testing',
+        description:
+          'Interfaces are tested across physical iOS and Android mobile devices, tablets, and desktop displays to ensure flawless responsive layouts and touch targets.',
       },
       {
-        id: 's3',
-        name: 'Advanced Webflow & CMS',
-        desc: 'Visual design systems augmented with custom GSAP scroll interactions, attribute routing, and external webhook integrations.',
-      },
-      {
-        id: 's4',
-        name: 'Shared Mobile Core (React Native)',
-        desc: 'Production iOS and Android application builds sharing business logic and state management with web platforms.',
+        id: 'v3',
+        title: 'Core Web Vitals & Accessibility Profiling',
+        description:
+          'Automated Lighthouse audits verify that production pages satisfy sub-second LCP paint targets, zero layout shift, and WCAG 2.1 AA contrast compliance.',
       },
     ],
   },
 
   confidentialityNotice: {
-    eyebrow: 'Client Protection Protocol',
-    title: 'Why Our Case Studies Respect White-Label Confidentiality',
+    eyebrow: 'CONFIDENTIALITY RATIONALE',
+    title: 'Why Our Best Client Work is Never Shown Publicly',
     description:
-      'Many agency partners ask why we showcase in-house products and sanitized builds instead of flaunting big-brand logos. Here is our ethical commitment.',
+      'When marketing agencies hire Next Web Works, they hire an invisible partner. We protect that trust above all else.',
     reasons: [
       {
         id: 'r1',
-        title: 'Your Agency Brand Takes the Credit',
-        desc: 'When an agency delivers an award-winning portal, their client should celebrate them. We never claim public glory or publish portfolio brag pieces.',
+        title: 'Strict Mutual Non-Disclosure',
+        desc: 'Agency contracts demand total discretion. Publishing client work to win our own new business would directly violate our core white-label promise.',
       },
       {
         id: 'r2',
-        title: 'Non-Disclosure Is Absolute',
-        desc: 'Our bilateral mutual NDA prohibits leaking client identities, proprietary feature sets, or commercial terms under any circumstances.',
+        title: 'Agency Client Protection',
+        desc: 'Your clients hired your agency, not Next Web Works. We ensure that your agency receives 100% of the industry acclaim, awards, and case study recognition.',
       },
       {
         id: 'r3',
-        title: 'Zero Stock or Synthetic Metrics',
-        desc: 'Every technical specification and architecture blueprint we share represents verified engineering work, adhering to our strict Zero Stock policy.',
+        title: 'Grounded In-House Architecture as Proof',
+        desc: 'Instead of violating client NDAs, we demonstrate our engineering capabilities through real, complex in-house software architectures and production products.',
+      },
+    ],
+  },
+
+  codeSovereignty: {
+    eyebrow: 'CODE SOVEREIGNTY',
+    title: 'Zero Vendor Lock-In. Complete Code Sovereignty.',
+    description:
+      'You own the code entirely. We build so cleanly that any competent developer can pick up the repository and continue building.',
+    guarantees: [
+      {
+        id: 'cs1',
+        title: 'Standardized Directory Structures',
+        description:
+          'Every project adheres to official framework conventions (Next.js App Router, clean Express controllers, typed Mongoose models) without weird proprietary wrappers.',
+      },
+      {
+        id: 'cs2',
+        title: 'Comprehensive Environment Setup Guides',
+        description:
+          'Every repository includes a detailed README.md with environment variable templates, local startup scripts, and production deployment instructions.',
+      },
+      {
+        id: 'cs3',
+        title: 'Direct Organization Transfer',
+        description:
+          'Repository ownership transfers directly to your agency private GitHub or GitLab organization upon milestone sign-off. You hold the master keys.',
       },
     ],
   },
 
   faqs: {
-    eyebrow: 'Deliverable Verification FAQ',
-    title: 'How We Ship, Stage, and Hand Over Code',
+    sectionId: 'work-faqs',
+    eyebrow: 'WORK & PROOF FAQ',
+    title: 'Work Samples & Technical Architecture FAQs',
     description: 'Straightforward answers on repository transfers, staging previews, QA audits, and warranties.',
     items: [
       {
-        question: 'How do you host and stage preview environments during development?',
+        question: 'Are the platforms showcased on this page actual client projects?',
         answer:
-          'We deploy staging builds either to your agency’s Vercel/cloud infrastructure or to a neutral, unbranded preview domain with HTTP password protection, allowing your internal team to review milestones before your client ever sees them.',
+          'No. The platforms displayed here are proprietary in-house software architectures and production applications engineered by our lead developer. They demonstrate our real-world database design, microservice orchestration, and API capabilities without violating client confidentiality agreements.',
       },
       {
-        question: 'When is full source code ownership transferred to our agency?',
+        question: 'Can our agency inspect a sample repository or code sample before hiring?',
         answer:
-          'Full code ownership is transferred directly to your organization repository upon final milestone signoff and handover. We retain zero proprietary locks or hidden licenses on custom builds.',
+          'Yes. During your 30-minute scoping call, we can walk you through architecture schemas, clean component trees, and Git commit histories to verify code quality, typing discipline, and commenting standards directly.',
       },
       {
-        question: 'What quality assurance and device testing checks are performed before handover?',
+        question: 'Do you provide staging preview URLs for our client account team to test?',
         answer:
-          'Every deliverable passes automated linting, structural line and bundle audits, responsive breakpoint testing across mobile, tablet, and desktop viewports, and accessibility contrast checks across both light and dark display modes.',
+          'Yes. Every project milestone is deployed to private, password-protected staging preview environments hosted under neutral URLs. Your account managers and clients can test interactive features thoroughly before production deployment.',
       },
       {
-        question: 'What does the 14-day post-launch warranty cover?',
+        question: 'What coding standards do you enforce across your repositories?',
         answer:
-          'Every full build includes a 14-day defect fix window with scheduled check-ins on Day 7 and Day 14 to resolve any unexpected bugs or responsive edge-cases that emerge after production DNS propagation.',
+          'We enforce strict TypeScript or modern ECMAScript standards, modular component architectures, automated ESLint formatting, responsive design principles, and comprehensive documentation to ensure maintainability and clean ownership by your team.',
       },
       {
-        question: 'How do you maintain clean Git commit histories and branch hygiene during agency sprints?',
+        question: 'How do you handle third-party API dependencies and external services?',
         answer:
-          'We enforce structured feature branch workflows with descriptive, atomic commit messages following conventional standards. Pull requests include lint, build, and automated structural check verifications before merging into production branches.',
+          'We configure third-party services—such as Stripe, Resend, Amazon S3, and database providers—directly within your agency or client cloud accounts. Credentials remain strictly isolated to your organization for maximum security.',
       },
     ],
   },
 
   ctaBanner: {
+    sectionId: 'work-cta',
     badge: 'Production Delivery Bench',
-    title: 'Have a Complex Technical Build or Client Portal in Mind?',
+    title: 'Discuss an Architectural Build for Your Agency',
     description:
-      'Send us your Figma designs or client brief. We review architecture specifications and provide a comprehensive fixed-scope quotation within 24 business hours.',
-    primaryButton: { text: 'Review Your Project Brief', href: '/contact' },
+      'Schedule a 30-minute scoping call directly with Devansh. We will evaluate your client technical requirements and outline a clean architecture.',
+    primaryButton: { text: 'Book a 30-Min Call', href: '/book-a-call' },
     footnote: 'Clean Git histories · 100% white-label repos · 14-day warranty included',
   },
 
   contactForm: {
+    sectionId: 'work-contact-form',
     eyebrow: 'Production Build Scoping',
-    leadIn: 'Request Architecture & Delivery Review for Your Project',
+    leadIn: 'Submit an Engineering Specification',
     description:
-      'Have an upcoming client portal, web application, or custom platform launch? Share your functional requirements and delivery timeline with our engineering team.',
+      'Share your project brief, database requirements, and target launch window. We will review the brief under mutual NDA and reply within 24 hours.',
   },
 
   showcase: {
@@ -180,7 +202,7 @@ export const workContent = {
         stack: 'Multi-Tenant SaaS · Next.js · Node.js · WhatsApp API Bridge',
         badge: 'In-House Proprietary Platform',
         overview:
-          'High-concurrency digital menu and ordering platform with live multi-device table synchronization and seamless WhatsApp kitchen routing.',
+          'High-concurrency digital menu and ordering platform with live multi-device table synchronization and direct WhatsApp kitchen routing.',
         highlights: [
           'Optimistic UI state management ensuring instant order manipulation',
           'Zero mandatory customer authentication reducing ordering abandonments',
@@ -230,7 +252,7 @@ export const workDetailContent = {
         {
           question: 'How does the NWW CMS Kit achieve sub-second incremental static regeneration?',
           answer:
-            'The kit leverages Next.js fetch cache tagging with custom HTTP revalidation webhooks. Content renders from edge cache in single-digit milliseconds while background webhook handlers purge specific model tags only when editorial changes occur in the CMS.',
+            'The kit utilizes Next.js fetch cache tagging with custom HTTP revalidation webhooks. Content renders from edge cache in single-digit milliseconds while background webhook handlers purge specific model tags only when editorial changes occur in the CMS.',
         },
         {
           question: 'What advantages does class-based SDK encapsulation offer over raw REST fetch calls?',

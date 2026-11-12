@@ -52,3 +52,4 @@ export default function AboutConfidentialitySection({ content }) {
     </section>
   );
 }
+

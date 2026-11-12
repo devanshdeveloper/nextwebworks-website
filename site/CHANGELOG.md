@@ -5,6 +5,35 @@ All notable changes to the Next Web Works platform will be documented in this fi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.10.0] - 2026-11-12
+
+### Added
+- **Single-Objective Content Architecture & Hard Gate Suite**:
+  - Enforced "One Concept, One Home", "One Objective Per Section", "One Terminology", and "One Primary CTA Per Page (`/book-a-call`)" invariants sitewide.
+  - Authored comprehensive Content Architecture specification (`project-docs/content-architecture.md`) and machine-readable concept registry (`project-docs/concept-map.json`).
+  - Added `.agents/rules/copy-standards.md` establishing non-negotiable copy and structural invariants for content and component development.
+  - Extended `site/scripts/check-content.mjs` with hard gates auditing registered data-section objectives, semantic non-owner concept leaks (>= 3 keyword threshold), prohibited terminology aliases, banned marketing filler phrases, and multiple/circular primary CTAs.
+  - Added `project-docs/open-flags.md` recording all 23 project flags, resolving 21 items and explicitly deferring 2 post-launch items (`NEXT_PUBLIC_GA4_ID`, `RESEND_API_KEY`).
+  - Created new substantive section components with distinct objectives:
+    - `ServicesIntegrationStandardsSection` (`/services`): Production hygiene and automated gate standards.
+    - `AgencySlaSection`, `AgencyRiskReversalSection` (`/for-agencies`): Fixed-price guarantee and agency SLAs.
+    - `WorkStandardsSection`, `WorkVerificationSection`, `WorkCodeSovereigntySection` (`/work`): Engineering standards, verification evidence, and code ownership.
+    - `AboutOperationsSection` (`/about`): Direct engineering operational workflow and communication cadence.
+    - `BookAgendaSection`, `BookPreparationSection`, `BookFallbackChannelsSection`, `BookWrittenAlternativeSection` (`/book-a-call`): Scoping agenda, preparation checklist, fallback channels, and written brief routing.
+    - `ContactExpectationsSection`, `ContactChannelsSection` (`/contact`): Inquiry expectations and communication routing.
+  - Authored authentic in-house cobalt monogram avatar badge (`DK · Lead Engineer`) for `AboutFounderSection` adhering 100% to the Zero Stock policy.
+
+### Changed
+- **Eliminated Cross-Page Content Repetition**:
+  - Completely rewrote copy across all static pages (`/`, `/services`, `/for-agencies`, `/work`, `/about`, `/book-a-call`, `/contact`, `/blog`) and dynamic templates (`/services/[slug]`, `/work/[slug]`, `/blog/[slug]`) from scratch.
+  - Centralized 4-Step Delivery Protocol exclusively on Home (`home-workflow`).
+  - Centralized 14-Day Defect Warranty exclusively on About (`about-s6-warranty`).
+  - Centralized 3 Commercial Models on For Agencies (`partnership-models`).
+  - Harmonized 5 canonical service lines across metadata, navigation, content modules, and JSON-LD structured data.
+  - Replaced circular CTA banner on `/book-a-call` with a written brief alternative routing to `/contact`.
+  - Updated Server Action `site/app/actions/lead.js` to persist newsletter subscriptions directly into the NWW CMS `ContactUs` database.
+  - Added entity decoding in `site/scripts/check-seo.mjs` for visible text FAQ extraction.
+
 ## [0.9.0] - 2026-11-12
 
 ### Added

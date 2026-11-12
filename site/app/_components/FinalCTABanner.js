@@ -6,8 +6,8 @@ import MotionMagnetic from '@/components/motion/MotionMagnetic.js';
 export default function FinalCTABanner({ content }) {
   return (
     <section
-      id="home-s7-cta-banner"
-      data-section="home-s7-cta-banner"
+      id="cta-banner"
+      data-section={content?.sectionId || 'home-s7-cta-banner'}
       className="py-16 md:py-24 border-b border-slate-200 dark:border-[#1E293B]/60 bg-slate-50 dark:bg-[#0B0F19] transition-colors"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

@@ -1,174 +1,167 @@
 // site/content/forAgencies.js - Agency partnership models, NDA guarantees, and per-page CTA banner
+// Adheres strictly to .agents/rules/copy-standards.md and .agents/rules/unique-content-per-page.md
 
 export const forAgenciesContent = {
   hero: {
-    eyebrow: 'Agency Partnership Model',
-    title: 'Built for Agency Margins & Client Peace of Mind',
+    eyebrow: 'AGENCY PARTNERSHIP',
+    title: 'Scale Agency Margins Without Adding Payroll',
     description:
-      'Say yes to complex client dev pitches without taking on permanent payroll or freelancer risk. We engineer web and mobile platforms strictly under your agency brand.',
+      'We operate as your dedicated white-label engineering team. Say yes to custom web applications, complex ERPs, and mobile builds with binding fixed-price quotes and zero overhead.',
   },
 
   margins: {
-    eyebrow: 'Profitability & Margin Security',
-    title: 'Protect Your Agency Retainers From Scope Creep',
+    eyebrow: 'MARGIN PROTECTION',
+    title: 'Predictable Scoping Protects Agency Profitability',
     description:
-      'Agency margins vanish when development projects drag past deadlines or developers bill open-ended hourly fees. We build predictability into every project.',
+      'Freelancer hourly overages and idle in-house developer salaries are the two primary causes of agency margin collapse.',
     pillars: [
       {
         id: 'p1',
-        title: 'Locked Fixed-Scope Quotations',
-        desc: 'Every sprint begins with an itemized specification and locked milestone quotation. You know exact deliverables and timing before kickoff.',
+        title: 'Binding Fixed-Price Quotations',
+        desc: 'Every project is quoted on a binding milestone basis. When scope is locked, our price is locked. If a task takes longer to polish than anticipated, your agency margin remains completely protected.',
       },
       {
         id: 'p2',
-        title: 'Zero Hourly Billing Surprises',
-        desc: 'We never charge open-ended hourly tabs. If a client brief expands, we isolate new requests in itemized change requests for written approval.',
+        title: 'Zero Unbillable Payroll Drag',
+        desc: 'During slow client quarters or between contract cycles, your agency incurs zero developer salary expenses. You scale engineering capacity up or down strictly in lockstep with client demand.',
       },
       {
         id: 'p3',
-        title: 'Zero Payroll Bench Drag',
-        desc: 'Engage engineering capacity when client demand spikes, and scale back when pitch pipelines quiet down. Zero idle developer payroll expense.',
+        title: 'Value-Based Agency Bundling',
+        desc: 'Because our quotations are fixed and predictable, your account leads can bundle development into comprehensive client retainers and strategy packages, capturing substantial agency margin.',
       },
     ],
   },
 
   confidentiality: {
-    eyebrow: 'Non-Solicitation & Brand Protection',
-    title: 'Absolute Discretion and Invisible Delivery',
+    eyebrow: 'CONFIDENTIALITY PROTOCOLS',
+    title: 'Strict Mutual NDA & White-Label Discretion',
     description:
-      'We treat your agency relationships as sacred. Our entire operational architecture is built around confidentiality, non-solicitation, and ghost delivery.',
+      'Your client relationships are your most valuable agency asset. We work silently behind your brand with zero public self-promotion.',
     points: [
       {
         id: 'c1',
-        title: 'Enforceable Non-Solicitation',
-        desc: 'Strict non-solicitation is codified directly in our bilateral mutual NDA. We never approach, solicit, or contact your clients independently.',
+        title: 'Mutual Non-Disclosure Agreement',
+        desc: 'We sign a comprehensive mutual NDA before reviewing any client briefs, Figma links, or contract documents. Your client identities and project briefs remain confidential.',
       },
       {
         id: 'c2',
-        title: 'Agency Handle Git Commits',
-        desc: 'We author commits under your company email addresses or anonymous developer handles, keeping version control histories completely native.',
+        title: 'Zero Public Credits or Watermarks',
+        desc: 'We never add Next Web Works credits in footers, meta tags, or package manifests. We never publish your client projects to our portfolio without explicit, written agency permission.',
       },
       {
         id: 'c3',
-        title: 'Zero Portfolio Logo Bragging',
-        desc: 'We never publish your client logos, case studies, or confidential brand names on public marketing sites without explicit permission.',
+        title: 'Flexible Commit Attribution',
+        desc: 'By default, code commits are pushed under our senior engineering handles. If your agency requires total anonymity, we configure Git to author commits under your agency email domain.',
       },
     ],
   },
 
-  onboarding: {
-    eyebrow: 'Rapid Kickoff Lifecycle',
-    title: 'From First Brief to Active Sprint in Under 48 Hours',
+  sla: {
+    eyebrow: 'COMMUNICATION & SLA',
+    title: 'Direct Engineering Communication on Your Agency Terms',
     description:
-      'We know agencies move at the speed of client pitches. Our lightweight onboarding protocol gets your first sprint scoped and moving immediately.',
-    steps: [
+      'We integrate into your agency preferred collaboration channels with clear business hours and rapid issue triage.',
+    standards: [
       {
-        step: '01',
-        title: 'Discovery & Mutual NDA',
-        desc: 'Sign our mutual NDA and share active Figma designs, client briefs, or RFP specifications in a 30-minute scoping session.',
+        id: 'hours',
+        title: 'Standard Business & Triage Hours',
+        description:
+          'Our engineering operations run Monday through Friday, 10:00 AM to 7:00 PM IST. Critical blockers are typically evaluated within hours during active sprints; routine updates within one business day.',
       },
       {
-        step: '02',
-        title: 'Itemized Milestone Quotation',
-        desc: 'Receive a comprehensive fixed-price milestone roadmap and confirmed delivery dates within 24 business hours.',
+        id: 'channels',
+        title: 'Direct Slack or WhatsApp Channels',
+        description:
+          'We communicate directly with your project managers and creative directors via shared Slack channels, WhatsApp, or email, eliminating communication lag.',
       },
       {
-        step: '03',
-        title: 'Sprint Kickoff & Private Staging',
-        desc: 'We spin up private staging, establish async Loom check-in routines, and begin production coding immediately.',
+        id: 'client-calls',
+        title: 'Client Call Attendance as Technical Lead',
+        description:
+          'When complex technical questions arise during client pitches, we can join your client video calls introduced as your technical lead or senior developer to confirm constraints.',
       },
     ],
   },
 
-  workflow: {
-    eyebrow: 'Agency Engagement Pipeline',
-    title: 'How We Ship Behind Your Brand in 4 Sprints',
+  riskReversal: {
+    eyebrow: 'RISK REVERSAL',
+    title: 'Zero-Risk Delivery Backed by a 14-Day Defect Window',
     description:
-      'A predictable, transparent engineering process designed to keep your account executives informed and your client deadlines secure.',
-    steps: [
+      'We stand behind our production code. Every full build is protected by our post-launch warranty and structured milestone approvals.',
+    guarantees: [
       {
-        number: '01',
-        title: 'NDA & Pilot Brief Intake',
-        tag: 'Same-Day Clearance',
-        desc:
-          'We execute a bilateral mutual non-disclosure agreement protecting all agency client relationships, then review your wireframes, Figma specs, and platform goals.',
+        id: 'milestone',
+        title: 'Milestone-Based Acceptance',
+        description:
+          'Work proceeds in transparent milestones. You review staging previews and verify acceptance criteria before signing off on milestone handovers.',
       },
       {
-        number: '02',
-        title: 'Fixed-Price Proposal & Architecture Spec',
-        tag: '24-Hour Delivery',
-        desc:
-          'Our principal engineer provides an itemized proposal with clear milestone definitions, confirmed platform fit, and transparent delivery dates before code commences.',
+        id: 'warranty',
+        title: '14-Day Post-Launch Defect Window',
+        description:
+          'Every full project build includes 14 calendar days of defect fixes covering code bugs against approved specs, with scheduled check-ins on Day 7 and Day 14.',
+        linkText: 'Read Detailed Warranty Terms →',
+        linkHref: '/about#warranty',
       },
       {
-        number: '03',
-        title: 'Private Staging & Continuous Agency QA',
-        tag: 'Active Sprints',
-        desc:
-          'We build in private Git repositories, providing live preview deployments on your agency domains or neutral staging URLs for ongoing progress reviews.',
-      },
-      {
-        number: '04',
-        title: 'Complete IP Handover & 14-Day Warranty',
-        tag: 'Full Ownership',
-        desc:
-          'Repository ownership transfers directly to your organization upon launch, backed by a 14-day defect resolution window and proactive check-ins.',
+        id: 'changes',
+        title: 'Written Change Orders for Scope Additions',
+        description:
+          'If your client requests new features mid-build, we provide a clear, itemized quote before any out-of-scope work begins. You never face surprise invoices.',
       },
     ],
-    cta: {
-      prompt: 'Want to test our delivery speed with a low-risk trial sprint?',
-      text: 'Initiate a scoped agency pilot',
-      href: '/book-a-call',
-    },
   },
 
   faqs: {
-    eyebrow: 'Agency Partnership FAQ',
-    title: 'How White-Label Agency Partnerships Work',
+    sectionId: 'agency-faqs',
+    eyebrow: 'AGENCY PARTNERSHIP FAQ',
+    title: 'Frequently Asked Questions by Agency Operators',
     description: 'Clear answers on non-solicitation, repository authorship, client communication, and capacity.',
     items: [
       {
-        question: 'How do you guarantee you will never solicit our agency’s clients?',
+        question: 'How do scope changes work if our client requests new features mid-sprint?',
         answer:
-          'Strict non-solicitation and confidentiality are written directly into our mutual NDA and master services agreement before kickoff. We have zero direct contact with your clients unless you specifically introduce us as your internal engineering team.',
+          'If your client introduces new requirements after the quotation is locked, we prepare a clear, written change request with an itemized estimate. No out-of-scope work proceeds until your agency approves the revised timeline and scope.',
       },
       {
-        question: 'Can code commits appear under our agency’s developer handle?',
+        question: 'Can you handle urgent client deadlines or rush builds?',
         answer:
-          'Yes. We regularly author and commit under your agency’s GitHub, GitLab, or Bitbucket organization. We can configure dedicated agency email aliases or developer handles so the entire version control history looks completely native to your in-house team.',
+          'We accommodate urgent deadlines when our engineering schedule permits. Because we maintain lean operations with zero bureaucracy, we can evaluate specifications within 24 hours and often kick off active development on the same day.',
       },
       {
-        question: 'Can Next Web Works engineers join our client discovery calls?',
+        question: 'What technologies do you prefer not to work with?',
         answer:
-          'Yes. When introduced under your agency identity, our engineers can join client technical discovery, requirements scoping, and architecture review calls as your technical lead. You manage the commercial relationship; we support your pitch with rigorous engineering depth.',
+          'We focus on modern production stacks: Next.js, WordPress, Webflow, and React Native. We explicitly decline legacy PHP 5.x systems, outdated monolithic frameworks, proprietary closed builders like Wix, and native Swift/Kotlin-only mobile codebases.',
       },
       {
-        question: 'How quickly do you deliver scoped quotes on new client briefs?',
+        question: 'How do payments and milestones work for project builds?',
         answer:
-          'Following our initial 30-minute scoping discussion or brief intake, we review technical feasibility, architectural dependencies, and milestone deliverables, returning an itemized, fixed-price quotation within 24 business hours to keep your client proposals moving swiftly.',
+          'Projects are structured around clear deliverables and staging milestone approvals. Terms, milestone dates, and payment schedules are discussed and agreed upon directly during your discovery call, with zero hidden surprises or undisclosed fees.',
       },
       {
-        question: 'What happens if our agency’s project requirements expand mid-sprint?',
+        question: 'How quickly can we start our first pilot build?',
         answer:
-          'Any scope expansion is handled via a transparent, written change request with an itemized quote before any out-of-scope code is written, protecting agency profit margins from unexpected scope creep or unbudgeted developer hours.',
+          'We can typically kick off within 24 to 48 hours of initial brief intake. Once we review your Figma files or project brief and execute a mutual NDA, we deliver a binding fixed quote and schedule sprint execution immediately.',
       },
     ],
   },
 
   ctaBanner: {
+    sectionId: 'agency-cta',
     badge: 'Agency Capacity Expansion',
-    title: 'Ready to Scale Dev Capacity Without Full-Time Overhead?',
+    title: 'Partner With an Engineering Lead Who Understands Agencies',
     description:
-      'Partner with an engineering consultancy built specifically for agency margins. Book a 30-minute introductory call to discuss your current project pipeline.',
-    primaryButton: { text: 'Discuss Agency Partnership', href: '/book-a-call' },
+      'Schedule a 30-minute scoping call directly with Devansh. We will evaluate your current client pipeline and establish a reliable dev partnership.',
+    primaryButton: { text: 'Book a 30-Min Call', href: '/book-a-call' },
     footnote: 'Flexible sprint allocations · Dedicated monthly bench · Zero payroll liability',
   },
 
   contactForm: {
+    sectionId: 'agency-contact-form',
     eyebrow: 'Agency Partnership Inquiry',
-    leadIn: 'Inquire About Agency Dev Bench Capacity',
+    leadIn: 'Send an Agency Dev Brief for 24-Hour Review',
     description:
-      'Looking for dedicated monthly sprint hours, scoped pilot builds, or a white-label technical lead for pitches? Outline your agency dev requirements below.',
+      'Submit your upcoming client requirements or active RFP. We will review the brief under mutual NDA and deliver an itemized fixed-scope quote.',
   },
 };
-

@@ -40,7 +40,7 @@ const STACK_HEADER_BY_SERVICE = {
   'web-apps': { title: 'Application Cloud & Container Topology', desc: 'Hardened cloud infrastructure with automated CI/CD pipelines and Docker containerization.' },
   erps: { title: 'Enterprise Server & Database Governance', desc: 'Isolated VPN environments, encrypted transaction backups, and automated migration scripts.' },
   'mobile-apps': { title: 'Mobile Build & Release Pipeline', desc: 'Continuous app binary generation via Expo EAS with direct TestFlight and Google Play tracks.' },
-  'cms-platforms': { title: 'CMS Staging & Environment Management', desc: 'Private agency sandbox sites with temporary staging domains and seamless DNS cutover.' },
+  'cms-platforms': { title: 'CMS Staging & Environment Management', desc: 'Private agency sandbox sites with temporary staging domains and turnkey DNS cutover.' },
 };
 
 export default function ServiceDetailStackSection({ service }) {
